@@ -1,0 +1,279 @@
+<datapack>
+  <category id="plugin">
+    <object id="EQ">
+      <visual name="EQ" />
+      <params>
+        <bool id="phaseInvert" def="0" />
+        <bool id="band0Enabled" def="0" />
+        <int id="band0Freq" def="80" min="20" max="20000" />
+        <float id="band0Q" def="0.707" min="0.1" max="2" />
+        <bool id="band1Enabled" def="1" />
+        <int id="band1Freq" def="200" min="20" max="20000" />
+        <int id="band1Gain" def="0" min="-24" max="24" />
+        <int id="band1Q" def="1" min="0.1" max="18" />
+        <int id="band1Type" def="0" min="0" max="1" />
+        <bool id="band2Enabled" def="1" />
+        <int id="band2Freq" def="500" min="20" max="20000" />
+        <int id="band2Gain" def="0" min="-24" max="24" />
+        <int id="band2Q" def="1" min="0.1" max="18" />
+        <bool id="band3Enabled" def="1" />
+        <int id="band3Freq" def="1000" min="20" max="20000" />
+        <int id="band3Gain" def="0" min="-24" max="24" />
+        <int id="band3Q" def="1" min="0.1" max="18" />
+        <bool id="band4Enabled" def="1" />
+        <int id="band4Freq" def="3000" min="20" max="20000" />
+        <int id="band4Gain" def="0" min="-24" max="24" />
+        <int id="band4Q" def="1" min="0.1" max="18" />
+        <bool id="band5Enabled" def="1" />
+        <int id="band5Freq" def="8000" min="20" max="20000" />
+        <int id="band5Gain" def="0" min="-24" max="24" />
+        <int id="band5Q" def="1" min="0.1" max="18" />
+        <int id="band5Type" def="0" min="0" max="1" />
+        <bool id="band6Enabled" def="0" />
+        <int id="band6Freq" def="16000" min="20" max="16000" />
+        <float id="band6Q" def="0.707" min="0.1" max="2" />
+      </params>
+    </object>
+    <object id="COMPRESSOR">
+      <visual name="Compressor" />
+      <params>
+        <int id="threshold" def="-24" min="-60" max="0" />
+        <int id="ratio" def="4" min="1" max="20" />
+        <int id="knee" def="6" min="0" max="40" />
+        <int id="attack" def="10" min="0" max="1000" />
+        <int id="release" def="100" min="10" max="3000" />
+        <int id="makeupGain" def="0" min="-12" max="24" />
+        <int id="mix" def="100" min="0" max="100" />
+      </params>
+    </object>
+    <object id="LIMITER">
+      <visual name="Limiter" />
+      <params>
+        <int id="inputGain" def="-2" min="-12" max="24" />
+        <int id="ceiling" def="0" min="-12" max="0" />
+        <int id="release" def="1" min="1" max="500" />
+      </params>
+    </object>
+    <object id="GATE">
+      <visual name="Gate" />
+      <params>
+        <float id="threshold" def="-32.5" min="-80" max="0" />
+        <int id="range" def="-80" min="-80" max="0" />
+        <float id="attack" def="0.5" min="0.01" max="50" />
+        <int id="hold" def="167" min="0" max="500" />
+        <int id="release" def="100" min="5" max="2000" />
+      </params>
+    </object>
+    <object id="DE_ESSER">
+      <visual name="De-Esser" />
+      <params>
+        <int id="frequency" def="6000" min="2000" max="12000" />
+        <int id="range" def="2000" min="500" max="6000" />
+        <int id="threshold" def="-20" min="-40" max="0" />
+        <int id="reduction" def="6" min="0" max="24" />
+        <int id="mode" def="0" min="0" max="1" />
+        <bool id="listen" def="0" />
+      </params>
+    </object>
+    <object id="EXPANDER">
+      <visual name="Expander" />
+      <params>
+        <int id="threshold" def="-40" min="-60" max="0" />
+        <int id="ratio" def="2" min="1" max="10" />
+        <int id="attack" def="5" min="0.1" max="100" />
+        <int id="release" def="100" min="10" max="1000" />
+        <int id="range" def="-40" min="-80" max="0" />
+        <int id="mix" def="100" min="0" max="100" />
+      </params>
+    </object>
+    <object id="REVERB">
+      <visual name="Reverb" />
+      <params>
+        <int id="size" def="50" min="0" max="100" />
+        <int id="decay" def="2" min="0.1" max="10" />
+        <int id="damping" def="50" min="0" max="100" />
+        <int id="predelay" def="20" min="0" max="200" />
+        <int id="mix" def="30" min="0" max="100" />
+      </params>
+    </object>
+    <object id="DELAY">
+      <visual name="Delay" />
+      <params>
+        <bool id="tempoSync" def="0" />
+        <int id="delayTimeLeft" def="250" min="1" max="2000" />
+        <int id="delayTimeRight" def="375" min="1" max="2000" />
+        <int id="noteValueLeft" def="2" min="0" max="4" />
+        <int id="noteValueRight" def="2" min="0" max="4" />
+        <bool id="sync" def="0" />
+        <int id="feedback" def="30" min="0" max="95" />
+        <int id="filterFreq" def="8000" min="200" max="20000" />
+        <int id="mix" def="30" min="0" max="100" />
+      </params>
+    </object>
+    <object id="GUITAR_AMP">
+      <visual name="Guitar Amp" />
+      <params>
+        <int id="ampModel" def="1" min="0" max="3" />
+        <int id="inputGain" def="0" min="-12" max="12" />
+        <int id="gain" def="50" min="0" max="100" />
+        <int id="bass" def="50" min="0" max="100" />
+        <int id="mid" def="50" min="0" max="100" />
+        <int id="treble" def="50" min="0" max="100" />
+        <int id="presence" def="50" min="0" max="100" />
+        <int id="cabType" def="2" min="0" max="3" />
+        <int id="master" def="50" min="0" max="100" />
+        <int id="mix" def="100" min="0" max="100" />
+        <bool id="gateEnabled" def="1" />
+        <int id="gateThreshold" def="-50" min="-80" max="0" />
+      </params>
+    </object>
+    <object id="BASS_AMP">
+      <visual name="Bass Amp" />
+      <params>
+        <int id="ampModel" def="2" min="0" max="3" />
+        <int id="inputGain" def="0" min="-12" max="12" />
+        <int id="gain" def="27" min="0" max="100" />
+        <int id="bass" def="50" min="0" max="100" />
+        <int id="mid" def="59" min="0" max="100" />
+        <int id="treble" def="50" min="0" max="100" />
+        <int id="presence" def="50" min="0" max="100" />
+        <int id="cabType" def="1" min="0" max="3" />
+        <int id="master" def="50" min="0" max="100" />
+        <int id="mix" def="87" min="0" max="100" />
+        <bool id="gateEnabled" def="0" />
+        <int id="gateThreshold" def="-46" min="-80" max="0" />
+      </params>
+    </object>
+    <object id="FLANGER">
+      <visual name="Flanger" />
+      <params>
+        <float id="rate" def="0.01" min="0.01" max="10" />
+        <int id="depth" def="50" min="0" max="100" />
+        <int id="delay" def="5" min="0.5" max="20" />
+        <int id="feedback" def="50" min="0" max="95" />
+        <int id="mix" def="50" min="0" max="100" />
+      </params>
+    </object>
+    <object id="PHASER">
+      <visual name="Phaser" />
+      <params>
+        <int id="mode" def="0" min="0" max="2" />
+        <float id="rate" def="0.5" min="0.01" max="10" />
+        <int id="depth" def="50" min="0" max="100" />
+        <int id="sensitivity" def="50" min="0" max="100" />
+        <int id="centerFreq" def="1000" min="100" max="4000" />
+        <int id="stages" def="2" min="0" max="4" />
+        <int id="feedback" def="30" min="0" max="95" />
+        <int id="mix" def="50" min="0" max="100" />
+      </params>
+    </object>
+    <object id="CHORUS">
+      <visual name="Chorus" />
+      <params>
+        <int id="rate" def="1" min="0.1" max="5" />
+        <int id="depth" def="40" min="0" max="100" />
+        <int id="delay" def="20" min="5" max="50" />
+        <int id="voices" def="1" min="0" max="3" />
+        <int id="spread" def="100" min="0" max="100" />
+        <int id="mix" def="50" min="0" max="100" />
+      </params>
+    </object>
+    <object id="TREMOLO">
+      <visual name="Tremolo" />
+      <params>
+        <int id="rate" def="4" min="0.1" max="20" />
+        <int id="depth" def="50" min="0" max="100" />
+        <int id="waveform" def="0" min="0" max="3" />
+        <int id="stereoPhase" def="0" min="0" max="180" />
+      </params>
+    </object>
+    <object id="VIBRATO">
+      <visual name="Vibrato" />
+      <params>
+        <int id="rate" def="5" min="0.1" max="15" />
+        <int id="depth" def="30" min="0" max="100" />
+        <int id="waveform" def="0" min="0" max="1" />
+        <int id="mix" def="100" min="0" max="100" />
+      </params>
+    </object>
+    <object id="AUTO_PAN">
+      <visual name="Auto Pan" />
+      <params>
+        <float id="rate" def="0.1" min="0.1" max="10" />
+        <int id="depth" def="83" min="0" max="100" />
+        <int id="waveform" def="0" min="0" max="3" />
+        <int id="phase" def="0" min="0" max="360" />
+      </params>
+    </object>
+    <object id="OVERDRIVE">
+      <visual name="Overdrive" />
+      <params>
+        <int id="drive" def="50" min="0" max="100" />
+        <int id="tone" def="5000" min="500" max="12000" />
+        <int id="character" def="1" min="0" max="3" />
+        <int id="output" def="0" min="-12" max="12" />
+        <int id="mix" def="100" min="0" max="100" />
+      </params>
+    </object>
+    <object id="BITCRUSHER">
+      <visual name="Bitcrusher" />
+      <params>
+        <int id="bitDepth" def="8" min="1" max="16" />
+        <int id="sampleRateReduction" def="1" min="1" max="50" />
+        <int id="mix" def="100" min="0" max="100" />
+      </params>
+    </object>
+    <object id="TAPE_SATURATION">
+      <visual name="Tape Saturation" />
+      <params>
+        <int id="drive" def="30" min="0" max="100" />
+        <int id="character" def="1" min="0" max="3" />
+        <int id="warmth" def="50" min="0" max="100" />
+        <int id="output" def="0" min="-12" max="12" />
+        <int id="mix" def="100" min="0" max="100" />
+      </params>
+    </object>
+    <object id="UTILITY">
+      <visual name="Utility" />
+      <params>
+        <int id="gain" def="0" min="-24" max="24" />
+        <int id="pan" def="0" min="-100" max="100" />
+        <bool id="phaseInvertL" def="0" />
+        <bool id="phaseInvertR" def="0" />
+        <int id="width" def="100" min="0" max="200" />
+        <bool id="mono" def="0" />
+      </params>
+    </object>
+    <object id="STEREO_IMAGER">
+      <visual name="Stereo Imager" />
+      <params>
+        <int id="width" def="100" min="0" max="200" />
+        <int id="midGain" def="0" min="-12" max="12" />
+        <int id="sideGain" def="0" min="-12" max="12" />
+        <int id="balance" def="0" min="-100" max="100" />
+      </params>
+    </object>
+    <object id="STEREO_SPREADER">
+      <visual name="Stereo Spreader" />
+      <params>
+        <int id="spread" def="50" min="0" max="100" />
+        <int id="delay" def="15" min="1" max="100" />
+        <int id="freqSpread" def="0" min="0" max="100" />
+        <int id="mix" def="100" min="0" max="100" />
+      </params>
+    </object>
+    <object id="AUTO_FILTER">
+      <visual name="Auto Filter" />
+      <params>
+        <int id="frequency" def="1000" min="20" max="20000" />
+        <int id="resonance" def="5" min="0.1" max="20" />
+        <int id="filterType" def="0" min="0" max="2" />
+        <int id="lfoRate" def="1" min="0.01" max="20" />
+        <int id="lfoDepth" def="50" min="0" max="100" />
+        <int id="lfoWaveform" def="0" min="0" max="3" />
+        <int id="mix" def="100" min="0" max="100" />
+      </params>
+    
+    </object>
+  </category>
+</datapack>
