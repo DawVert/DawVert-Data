@@ -143,7 +143,7 @@
         <enum_int id="filter2" source="filter_type" max="21" />
         <float id="gain1" name="Gain 1" def="100" max="200" unit="one:percent" />
         <float id="gain2" name="Gain 2" def="100" max="200" unit="one:percent" />
-        <float id="mix" name="Mix" min="-1" />
+        <float id="mix" name="Mix" min="-1" unit="one:plusminus" />
         <float id="res1" name="Q/Resonance 1" def="0.5" max="10" unit="filtband:q" />
         <float id="res2" name="Q/Resonance 2" def="0.5" max="10" unit="filtband:q" />
       </params>
@@ -216,7 +216,7 @@
       <visual name="Flanger" />
       <params>
         <float id="DelayTimeSamples" name="Delay samples" def="0.001" max="0.05" min="0.0001" unit="time:seconds" />
-        <float id="Feedback" name="Regen" min="-1" />
+        <float id="Feedback" name="Regen" min="-1" unit="one:plusminus" />
         <bool id="Invert" def="-1" />
         <float id="LfoAmount" name="Seconds" max="0.0025" unit="time:seconds" />
         <float id="LfoFrequency" name="m_lfoFrequencyModel" def="0.25" max="60" min="0.01" unit="time:seconds" />
@@ -228,7 +228,7 @@
       <params>
         <int id="bank" max="999" />
         <float id="gain" def="1" max="5" />
-        <int id="patch" max="127" />
+        <int id="patch" max="127" unit="midi"/>
       </params>
       <datavals>
         <string id="src" def="" />
@@ -238,9 +238,9 @@
       <visual name="Kicker" color="#829393" />
       <params>
         <float id="click" name="Click" def="0.4" />
-        <float id="decay" name="m_decayModel" def="440" max="5000" min="5" />
-        <float id="dist" name="Start distortion" def="0.8" max="100" />
-        <float id="distend" name="End distortion" def="0.8" max="100" />
+        <float id="decay" name="m_decayModel" def="440" max="5000" min="5" unit="time:ms"/>
+        <float id="dist" name="Start distortion" def="0.8" max="100" unit="one:percent"/>
+        <float id="distend" name="End distortion" def="0.8" max="100" unit="one:percent"/>
         <float id="endfreq" name="End frequency" def="40" max="1000" min="5" unit="freq:hz" />
         <bool id="endnote" name="m_endNoteModel" />
         <float id="env" name="Envelope slope" def="0.163" min="0.01" />
@@ -345,7 +345,7 @@
         <float id="o1ftl" name="Osc 1 fine detune left" max="100" min="-100" unit="pitch:cents" />
         <float id="o1ftr" name="Osc 1 fine detune right" max="100" min="-100" unit="pitch:cents" />
         <float id="o1pan" name="Osc 1 panning" max="100" min="-100" unit="one:percent_plusminus" />
-        <float id="o1pw" name="Osc 1 pulse width" def="50" max="100" />
+        <float id="o1pw" name="Osc 1 pulse width" def="50" max="100" unit="one:percent" />
         <float id="o1spo" name="Osc 1 stereo phase offset" max="180" min="-180" />
         <bool id="o1ssf" name="m_osc1SSF" />
         <bool id="o1ssr" name="m_osc1SSR" />
@@ -725,9 +725,9 @@
         <int id="vol0" name="Osc 1 volume" def="3" max="100" unit="one:percent"/>
         <int id="vol1" name="Osc 2 volume" def="33" max="100" unit="one:percent"/>
         <int id="vol2" name="Osc 3 volume" def="33" max="100" unit="one:percent"/>
-        <enum_int id="wavetype0" name="Osc 1 wave shape" source="wavetype" max="7" >
-        <enum_int id="wavetype1" name="Osc 2 wave shape" source="wavetype" max="7" >
-        <enum_int id="wavetype2" name="Osc 3 wave shape" source="wavetype" max="7" >
+        <enum_int id="wavetype0" name="Osc 1 wave shape" source="wavetype" max="7" />
+        <enum_int id="wavetype1" name="Osc 2 wave shape" source="wavetype" max="7" />
+        <enum_int id="wavetype2" name="Osc 3 wave shape" source="wavetype" max="7" />
       </params>
     </object>
     <object id="vestige">
@@ -781,19 +781,19 @@
         <int id="octave6" def="2" max="8" />
         <int id="octave7" def="2" max="8" />
         <int id="octave8" def="2" max="8" />
-        <float id="pan0" name="String 1 panning" min="-1" />
-        <float id="pan1" name="String 2 panning" min="-1" />
-        <float id="pan2" name="String 3 panning" min="-1" />
-        <float id="pan3" name="String 4 panning" min="-1" />
-        <float id="pan4" name="String 5 panning" min="-1" />
-        <float id="pan5" name="String 6 panning" min="-1" />
-        <float id="pan6" name="String 7 panning" min="-1" />
-        <float id="pan7" name="String 8 panning" min="-1" />
-        <float id="pan8" name="String 9 panning" min="-1" />
+        <float id="pan0" name="String 1 panning" min="-1" unit="one:plusminus"/>
+        <float id="pan1" name="String 2 panning" min="-1" unit="one:plusminus"/>
+        <float id="pan2" name="String 3 panning" min="-1" unit="one:plusminus"/>
+        <float id="pan3" name="String 4 panning" min="-1" unit="one:plusminus"/>
+        <float id="pan4" name="String 5 panning" min="-1" unit="one:plusminus"/>
+        <float id="pan5" name="String 6 panning" min="-1" unit="one:plusminus"/>
+        <float id="pan6" name="String 7 panning" min="-1" unit="one:plusminus"/>
+        <float id="pan7" name="String 8 panning" min="-1" unit="one:plusminus"/>
+        <float id="pan8" name="String 9 panning" min="-1" unit="one:plusminus"/>
         <float id="pick0" name="Pick 1 position" max="0.05" />
         <float id="pick1" name="Pick 2 position" max="0.05" />
         <float id="pick2" name="Pick 3 position" max="0.05" />
-        <float id="pick3" name="Pick 4 position" def="-1" max="0.05" />
+        <float id="pick3" name="Pick 4 position" max="0.05" />
         <float id="pick4" name="Pick 5 position" max="0.05" />
         <float id="pick5" name="Pick 6 position" max="0.05" />
         <float id="pick6" name="Pick 7 position" max="0.05" />
@@ -826,15 +826,15 @@
         <float id="stiffness6" name="String 7 stiffness" max="0.05" />
         <float id="stiffness7" name="String 8 stiffness" max="0.05" />
         <float id="stiffness8" name="String 9 stiffness" max="0.05" />
-        <int id="volume0" name="String 1 volume" def="100" max="200" />
-        <int id="volume1" name="String 2 volume" def="100" max="200" />
-        <int id="volume2" name="String 3 volume" def="100" max="200" />
-        <int id="volume3" name="String 4 volume" def="100" max="200" />
-        <int id="volume4" name="String 5 volume" def="100" max="200" />
-        <int id="volume5" name="String 6 volume" def="100" max="200" />
-        <int id="volume6" name="String 7 volume" def="100" max="200" />
-        <int id="volume7" name="String 8 volume" def="100" max="200" />
-        <int id="volume8" name="String 9 volume" def="100" max="200" />
+        <int id="volume0" name="String 1 volume" def="100" max="200" unit="one:percent"/>
+        <int id="volume1" name="String 2 volume" def="100" max="200" unit="one:percent"/>
+        <int id="volume2" name="String 3 volume" def="100" max="200" unit="one:percent"/>
+        <int id="volume3" name="String 4 volume" def="100" max="200" unit="one:percent"/>
+        <int id="volume4" name="String 5 volume" def="100" max="200" unit="one:percent"/>
+        <int id="volume5" name="String 6 volume" def="100" max="200" unit="one:percent"/>
+        <int id="volume6" name="String 7 volume" def="100" max="200" unit="one:percent"/>
+        <int id="volume7" name="String 8 volume" def="100" max="200" unit="one:percent"/>
+        <int id="volume8" name="String 9 volume" def="100" max="200" unit="one:percent"/>
       </params>
       <datavals>
         <string id="graph0" name="Graph 1" def="" />
@@ -864,30 +864,30 @@
         <float id="a1_mult" name="Freq. multiplier A1" def="8" max="24" min="1" />
         <float id="a1_pan" name="Panning A1" max="100" min="-100" unit="one:percent_plusminus" />
         <float id="a1_rtune" name="Right detune A1" max="600" min="-600" unit="pitch:cents"/>
-        <float id="a1_vol" name="Volume A1" def="100" max="200" />
+        <float id="a1_vol" name="Volume A1" def="100" max="200" unit="one:percent" />
         <float id="a2_ltune" name="Left detune A2" max="600" min="-600" unit="pitch:cents"/>
         <float id="a2_mult" name="Freq. multiplier A2" def="8" max="24" min="1" />
         <float id="a2_pan" name="Panning A2" max="100" min="-100" unit="one:percent_plusminus" />
         <float id="a2_rtune" name="Right detune A2" max="600" min="-600" unit="pitch:cents"/>
-        <float id="a2_vol" name="Volume A2" def="100" max="200" />
+        <float id="a2_vol" name="Volume A2" def="100" max="200" unit="one:percent" />
         <float id="abmix" name="A-B Mix" max="100" min="-100" unit="one:percent_plusminus" />
         <enum_int id="amod" name="A2-A1 modulation" source="mod" max="3" />
         <float id="b1_ltune" name="Left detune B1" max="600" min="-600" unit="pitch:cents"/>
         <float id="b1_mult" name="Freq. multiplier B1" def="8" max="24" min="1" />
         <float id="b1_pan" name="Panning B1" max="100" min="-100" unit="one:percent_plusminus" />
         <float id="b1_rtune" name="Right detune B1" max="600" min="-600" unit="pitch:cents"/>
-        <float id="b1_vol" name="Volume B1" def="100" max="200" />
+        <float id="b1_vol" name="Volume B1" def="100" max="200" unit="one:percent" />
         <float id="b2_ltune" name="Left detune B2" max="600" min="-600" unit="pitch:cents"/>
         <float id="b2_mult" name="Freq. multiplier B2" def="8" max="24" min="1" />
         <float id="b2_pan" name="Panning B2" max="100" min="-100" unit="one:percent_plusminus" />
         <float id="b2_rtune" name="Right detune B2" max="600" min="-600" unit="pitch:cents"/>
-        <float id="b2_vol" name="Panning B2" def="100" max="200" />
+        <float id="b2_vol" name="Panning B2" def="100" max="200" unit="one:percent" />
         <enum_int id="bmod" name="B2-B1 modulation" source="mod" max="3" />
         <float id="envAmt" name="A-B Mix envelope amount" max="200" min="-200" />
         <float id="envAtt" name="A-B Mix envelope attack" max="2000" unit="time:ms"/>
         <float id="envDec" name="A-B Mix envelope decay" max="2000" unit="time:ms"/>
         <float id="envHold" name="A-B Mix envelope hold" max="2000" unit="time:ms"/>
-        <float id="xtalk" name="A1-B2 Crosstalk" max="100" />
+        <float id="xtalk" name="A1-B2 Crosstalk" max="100" unit="one:percent" />
       </params>
       <datavals>
         <string id="a1_wave" name="Wave A1" def="" />
@@ -910,14 +910,14 @@
     <object id="zynaddsubfx">
       <visual name="ZynAddSubFX" color="#bfbfbf" />
       <params>
-        <int id="bandwidth" name="Bandwidth" def="64" max="127" />
-        <int id="filterfreq" name="Filter frequency" def="64" max="127" />
-        <int id="filterq" name="Filter resonance" def="64" max="127" />
-        <int id="fmgain" name="FM gain" def="127" max="127" />
+        <int id="bandwidth" name="Bandwidth" def="64" max="127" unit="midi"/>
+        <int id="filterfreq" name="Filter frequency" def="64" max="127" unit="midi"/>
+        <int id="filterq" name="Filter resonance" def="64" max="127" unit="midi"/>
+        <int id="fmgain" name="FM gain" def="127" max="127" unit="midi"/>
         <int id="forwardmidicc" name="Forward MIDI control change events" def="1" />
-        <int id="portamento" name="Portamento" max="127" />
-        <int id="resbandwidth" name="Resonance bandwidth" def="64" max="127" />
-        <int id="rescenterfreq" name="Resonance center frequency" def="64" max="127" />
+        <int id="portamento" name="Portamento" max="127" unit="midi"/>
+        <int id="resbandwidth" name="Resonance bandwidth" def="64" max="127" unit="midi"/>
+        <int id="rescenterfreq" name="Resonance center frequency" def="64" max="127" unit="midi"/>
       </params>
       <datavals>
         <string id="modifiedcontrollers" name="Modified Controllers" def="" />

@@ -59,8 +59,8 @@
       <params>
         <float id="0" name="Thresh." def="0.1" />
         <float id="1" name="Ratio" def="1" />
-        <float id="2" name="Attack" def="0.01" max="0.2" min="1e-05" />
-        <float id="3" name="Release" def="0.05" max="0.199356" min="0.001644" />
+        <float id="2" name="Attack" def="0.01" max="0.2" min="1e-05" unit="time:seconds" />
+        <float id="3" name="Release" def="0.05" max="0.199356" min="0.001644" unit="time:seconds" />
       </params>
     </object>
     <object id="delay">
@@ -107,8 +107,8 @@
       <params>
         <float id="0" name="Pre" def="2" max="4" />
         <float id="1" name="Post" def="0.5" max="1.99206" />
-        <float id="2" name="Attack" def="0.01" max="0.05" min="1e-05" />
-        <float id="3" name="Release" def="0.5" max="0.5" min="0.01" />
+        <float id="2" name="Attack" def="0.01" max="0.05" min="1e-05" unit="time:seconds" />
+        <float id="3" name="Release" def="0.5" max="0.5" min="0.01" unit="time:seconds" />
       </params>
     </object>
     <object id="octaver">
@@ -125,7 +125,7 @@
       <visual name="Param. EQ" color="#a58470" />
       <params>
         <float id="0" name="Freq" def="0.54" min="0.08" />
-        <float id="1" name="Gain" max="12" min="-12" />
+        <float id="1" name="Gain" max="12" min="-12" unit="decibel"/>
         <float id="2" name="Bandwidth" def="-2.0192" max="-0.5744" min="-3.464" />
       </params>
     </object>
@@ -188,9 +188,9 @@
       <visual name="8BitSynth" color="#d1c6a0" />
       <params>
         <float id="0" max="0" />
-        <int id="1" name="Octave" max="4" min="-4" />
-        <int id="2" name="Semis" max="12" min="-12" />
-        <float id="3" name="Cents" max="100" min="-100" />
+        <int id="1" name="Octave" max="4" min="-4" unit="pitch:octave"/>
+        <int id="2" name="Semis" max="12" min="-12" unit="pitch:semitones"/>
+        <float id="3" name="Cents" max="100" min="-100" unit="pitch:cents"/>
         <float id="4" name="Volume" def="1" max="1.98411" />
         <float id="6" name="A&gt;B" />
         <bool id="7" name="Prog" />
@@ -202,12 +202,22 @@
     <object id="BLNE">
       <visual name="BassLine" color="#fcfcfc" />
       <params>
-        <int id="0" name="Waveform" max="2" />
-        <float id="1" name="Tune" max="12" min="-12" />
+        <enum_int id="0" name="Waveform" max="2" >
+          <part num="0" id="saw" />
+          <part num="1" id="square" />
+          <part num="2" id="custom" />
+        </enum_int>
+        <float id="1" name="Tune" max="12" min="-12" unit="pitch:semitones"/>
         <int id="10" name="LFO Rate" def="1" max="12" />
         <float id="11" name="LFO Depth" />
         <float id="12" name="LFO Phase" />
-        <int id="13" name="Dist. Program" max="4" />
+        <enum_int id="13" name="Dist. Program" max="4" >
+          <part num="0" id="off" />
+          <part num="1" id="overdrive" />
+          <part num="2" id="saturate" />
+          <part num="3" id="foldback" />
+          <part num="4" id="fuzz" />
+        </enum_int>
         <float id="14" name="Dist. Pre" def="4.05" max="5" />
         <float id="15" name="Dist. Amount" def="16.3" max="20" min="1" />
         <float id="16" name="Dist. Post" def="0.1" />
@@ -219,7 +229,12 @@
         <float id="6" name="Accent" def="0.5" max="0.996028" />
         <float id="7" name="Volume" def="1" max="2" />
         <float id="8" name="Pulse Width" max="0" min="-0.45" />
-        <int id="9" name="LFO Target" max="3" />
+        <enum_int id="9" name="LFO Target" max="3"  >
+          <part num="0" id="off" />
+          <part num="1" id="pwm" />
+          <part num="2" id="vcf" />
+          <part num="3" id="vca" />
+        </enum_int>
       </params>
     </object>
     <object id="FMSN">
@@ -231,8 +246,8 @@
         <float id="11" name="Op1 Level" def="0.5" />
         <bool id="12" name="Op1 Vel" />
         <bool id="13" name="Op1 Fixed" />
-        <int id="14" name="Op1 Octave" max="4" min="-4" />
-        <int id="15" name="Op1 Semi" max="6" min="-6" />
+        <int id="14" name="Op1 Octave" max="4" min="-4" unit="pitch:octave"/>
+        <int id="15" name="Op1 Semi" max="6" min="-6" unit="pitch:semitones"/>
         <bool id="16" name="Op1 Attack Exp" />
         <float id="17" name="Op1 Attack" max="1.74305" />
         <bool id="18" name="Op1 Decay Exp" />
@@ -245,8 +260,8 @@
         <float id="24" name="Op2 Level" def="0.5" max="0.992053" />
         <bool id="25" name="Op2 Vel" />
         <bool id="26" name="Op2 Fixed" />
-        <int id="27" name="Op2 Octave" max="4" min="-4" />
-        <int id="28" name="Op2 Semi" max="6" min="-6" />
+        <int id="27" name="Op2 Octave" max="4" min="-4" unit="pitch:octave"/>
+        <int id="28" name="Op2 Semi" max="6" min="-6" unit="pitch:semitones"/>
         <bool id="29" name="Op2 Attack Exp" />
         <float id="3" name="Volume" def="0.5" />
         <float id="30" name="Op2 Attack" max="1.75" />
@@ -260,8 +275,8 @@
         <bool id="38" name="Op3 Vel" />
         <bool id="39" name="Op3 Fixed" />
         <bool id="4" name="Volume Vel" />
-        <int id="40" name="Op3 Octave" max="4" min="-4" />
-        <int id="41" name="Op3 Semi" max="6" min="-6" />
+        <int id="40" name="Op3 Octave" max="4" min="-4" unit="pitch:octave"/>
+        <int id="41" name="Op3 Semi" max="6" min="-6" unit="pitch:semitones"/>
         <bool id="42" name="Op3 Attack Exp" />
         <float id="43" name="Op3 Attack" max="1.75" />
         <bool id="44" name="Op3 Decay Exp" />
@@ -285,17 +300,17 @@
       <params>
         <float id="0" max="0" />
         <float id="1" name="Pre-Filter" def="0.62" max="0.99" min="0.25" />
-        <int id="10" name="Unit 1 Semis" max="6" min="-6" />
-        <float id="11" name="Unit 1 Cents" max="48.411" min="-50" />
+        <int id="10" name="Unit 1 Semis" max="6" min="-6" unit="pitch:semitones"/>
+        <float id="11" name="Unit 1 Cents" max="50" min="-50" unit="pitch:cents"/>
         <float id="12" name="Unit 1 Damping" def="0.45" max="0.9" min="0.001" />
         <float id="13" name="Unit 1 Damping Track" def="0.5" max="0.996027" />
         <float id="14" name="Unit 1 Damping Vel" def="0.5" max="0.992053" />
         <bool id="15" name="Unit 1 Inv" />
         <float id="2" name="Pre-Filter Track" def="0.5" max="0.99" min="0.0001" />
         <bool id="20" name="Unit 2 KB Follow" />
-        <int id="21" name="Unit 2 Octave" max="2" min="-2" />
-        <int id="22" name="Unit 2 Semis" max="6" min="-6" />
-        <float id="23" name="Unit 2 Cents" max="50" min="-50" />
+        <int id="21" name="Unit 2 Octave" max="2" min="-2" unit="pitch:octave"/>
+        <int id="22" name="Unit 2 Semis" max="6" min="-6" unit="pitch:semitones"/>
+        <float id="23" name="Unit 2 Cents" max="50" min="-50" unit="pitch:cents"/>
         <float id="24" name="Unit 2 Damping" def="0.45" max="0.9" min="0.001" />
         <float id="25" name="Unit 2 Damping Track" def="0.5" max="0.988079" />
         <float id="26" name="Unit 2 Damping Vel" def="0.5" max="0.996027" />
@@ -306,7 +321,7 @@
         <float id="6" name="Mix" def="0.5" />
         <bool id="7" name="Inv" def="1" />
         <bool id="8" name="Unit 1 KB Follow" />
-        <int id="9" name="Unit 1 Octave" max="2" min="-2" />
+        <int id="9" name="Unit 1 Octave" max="2" min="-2" unit="pitch:octave"/>
       </params>
     </object>
     <object id="MDLR">
@@ -345,26 +360,36 @@
       <params>
         <float id="0" max="0" />
         <float id="1" name="Volume" def="1" max="2" />
-        <float id="10" name="Morph Blend" />
-        <bool id="11" name="Morph Env" />
-        <float id="12" name="Morph Attack" max="3" />
-        <float id="13" name="Morph Decay" max="3" />
-        <float id="14" name="Morph Sustain" def="1" />
-        <float id="15" name="Morph Release" max="3" />
-        <float id="16" name="Gain 1" def="1" />
-        <float id="17" name="Gain 2" def="1" />
-        <float id="18" name="Gain Attack" max="3" />
-        <float id="19" name="Gain Decay" max="3" />
-        <int id="2" name="LFO 1 Target" max="3" />
-        <float id="20" name="Gain Sustain" def="1" />
-        <float id="21" name="Gain Release" max="3" />
+        <enum_int id="2" name="LFO 1 Target" max="3">
+          <part num="0" id="none" />
+          <part num="1" id="morph" />
+          <part num="2" id="pitch" />
+          <part num="3" id="vol" />
+        </enum_int>
         <int id="3" name="LFO 1 Rate" def="6" max="12" />
         <float id="4" name="LFO 1 Depth" />
         <float id="5" name="LFO 1 Phase" max="0.5" min="-0.5" />
-        <int id="6" name="LFO 2 Target" max="3" />
+        <enum_int id="6" name="LFO 2 Target" max="3">
+          <part num="0" id="none" />
+          <part num="1" id="morph" />
+          <part num="2" id="pitch" />
+          <part num="3" id="vol" />
+        </enum_int>
         <int id="7" name="LFO 2 Rate" def="6" max="12" />
         <float id="8" name="LFO 2 Depth" max="0.984111" />
         <float id="9" name="LFO 2 Phase" max="0.5" min="-0.5" />
+        <float id="10" name="Morph Blend" />
+        <bool id="11" name="Morph Env" />
+        <float id="12" name="Morph Attack" max="3" unit="time:seconds"/>
+        <float id="13" name="Morph Decay" max="3" unit="time:seconds"/>
+        <float id="14" name="Morph Sustain" def="1" />
+        <float id="15" name="Morph Release" max="3" unit="time:seconds"/>
+        <float id="16" name="Gain 1" def="1" />
+        <float id="17" name="Gain 2" def="1" />
+        <float id="18" name="Gain Attack" max="3" unit="time:seconds"/>
+        <float id="19" name="Gain Decay" max="3" unit="time:seconds"/>
+        <float id="20" name="Gain Sustain" def="1" />
+        <float id="21" name="Gain Release" max="3" unit="time:seconds"/>
       </params>
     </object>
     <object id="PCMS">
@@ -374,7 +399,24 @@
       <visual name="SawSynth" color="#fc993f" />
       <params>
         <float id="0" max="0" />
-        <int id="1" name="Wave" max="2" />
+        <enum_int id="1" name="Wave" max="2" >
+          <part num="0" id="saw" />
+          <part num="1" id="square" />
+          <part num="2" id="pulse" />
+        </enum_int>
+        <float id="2" name="Stereo Width" def="0.19" max="0.996025" />
+        <float id="3" name="Detune" def="0.65" />
+        <float id="4" name="Mix" def="1" />
+        <float id="5" name="Cutoff" def="1" />
+        <float id="6" name="Res" max="0.9" />
+        <enum_int id="7" name="Filter Type" max="3" >
+          <part num="0" id="none" />
+          <part num="1" id="lp" />
+          <part num="2" id="hp" />
+          <part num="3" id="bp" />
+        </enum_int>
+        <float id="8" name="Filter KB Track" />
+        <float id="9" name="Filter Env Amount" def="1" min="-1" />
         <float id="10" name="Filter Attack" max="1.75" />
         <float id="11" name="Filter Decay" max="1.75" />
         <float id="12" name="Filter Sustain" def="1" />
@@ -383,38 +425,86 @@
         <float id="15" name="Amp Deacy" def="0.65" max="1.75" />
         <float id="16" name="Amp Sustain" def="0.25" />
         <float id="17" name="Amp Release" def="0.65" max="1.75" />
-        <int id="18" name="LFO Target" max="5" />
-        <float id="2" name="Stereo Width" def="0.19" max="0.996025" />
+        <enum_int id="18" name="LFO Target" max="5" >
+          <part num="0" id="none" />
+          <part num="1" id="pitch" />
+          <part num="2" id="detune" />
+          <part num="3" id="cutoff" />
+          <part num="4" id="vol" />
+          <part num="5" id="width" />
+        </enum_int>
         <float id="21" name="LFO Depth" />
         <int id="22" name="LFO Rate" def="6" max="12" />
         <float id="23" name="Pitch Env Amount" min="-1" />
         <float id="24" name="Pitch Env Time" max="1.414" />
-        <float id="3" name="Detune" def="0.65" />
         <float id="31" name="Volume" def="0.5" />
-        <float id="4" name="Mix" def="1" />
-        <float id="5" name="Cutoff" def="1" />
-        <float id="6" name="Res" max="0.9" />
-        <int id="7" name="Filter Type" max="3" />
-        <float id="8" name="Filter KB Track" />
-        <float id="9" name="Filter Env Amount" def="1" min="-1" />
       </params>
     </object>
     <object id="SSYN">
       <visual name="SubSynth" color="#c9d1e8" />
       <params>
         <float id="0" max="0" />
-        <int id="1" name="Osc 1 Shape" max="8" />
+        <enum_int id="1" name="Osc 1 Shape" max="8" >
+          <part num="0" id="sine" />
+          <part num="1" id="triangle" />
+          <part num="2" id="saw" />
+          <part num="3" id="saw_hq" />
+          <part num="4" id="square" />
+          <part num="5" id="square_hq" />
+          <part num="6" id="noise" />
+          <part num="7" id="custom1" />
+          <part num="8" id="custom2" />
+        </enum_int>
+        <float id="2" name="Osc 1 Mix" def="0.543478" />
+        <float id="3" name="Osc 1 Bend" max="0.99" min="-0.99" />
+        <enum_int id="4" name="Osc 2 Shape" max="9" >
+          <part num="0" id="none" />
+          <part num="1" id="sine" />
+          <part num="2" id="triangle" />
+          <part num="3" id="saw" />
+          <part num="4" id="saw_hq" />
+          <part num="5" id="square" />
+          <part num="6" id="square_hq" />
+          <part num="7" id="noise" />
+          <part num="8" id="custom1" />
+          <part num="9" id="custom2" />
+        </enum_int>
+        <float id="5" name="Osc 2 Phase" def="-0.004348" max="0.5" min="-0.5" />
+        <int id="6" name="Osc 2 Octave" max="4" min="-4" unit="pitch:octave"/>
+        <int id="7" name="Osc 2 Semis" max="12" min="-12" unit="pitch:semitones"/>
+        <float id="8" name="Osc 2 Mod" def="4.34788" max="50" min="-50" unit="pitch:cents"/>
         <int id="10" name="LFO 1 Shape" max="2" />
-        <int id="11" name="LFO 1 Target" max="9" />
+        <enum_int id="11" name="LFO 1 Target" max="9" >
+          <part num="0" id="none" />
+          <part num="1" id="osc1" />
+          <part num="2" id="osc2" />
+          <part num="3" id="osc12" />
+          <part num="4" id="phase" />
+          <part num="5" id="cutoff" />
+          <part num="6" id="vol" />
+          <part num="7" id="octave" />
+          <part num="8" id="semis" />
+          <part num="9" id="osc1mod" />
+        </enum_int>
         <int id="12" name="LFO 1 Rate" max="12" />
         <float id="13" name="LFO 1 Depth" />
-        <int id="14" name="LFO 2 Target" max="9" />
+        <enum_int id="14" name="LFO 2 Target" max="9" >
+          <part num="0" id="none" />
+          <part num="1" id="osc1" />
+          <part num="2" id="osc2" />
+          <part num="3" id="osc12" />
+          <part num="4" id="phase" />
+          <part num="5" id="cutoff" />
+          <part num="6" id="vol" />
+          <part num="7" id="octave" />
+          <part num="8" id="semis" />
+          <part num="9" id="osc1mod" />
+        </enum_int>
         <int id="15" name="LFO 2 Rate" max="12" />
         <float id="16" name="LFO 2 Depth" />
         <float id="17" name="Filter Cutoff" def="0.217691" min="0.001" />
         <float id="18" name="Filter Res" def="0.9" max="0.9" />
         <float id="19" name="Filter Type" def="2" max="6" />
-        <float id="2" name="Osc 1 Mix" def="0.543478" />
         <float id="20" name="Filter Track" />
         <float id="21" name="Filter Attack" max="1.75" />
         <float id="22" name="Filter Decay" def="0.585869" max="1.75" />
@@ -425,13 +515,7 @@
         <float id="27" name="Volume Sustain" def="1" />
         <float id="28" name="Volume Release" max="1.75" />
         <float id="29" name="Volume" max="2" />
-        <float id="3" name="Osc 1 Bend" max="0.99" min="-0.99" />
         <float id="31" name="Osc 1 Mod" />
-        <int id="4" name="Osc 2 Shape" max="9" />
-        <float id="5" name="Osc 2 Phase" def="-0.004348" max="0.5" min="-0.5" />
-        <int id="6" name="Osc 2 Octave" max="4" min="-4" />
-        <int id="7" name="Osc 2 Semis" max="12" min="-12" />
-        <float id="8" name="Osc 2 Mod" def="4.34788" max="50" min="-50" />
       </params>
     </object>
     <object id="VCDR">
@@ -491,15 +575,15 @@
       <visual name="Limiter" color="#9e7c6b" />
       <params>
         <float id="35" name="pre" def="1" max="2" />
-        <float id="36" name="attack" def="0.0213" max="0.1" min="0.003" />
-        <float id="37" name="release" def="0.26" max="0.5" min="0.02" />
+        <float id="36" name="attack" def="0.0213" max="0.1" min="0.003" unit="time:seconds" />
+        <float id="37" name="release" def="0.26" max="0.5" min="0.02" unit="time:seconds" />
         <float id="38" name="post" def="1" max="2" />
       </params>
     </object>
     <object id="master_reverb">
       <visual name="Reverb" color="#d3d182" />
       <params>
-        <float id="16" name="predelay" def="0.025" max="0.0925" />
+        <float id="16" name="predelay" def="0.025" max="0.0925" unit="time:seconds" />
         <float id="17" name="room_size" def="0.755" max="0.925" />
         <float id="18" name="hf_damping" def="0.156" max="0.8" />
         <float id="19" name="diffuse" def="0.7" max="0.7" />

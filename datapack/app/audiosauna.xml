@@ -17,25 +17,25 @@
         </enum>
       </enum>
       <params>
-        <float id="aOp1" name="Osc 1 Attack" max="5" />
-        <float id="aOp2" name="Osc 2 Attack" max="5" />
-        <float id="attack" name="Attack" max="5" />
-        <float id="dOp1" name="Osc 1 Decay" max="5" />
-        <float id="dOp2" name="Osc 2 Decay" max="5" />
-        <float id="decay" name="Decay" max="5" />
-        <int id="fine1" name="Osc 1 Fine" max="100" />
-        <int id="fine2" name="Osc 2 Fine" max="100" />
-        <int id="fm" name="FM" max="100" />
+        <float id="aOp1" name="Osc 1 Attack" max="5" unit="time:seconds"/>
+        <float id="aOp2" name="Osc 2 Attack" max="5" unit="time:seconds"/>
+        <float id="attack" name="Attack" max="5" unit="time:seconds"/>
+        <float id="dOp1" name="Osc 1 Decay" max="5" unit="time:seconds"/>
+        <float id="dOp2" name="Osc 2 Decay" max="5" unit="time:seconds"/>
+        <float id="decay" name="Decay" max="5" unit="time:seconds"/>
+        <int id="fine1" name="Osc 1 Fine" max="100" unit="pitch:cents"/>
+        <int id="fine2" name="Osc 2 Fine" max="100" unit="pitch:cents"/>
+        <int id="fm" name="FM" max="100" unit="one:percent"/>
         <int id="oct1" name="Osc 1 Octave" max="8" />
         <int id="oct2" name="Osc 2 Octave" max="8" />
         <float id="osc1Vol" name="Osc 1 Volume" max="0.5" />
         <float id="osc2Vol" name="Osc 2 Volume" max="0.5" />
-        <float id="portamento" name="Portamento" max="2" />
-        <float id="release" name="Release" max="5" />
+        <float id="portamento" name="Portamento" max="2" unit="time:seconds"/>
+        <float id="release" name="Release" max="5" unit="time:seconds"/>
         <float id="sOp1" name="Osc 1 Sustain" />
         <float id="sOp2" name="Osc 2 Sustain" />
-        <int id="semi1" name="Osc 1 Semi" max="12" min="-12" />
-        <int id="semi2" name="Osc 2 Semi" max="12" min="-12" />
+        <int id="semi1" name="Osc 1 Semi" max="12" min="-12" unit="pitch:semitones"/>
+        <int id="semi2" name="Osc 2 Semi" max="12" min="-12" unit="pitch:semitones"/>
         <float id="sustain" name="Sustain" />
         <enum_int id="wave1" name="Osc 1 Wave" source="osc_waveform" max="4" />
         <enum_int id="wave2" name="Osc 2 Wave" source="osc_waveform" max="4" />
@@ -52,36 +52,36 @@
         </enum>
       </enum>
       <params>
-        <float id="aOp1" name="Op1 Attack" max="5" />
-        <float id="aOp2" name="Op2 Attack" max="5" />
-        <float id="aOp3" name="Op3 Attack" max="5" />
-        <float id="aOp4" name="Op4 Attack" max="5" />
-        <float id="attack" name="Attack" max="2" />
-        <float id="dOp1" name="Op1 Decay" max="5" />
-        <float id="dOp2" name="Op2 Decay" max="5" />
-        <float id="dOp3" name="Op3 Decay" max="5" />
-        <float id="dOp4" name="Op4 Decay" max="5" />
-        <float id="decay" name="Decay" max="5" />
+        <float id="aOp1" name="Op1 Attack" max="5" unit="time:seconds"/>
+        <float id="aOp2" name="Op2 Attack" max="5" unit="time:seconds"/>
+        <float id="aOp3" name="Op3 Attack" max="5" unit="time:seconds"/>
+        <float id="aOp4" name="Op4 Attack" max="5" unit="time:seconds"/>
+        <float id="attack" name="Attack" max="2" unit="time:seconds"/>
+        <float id="dOp1" name="Op1 Decay" max="5" unit="time:seconds"/>
+        <float id="dOp2" name="Op2 Decay" max="5" unit="time:seconds"/>
+        <float id="dOp3" name="Op3 Decay" max="5" unit="time:seconds"/>
+        <float id="dOp4" name="Op4 Decay" max="5" unit="time:seconds"/>
+        <float id="decay" name="Decay" max="5" unit="time:seconds"/>
         <float id="fine1" name="Op1 Fine" max="0.5" min="-0.5" />
         <float id="fine2" name="Op2 Fine" max="0.5" min="-0.5" />
         <float id="fine3" name="Op3 Fine" max="0.5" min="-0.5" />
         <float id="fine4" name="Op4 Fine" max="0.5" min="-0.5" />
         <int id="fmAlgorithm" name="Algorithm" max="8" />
-        <int id="fmFeedBack" name="Feedback" max="200" />
+        <int id="fmFeedBack" name="Feedback" max="200" unit="one:percent"/>
         <int id="frq1" name="Op1 FreqMul" max="32" />
         <int id="frq2" name="Op2 FreqMul" max="32" />
         <int id="frq3" name="Op3 FreqMul" max="32" />
         <int id="frq4" name="Op4 FreqMul" max="32" />
-        <int id="opAmp1" name="Op1 Amp" max="100" />
-        <int id="opAmp2" name="Op2 Amp" max="100" />
-        <int id="opAmp3" name="Op3 Amp" max="100" />
-        <int id="opAmp4" name="Op4 Amp" max="100" />
-        <float id="portamento" name="Portamento" max="2" />
-        <float id="release" name="Release" max="5" />
-        <int id="sOp1" name="Op1 Sustain" max="100" />
-        <int id="sOp2" name="Op2 Sustain" max="100" />
-        <int id="sOp3" name="Op3 Sustain" max="100" />
-        <int id="sOp4" name="Op4 Sustain" max="100" />
+        <int id="opAmp1" name="Op1 Amp" max="100" unit="one:percent"/>
+        <int id="opAmp2" name="Op2 Amp" max="100" unit="one:percent"/>
+        <int id="opAmp3" name="Op3 Amp" max="100" unit="one:percent"/>
+        <int id="opAmp4" name="Op4 Amp" max="100" unit="one:percent"/>
+        <float id="portamento" name="Portamento" max="2" unit="time:seconds"/>
+        <float id="release" name="Release" max="5" unit="time:seconds"/>
+        <int id="sOp1" name="Op1 Sustain" max="100" unit="one:percent"/>
+        <int id="sOp2" name="Op2 Sustain" max="100" unit="one:percent"/>
+        <int id="sOp3" name="Op3 Sustain" max="100" unit="one:percent"/>
+        <int id="sOp4" name="Op4 Sustain" max="100" unit="one:percent"/>
         <float id="sustain" name="Sustain" />
         <enum_int id="waveform" name="Waveform" source="lfo_waveform" max="2" />
       </params>
