@@ -78,10 +78,10 @@
         <float id="1" name="Amount" def="12.4155" max="20" min="1" />
         <float id="2" name="Post" def="0.1" />
         <enum_float id="3" name="Program" enum_max="3" max="3" end_point="start">
-          <part val="0" id="overdrive" />
-          <part val="1" id="saturate" />
-          <part val="2" id="foldback" />
-          <part val="3" id="fuzz" />
+          <part num="0" id="overdrive" />
+          <part num="1" id="saturate" />
+          <part num="2" id="foldback" />
+          <part num="3" id="fuzz" />
         </enum_float>
       </params>
     </object>

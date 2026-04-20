@@ -18,18 +18,18 @@
         <int id="arp" name="Arpeggio type" def="1" max="94" min="1" />
         <int id="arpcycle" name="Cycle steps" max="6" />
         <enum_int id="arpdir" name="Arp direction" max="4">
-          <part val="0" id="up" />
-          <part val="1" id="down" />
-          <part val="2" id="updown" />
-          <part val="3" id="downup" />
-          <part val="4" id="random" />
+          <part num="0" id="up" />
+          <part num="1" id="down" />
+          <part num="2" id="updown" />
+          <part num="3" id="downup" />
+          <part num="4" id="random" />
         </enum_int>
         <int id="arpgate" name="Arpeggio gate" def="100" max="200" min="1" unit="one:percent" />
         <int id="arpmiss" name="Miss rate" max="100" unit="one:percent" />
         <enum_int id="arpmode" name="Arpeggio mode" max="2">
-          <part val="0" id="free" />
-          <part val="1" id="sort" />
-          <part val="2" id="sync" />
+          <part num="0" id="free" />
+          <part num="1" id="sort" />
+          <part num="2" id="sync" />
         </enum_int>
         <int id="arprange" name="Arpeggio range" def="1" max="9" min="1" />
         <int id="arpskip" name="Skip rate" max="100" unit="one:percent" />
@@ -110,28 +110,28 @@
       <visual name="Dual Filter" />
       <enums>
         <enum id="filter_type" max="21">
-          <part val="0" id="low_pass" />
-          <part val="1" id="high_pass" />
-          <part val="2" id="band_pass:csg" />
-          <part val="3" id="band_pass:czpg" />
-          <part val="4" id="notch" />
-          <part val="5" id="all_pass" />
-          <part val="6" id="moog" />
-          <part val="7" id="low_pass:double" />
-          <part val="8" id="low_pass:rc12" />
-          <part val="9" id="band_pass:rc12" />
-          <part val="10" id="high_pass:rc12" />
-          <part val="11" id="low_pass:rc24" />
-          <part val="12" id="band_pass:rc24" />
-          <part val="13" id="high_pass:rc24" />
-          <part val="14" id="formant" />
-          <part val="15" id="moog:double" />
-          <part val="16" id="low_pass:sv" />
-          <part val="17" id="band_pass:sv" />
-          <part val="18" id="high_pass:sv" />
-          <part val="19" id="notch:sv" />
-          <part val="20" id="formant:fast" />
-          <part val="21" id="tripole" />
+          <part num="0" id="low_pass" />
+          <part num="1" id="high_pass" />
+          <part num="2" id="band_pass:csg" />
+          <part num="3" id="band_pass:czpg" />
+          <part num="4" id="notch" />
+          <part num="5" id="all_pass" />
+          <part num="6" id="moog" />
+          <part num="7" id="low_pass:double" />
+          <part num="8" id="low_pass:rc12" />
+          <part num="9" id="band_pass:rc12" />
+          <part num="10" id="high_pass:rc12" />
+          <part num="11" id="low_pass:rc24" />
+          <part num="12" id="band_pass:rc24" />
+          <part num="13" id="high_pass:rc24" />
+          <part num="14" id="formant" />
+          <part num="15" id="moog:double" />
+          <part num="16" id="low_pass:sv" />
+          <part num="17" id="band_pass:sv" />
+          <part num="18" id="high_pass:sv" />
+          <part num="19" id="notch:sv" />
+          <part num="20" id="formant:fast" />
+          <part num="21" id="tripole" />
         </enum>
       </enums>
       <params>
@@ -156,9 +156,9 @@
         <float id="outputGain" name="Output gain" def="1" max="5" />
         <float id="release" name="Release time" def="100" max="500" min="1" unit="time:ms" />
         <enum_int id="stereoMode" name="Stereo mode" max="2">
-          <part val="0" id="maximum" />
-          <part val="1" id="average" />
-          <part val="2" id="unlinked" />
+          <part num="0" id="maximum" />
+          <part num="1" id="average" />
+          <part num="2" id="unlinked" />
         </enum_int>
       </params>
       <datavals>
@@ -259,18 +259,18 @@
         <bool id="dead" name="deadToggle" />
         <float id="dist" name="Distortion" />
         <enum_int id="shape" name="Waveform" def="8" max="11">
-          <part val="0" id="saw" />
-          <part val="1" id="tringle" />
-          <part val="2" id="square" />
-          <part val="3" id="square_rounded" />
-          <part val="4" id="moog" />
-          <part val="5" id="sine" />
-          <part val="6" id="exp" />
-          <part val="7" id="noise" />
-          <part val="8" id="lq_saw" />
-          <part val="9" id="lq_square" />
-          <part val="10" id="lq_tringle" />
-          <part val="11" id="lq_exp" />
+          <part num="0" id="saw" />
+          <part num="1" id="tringle" />
+          <part num="2" id="square" />
+          <part num="3" id="square_rounded" />
+          <part num="4" id="moog" />
+          <part num="5" id="sine" />
+          <part num="6" id="exp" />
+          <part num="7" id="noise" />
+          <part num="8" id="lq_saw" />
+          <part num="9" id="lq_square" />
+          <part num="10" id="lq_tringle" />
+          <part num="11" id="lq_exp" />
         </enum_int>
         <bool id="slide" name="slideToggle" />
         <float id="slide_dec" name="Slide Decay" def="0.6" />
@@ -461,12 +461,12 @@
       <visual name="Organic" color="#3dc121" />
       <enums>
         <enum id="wavetype" max="5">
-          <part val="0" id="sine" />
-          <part val="1" id="saw" />
-          <part val="2" id="square" />
-          <part val="3" id="triangle" />
-          <part val="4" id="moog" />
-          <part val="5" id="exp" />
+          <part num="0" id="sine" />
+          <part num="1" id="saw" />
+          <part num="2" id="square" />
+          <part num="3" id="triangle" />
+          <part num="4" id="moog" />
+          <part num="5" id="exp" />
         </enum>
       </enum>
       <params>
@@ -613,10 +613,10 @@
       <visual name="SID" color="#baafa0" />
       <enums>
         <enum id="waveform" max="3">
-          <part val="0" id="triangle" />
-          <part val="1" id="square" />
-          <part val="2" id="saw" />
-          <part val="3" id="noise" />
+          <part num="0" id="triangle" />
+          <part num="1" id="square" />
+          <part num="2" id="saw" />
+          <part num="3" id="noise" />
         </enum>
       </enum>
       <params>
@@ -683,21 +683,21 @@
       <visual name="TripleOscillator" color="#ff5621" />
       <enums>
         <enum id="modalgo" max="4">
-          <part val="0" id="pm" />
-          <part val="1" id="am" />
-          <part val="2" id="mix" />
-          <part val="3" id="sync" />
-          <part val="4" id="fm" />
+          <part num="0" id="pm" />
+          <part num="1" id="am" />
+          <part num="2" id="mix" />
+          <part num="3" id="sync" />
+          <part num="4" id="fm" />
         </enum>
         <enum id="wavetype" max="7">
-          <part val="0" id="sine" />
-          <part val="1" id="triangle" />
-          <part val="2" id="saw" />
-          <part val="3" id="square" />
-          <part val="4" id="moog" />
-          <part val="5" id="exp" />
-          <part val="6" id="noise" />
-          <part val="7" id="custom" />
+          <part num="0" id="sine" />
+          <part num="1" id="triangle" />
+          <part num="2" id="saw" />
+          <part num="3" id="square" />
+          <part num="4" id="moog" />
+          <part num="5" id="exp" />
+          <part num="6" id="noise" />
+          <part num="7" id="custom" />
         </enum>
       </enum>
       <params>
@@ -853,10 +853,10 @@
       <visual name="Watsyn" color="#cedddd" />
       <enums>
         <enum id="mod" max="3">
-          <part val="0" id="mix" />
-          <part val="1" id="am" />
-          <part val="2" id="ring" />
-          <part val="3" id="pm" />
+          <part num="0" id="mix" />
+          <part num="1" id="am" />
+          <part num="2" id="ring" />
+          <part num="3" id="pm" />
         </enum>
       </enum>
       <params>

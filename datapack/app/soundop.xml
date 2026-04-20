@@ -111,13 +111,13 @@
       <visual name="EQ" />
       <enums>
         <enum id="shape" max="6" end_point="start">
-          <part val="0" id="peak" />
-          <part val="1" id="low_shelf" />
-          <part val="2" id="high_shelf" />
-          <part val="3" id="low_cut" />
-          <part val="4" id="high_cut" />
-          <part val="5" id="band_pass" />
-          <part val="6" id="notch" />
+          <part num="0" id="peak" />
+          <part num="1" id="low_shelf" />
+          <part num="2" id="high_shelf" />
+          <part num="3" id="low_cut" />
+          <part num="4" id="high_cut" />
+          <part num="5" id="band_pass" />
+          <part num="6" id="notch" />
         </enum>
       </enum>
       <params>

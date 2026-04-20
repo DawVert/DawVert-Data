@@ -34,13 +34,13 @@
       </datadef>
       <enums>
         <enum id="shape" max="6">
-          <part val="0" id="sine" />
-          <part val="1" id="triangle" />
-          <part val="2" id="square" />
-          <part val="3" id="saw" />
-          <part val="4" id="pulse" />
-          <part val="5" id="noise" />
-          <part val="6" id="custom" />
+          <part num="0" id="sine" />
+          <part num="1" id="triangle" />
+          <part num="2" id="square" />
+          <part num="3" id="saw" />
+          <part num="4" id="pulse" />
+          <part num="5" id="noise" />
+          <part num="6" id="custom" />
         </enum>
       </enum>
       <params>
@@ -298,21 +298,21 @@
       </datadef>
       <params>
         <enum_int id="amp_type" max="3">
-          <part val="0" id="dry" name="Dry" />
-          <part val="1" id="tube" name="Tube" />
-          <part val="2" id="eq" name="EQ" />
-          <part val="3" id="bandpass" name="Bandpass" />
+          <part num="0" id="dry" name="Dry" />
+          <part num="1" id="tube" name="Tube" />
+          <part num="2" id="eq" name="EQ" />
+          <part num="3" id="bandpass" name="Bandpass" />
         </enum_int>
         <enum_int id="cabinet" max="3">
-          <part val="0" id="dry" name="Dry"/>
-          <part val="1" id="british" name="British"/>
-          <part val="2" id="combo" name="Combo"/>
-          <part val="3" id="stax" name="StaX"/>
+          <part num="0" id="dry" name="Dry"/>
+          <part num="1" id="british" name="British"/>
+          <part num="2" id="combo" name="Combo"/>
+          <part num="3" id="stax" name="StaX"/>
         </enum_int>
         <enum_int id="coil_type" max="2">
-          <part val="0" id="none" name="None" />
-          <part val="1" id="single" name="Single" />
-          <part val="2" id="double" name="Double" />
+          <part num="0" id="none" name="None" />
+          <part num="1" id="single" name="Single" />
+          <part num="2" id="double" name="Double" />
         </enum_int>
         <int id="damp" max="65535" />
         <int id="damp_vel" max="65535" />
@@ -325,47 +325,47 @@
         <int id="fx_param1" max="65535" />
         <int id="fx_param2" max="65535" />
         <enum_int id="fx_type" max="15">
-          <part val="0" id="dry" name="Dry"/>
-          <part val="1" id="amp:phaser" name="AMP:Phaser"/>
-          <part val="2" id="amp:tremolo" name="AMP:Tremolo"/>
-          <part val="3" id="amp:wahwah" name="AMP:WahWah"/>
-          <part val="4" id="amp:wahwah_lfo" name="AMP:WahWah LFO"/>
-          <part val="5" id="amp:ringmod" name="AMP:RingMod"/>
-          <part val="6" id="amp:fuzz_box" name="AMP:Fuzz Box"/>
-          <part val="7" id="amp:harmonizer" name="AMP:Harmonizer"/>
-          <part val="8" id="amp:talkbox" name="AMP:Talkbox"/>
-          <part val="9" id="mst:chorus" name="MST:Chorus"/>
-          <part val="10" id="mst:flanger" name="MST:Flanger"/>
-          <part val="11" id="mst:phaser" name="MST:Phaser"/>
-          <part val="12" id="mst:leslie" name="MST:Leslie"/>
-          <part val="13" id="mst:tremolo" name="MST:Tremolo"/>
-          <part val="14" id="mst:dub_delay" name="MST:Dub Delay"/>
-          <part val="15" id="mst:multi_tap" name="MST:Multi tap"/>
+          <part num="0" id="dry" name="Dry"/>
+          <part num="1" id="amp:phaser" name="AMP:Phaser"/>
+          <part num="2" id="amp:tremolo" name="AMP:Tremolo"/>
+          <part num="3" id="amp:wahwah" name="AMP:WahWah"/>
+          <part num="4" id="amp:wahwah_lfo" name="AMP:WahWah LFO"/>
+          <part num="5" id="amp:ringmod" name="AMP:RingMod"/>
+          <part num="6" id="amp:fuzz_box" name="AMP:Fuzz Box"/>
+          <part num="7" id="amp:harmonizer" name="AMP:Harmonizer"/>
+          <part num="8" id="amp:talkbox" name="AMP:Talkbox"/>
+          <part num="9" id="mst:chorus" name="MST:Chorus"/>
+          <part num="10" id="mst:flanger" name="MST:Flanger"/>
+          <part num="11" id="mst:phaser" name="MST:Phaser"/>
+          <part num="12" id="mst:leslie" name="MST:Leslie"/>
+          <part num="13" id="mst:tremolo" name="MST:Tremolo"/>
+          <part num="14" id="mst:dub_delay" name="MST:Dub Delay"/>
+          <part num="15" id="mst:multi_tap" name="MST:Multi tap"/>
         </enum_int>
         <int id="glissando" />
         <int id="harmonic" max="65535" />
         <int id="harmonic_vel" max="65535" />
         <int id="hold" />
         <enum_int id="mode" max="5">
-          <part val="0" id="none" name="None" />
-          <part val="1" id="autochords" name="AutoChords" />
-          <part val="2" id="powerchords" name="PowerChords" />
-          <part val="3" id="strumming" name="Strumming" />
-          <part val="4" id="solo_fixed" name="Solo fixed" />
-          <part val="5" id="solo_dynamic" name="Solo dynamic" />
+          <part num="0" id="none" name="None" />
+          <part num="1" id="autochords" name="AutoChords" />
+          <part num="2" id="powerchords" name="PowerChords" />
+          <part num="3" id="strumming" name="Strumming" />
+          <part num="4" id="solo_fixed" name="Solo fixed" />
+          <part num="5" id="solo_dynamic" name="Solo dynamic" />
         </enum_int>
         <int id="pickup_position" max="65535" />
         <int id="pitch_bend" max="127" />
         <int id="presence" max="65535" />
         <int id="slap" max="65535" />
         <enum_int id="string_type" max="6">
-          <part val="0" id="noise" name="Noise" />
-          <part val="1" id="6string1" name="6String1" />
-          <part val="2" id="6string2" name="6String2" />
-          <part val="3" id="6string3" name="6String3" />
-          <part val="4" id="slap" name="Slap" />
-          <part val="5" id="ebass" name="Ebass" />
-          <part val="6" id="fretless" name="Fretless" />
+          <part num="0" id="noise" name="Noise" />
+          <part num="1" id="6string1" name="6String1" />
+          <part num="2" id="6string2" name="6String2" />
+          <part num="3" id="6string3" name="6String3" />
+          <part num="4" id="slap" name="Slap" />
+          <part num="5" id="ebass" name="Ebass" />
+          <part num="6" id="fretless" name="Fretless" />
         </enum_int>
         <int id="timing" max="65535" />
         <int id="tone" max="65535" />
@@ -689,9 +689,9 @@
         <int id="fb_cut" name="Feedback Cut" max="128" num="7" />
         <int id="time_stereo_offset" name="Stereo Offset" max="512" min="-512" num="5" />
         <enum_int id="fb_mode" name="Feedback Mode" max="2" num="6">
-          <part val="0" id="normal" name="Normal" />
-          <part val="1" id="invert" name="Invert" />
-          <part val="2" id="pingpong" name="Ping-pong" />
+          <part num="0" id="normal" name="Normal" />
+          <part num="1" id="invert" name="Invert" />
+          <part num="2" id="pingpong" name="Ping-pong" />
         </enum_int>
       </params>
     </object>
@@ -823,19 +823,19 @@
       </datadef>
       <enums>
         <enum id="filter_type" max="6">
-          <part val="0" id="off" />
-          <part val="1" id="lowpass" />
-          <part val="2" id="bandpass" />
-          <part val="3" id="notch" />
-          <part val="4" id="highpass" />
-          <part val="5" id="lowshelf" />
-          <part val="6" id="peaking" />
-          <part val="7" id="highshelf" />
+          <part num="0" id="off" />
+          <part num="1" id="lowpass" />
+          <part num="2" id="bandpass" />
+          <part num="3" id="notch" />
+          <part num="4" id="highpass" />
+          <part num="5" id="lowshelf" />
+          <part num="6" id="peaking" />
+          <part num="7" id="highshelf" />
         </enum>
         <enum id="filter_mode" max="2">
-          <part val="0" id="single" />
-          <part val="1" id="dual" />
-          <part val="2" id="triple" />
+          <part num="0" id="single" />
+          <part num="1" id="dual" />
+          <part num="2" id="triple" />
         </enum>
       </enums>
       <params>
@@ -1654,14 +1654,14 @@
       </datadef>
       <enums>
         <enum id="type" max="7">
-          <part val="0" id="disabled" />
-          <part val="1" id="lowpass" />
-          <part val="2" id="bandpass" />
-          <part val="3" id="highpass" />
-          <part val="4" id="notch" />
-          <part val="5" id="lowshelf" />
-          <part val="6" id="peaking" />
-          <part val="7" id="highshelf" />
+          <part num="0" id="disabled" />
+          <part num="1" id="lowpass" />
+          <part num="2" id="bandpass" />
+          <part num="3" id="highpass" />
+          <part num="4" id="notch" />
+          <part num="5" id="lowshelf" />
+          <part num="6" id="peaking" />
+          <part num="7" id="highshelf" />
         </enum>
       </enums>
       <params>
@@ -1741,14 +1741,14 @@
       </datadef>
       <enums>
         <enum id="type" max="7">
-          <part val="0" id="disabled" />
-          <part val="1" id="lowpass" />
-          <part val="2" id="bandpass" />
-          <part val="3" id="highpass" />
-          <part val="4" id="notch" />
-          <part val="5" id="lowshelf" />
-          <part val="6" id="peaking" />
-          <part val="7" id="highshelf" />
+          <part num="0" id="disabled" />
+          <part num="1" id="lowpass" />
+          <part num="2" id="bandpass" />
+          <part num="3" id="highpass" />
+          <part num="4" id="notch" />
+          <part num="5" id="lowshelf" />
+          <part num="6" id="peaking" />
+          <part num="7" id="highshelf" />
         </enum>
       </enums>
       <params>

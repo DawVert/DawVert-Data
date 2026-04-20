@@ -21,8 +21,8 @@
         <float id="frequency" name="Frequency" />
         <float id="phase" name="Phase" />
         <enum_float id="waveshape" name="WaveShape" end_point="start">
-          <part val="0" id="square" />
-          <part val="1" id="sine" />
+          <part num="0" id="square" />
+          <part num="1" id="sine" />
         </enum_float>
         <float id="wetdrymix" name="WetDryMix" />
       </params>
@@ -110,8 +110,8 @@
         <float id="frequency" name="Frequency" />
         <float id="phase" name="Phase" />
         <enum_float id="waveshape" name="WaveShape" end_point="start">
-          <part val="0" id="square" />
-          <part val="1" id="sine" />
+          <part num="0" id="square" />
+          <part num="1" id="sine" />
         </enum_float>
         <float id="wetdrymix" name="WetDryMix" />
       </params>
@@ -128,8 +128,8 @@
       <params>
         <float id="rate" name="Rate" />
         <enum_float id="waveshape" name="WaveShape" end_point="start">
-          <part val="0" id="triangle" />
-          <part val="1" id="square" />
+          <part num="0" id="triangle" />
+          <part num="1" id="square" />
         </enum_float>
       </params>
     </object>

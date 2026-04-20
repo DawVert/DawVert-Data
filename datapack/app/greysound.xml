@@ -72,8 +72,8 @@
         <float id="threshold" def="-20" min="-40" max="0" unit="decibel"/>
         <float id="reduction" def="6" min="0" max="24" unit="decibel"/>
         <enum_int id="mode" def="split" max="1">
-          <part val="0" id="split" />
-          <part val="1" id="wide" />
+          <part num="0" id="split" />
+          <part num="1" id="wide" />
         </enum_int>
         <bool id="listen" def="0" />
       </params>
@@ -106,18 +106,18 @@
         <float id="delayTimeLeft" def="250" min="1" max="2000" unit="time:ms"/>
         <float id="delayTimeRight" def="375" min="1" max="2000" unit="time:ms"/>
         <enum_int id="noteValueLeft" def="1/4" max="4">
-          <part val="0" id="1/16" />
-          <part val="1" id="1/8" />
-          <part val="2" id="1/4" />
-          <part val="3" id="1/2" />
-          <part val="4" id="1/1" />
+          <part num="0" id="1/16" />
+          <part num="1" id="1/8" />
+          <part num="2" id="1/4" />
+          <part num="3" id="1/2" />
+          <part num="4" id="1/1" />
         </enum_int>
         <enum_int id="noteValueRight" def="1/4" max="4">
-          <part val="0" id="1/16" />
-          <part val="1" id="1/8" />
-          <part val="2" id="1/4" />
-          <part val="3" id="1/2" />
-          <part val="4" id="1/1" />
+          <part num="0" id="1/16" />
+          <part num="1" id="1/8" />
+          <part num="2" id="1/4" />
+          <part num="3" id="1/2" />
+          <part num="4" id="1/1" />
         </enum_int>
         <bool id="sync" def="0" />
         <float id="feedback" def="30" min="0" max="95" unit="one:percent"/>
@@ -129,10 +129,10 @@
       <visual name="Guitar Amp" />
       <params>
         <enum_int id="ampModel" def="clean" max="3">
-          <part val="0" id="clean" />
-          <part val="1" id="crunch" />
-          <part val="2" id="highgain" />
-          <part val="3" id="modernmetal" />
+          <part num="0" id="clean" />
+          <part num="1" id="crunch" />
+          <part num="2" id="highgain" />
+          <part num="3" id="modernmetal" />
         </enum_int>
         <float id="ampModel" def="1" min="0" max="3" />
         <float id="inputGain" def="0" min="-12" max="12" unit="decibel"/>
@@ -142,10 +142,10 @@
         <float id="treble" def="50" min="0" max="100" unit="one:percent"/>
         <float id="presence" def="50" min="0" max="100" unit="one:percent"/>
         <enum_int id="cabType" def="4x10" max="3">
-          <part val="0" id="1x12" />
-          <part val="1" id="2x12" />
-          <part val="2" id="4x12" />
-          <part val="3" id="Direct" />
+          <part num="0" id="1x12" />
+          <part num="1" id="2x12" />
+          <part num="2" id="4x12" />
+          <part num="3" id="Direct" />
         </enum_int>
         <float id="master" def="50" min="0" max="100" unit="one:percent"/>
         <float id="mix" def="100" min="0" max="100" unit="one:percent"/>
@@ -157,10 +157,10 @@
       <visual name="Bass Amp" />
       <params>
         <enum_int id="ampModel" def="clean" max="3">
-          <part val="0" id="clean" />
-          <part val="1" id="vintage" />
-          <part val="2" id="modern" />
-          <part val="3" id="hifi" />
+          <part num="0" id="clean" />
+          <part num="1" id="vintage" />
+          <part num="2" id="modern" />
+          <part num="3" id="hifi" />
         </enum_int>
         <float id="inputGain" def="0" min="-12" max="12" unit="decibel"/>
         <float id="gain" def="27" min="0" max="100" unit="one:percent"/>
@@ -169,10 +169,10 @@
         <float id="treble" def="50" min="0" max="100" unit="one:percent"/>
         <float id="presence" def="50" min="0" max="100" unit="one:percent"/>
         <enum_int id="cabType" def="4x10" max="3">
-          <part val="0" id="1x15" />
-          <part val="1" id="4x10" />
-          <part val="2" id="8x10" />
-          <part val="3" id="DI" />
+          <part num="0" id="1x15" />
+          <part num="1" id="4x10" />
+          <part num="2" id="8x10" />
+          <part num="3" id="DI" />
         </enum_int>
         <float id="master" def="50" min="0" max="100" unit="one:percent"/>
         <float id="mix" def="87" min="0" max="100" unit="one:percent"/>
@@ -194,20 +194,20 @@
       <visual name="Phaser" />
       <params>
         <enum_int id="mode" def="lfo" max="2">
-          <part val="0" id="lfo" />
-          <part val="1" id="envelope" />
-          <part val="2" id="random" />
+          <part num="0" id="lfo" />
+          <part num="1" id="envelope" />
+          <part num="2" id="random" />
         </enum_int>
         <float id="rate" def="0.5" min="0.01" max="10" unit="freq:hz"/>
         <float id="depth" def="50" min="0" max="100" unit="one:percent"/>
         <float id="sensitivity" def="50" min="0" max="100" unit="one:percent"/>
         <float id="centerFreq" def="1000" min="100" max="4000" unit="freq:hz"/>
         <enum_int id="stages" def="6" max="4">
-          <part val="0" id="2" />
-          <part val="1" id="4" />
-          <part val="2" id="6" />
-          <part val="3" id="8" />
-          <part val="4" id="12" />
+          <part num="0" id="2" />
+          <part num="1" id="4" />
+          <part num="2" id="6" />
+          <part num="3" id="8" />
+          <part num="4" id="12" />
         </enum_int>
         <float id="feedback" def="30" min="0" max="95" unit="one:percent"/>
         <float id="mix" def="50" min="0" max="100" unit="one:percent"/>
@@ -230,10 +230,10 @@
         <float id="rate" def="4" min="0.1" max="20" unit="freq:hz"/>
         <float id="depth" def="50" min="0" max="100" unit="one:percent"/>
         <enum_int id="waveform" def="sine" max="3">
-          <part val="0" id="sine" />
-          <part val="1" id="triangle" />
-          <part val="2" id="square" />
-          <part val="3" id="saw" />
+          <part num="0" id="sine" />
+          <part num="1" id="triangle" />
+          <part num="2" id="square" />
+          <part num="3" id="saw" />
         </enum_int>
         <float id="stereoPhase" def="0" min="0" max="180" />
       </params>
@@ -244,8 +244,8 @@
         <float id="rate" def="5" min="0.1" max="15" unit="freq:hz"/>
         <float id="depth" def="30" min="0" max="100" unit="one:percent"/>
         <enum_int id="waveform" def="sine" max="1">
-          <part val="0" id="sine" />
-          <part val="1" id="triangle" />
+          <part num="0" id="sine" />
+          <part num="1" id="triangle" />
         <float id="mix" def="100" min="0" max="100" unit="one:percent"/>
       </params>
     </object>
@@ -255,10 +255,10 @@
         <float id="rate" def="0.1" min="0.1" max="10" unit="freq:hz"/>
         <float id="depth" def="83" min="0" max="100" unit="one:percent"/>
         <enum_int id="waveform" def="sine" max="3">
-          <part val="0" id="sine" />
-          <part val="1" id="triangle" />
-          <part val="2" id="square" />
-          <part val="3" id="saw" />
+          <part num="0" id="sine" />
+          <part num="1" id="triangle" />
+          <part num="2" id="square" />
+          <part num="3" id="saw" />
         </enum_int>
         <float id="phase" def="0" min="0" max="360" />
       </params>
@@ -269,10 +269,10 @@
         <float id="drive" def="50" min="0" max="100" unit="one:percent"/>
         <float id="tone" def="5000" min="500" max="12000" unit="freq:hz"/>
         <enum_int id="character" def="warm" max="3">
-          <part val="0" id="clean" />
-          <part val="1" id="warm" />
-          <part val="2" id="hot" />
-          <part val="3" id="crunch" />
+          <part num="0" id="clean" />
+          <part num="1" id="warm" />
+          <part num="2" id="hot" />
+          <part num="3" id="crunch" />
         </enum_int>
         <float id="output" def="0" min="-12" max="12" unit="decibel"/>
         <float id="mix" def="100" min="0" max="100" unit="one:percent"/>
@@ -291,10 +291,10 @@
       <params>
         <float id="drive" def="30" min="0" max="100" unit="one:percent"/>
         <enum_int id="character" def="warm" max="3">
-          <part val="0" id="clean" />
-          <part val="1" id="warm" />
-          <part val="2" id="hot" />
-          <part val="3" id="saturated" />
+          <part num="0" id="clean" />
+          <part num="1" id="warm" />
+          <part num="2" id="hot" />
+          <part num="3" id="saturated" />
         </enum_int>
         <float id="warmth" def="50" min="0" max="100" unit="one:percent"/>
         <float id="output" def="0" min="-12" max="12" unit="decibel"/>
@@ -336,17 +336,17 @@
         <float id="frequency" def="1000" min="20" max="20000" unit="freq:hz"/>
         <float id="resonance" def="5" min="0.1" max="20" unit="filtband:q"/>
         <enum_int id="filterType" def="lowpass" max="2">
-          <part val="0" id="lowpass" />
-          <part val="1" id="highpass" />
-          <part val="2" id="bandpass" />
+          <part num="0" id="lowpass" />
+          <part num="1" id="highpass" />
+          <part num="2" id="bandpass" />
         </enum_int>
         <float id="lfoRate" def="1" min="0.01" max="20" unit="freq:hz"/>
         <float id="lfoDepth" def="50" min="0" max="100" unit="one:percent"/>
         <enum_int id="lfoWaveform" def="sine" max="3">
-          <part val="0" id="sine" />
-          <part val="1" id="triangle" />
-          <part val="2" id="square" />
-          <part val="3" id="saw" />
+          <part num="0" id="sine" />
+          <part num="1" id="triangle" />
+          <part num="2" id="square" />
+          <part num="3" id="saw" />
         </enum_int>
         <float id="mix" def="100" min="0" max="100" unit="one:percent"/>
       </params>

@@ -7,13 +7,13 @@
         <float id="gain" name="Gain" max="20" min="-20" unit="decibel" />
         <float id="q" name="Q" def="0.5" max="4" min="0.1" unit="filtband:q" />
         <enum_int id="shape" name="Shape" def="peak" max="6">
-          <part val="0" id="low_pass" />
-          <part val="1" id="low_shelf" />
-          <part val="2" id="peak" />
-          <part val="3" id="band_pass" />
-          <part val="4" id="notch" />
-          <part val="5" id="high_shelf" />
-          <part val="6" id="high_pass" />
+          <part num="0" id="low_pass" />
+          <part num="1" id="low_shelf" />
+          <part num="2" id="peak" />
+          <part num="3" id="band_pass" />
+          <part num="4" id="notch" />
+          <part num="5" id="high_shelf" />
+          <part num="6" id="high_pass" />
         </enum_int>
         <int id="slope" name="Slope" def="12" max="48" min="12" unit="decibel" />
       </params>
@@ -51,20 +51,20 @@
       <visual name="8-Band Equalizer" color="#33363d" />
       <enums>
         <enum id="shape" max="6">
-          <part val="0" id="low_pass" />
-          <part val="1" id="low_shelf" />
-          <part val="2" id="peak" />
-          <part val="3" id="band_pass" />
-          <part val="4" id="notch" />
-          <part val="5" id="high_shelf" />
-          <part val="6" id="high_pass" />
+          <part num="0" id="low_pass" />
+          <part num="1" id="low_shelf" />
+          <part num="2" id="peak" />
+          <part num="3" id="band_pass" />
+          <part num="4" id="notch" />
+          <part num="5" id="high_shelf" />
+          <part num="6" id="high_pass" />
         </enum>
       </enums>
       <params>
         <enum_int id="analyzer" def="0" max="2" >
-          <part val="0" id="line" />
-          <part val="1" id="bins" />
-          <part val="2" id="off" />
+          <part num="0" id="line" />
+          <part num="1" id="bins" />
+          <part num="2" id="off" />
         </enum_int>
         <bool id="enable1lm" def="0" />
         <bool id="enable1rs" def="0" />
@@ -115,9 +115,9 @@
         <float id="gain8lm" unit="decibel" />
         <float id="gain8rs" unit="decibel" />
         <enum_int id="mode" max="2" >
-          <part val="0" id="stereo" />
-          <part val="1" id="lr" />
-          <part val="2" id="ms" />
+          <part num="0" id="stereo" />
+          <part num="1" id="lr" />
+          <part num="2" id="ms" />
         </enum_int>
         <float id="q1lm" def="0.5" unit="filtband:q" />
         <float id="q1rs" def="0.5" unit="filtband:q" />
@@ -186,48 +186,48 @@
         <float id="mix" name="Mix" def="1" />
         <bool id="mixLock" name="Mix Lock" />
         <enum_int id="mode" name="Mode" def="wide" max="2">
-          <part val="0" id="normal" />
-          <part val="1" id="wide" />
-          <part val="2" id="wider" />
+          <part num="0" id="normal" />
+          <part num="1" id="wide" />
+          <part num="2" id="wider" />
         </enum_int>
         <float id="rateSyncOff" name="Rate Sec" def="0.4" max="5" min="0.02" unit="freq:hz" />
         <enum_int id="rateSyncOn" name="Rate Beat" def="1/8t" max="35">
-          <part val="0" id="32" />
-          <part val="1" id="28" />
-          <part val="2" id="24" />
-          <part val="3" id="20" />
-          <part val="4" id="16" />
-          <part val="5" id="12" />
-          <part val="6" id="10" />
-          <part val="7" id="8" />
-          <part val="8" id="6" />
-          <part val="9" id="5" />
-          <part val="10" id="4" />
-          <part val="11" id="3" />
-          <part val="12" id="2" />
-          <part val="13" id="1" />
-          <part val="14" id="1/1d" />
-          <part val="15" id="1/1" />
-          <part val="16" id="1/1t" />
-          <part val="17" id="1/2d" />
-          <part val="18" id="1/2" />
-          <part val="19" id="1/2t" />
-          <part val="20" id="1/4d" />
-          <part val="21" id="1/4" />
-          <part val="22" id="1/4t" />
-          <part val="23" id="1/8d" />
-          <part val="24" id="1/8" />
-          <part val="25" id="1/8t" />
-          <part val="26" id="1/16d" />
-          <part val="27" id="1/16" />
-          <part val="28" id="1/16t" />
-          <part val="29" id="1/32d" />
-          <part val="30" id="1/32" />
-          <part val="31" id="1/32t" />
-          <part val="32" id="1/64d" />
-          <part val="33" id="1/64" />
-          <part val="34" id="1/64t" />
-          <part val="35" id="off" />
+          <part num="0" id="32" />
+          <part num="1" id="28" />
+          <part num="2" id="24" />
+          <part num="3" id="20" />
+          <part num="4" id="16" />
+          <part num="5" id="12" />
+          <part num="6" id="10" />
+          <part num="7" id="8" />
+          <part num="8" id="6" />
+          <part num="9" id="5" />
+          <part num="10" id="4" />
+          <part num="11" id="3" />
+          <part num="12" id="2" />
+          <part num="13" id="1" />
+          <part num="14" id="1/1d" />
+          <part num="15" id="1/1" />
+          <part num="16" id="1/1t" />
+          <part num="17" id="1/2d" />
+          <part num="18" id="1/2" />
+          <part num="19" id="1/2t" />
+          <part num="20" id="1/4d" />
+          <part num="21" id="1/4" />
+          <part num="22" id="1/4t" />
+          <part num="23" id="1/8d" />
+          <part num="24" id="1/8" />
+          <part num="25" id="1/8t" />
+          <part num="26" id="1/16d" />
+          <part num="27" id="1/16" />
+          <part num="28" id="1/16t" />
+          <part num="29" id="1/32d" />
+          <part num="30" id="1/32" />
+          <part num="31" id="1/32t" />
+          <part num="32" id="1/64d" />
+          <part num="33" id="1/64" />
+          <part num="34" id="1/64t" />
+          <part num="35" id="off" />
         </enum_int>
         <bool id="sync" name="Sync" />
       </params>
@@ -271,12 +271,12 @@
       <params>
         <float id="drive" />
         <enum_int id="dtype" def="light" max="5">
-          <part val="0" id="light" />
-          <part val="1" id="medium" />
-          <part val="2" id="hard" />
-          <part val="3" id="clip" />
-          <part val="4" id="tube" />
-          <part val="5" id="fuzz" />
+          <part num="0" id="light" />
+          <part num="1" id="medium" />
+          <part num="2" id="hard" />
+          <part num="3" id="clip" />
+          <part num="4" id="tube" />
+          <part num="5" id="fuzz" />
         </enum_int>
         <float id="emphasis" def="0.25" />
         <float id="mix" def="1" />
@@ -324,9 +324,9 @@
     <object id="lowpass">
       <visual name="Low Pass (Old)" color="#33363d" />
       <params>
-        <enum_string id="mode" name="Mode" def="lowpass">
-          <part val="0" id="lowpass" />
-          <part val="1" id="highpass" />
+        <enum_string id="mode" name="Mode" def="lowpass" max="1">
+          <part num="0" string="lowpass" id="lowpass" />
+          <part num="1" string="highpass" id="highpass" />
         </enum_string>
         <float id="frequency" name="Frequency" def="4000" max="22000" min="10" unit="freq:hz"/>
       </params>
@@ -383,42 +383,42 @@
         <float id="mix" def="1" />
         <bool id="mixLock" />
         <enum_int id="rateSyncOn" def="1/8t" max="35">
-          <part val="0" id="32" />
-          <part val="1" id="28" />
-          <part val="2" id="24" />
-          <part val="3" id="20" />
-          <part val="4" id="16" />
-          <part val="5" id="12" />
-          <part val="6" id="10" />
-          <part val="7" id="8" />
-          <part val="8" id="6" />
-          <part val="9" id="5" />
-          <part val="10" id="4" />
-          <part val="11" id="3" />
-          <part val="12" id="2" />
-          <part val="13" id="1" />
-          <part val="14" id="1/1d" />
-          <part val="15" id="1/1" />
-          <part val="16" id="1/1t" />
-          <part val="17" id="1/2d" />
-          <part val="18" id="1/2" />
-          <part val="19" id="1/2t" />
-          <part val="20" id="1/4d" />
-          <part val="21" id="1/4" />
-          <part val="22" id="1/4t" />
-          <part val="23" id="1/8d" />
-          <part val="24" id="1/8" />
-          <part val="25" id="1/8t" />
-          <part val="26" id="1/16d" />
-          <part val="27" id="1/16" />
-          <part val="28" id="1/16t" />
-          <part val="29" id="1/32d" />
-          <part val="30" id="1/32" />
-          <part val="31" id="1/32t" />
-          <part val="32" id="1/64d" />
-          <part val="33" id="1/64" />
-          <part val="34" id="1/64t" />
-          <part val="35" id="off" />
+          <part num="0" id="32" />
+          <part num="1" id="28" />
+          <part num="2" id="24" />
+          <part num="3" id="20" />
+          <part num="4" id="16" />
+          <part num="5" id="12" />
+          <part num="6" id="10" />
+          <part num="7" id="8" />
+          <part num="8" id="6" />
+          <part num="9" id="5" />
+          <part num="10" id="4" />
+          <part num="11" id="3" />
+          <part num="12" id="2" />
+          <part num="13" id="1" />
+          <part num="14" id="1/1d" />
+          <part num="15" id="1/1" />
+          <part num="16" id="1/1t" />
+          <part num="17" id="1/2d" />
+          <part num="18" id="1/2" />
+          <part num="19" id="1/2t" />
+          <part num="20" id="1/4d" />
+          <part num="21" id="1/4" />
+          <part num="22" id="1/4t" />
+          <part num="23" id="1/8d" />
+          <part num="24" id="1/8" />
+          <part num="25" id="1/8t" />
+          <part num="26" id="1/16d" />
+          <part num="27" id="1/16" />
+          <part num="28" id="1/16t" />
+          <part num="29" id="1/32d" />
+          <part num="30" id="1/32" />
+          <part num="31" id="1/32t" />
+          <part num="32" id="1/64d" />
+          <part num="33" id="1/64" />
+          <part num="34" id="1/64t" />
+          <part num="35" id="off" />
         </enum_int>
         <float id="rateSyncOff" def="0.02" max="5" unit="freq:hz" />
         <int id="stages" def="6" max="12" />
@@ -467,42 +467,42 @@
       <visual name="Delay" color="#33363d" />
       <enums>
         <enum id="delay_synctime" max="35">
-          <part val="0" id="32" />
-          <part val="1" id="28" />
-          <part val="2" id="24" />
-          <part val="3" id="20" />
-          <part val="4" id="16" />
-          <part val="5" id="12" />
-          <part val="6" id="10" />
-          <part val="7" id="8" />
-          <part val="8" id="6" />
-          <part val="9" id="5" />
-          <part val="10" id="4" />
-          <part val="11" id="3" />
-          <part val="12" id="2" />
-          <part val="13" id="1" />
-          <part val="14" id="1/1d" />
-          <part val="15" id="1/1" />
-          <part val="16" id="1/1t" />
-          <part val="17" id="1/2d" />
-          <part val="18" id="1/2" />
-          <part val="19" id="1/2t" />
-          <part val="20" id="1/4d" />
-          <part val="21" id="1/4" />
-          <part val="22" id="1/4t" />
-          <part val="23" id="1/8d" />
-          <part val="24" id="1/8" />
-          <part val="25" id="1/8t" />
-          <part val="26" id="1/16d" />
-          <part val="27" id="1/16" />
-          <part val="28" id="1/16t" />
-          <part val="29" id="1/32d" />
-          <part val="30" id="1/32" />
-          <part val="31" id="1/32t" />
-          <part val="32" id="1/64d" />
-          <part val="33" id="1/64" />
-          <part val="34" id="1/64t" />
-          <part val="35" id="off" />
+          <part num="0" id="32" />
+          <part num="1" id="28" />
+          <part num="2" id="24" />
+          <part num="3" id="20" />
+          <part num="4" id="16" />
+          <part num="5" id="12" />
+          <part num="6" id="10" />
+          <part num="7" id="8" />
+          <part num="8" id="6" />
+          <part num="9" id="5" />
+          <part num="10" id="4" />
+          <part num="11" id="3" />
+          <part num="12" id="2" />
+          <part num="13" id="1" />
+          <part num="14" id="1/1d" />
+          <part num="15" id="1/1" />
+          <part num="16" id="1/1t" />
+          <part num="17" id="1/2d" />
+          <part num="18" id="1/2" />
+          <part num="19" id="1/2t" />
+          <part num="20" id="1/4d" />
+          <part num="21" id="1/4" />
+          <part num="22" id="1/4t" />
+          <part num="23" id="1/8d" />
+          <part num="24" id="1/8" />
+          <part num="25" id="1/8t" />
+          <part num="26" id="1/16d" />
+          <part num="27" id="1/16" />
+          <part num="28" id="1/16t" />
+          <part num="29" id="1/32d" />
+          <part num="30" id="1/32" />
+          <part num="31" id="1/32t" />
+          <part num="32" id="1/64d" />
+          <part num="33" id="1/64" />
+          <part num="34" id="1/64t" />
+          <part num="35" id="off" />
         </enum>
       </enums>
       <params>

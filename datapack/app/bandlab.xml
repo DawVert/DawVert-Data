@@ -1768,7 +1768,7 @@
       <visual name="D-Delay +" />
       <data uniqueId="706403424" />
       <params>
-        <float id="delayTimeMsec" def="0.45" max="2.6" min="0.01" />
+        <float id="delayTimeMsec" def="0.45" max="2.6" min="0.01" unit="time:seconds"/>
         <float id="dry" def="1" />
         <float id="feedback" def="0.1" max="0.5" />
         <float id="hpf" def="50" max="1200" min="50" unit="freq:hz"/>
@@ -1776,9 +1776,18 @@
         <float id="lpf" def="16000" max="16000" min="1200" unit="freq:hz"/>
         <float id="spread" def="0.5" />
         <float id="wet" def="0.5" />
+        <enum_string id="delayTimeBeats" def="quarterNote" max="7" >
+          <part num="0" val="sixteenthNoteTriplet" id="sixteenthNoteTriplet" />
+          <part num="1" val="sixteenthNote" id="sixteenthNote" />
+          <part num="2" val="dottedSixteenthNote" id="dottedSixteenthNote" />
+          <part num="3" val="eighthNote" id="eighthNote" />
+          <part num="4" val="dottedEighthNote" id="dottedEighthNote" />
+          <part num="5" val="quarterNoteTriplet" id="quarterNoteTriplet" />
+          <part num="6" val="quarterNote" id="quarterNote" />
+          <part num="7" val="halfNote" id="halfNote" />
+        </enum_string>
       </params>
       <datavals>
-        <string id="delayTimeBeats" def="quarterNote" />
         <string id="delayUnitSelection" def="delayTimeBeats" />
       </datavals>
     </object>
@@ -1787,32 +1796,64 @@
       <data uniqueId="412590923" />
       <params>
         <float id="cutoff" def="12000" max="16000" min="300" unit="freq:hz"/>
-        <float id="delayTime" def="0.2" />
+        <float id="delayTime" def="0.2" unit="time:seconds"/>
         <float id="dryWetMix" def="0.4" />
         <float id="feedback" def="0.204" max="0.85" />
+        <enum_string id="delayUnitSelection" def="delayTime" max="1" >
+          <part num="0" val="delayTime" id="delayTime" />
+          <part num="1" val="syncDelay" id="syncDelay" />
+        </enum_string>
+        <enum_string id="syncDelay" def="quarterNote" max="7" >
+          <part num="0" val="sixteenthNoteTriplet" id="sixteenthNoteTriplet" />
+          <part num="1" val="sixteenthNote" id="sixteenthNote" />
+          <part num="2" val="dottedSixteenthNote" id="dottedSixteenthNote" />
+          <part num="3" val="eighthNote" id="eighthNote" />
+          <part num="4" val="dottedEighthNote" id="dottedEighthNote" />
+          <part num="5" val="quarterNoteTriplet" id="quarterNoteTriplet" />
+          <part num="6" val="quarterNote" id="quarterNote" />
+          <part num="7" val="halfNote" id="halfNote" />
+        </enum_string>
       </params>
-      <datavals>
-        <string id="delayUnitSelection" def="syncDelay" />
-        <string id="syncDelay" def="quarterNote" />
-      </datavals>
     </object>
     <object id="pingpongDelay">
       <visual name="Ping Pong Delay" />
       <data uniqueId="1621808342" />
       <params>
         <float id="cutoff" def="9000" max="16000" min="300" unit="freq:hz"/>
-        <float id="delayOffsetSec" def="0.35" />
-        <float id="delayTimeSec" def="0.7" />
+        <float id="delayOffsetSec" def="0.35" unit="time:seconds"/>
+        <float id="delayTimeSec" def="0.7" unit="time:seconds"/>
         <float id="dryWetMix" def="0.7" />
         <float id="feedback" def="0.34" max="0.85" />
         <float id="spread" def="1" />
+        <enum_string id="delayUnitSelection" def="delayTimeSec" max="1" >
+          <part num="0" val="delayTimeSec" id="delayTimeSec" />
+          <part num="1" val="delayTimeBeats" id="delayTimeBeats" />
+        </enum_string>
+        <enum_string id="delayOffsetUnitSelection" def="delayOffsetSec" max="1" >
+          <part num="0" val="delayOffsetSec" id="delayOffsetSec" />
+          <part num="1" val="delayOffsetBeats" id="delayOffsetBeats" />
+        </enum_string>
+        <enum_string id="delayOffsetBeats" def="eighthNote" max="7" >
+          <part num="0" val="sixteenthNoteTriplet" id="sixteenthNoteTriplet" />
+          <part num="1" val="sixteenthNote" id="sixteenthNote" />
+          <part num="2" val="dottedSixteenthNote" id="dottedSixteenthNote" />
+          <part num="3" val="eighthNote" id="eighthNote" />
+          <part num="4" val="dottedEighthNote" id="dottedEighthNote" />
+          <part num="5" val="quarterNoteTriplet" id="quarterNoteTriplet" />
+          <part num="6" val="quarterNote" id="quarterNote" />
+          <part num="7" val="halfNote" id="halfNote" />
+        </enum_string>
+        <enum_string id="delayTimeBeats" def="eighthNote" max="7" >
+          <part num="0" val="sixteenthNoteTriplet" id="sixteenthNoteTriplet" />
+          <part num="1" val="sixteenthNote" id="sixteenthNote" />
+          <part num="2" val="dottedSixteenthNote" id="dottedSixteenthNote" />
+          <part num="3" val="eighthNote" id="eighthNote" />
+          <part num="4" val="dottedEighthNote" id="dottedEighthNote" />
+          <part num="5" val="quarterNoteTriplet" id="quarterNoteTriplet" />
+          <part num="6" val="quarterNote" id="quarterNote" />
+          <part num="7" val="halfNote" id="halfNote" />
+        </enum_string>
       </params>
-      <datavals>
-        <string id="delayOffsetBeats" def="quarterNote" />
-        <string id="delayOffsetUnitSelection" def="delayOffsetBeats" />
-        <string id="delayTimeBeats" def="quarterNote" />
-        <string id="delayUnitSelection" def="delayTimeBeats" />
-      </datavals>
     </object>
     <object id="bitBandit">
       <visual name="Bit Bandit" />
@@ -1883,13 +1924,17 @@
       <data uniqueId="998880715" />
       <params>
         <float id="attack" def="1.2" max="10" />
-        <float id="gain" def="10" max="20" />
-        <float id="makeup" max="15" min="-15" />
+        <float id="gain" def="10" max="20" unit="decibel"/>
+        <float id="makeup" max="15" min="-15" unit="decibel"/>
         <float id="release" def="5" max="10" />
+        <enum_string id="ratio" def="12" max="3" >
+          <part num="0" val="4" id="4" />
+          <part num="1" val="8" id="8" />
+          <part num="2" val="12" id="12" />
+          <part num="3" val="20" id="20" />
+          <part num="3" val="all" id="all" />
+        </enum_string>
       </params>
-      <datavals>
-        <string id="ratio" def="12" />
-      </datavals>
     </object>
     <object id="compander">
       <visual name="Compander" />
@@ -1926,10 +1971,10 @@
       <visual name="FBK Compressor" />
       <data uniqueId="1297001226" />
       <params>
-        <float id="attack" def="0.05" max="0.2" min="0.001" />
-        <float id="makeupGain" max="15" min="-15" />
+        <float id="attack" def="0.05" max="0.2" min="0.001" unit="time:seconds"/>
+        <float id="makeupGain" max="15" min="-15" unit="decibel"/>
         <float id="ratio" def="6" max="20" min="1" />
-        <float id="release" def="0.4" max="4" min="0.04" />
+        <float id="release" def="0.4" max="4" min="0.04" unit="time:seconds"/>
         <float id="threshold" def="15" max="40" min="-10" />
       </params>
     </object>
@@ -1937,9 +1982,9 @@
       <visual name="Noise Gate" />
       <data uniqueId="300578881" />
       <params>
-        <float id="attack" def="0.005" max="0.15" min="0.001" />
-        <float id="release" def="0.2" max="0.8" min="0.1" />
-        <float id="threshold" def="-30" max="-18" min="-72" />
+        <float id="attack" def="0.005" max="0.15" min="0.001" unit="time:seconds"/>
+        <float id="release" def="0.2" max="0.8" min="0.1" unit="time:seconds"/>
+        <float id="threshold" def="-30" max="-18" min="-72" unit="decibel"/>
       </params>
     </object>
     <object id="pumper2">
@@ -1948,16 +1993,23 @@
       <params>
         <float id="amount" def="0.5" />
         <float id="phase" def="18" max="180" min="-180" />
+        <enum_string id="period" def="quarterNote" max="7" >
+          <part num="0" val="sixteenthNoteTriplet" id="sixteenthNoteTriplet" />
+          <part num="1" val="sixteenthNote" id="sixteenthNote" />
+          <part num="2" val="dottedSixteenthNote" id="dottedSixteenthNote" />
+          <part num="3" val="eighthNote" id="eighthNote" />
+          <part num="4" val="dottedEighthNote" id="dottedEighthNote" />
+          <part num="5" val="quarterNoteTriplet" id="quarterNoteTriplet" />
+          <part num="6" val="quarterNote" id="quarterNote" />
+          <part num="7" val="halfNote" id="halfNote" />
+        </enum_string>
       </params>
-      <datavals>
-        <string id="period" def="quarterNote" />
-      </datavals>
     </object>
     <object id="la2aCompr">
       <visual name="TecLab BA-2A" />
       <data uniqueId="245561241" />
       <params>
-        <float id="makeupGain" def="3" max="15" min="-15" />
+        <float id="makeupGain" def="3" max="15" min="-15" unit="decibel"/>
         <float id="threshold" def="25" max="40" min="-10" />
       </params>
       <datavals>
@@ -1968,8 +2020,8 @@
       <visual name="Clean Limiter" />
       <data uniqueId="790566688" />
       <params>
-        <float id="input" def="0" max="24" min="-24" />
-        <float id="threshold" def="0" max="0" min="-24" />
+        <float id="input" def="0" max="24" min="-24" unit="decibel"/>
+        <float id="threshold" def="0" max="0" min="-24" unit="decibel"/>
         <bool id="truePeak" />
       </params>
       <datavals>
@@ -1995,37 +2047,68 @@
       <data uniqueId="795558986" />
       <params>
         <float id="depth" def="1" min="1" />
+        <enum_string id="period" def="quarterNote" max="7" >
+          <part num="0" val="sixteenthNoteTriplet" id="sixteenthNoteTriplet" />
+          <part num="1" val="sixteenthNote" id="sixteenthNote" />
+          <part num="2" val="dottedSixteenthNote" id="dottedSixteenthNote" />
+          <part num="3" val="eighthNote" id="eighthNote" />
+          <part num="4" val="dottedEighthNote" id="dottedEighthNote" />
+          <part num="5" val="quarterNoteTriplet" id="quarterNoteTriplet" />
+          <part num="6" val="quarterNote" id="quarterNote" />
+          <part num="7" val="halfNote" id="halfNote" />
+        </enum_string>
       </params>
-      <datavals>
-        <string id="period" def="quarterNote" />
-      </datavals>
     </object>
     <object id="autoFilter">
       <visual name="Auto Filter" />
       <data uniqueId="357762293" />
       <params>
         <float id="drive" def="0.8" max="10" min="0.1" />
-        <float id="frequency" def="2000" max="10000" min="20" />
+        <float id="frequency" def="2000" max="10000" min="20" unit="freq:hz"/>
         <float id="lfoDepth" def="0.5" />
-        <float id="lfoRate" def="3" max="10" min="0.1" />
-        <float id="resonance" def="1" max="20" min="0.1" />
+        <float id="lfoRate" def="3" max="10" min="0.1" unit="freq:hz"/>
+        <float id="resonance" def="1" max="20" min="0.1" unit="filtband:q"/>
         <float id="sensitivity" def="1" max="5" />
+        <enum_string id="filterType" def="lpf" max="3" >
+          <part num="0" val="lpf" id="lpf" />
+          <part num="1" val="hpf" id="hpf" />
+          <part num="2" val="bpf" id="bpf" />
+          <part num="3" val="brf" id="brf" />
+        </enum_string>
+        <enum_string id="lfoRateUnitSelection" def="lfoRate" max="1" >
+          <part num="0" val="lfoRate" id="lfoRate" />
+          <part num="1" val="syncLfoRate" id="syncLfoRate" />
+        </enum_string>
+        <enum_string id="syncLfoRate" def="eighthNote" max="7" >
+          <part num="0" val="sixteenthNoteTriplet" id="sixteenthNoteTriplet" />
+          <part num="1" val="sixteenthNote" id="sixteenthNote" />
+          <part num="2" val="dottedSixteenthNote" id="dottedSixteenthNote" />
+          <part num="3" val="eighthNote" id="eighthNote" />
+          <part num="4" val="dottedEighthNote" id="dottedEighthNote" />
+          <part num="5" val="quarterNoteTriplet" id="quarterNoteTriplet" />
+          <part num="6" val="quarterNote" id="quarterNote" />
+          <part num="7" val="halfNote" id="halfNote" />
+        </enum_string>
       </params>
-      <datavals>
-        <string id="filterType" def="lpf" />
-        <string id="lfoRateUnitSelection" def="syncLfoRate" />
-        <string id="syncLfoRate" def="eighthNote" />
-      </datavals>
     </object>
     <object id="autoPan">
       <visual name="Auto Pan" />
       <data uniqueId="1215185213" />
       <params>
-        <float id="rateHz" def="0.5" max="11" min="0.1" />
+        <float id="rateHz" def="0.5" max="11" min="0.1" unit="freq:hz"/>
         <float id="spread" def="0.7" />
+        <enum_string id="rateBeats" def="quarterNote" max="7" >
+          <part num="0" val="sixteenthNoteTriplet" id="sixteenthNoteTriplet" />
+          <part num="1" val="sixteenthNote" id="sixteenthNote" />
+          <part num="2" val="dottedSixteenthNote" id="dottedSixteenthNote" />
+          <part num="3" val="eighthNote" id="eighthNote" />
+          <part num="4" val="dottedEighthNote" id="dottedEighthNote" />
+          <part num="5" val="quarterNoteTriplet" id="quarterNoteTriplet" />
+          <part num="6" val="quarterNote" id="quarterNote" />
+          <part num="7" val="halfNote" id="halfNote" />
+        </enum_string>
       </params>
       <datavals>
-        <string id="rateBeats" def="quarterNote" />
         <string id="rateUnitSelection" def="rateBeats" />
       </datavals>
     </object>
@@ -2035,8 +2118,8 @@
       <params>
         <float id="depth" def="35" max="100" unit="one:percent"/>
         <float id="filter" def="50" max="100" unit="one:percent"/>
-        <float id="outLevel" max="12" min="-40" />
-        <float id="release" def="0.8" max="1.5" min="0.06" />
+        <float id="outLevel" max="12" min="-40" unit="decibel"/>
+        <float id="release" def="0.8" max="1.5" min="0.06" unit="time:seconds"/>
         <float id="sensitivity" def="35" max="100" unit="one:percent"/>
         <float id="speed" def="9.936" max="22.2" min="0.3" />
       </params>
@@ -2115,7 +2198,7 @@
       <data uniqueId="1698396972" />
       <params>
         <float id="mix" def="1" />
-        <float id="shift" def="-5" max="12" min="-12" />
+        <float id="shift" def="-5" max="12" min="-12" unit="pitch:semitones"/>
       </params>
       <datavals>
         <string id="inputType" def="vocal" />
@@ -2167,34 +2250,41 @@
       <visual name="EQ3-M" />
       <data uniqueId="589015423" />
       <params>
-        <float id="highGain" max="30" min="-30" />
-        <float id="lowGain" max="30" min="-30" />
-        <float id="midFreq" def="5000" max="8000" min="100" />
-        <float id="midGain" max="30" min="-30" />
+        <float id="highGain" max="30" min="-30" unit="decibel"/>
+        <float id="lowGain" max="30" min="-30" unit="decibel"/>
+        <float id="midFreq" def="5000" max="8000" min="100" unit="freq:hz"/>
+        <float id="midGain" max="30" min="-30" unit="decibel"/>
       </params>
     </object>
     <object id="threeBandEq2">
       <visual name="EZ EQ" />
       <data uniqueId="1796125019" />
       <params>
-        <float id="hpfFreq" def="80" max="10000" min="20" />
-        <float id="lpfFreq" def="7000" max="10000" min="20" />
-        <float id="peakFreq" def="5000" max="10000" min="20" />
-        <float id="peakGain" def="1" max="48" min="-96" />
-        <float id="peakQ" def="3" max="10" min="0.5" />
+        <float id="hpfFreq" def="80" max="10000" min="20" unit="freq:hz"/>
+        <float id="lpfFreq" def="7000" max="10000" min="20" unit="freq:hz"/>
+        <float id="peakFreq" def="5000" max="10000" min="20" unit="freq:hz"/>
+        <float id="peakGain" def="1" max="48" min="-96" unit="decibel"/>
+        <float id="peakQ" def="3" max="10" min="0.5" unit="filtband:q"/>
       </params>
     </object>
     <object id="filter">
       <visual name="Multi Filter" />
       <data uniqueId="121917997" />
       <params>
-        <float id="frequency" def="8000" max="12000" min="30" />
-        <float id="gain" max="20" min="-20" />
+        <float id="frequency" def="8000" max="12000" min="30" unit="freq:hz"/>
+        <float id="gain" max="20" min="-20" unit="decibel"/>
         <float id="q" def="2" max="10" />
+        <enum_string id="filterType" def="lowpass" max="7" >
+          <part num="0" val="lowpass" id="lowpass" />
+          <part num="1" val="highpass" id="highpass" />
+          <part num="2" val="bandpass" id="bandpass" />
+          <part num="3" val="lowshelf" id="lowshelf" />
+          <part num="4" val="highshelf" id="highshelf" />
+          <part num="5" val="peaking" id="peaking" />
+          <part num="6" val="notch" id="notch" />
+          <part num="7" val="allpass" id="allpass" />
+        </enum_string>
       </params>
-      <datavals>
-        <string id="filterType" def="lowpass" />
-      </datavals>
     </object>
     <object id="antiSqueal">
       <visual name="Feedback Killer" />
@@ -2215,10 +2305,19 @@
       <data uniqueId="1688690742" />
       <params>
         <float id="dryWetMix" def="0.61" />
-        <float id="intervalTimeSec" def="0.449953" max="2.5" min="0.05" />
+        <float id="intervalTimeSec" def="0.449953" max="2.5" min="0.05" unit="time:seconds"/>
+        <enum_string id="intervalTimeBeats" def="eighthNote" max="7" >
+          <part num="0" val="sixteenthNoteTriplet" id="sixteenthNoteTriplet" />
+          <part num="1" val="sixteenthNote" id="sixteenthNote" />
+          <part num="2" val="dottedSixteenthNote" id="dottedSixteenthNote" />
+          <part num="3" val="eighthNote" id="eighthNote" />
+          <part num="4" val="dottedEighthNote" id="dottedEighthNote" />
+          <part num="5" val="quarterNoteTriplet" id="quarterNoteTriplet" />
+          <part num="6" val="quarterNote" id="quarterNote" />
+          <part num="7" val="halfNote" id="halfNote" />
+        </enum_string>
       </params>
       <datavals>
-        <string id="intervalTimeBeats" def="eighthNote" />
         <string id="intervalUnitSelection" def="intervalTimeBeats" />
       </datavals>
     </object>
@@ -2227,7 +2326,7 @@
       <data uniqueId="1656496245" />
       <params>
         <float id="lowerIntensity" def="1" />
-        <float id="upperFrequency" def="1025.72" max="20000" min="20" />
+        <float id="upperFrequency" def="1025.72" max="20000" min="20" unit="freq:hz"/>
         <float id="upperIntensity" def="1" />
       </params>
     </object>
@@ -2236,11 +2335,11 @@
       <data uniqueId="296505561" />
       <params>
         <float id="dry" def="100" max="100" unit="one:percent"/>
-        <float id="hpf" def="1200" max="1200" min="50" />
-        <float id="level" max="12" min="-12" />
+        <float id="hpf" def="1200" max="1200" min="50" unit="freq:hz"/>
+        <float id="level" max="12" min="-12" unit="decibel"/>
         <float id="lpf" def="6500" max="16000" min="1200" unit="freq:hz"/>
         <float id="regen" def="25" max="100" unit="one:percent"/>
-        <float id="time" def="1" max="2.6" min="0.01" />
+        <float id="time" def="1" max="2.6" min="0.01" unit="freq:hz"/>
         <float id="wet" def="20" max="100" unit="one:percent"/>
       </params>
     </object>
@@ -2249,14 +2348,14 @@
       <data uniqueId="907963035" />
       <params>
         <float id="filter0Bandwidth" def="0.17" />
-        <float id="filter0Freq" def="50.0" />
-        <float id="filter0Gain" def="0.0" />
+        <float id="filter0Freq" def="50.0" unit="freq:hz"/>
+        <float id="filter0Gain" def="0.0" unit="decibel"/>
         <float id="filter1Bandwidth" def="0.17" />
-        <float id="filter1Freq" def="485.0" />
-        <float id="filter1Gain" def="0.0" />
+        <float id="filter1Freq" def="485.0" unit="freq:hz"/>
+        <float id="filter1Gain" def="0.0" unit="decibel"/>
         <float id="filter2Bandwidth" def="0.17" />
-        <float id="filter2Freq" def="4985.0" />
-        <float id="filter2Gain" def="0.0" />
+        <float id="filter2Freq" def="4985.0" unit="freq:hz"/>
+        <float id="filter2Gain" def="0.0" unit="decibel"/>
       </params>
       <datavals>
         <string id="filter0Active" def="true" />

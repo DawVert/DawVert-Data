@@ -21,24 +21,24 @@
       <params>
         <float id="delay1" def="150.0" unit="time:ms" />
         <enum_float id="temposync1" def="1/1" enum_max="17" max="17" end_point="end">
-          <part val="0" id="1/1" />
-          <part val="1" id="1/2" />
-          <part val="2" id="1/4" />
-          <part val="3" id="1/8" />
-          <part val="4" id="1/16" />
-          <part val="5" id="1/32" />
-          <part val="6" id="1/1t" />
-          <part val="7" id="1/2t" />
-          <part val="8" id="1/4t" />
-          <part val="9" id="1/8t" />
-          <part val="10" id="1/16t" />
-          <part val="11" id="1/32t" />
-          <part val="12" id="1/1d" />
-          <part val="13" id="1/2d" />
-          <part val="14" id="1/4d" />
-          <part val="15" id="1/8d" />
-          <part val="16" id="1/16d" />
-          <part val="17" id="1/32d" />
+          <part num="0" id="1/1" />
+          <part num="1" id="1/2" />
+          <part num="2" id="1/4" />
+          <part num="3" id="1/8" />
+          <part num="4" id="1/16" />
+          <part num="5" id="1/32" />
+          <part num="6" id="1/1t" />
+          <part num="7" id="1/2t" />
+          <part num="8" id="1/4t" />
+          <part num="9" id="1/8t" />
+          <part num="10" id="1/16t" />
+          <part num="11" id="1/32t" />
+          <part num="12" id="1/1d" />
+          <part num="13" id="1/2d" />
+          <part num="14" id="1/4d" />
+          <part num="15" id="1/8d" />
+          <part num="16" id="1/16d" />
+          <part num="17" id="1/32d" />
         </enum_float>
         <float id="syncnote1" def="0.0" />
         <float id="feedback1" def="50.0" unit="one:percent" />
@@ -50,24 +50,24 @@
         <float id="pan1" def="-100.0" unit="one:percent_plusminus" />
         <float id="delay2" def="550.0" unit="time:ms" />
         <enum_float id="temposync2" def="1/1" enum_max="17" max="17" end_point="end">
-          <part val="0" id="1/1" />
-          <part val="1" id="1/2" />
-          <part val="2" id="1/4" />
-          <part val="3" id="1/8" />
-          <part val="4" id="1/16" />
-          <part val="5" id="1/32" />
-          <part val="6" id="1/1t" />
-          <part val="7" id="1/2t" />
-          <part val="8" id="1/4t" />
-          <part val="9" id="1/8t" />
-          <part val="10" id="1/16t" />
-          <part val="11" id="1/32t" />
-          <part val="12" id="1/1d" />
-          <part val="13" id="1/2d" />
-          <part val="14" id="1/4d" />
-          <part val="15" id="1/8d" />
-          <part val="16" id="1/16d" />
-          <part val="17" id="1/32d" />
+          <part num="0" id="1/1" />
+          <part num="1" id="1/2" />
+          <part num="2" id="1/4" />
+          <part num="3" id="1/8" />
+          <part num="4" id="1/16" />
+          <part num="5" id="1/32" />
+          <part num="6" id="1/1t" />
+          <part num="7" id="1/2t" />
+          <part num="8" id="1/4t" />
+          <part num="9" id="1/8t" />
+          <part num="10" id="1/16t" />
+          <part num="11" id="1/32t" />
+          <part num="12" id="1/1d" />
+          <part num="13" id="1/2d" />
+          <part num="14" id="1/4d" />
+          <part num="15" id="1/8d" />
+          <part num="16" id="1/16d" />
+          <part num="17" id="1/32d" />
         </enum_float>
         <float id="syncnote2" def="0.0" />
         <float id="feedback2" def="50.0" unit="one:percent" />
@@ -103,21 +103,21 @@
       <visual name="AmpSimulator" />
       <params>
         <enum_float id="ampmodel" def="clean" enum_max="14" max="14" end_point="end">
-          <part val="0" id="clean" />
-          <part val="1" id="crunch" />
-          <part val="2" id="crunch_plus" />
-          <part val="3" id="lead" />
-          <part val="4" id="lead2" />
-          <part val="5" id="modern" />
-          <part val="6" id="american_clean" />
-          <part val="7" id="american_crunch" />
-          <part val="8" id="jazz" />
-          <part val="9" id="bass_woman" />
-          <part val="10" id="1_tube" />
-          <part val="11" id="2_tubes" />
-          <part val="12" id="3_tubes" />
-          <part val="13" id="broken_tube" />
-          <part val="14" id="none" />
+          <part num="0" id="clean" />
+          <part num="1" id="crunch" />
+          <part num="2" id="crunch_plus" />
+          <part num="3" id="lead" />
+          <part num="4" id="lead2" />
+          <part num="5" id="modern" />
+          <part num="6" id="american_clean" />
+          <part num="7" id="american_crunch" />
+          <part num="8" id="jazz" />
+          <part num="9" id="bass_woman" />
+          <part num="10" id="1_tube" />
+          <part num="11" id="2_tubes" />
+          <part num="12" id="3_tubes" />
+          <part num="13" id="broken_tube" />
+          <part num="14" id="none" />
         </enum_float>
         <float id="drive" def="5.0" />
         <float id="bass" def="5.0" />
@@ -126,17 +126,17 @@
         <float id="presence" def="5.0" />
         <float id="volume" def="5.0" />
         <enum_float id="speakertype" def="cab_2" enum_max="10" max="10" end_point="end">
-          <part val="0" id="cab_1" />
-          <part val="1" id="cab_2" />
-          <part val="2" id="cab_3" />
-          <part val="3" id="cab_4" />
-          <part val="4" id="cab_5" />
-          <part val="5" id="cab_6" />
-          <part val="6" id="cab_7" />
-          <part val="7" id="cab_8" />
-          <part val="8" id="cab_9" />
-          <part val="9" id="cab_10" />
-          <part val="10" id="none" />
+          <part num="0" id="cab_1" />
+          <part num="1" id="cab_2" />
+          <part num="2" id="cab_3" />
+          <part num="3" id="cab_4" />
+          <part num="4" id="cab_5" />
+          <part num="5" id="cab_6" />
+          <part num="6" id="cab_7" />
+          <part num="7" id="cab_8" />
+          <part num="8" id="cab_9" />
+          <part num="9" id="cab_10" />
+          <part num="10" id="none" />
         </enum_float>
         <float id="damplo" def="5.0" unit="one:percent" />
         <float id="damphi" def="50.0" unit="one:percent" />
@@ -166,9 +166,9 @@
         <float id="scon" def="1.0" />
         <float id="sclisten" def="0.0" />
         <enum_float id="filtertype" def="bandpass" enum_max="2" max="2" end_point="end">
-          <part val="0" id="lowpass" />
-          <part val="1" id="bandpass" />
-          <part val="2" id="highpass" />
+          <part num="0" id="lowpass" />
+          <part num="1" id="bandpass" />
+          <part num="2" id="highpass" />
         </enum_float>
         <float id="centerfreq" def="500.0" unit="freq:hz"/>
         <float id="qfactor" def="0.1" unit="filtband:q"/>
@@ -244,24 +244,24 @@
       <params>
         <float id="rate" def="1.0" unit="freq:hz"/>
         <enum_float id="temposync" def="1/1" enum_max="17" max="17" end_point="end">
-          <part val="0" id="1/1" />
-          <part val="1" id="1/2" />
-          <part val="2" id="1/4" />
-          <part val="3" id="1/8" />
-          <part val="4" id="1/16" />
-          <part val="5" id="1/32" />
-          <part val="6" id="1/1t" />
-          <part val="7" id="1/2t" />
-          <part val="8" id="1/4t" />
-          <part val="9" id="1/8t" />
-          <part val="10" id="1/16t" />
-          <part val="11" id="1/32t" />
-          <part val="12" id="1/1d" />
-          <part val="13" id="1/2d" />
-          <part val="14" id="1/4d" />
-          <part val="15" id="1/8d" />
-          <part val="16" id="1/16d" />
-          <part val="17" id="1/32d" />
+          <part num="0" id="1/1" />
+          <part num="1" id="1/2" />
+          <part num="2" id="1/4" />
+          <part num="3" id="1/8" />
+          <part num="4" id="1/16" />
+          <part num="5" id="1/32" />
+          <part num="6" id="1/1t" />
+          <part num="7" id="1/2t" />
+          <part num="8" id="1/4t" />
+          <part num="9" id="1/8t" />
+          <part num="10" id="1/16t" />
+          <part num="11" id="1/32t" />
+          <part num="12" id="1/1d" />
+          <part num="13" id="1/2d" />
+          <part num="14" id="1/4d" />
+          <part num="15" id="1/8d" />
+          <part num="16" id="1/16d" />
+          <part num="17" id="1/32d" />
         </enum_float>
         <float id="syncnote" def="0.0" />
         <float id="width" def="75.0" unit="one:percent" />
@@ -275,24 +275,24 @@
         <float id="mix" def="50.0" unit="one:percent" />
         <float id="rate" def="0.1" unit="freq:hz"/>
         <enum_float id="temposync" def="1/1" enum_max="17" max="17" end_point="end">
-          <part val="0" id="1/1" />
-          <part val="1" id="1/2" />
-          <part val="2" id="1/4" />
-          <part val="3" id="1/8" />
-          <part val="4" id="1/16" />
-          <part val="5" id="1/32" />
-          <part val="6" id="1/1t" />
-          <part val="7" id="1/2t" />
-          <part val="8" id="1/4t" />
-          <part val="9" id="1/8t" />
-          <part val="10" id="1/16t" />
-          <part val="11" id="1/32t" />
-          <part val="12" id="1/1d" />
-          <part val="13" id="1/2d" />
-          <part val="14" id="1/4d" />
-          <part val="15" id="1/8d" />
-          <part val="16" id="1/16d" />
-          <part val="17" id="1/32d" />
+          <part num="0" id="1/1" />
+          <part num="1" id="1/2" />
+          <part num="2" id="1/4" />
+          <part num="3" id="1/8" />
+          <part num="4" id="1/16" />
+          <part num="5" id="1/32" />
+          <part num="6" id="1/1t" />
+          <part num="7" id="1/2t" />
+          <part num="8" id="1/4t" />
+          <part num="9" id="1/8t" />
+          <part num="10" id="1/16t" />
+          <part num="11" id="1/32t" />
+          <part num="12" id="1/1d" />
+          <part num="13" id="1/2d" />
+          <part num="14" id="1/4d" />
+          <part num="15" id="1/8d" />
+          <part num="16" id="1/16d" />
+          <part num="17" id="1/32d" />
         </enum_float>
         <float id="syncnote" def="0.0" />
         <float id="width" def="10.0" unit="one:percent" />
@@ -310,24 +310,24 @@
         <float id="mix" def="50.0" unit="one:percent" />
         <float id="rate" def="1.0" unit="freq:hz"/>
         <enum_float id="temposync" def="1/1" enum_max="17" max="17" end_point="end">
-          <part val="0" id="1/1" />
-          <part val="1" id="1/2" />
-          <part val="2" id="1/4" />
-          <part val="3" id="1/8" />
-          <part val="4" id="1/16" />
-          <part val="5" id="1/32" />
-          <part val="6" id="1/1t" />
-          <part val="7" id="1/2t" />
-          <part val="8" id="1/4t" />
-          <part val="9" id="1/8t" />
-          <part val="10" id="1/16t" />
-          <part val="11" id="1/32t" />
-          <part val="12" id="1/1d" />
-          <part val="13" id="1/2d" />
-          <part val="14" id="1/4d" />
-          <part val="15" id="1/8d" />
-          <part val="16" id="1/16d" />
-          <part val="17" id="1/32d" />
+          <part num="0" id="1/1" />
+          <part num="1" id="1/2" />
+          <part num="2" id="1/4" />
+          <part num="3" id="1/8" />
+          <part num="4" id="1/16" />
+          <part num="5" id="1/32" />
+          <part num="6" id="1/1t" />
+          <part num="7" id="1/2t" />
+          <part num="8" id="1/4t" />
+          <part num="9" id="1/8t" />
+          <part num="10" id="1/16t" />
+          <part num="11" id="1/32t" />
+          <part num="12" id="1/1d" />
+          <part num="13" id="1/2d" />
+          <part num="14" id="1/4d" />
+          <part num="15" id="1/8d" />
+          <part num="16" id="1/16d" />
+          <part num="17" id="1/32d" />
         </enum_float>
         <float id="syncnote" def="0.0" />
         <float id="rangeLo" def="50.0" unit="one:percent" />
@@ -349,24 +349,24 @@
         <float id="mix" def="50.0" unit="one:percent" />
         <float id="rate" def="1.0" unit="freq:hz"/>
         <enum_float id="temposync" def="1/1" enum_max="17" max="17" end_point="end">
-          <part val="0" id="1/1" />
-          <part val="1" id="1/2" />
-          <part val="2" id="1/4" />
-          <part val="3" id="1/8" />
-          <part val="4" id="1/16" />
-          <part val="5" id="1/32" />
-          <part val="6" id="1/1t" />
-          <part val="7" id="1/2t" />
-          <part val="8" id="1/4t" />
-          <part val="9" id="1/8t" />
-          <part val="10" id="1/16t" />
-          <part val="11" id="1/32t" />
-          <part val="12" id="1/1d" />
-          <part val="13" id="1/2d" />
-          <part val="14" id="1/4d" />
-          <part val="15" id="1/8d" />
-          <part val="16" id="1/16d" />
-          <part val="17" id="1/32d" />
+          <part num="0" id="1/1" />
+          <part num="1" id="1/2" />
+          <part num="2" id="1/4" />
+          <part num="3" id="1/8" />
+          <part num="4" id="1/16" />
+          <part num="5" id="1/32" />
+          <part num="6" id="1/1t" />
+          <part num="7" id="1/2t" />
+          <part num="8" id="1/4t" />
+          <part num="9" id="1/8t" />
+          <part num="10" id="1/16t" />
+          <part num="11" id="1/32t" />
+          <part num="12" id="1/1d" />
+          <part num="13" id="1/2d" />
+          <part num="14" id="1/4d" />
+          <part num="15" id="1/8d" />
+          <part num="16" id="1/16d" />
+          <part num="17" id="1/32d" />
         </enum_float>
         <float id="syncnote" def="0.0" />
         <float id="width" def="50.0" unit="one:percent" />
@@ -412,24 +412,24 @@
       <params>
         <float id="rate" def="8.0" unit="freq:hz" />
         <enum_float id="temposync" def="1/1" enum_max="17" max="17" end_point="end">
-          <part val="0" id="1/1" />
-          <part val="1" id="1/2" />
-          <part val="2" id="1/4" />
-          <part val="3" id="1/8" />
-          <part val="4" id="1/16" />
-          <part val="5" id="1/32" />
-          <part val="6" id="1/1t" />
-          <part val="7" id="1/2t" />
-          <part val="8" id="1/4t" />
-          <part val="9" id="1/8t" />
-          <part val="10" id="1/16t" />
-          <part val="11" id="1/32t" />
-          <part val="12" id="1/1d" />
-          <part val="13" id="1/2d" />
-          <part val="14" id="1/4d" />
-          <part val="15" id="1/8d" />
-          <part val="16" id="1/16d" />
-          <part val="17" id="1/32d" />
+          <part num="0" id="1/1" />
+          <part num="1" id="1/2" />
+          <part num="2" id="1/4" />
+          <part num="3" id="1/8" />
+          <part num="4" id="1/16" />
+          <part num="5" id="1/32" />
+          <part num="6" id="1/1t" />
+          <part num="7" id="1/2t" />
+          <part num="8" id="1/4t" />
+          <part num="9" id="1/8t" />
+          <part num="10" id="1/16t" />
+          <part num="11" id="1/32t" />
+          <part num="12" id="1/1d" />
+          <part num="13" id="1/2d" />
+          <part num="14" id="1/4d" />
+          <part num="15" id="1/8d" />
+          <part num="16" id="1/16d" />
+          <part num="17" id="1/32d" />
         </enum_float>
         <float id="syncnote" def="0.0" />
         <float id="depth" def="75.0" unit="one:percent" />
@@ -443,24 +443,24 @@
       <params>
         <float id="rate" def="1.0" unit="freq:hz" />
         <enum_float id="temposync" def="1/1" enum_max="17" max="17" end_point="end">
-          <part val="0" id="1/1" />
-          <part val="1" id="1/2" />
-          <part val="2" id="1/4" />
-          <part val="3" id="1/8" />
-          <part val="4" id="1/16" />
-          <part val="5" id="1/32" />
-          <part val="6" id="1/1t" />
-          <part val="7" id="1/2t" />
-          <part val="8" id="1/4t" />
-          <part val="9" id="1/8t" />
-          <part val="10" id="1/16t" />
-          <part val="11" id="1/32t" />
-          <part val="12" id="1/1d" />
-          <part val="13" id="1/2d" />
-          <part val="14" id="1/4d" />
-          <part val="15" id="1/8d" />
-          <part val="16" id="1/16d" />
-          <part val="17" id="1/32d" />
+          <part num="0" id="1/1" />
+          <part num="1" id="1/2" />
+          <part num="2" id="1/4" />
+          <part num="3" id="1/8" />
+          <part num="4" id="1/16" />
+          <part num="5" id="1/32" />
+          <part num="6" id="1/1t" />
+          <part num="7" id="1/2t" />
+          <part num="8" id="1/4t" />
+          <part num="9" id="1/8t" />
+          <part num="10" id="1/16t" />
+          <part num="11" id="1/32t" />
+          <part num="12" id="1/1d" />
+          <part num="13" id="1/2d" />
+          <part num="14" id="1/4d" />
+          <part num="15" id="1/8d" />
+          <part num="16" id="1/16d" />
+          <part num="17" id="1/32d" />
         </enum_float>
         <float id="syncnote" def="0.0" />
         <float id="depth" def="75.0" unit="one:percent" />
