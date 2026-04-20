@@ -1684,14 +1684,14 @@
       <visual name="Graphic EQ" color="#AEA69B" />
       <data uniqueId="1921617421" />
       <params>
-        <float id="gainAt100Hz" max="15" min="-15" />
-        <float id="gainAt1600Hz" max="15" min="-15" />
-        <float id="gainAt200Hz" max="15" min="-15" />
-        <float id="gainAt3200Hz" max="15" min="-15" />
-        <float id="gainAt400Hz" max="15" min="-15" />
-        <float id="gainAt6400Hz" max="15" min="-15" />
-        <float id="gainAt800Hz" max="15" min="-15" />
-        <float id="level" max="15" min="-15" />
+        <float id="gainAt100Hz" max="15" min="-15" unit="decibel"/>
+        <float id="gainAt1600Hz" max="15" min="-15" unit="decibel"/>
+        <float id="gainAt200Hz" max="15" min="-15" unit="decibel"/>
+        <float id="gainAt3200Hz" max="15" min="-15" unit="decibel"/>
+        <float id="gainAt400Hz" max="15" min="-15" unit="decibel"/>
+        <float id="gainAt6400Hz" max="15" min="-15" unit="decibel"/>
+        <float id="gainAt800Hz" max="15" min="-15" unit="decibel"/>
+        <float id="level" max="15" min="-15" unit="decibel"/>
       </params>
     </object>
     <object id="rossCompr">
@@ -1760,7 +1760,7 @@
       <visual name="VibeToo" color="#020039" />
       <data uniqueId="111561704" />
       <params>
-        <float id="amount" def="30" max="100" />
+        <float id="amount" def="30" max="100" unit="one:percent"/>
         <float id="speed" def="3.17" max="20" min="0.2" />
       </params>
     </object>
@@ -1771,9 +1771,9 @@
         <float id="delayTimeMsec" def="0.45" max="2.6" min="0.01" />
         <float id="dry" def="1" />
         <float id="feedback" def="0.1" max="0.5" />
-        <float id="hpf" def="50" max="1200" min="50" />
-        <float id="level" max="12" min="-12" />
-        <float id="lpf" def="16000" max="16000" min="1200" />
+        <float id="hpf" def="50" max="1200" min="50" unit="freq:hz"/>
+        <float id="level" max="12" min="-12" unit="decibel"/>
+        <float id="lpf" def="16000" max="16000" min="1200" unit="freq:hz"/>
         <float id="spread" def="0.5" />
         <float id="wet" def="0.5" />
       </params>
@@ -1786,7 +1786,7 @@
       <visual name="Filter Echo +" />
       <data uniqueId="412590923" />
       <params>
-        <float id="cutoff" def="12000" max="16000" min="300" />
+        <float id="cutoff" def="12000" max="16000" min="300" unit="freq:hz"/>
         <float id="delayTime" def="0.2" />
         <float id="dryWetMix" def="0.4" />
         <float id="feedback" def="0.204" max="0.85" />
@@ -1800,7 +1800,7 @@
       <visual name="Ping Pong Delay" />
       <data uniqueId="1621808342" />
       <params>
-        <float id="cutoff" def="9000" max="16000" min="300" />
+        <float id="cutoff" def="9000" max="16000" min="300" unit="freq:hz"/>
         <float id="delayOffsetSec" def="0.35" />
         <float id="delayTimeSec" def="0.7" />
         <float id="dryWetMix" def="0.7" />
@@ -1821,9 +1821,9 @@
         <float id="clipperMix" def="0.65" />
         <float id="crush" def="12" max="16" min="2" />
         <float id="effectMix" def="0.5" />
-        <float id="fidelity" def="-20" max="20" min="-20" />
-        <float id="inputGain" max="20" min="-20" />
-        <float id="outputGain" def="-6" max="20" min="-20" />
+        <float id="fidelity" def="-20" max="20" min="-20" unit="decibel"/>
+        <float id="inputGain" max="20" min="-20" unit="decibel"/>
+        <float id="outputGain" def="-6" max="20" min="-20" unit="decibel"/>
       </params>
       <datavals>
         <string id="emulation" def="true" />
@@ -1844,28 +1844,28 @@
       <params>
         <float id="amount" def="3.5" max="10" />
         <float id="outputGain" def="4.5" max="10" />
-        <float id="tone" def="1800" max="16000" min="250" />
+        <float id="tone" def="1800" max="16000" min="250" unit="freq:hz"/>
       </params>
     </object>
     <object id="exciter">
       <visual name="Exciter" />
       <data uniqueId="1643173503" />
       <params>
-        <float id="harmonics" def="50" max="100" />
+        <float id="harmonics" def="50" max="100" unit="one:percent"/>
         <float id="mix" max="0" min="-30" />
-        <float id="threshold" def="-5" max="0" min="-30" />
-        <float id="tune" def="3500" max="7000" min="1000" />
+        <float id="threshold" def="-5" max="0" min="-30" unit="decibel"/>
+        <float id="tune" def="3500" max="7000" min="1000" unit="freq:hz"/>
       </params>
     </object>
     <object id="tapeSimulator">
       <visual name="Tape Simulator" />
       <data uniqueId="1046885364" />
       <params>
-        <float id="bias" def="80" max="100" />
+        <float id="bias" def="80" max="100" unit="one:percent"/>
         <float id="drive" def="8.1" max="18" />
         <float id="level" def="-1" max="15" min="-15" />
         <float id="speed" def="12.97" max="30" min="3.8" />
-        <float id="wow" def="30" max="100" />
+        <float id="wow" def="30" max="100" unit="one:percent"/>
       </params>
     </object>
     <object id="enhancer">
@@ -1895,9 +1895,9 @@
       <visual name="Compander" />
       <data uniqueId="838898716" />
       <params>
-        <float id="comprThreshold" def="-18" max="40" min="-30" />
-        <float id="expThreshold" def="-40" max="-30" min="-90" />
-        <float id="makeupGain" def="3" max="20" min="-20" />
+        <float id="comprThreshold" def="-18" max="40" min="-30" unit="decibel"/>
+        <float id="expThreshold" def="-40" max="-30" min="-90" unit="decibel"/>
+        <float id="makeupGain" def="3" max="20" min="-20" unit="decibel"/>
       </params>
       <datavals>
         <string id="mode" def="dynamic" />
@@ -1907,19 +1907,19 @@
       <visual name="DeEsser" />
       <data uniqueId="2011042226" />
       <params>
-        <float id="frequency" def="9000" max="16000" min="1000" />
-        <float id="threshold" def="-19" max="0" min="-40" />
+        <float id="frequency" def="9000" max="16000" min="1000" unit="freq:hz"/>
+        <float id="threshold" def="-19" max="0" min="-40" unit="decibel"/>
       </params>
     </object>
     <object id="compressor">
       <visual name="DIGI Comp" />
       <data uniqueId="1154233578" />
       <params>
-        <float id="attack" def="0.018" min="0.001" />
-        <float id="knee" def="6" max="20" />
+        <float id="attack" def="0.018" min="0.001" unit="time:seconds"/>
+        <float id="knee" def="6" max="20" unit="decibel"/>
         <float id="ratio" def="12.1" max="20" min="1" />
-        <float id="release" def="0.222" min="0.001" />
-        <float id="threshold" def="-17.5" max="0" min="-60" />
+        <float id="release" def="0.222" min="0.001" unit="time:seconds"/>
+        <float id="threshold" def="-17.5" max="0" min="-60" unit="decibel"/>
       </params>
     </object>
     <object id="backCompr">
@@ -1982,11 +1982,11 @@
       <visual name="Vintage Limiter" />
       <data uniqueId="1668779751" />
       <params>
-        <float id="attack" def="0.001" max="0.001" min="0.0005" />
+        <float id="attack" def="0.001" max="0.001" min="0.0005" unit="time:seconds"/>
         <float id="enhance" max="8" min="-8" />
-        <float id="gain" max="18" min="-18" />
-        <float id="masterLevel" max="15" min="-15" />
-        <float id="release" def="0.5003" min="0.05" />
+        <float id="gain" max="18" min="-18" unit="decibel"/>
+        <float id="masterLevel" max="15" min="-15" unit="decibel"/>
+        <float id="release" def="0.5003" min="0.05" unit="time:seconds"/>
         <float id="softKnee" def="-5" max="0" min="-15" />
       </params>
     </object>
@@ -2033,11 +2033,11 @@
       <visual name="Auto Wah" />
       <data uniqueId="1212565802" />
       <params>
-        <float id="depth" def="35" max="100" />
-        <float id="filter" def="50" max="100" />
+        <float id="depth" def="35" max="100" unit="one:percent"/>
+        <float id="filter" def="50" max="100" unit="one:percent"/>
         <float id="outLevel" max="12" min="-40" />
         <float id="release" def="0.8" max="1.5" min="0.06" />
-        <float id="sensitivity" def="35" max="100" />
+        <float id="sensitivity" def="35" max="100" unit="one:percent"/>
         <float id="speed" def="9.936" max="22.2" min="0.3" />
       </params>
       <datavals>
@@ -2125,7 +2125,7 @@
       <visual name="Space Maker" />
       <data uniqueId="1374318591" />
       <params>
-        <float id="dampening" def="7500" max="16000" min="250" />
+        <float id="dampening" def="7500" max="16000" min="250" unit="freq:hz"/>
         <float id="dryWetMix" def="0.1" />
         <float id="roomSize" def="8" max="10" />
         <float id="spread" def="3" max="10" />
@@ -2138,7 +2138,7 @@
       <visual name="Spring Reverb" />
       <data uniqueId="495073626" />
       <params>
-        <float id="intensity" def="20" max="100" />
+        <float id="intensity" def="20" max="100" unit="one:percent"/>
       </params>
       <datavals>
         <string id="mode" def="medium" />
@@ -2235,13 +2235,13 @@
       <visual name="D-Delay" />
       <data uniqueId="296505561" />
       <params>
-        <float id="dry" def="100" max="100" />
+        <float id="dry" def="100" max="100" unit="one:percent"/>
         <float id="hpf" def="1200" max="1200" min="50" />
         <float id="level" max="12" min="-12" />
-        <float id="lpf" def="6500" max="16000" min="1200" />
-        <float id="regen" def="25" max="100" />
+        <float id="lpf" def="6500" max="16000" min="1200" unit="freq:hz"/>
+        <float id="regen" def="25" max="100" unit="one:percent"/>
         <float id="time" def="1" max="2.6" min="0.01" />
-        <float id="wet" def="20" max="100" />
+        <float id="wet" def="20" max="100" unit="one:percent"/>
       </params>
     </object>
     <object id="visualEq">
