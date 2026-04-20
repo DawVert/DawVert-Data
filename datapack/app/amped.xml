@@ -12,7 +12,7 @@
       <visual name="Chorus" />
       <params>
         <float id="delayLfoDepth" def="0.15" />
-        <float id="delayLfoRateHz" def="0.7585" max="5" min="0.01" />
+        <float id="delayLfoRateHz" def="0.7585" max="5" min="0.01" unit="freq:hz"/>
         <float id="mix" def="0.85" />
         <float id="tone" def="0.2" />
       </params>
@@ -20,22 +20,22 @@
     <object id="Compressor">
       <visual name="Compressor" />
       <params>
-        <float id="attackTimeMS" def="9" max="300" />
+        <float id="attackTimeMS" def="9" max="300" unit="time:ms"/>
         <float id="circuitMode" def="1" />
         <float id="detectMode" def="1" />
         <float id="filterActive" def="1" />
         <float id="filterAudition" />
-        <float id="filterFrequency" def="2018" max="20000" min="20" />
-        <float id="filterGainDB" max="60" />
+        <float id="filterFrequency" def="2018" max="20000" min="20" unit="freq:hz"/>
+        <float id="filterGainDB" max="60" unit="decibel"/>
         <float id="filterMode" max="2" />
         <float id="filterQ" def="0.05" min="0.05" />
-        <float id="lookaheadTimeMS" max="10" />
-        <float id="postGainDB" def="2.16" max="24" />
-        <float id="preGainDB" max="24" min="-12" />
+        <float id="lookaheadTimeMS" max="10" unit="time:ms"/>
+        <float id="postGainDB" def="2.16" max="24" unit="decibel"/>
+        <float id="preGainDB" max="24" min="-12" unit="decibel"/>
         <float id="ratio" def="4.04" max="20" min="1" />
-        <float id="releaseTimeMS" def="200" max="5000" />
+        <float id="releaseTimeMS" def="200" max="5000" unit="time:ms"/>
         <float id="softKneeWidth" />
-        <float id="thresholdDB" def="-19.2" max="0" min="-60" />
+        <float id="thresholdDB" def="-19.2" max="0" min="-60" unit="decibel"/>
       </params>
     </object>
     <object id="CompressorMini">
@@ -64,8 +64,8 @@
         <float id="intensity" def="0.4" />
         <float id="mix" def="1" />
         <float id="mode" def="3" max="10" />
-        <float id="postGainDB" def="-3" max="30" min="-30" />
-        <float id="preGainDB" def="12" max="30" min="-30" />
+        <float id="postGainDB" def="-3" max="30" min="-30" unit="decibel"/>
+        <float id="preGainDB" def="12" max="30" min="-30" unit="decibel"/>
         <float id="tone" def="1" />
       </params>
     </object>
@@ -75,55 +75,55 @@
     <object id="Equalizer">
       <visual name="Equalizer Mini" />
       <params>
-        <float id="hpfreq" def="20" max="10000" min="20" />
-        <float id="lpfreq" def="10000" max="10000" min="20" />
-        <float id="peakfreq" def="2000" max="10000" min="20" />
-        <float id="peakgain" max="48" min="-96" />
-        <float id="peakq" def="1" max="10" min="0.5" />
+        <float id="hpfreq" def="20" max="10000" min="20" unit="freq:hz"/>
+        <float id="lpfreq" def="10000" max="10000" min="20" unit="freq:hz"/>
+        <float id="peakfreq" def="2000" max="10000" min="20" unit="freq:hz"/>
+        <float id="peakgain" max="48" min="-96" unit="decibel"/>
+        <float id="peakq" def="1" max="10" min="0.5" unit="filtband:q"/>
       </params>
     </object>
     <object id="EqualizerPro">
       <visual name="Equalizer" />
       <params>
         <float id="filter/1/active" />
-        <float id="filter/1/freq" def="60" max="20000" min="20" />
-        <float id="filter/1/gain" max="24" min="-24" />
-        <float id="filter/1/q" def="0.71" max="40" min="0.1" />
+        <float id="filter/1/freq" def="60" max="20000" min="20" unit="freq:hz"/>
+        <float id="filter/1/gain" max="24" min="-24" unit="decibel"/>
+        <float id="filter/1/q" def="0.71" max="40" min="0.1" unit="filtband:q"/>
         <float id="filter/1/type" def="1" max="4" />
         <float id="filter/2/active" />
-        <float id="filter/2/freq" def="120" max="20000" min="20" />
-        <float id="filter/2/gain" max="24" min="-24" />
-        <float id="filter/2/q" def="0.71" max="40" min="0.1" />
+        <float id="filter/2/freq" def="120" max="20000" min="20" unit="freq:hz"/>
+        <float id="filter/2/gain" max="24" min="-24" unit="decibel"/>
+        <float id="filter/2/q" def="0.71" max="40" min="0.1" unit="filtband:q"/>
         <float id="filter/2/type" def="3" max="4" />
         <float id="filter/3/active" />
-        <float id="filter/3/freq" def="400" max="20000" min="20" />
-        <float id="filter/3/gain" max="24" min="-24" />
-        <float id="filter/3/q" def="0.71" max="40" min="0.1" />
+        <float id="filter/3/freq" def="400" max="20000" min="20" unit="freq:hz"/>
+        <float id="filter/3/gain" max="24" min="-24" unit="decibel"/>
+        <float id="filter/3/q" def="0.71" max="40" min="0.1" unit="filtband:q"/>
         <float id="filter/3/type" max="4" />
         <float id="filter/4/active" />
-        <float id="filter/4/freq" def="1200" max="20000" min="20" />
-        <float id="filter/4/gain" max="24" min="-24" />
-        <float id="filter/4/q" def="0.71" max="40" min="0.1" />
+        <float id="filter/4/freq" def="1200" max="20000" min="20" unit="freq:hz"/>
+        <float id="filter/4/gain" max="24" min="-24" unit="decibel"/>
+        <float id="filter/4/q" def="0.71" max="40" min="0.1" unit="filtband:q"/>
         <float id="filter/4/type" max="4" />
         <float id="filter/5/active" />
-        <float id="filter/5/freq" def="3000" max="20000" min="20" />
-        <float id="filter/5/gain" max="24" min="-24" />
-        <float id="filter/5/q" def="0.71" max="40" min="0.1" />
+        <float id="filter/5/freq" def="3000" max="20000" min="20" unit="freq:hz"/>
+        <float id="filter/5/gain" max="24" min="-24" unit="decibel"/>
+        <float id="filter/5/q" def="0.71" max="40" min="0.1" unit="filtband:q"/>
         <float id="filter/5/type" max="4" />
         <float id="filter/6/active" />
-        <float id="filter/6/freq" def="6000" max="20000" min="20" />
-        <float id="filter/6/gain" max="24" min="-24" />
-        <float id="filter/6/q" def="0.71" max="40" min="0.1" />
+        <float id="filter/6/freq" def="6000" max="20000" min="20" unit="freq:hz"/>
+        <float id="filter/6/gain" max="24" min="-24" unit="decibel"/>
+        <float id="filter/6/q" def="0.71" max="40" min="0.1" unit="filtband:q"/>
         <float id="filter/6/type" max="4" />
         <float id="filter/7/active" />
-        <float id="filter/7/freq" def="9000" max="20000" min="20" />
-        <float id="filter/7/gain" max="24" min="-24" />
-        <float id="filter/7/q" def="0.71" max="40" min="0.1" />
+        <float id="filter/7/freq" def="9000" max="20000" min="20" unit="freq:hz"/>
+        <float id="filter/7/gain" max="24" min="-24" unit="decibel"/>
+        <float id="filter/7/q" def="0.71" max="40" min="0.1" unit="filtband:q"/>
         <float id="filter/7/type" def="4" max="4" />
         <float id="filter/8/active" min="1" />
-        <float id="filter/8/freq" def="15000" max="20000" min="20" />
-        <float id="filter/8/gain" max="24" min="-24" />
-        <float id="filter/8/q" def="0.71" max="40" min="0.1" />
+        <float id="filter/8/freq" def="15000" max="20000" min="20" unit="freq:hz"/>
+        <float id="filter/8/gain" max="24" min="-24" unit="decibel"/>
+        <float id="filter/8/q" def="0.71" max="40" min="0.1" unit="filtband:q"/>
         <float id="filter/8/type" def="2" max="4" />
         <float id="postGain" max="24" />
       </params>
@@ -131,30 +131,30 @@
     <object id="Expander">
       <visual name="Expander" />
       <params>
-        <float id="attackTimeMS" max="300" />
+        <float id="attackTimeMS" max="300" unit="time:ms"/>
         <float id="circuitMode" def="1" />
         <float id="detectMode" />
         <float id="filterActive" />
         <float id="filterAudition" />
-        <float id="filterFrequency" def="200" max="20000" min="20" />
-        <float id="filterGainDB" max="60" />
+        <float id="filterFrequency" def="200" max="20000" min="20" unit="freq:hz"/>
+        <float id="filterGainDB" max="60" unit="decibel"/>
         <float id="filterMode" def="2" max="2" />
         <float id="filterQ" />
-        <float id="lookaheadTimeMS" max="10" />
-        <float id="postGainDB" max="24" />
-        <float id="preGainDB" max="24" min="-12" />
+        <float id="lookaheadTimeMS" max="10" unit="time:ms"/>
+        <float id="postGainDB" max="24" unit="decibel"/>
+        <float id="preGainDB" max="24" min="-12" unit="decibel"/>
         <float id="ratio" def="2" max="20" min="1" />
-        <float id="releaseTimeMS" def="150" max="5000" />
+        <float id="releaseTimeMS" def="150" max="5000" unit="time:ms"/>
         <float id="softKneeWidth" />
-        <float id="thresholdDB" def="-60" max="0" min="-60" />
+        <float id="thresholdDB" def="-60" max="0" min="-60" unit="decibel"/>
       </params>
     </object>
     <object id="Flanger">
       <visual name="Flanger" />
       <params>
         <float id="delayLfoDepth" def="0.75" />
-        <float id="delayLfoRateHz" def="1.0579" max="5" min="0.01" />
-        <float id="delayTimeMS" def="4" max="10" min="2" />
+        <float id="delayLfoRateHz" def="1.0579" max="5" min="0.01" unit="freq:hz"/>
+        <float id="delayTimeMS" def="4" max="10" min="2" unit="time:ms"/>
         <float id="mix" def="1" />
         <float id="tone" def="0.3" />
         <float id="voices" def="2" max="3" min="1" />
@@ -164,22 +164,22 @@
       <visual name="Gate" />
       <params>
         <float id="attackCurve" />
-        <float id="attackTimeMS" max="300" />
+        <float id="attackTimeMS" max="300" unit="time:ms"/>
         <float id="circuitMode" def="1" />
         <float id="detectMode" />
         <float id="filterActive" />
         <float id="filterAudition" />
-        <float id="filterFrequency" def="200" max="20000" min="20" />
-        <float id="filterGainDB" max="60" />
+        <float id="filterFrequency" def="200" max="20000" min="20" unit="freq:hz"/>
+        <float id="filterGainDB" max="60" unit="decibel"/>
         <float id="filterMode" def="2" max="2" />
         <float id="filterQ" />
-        <float id="hysteresisDB" max="0" min="-24" />
-        <float id="lookaheadTimeMS" max="10" />
-        <float id="postGainDB" max="24" />
-        <float id="preGainDB" max="24" min="-12" />
+        <float id="hysteresisDB" max="0" min="-24" unit="decibel"/>
+        <float id="lookaheadTimeMS" max="10" unit="time:ms"/>
+        <float id="postGainDB" max="24" unit="decibel"/>
+        <float id="preGainDB" max="24" min="-12" unit="decibel"/>
         <float id="releaseCurve" />
-        <float id="releaseTimeMS" def="50" max="5000" />
-        <float id="thresholdDB" def="-90" max="0" min="-90" />
+        <float id="releaseTimeMS" def="50" max="5000" unit="time:ms"/>
+        <float id="thresholdDB" def="-90" max="0" min="-90" unit="decibel"/>
       </params>
     </object>
     <object id="Granny">
@@ -235,29 +235,29 @@
     <object id="Limiter">
       <visual name="Limiter" />
       <params>
-        <float id="attackTimeMS" max="300" />
+        <float id="attackTimeMS" max="300" unit="time:ms"/>
         <float id="circuitMode" def="1" />
         <float id="detectMode" />
         <float id="filterActive" />
         <float id="filterAudition" />
-        <float id="filterFrequency" def="200" max="20000" min="20" />
-        <float id="filterGainDB" max="60" />
+        <float id="filterFrequency" def="200" max="20000" min="20" unit="freq:hz"/>
+        <float id="filterGainDB" max="60" unit="decibel"/>
         <float id="filterMode" def="2" max="2" />
         <float id="filterQ" />
-        <float id="lookaheadTimeMS" max="10" />
-        <float id="postGainDB" max="24" />
-        <float id="preGainDB" max="24" min="-12" />
-        <float id="releaseTimeMS" def="200" max="5000" />
-        <float id="thresholdDB" max="0" min="-60" />
+        <float id="lookaheadTimeMS" max="10" unit="time:ms"/>
+        <float id="postGainDB" max="24" unit="decibel"/>
+        <float id="preGainDB" max="24" min="-12" unit="decibel"/>
+        <float id="releaseTimeMS" def="200" max="5000" unit="time:ms"/>
+        <float id="thresholdDB" max="0" min="-60" unit="decibel"/>
       </params>
     </object>
     <object id="LimiterMini">
       <visual name="Limiter Mini" />
       <params>
-        <float id="postGainDB" max="24" />
-        <float id="preGainDB" max="24" min="-12" />
-        <float id="releaseTimeMS" def="200" max="5000" min="200" />
-        <float id="thresholdDB" max="0" min="-60" />
+        <float id="postGainDB" max="24" unit="decibel"/>
+        <float id="preGainDB" max="24" min="-12" unit="decibel"/>
+        <float id="releaseTimeMS" def="200" max="5000" min="200" unit="time:ms"/>
+        <float id="thresholdDB" max="0" min="-60" unit="decibel"/>
       </params>
     </object>
     <object id="Phaser">
@@ -296,14 +296,14 @@
       <visual name="Tremolo" />
       <params>
         <float id="lfoADepth" def="1" />
-        <float id="lfoARateHz" def="3.004" max="5" min="0.01" />
+        <float id="lfoARateHz" def="3.004" max="5" min="0.01" unit="freq:hz"/>
       </params>
     </object>
     <object id="Vibrato">
       <visual name="Vibrato" />
       <params>
         <float id="delayLfoDepth" def="0.7" />
-        <float id="delayLfoRateHz" def="2.8044" max="5" min="0.01" />
+        <float id="delayLfoRateHz" def="2.8044" max="5" min="0.01" unit="freq:hz"/>
       </params>
     </object>
     <object id="Volt">

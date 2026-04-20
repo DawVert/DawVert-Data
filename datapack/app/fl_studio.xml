@@ -44,26 +44,26 @@
         </enum>
       </enum>
       <params>
-        <int id="osc1_coarse" name="Osc 1 coarse" max="24" min="-24" />
+        <int id="osc1_coarse" name="Osc 1 coarse" max="24" min="-24" unit="pitch:semitones"/>
         <int id="osc1_detune" name="Osc 1 stereo detune" max="50" min="-50" />
-        <int id="osc1_fine" name="Osc 1 fine" max="100" min="-100" />
+        <int id="osc1_fine" name="Osc 1 fine" max="100" min="-100" unit="pitch:cents"/>
         <bool id="osc1_invert" name="Osc 1 Invert" />
         <int id="osc1_mixlevel" name="Osc 1 Mix Level" max="128" />
         <int id="osc1_ofs" name="Osc 1 Offset" max="64" min="-64" />
         <int id="osc1_pan" name="Osc 1 Pan" max="64" min="-64" />
         <enum_int id="osc1_shape" name="Osc 1 Shape" source="shape" max="6" />
-        <int id="osc2_coarse" name="Osc 2 Coarse" max="24" min="-24" />
+        <int id="osc2_coarse" name="Osc 2 Coarse" max="24" min="-24" unit="pitch:semitones"/>
         <int id="osc2_detune" name="Osc 2 Detune" max="50" min="-50" />
-        <int id="osc2_fine" name="Osc 2 Fine" max="100" min="-100" />
+        <int id="osc2_fine" name="Osc 2 fine" max="100" min="-100" unit="pitch:cents"/>
         <bool id="osc2_invert" name="Osc 2 Invert" />
         <int id="osc2_mixlevel" name="Osc 2 Mix Level" max="128" />
         <int id="osc2_ofs" name="Osc 2 Offset" max="64" min="-64" />
         <int id="osc2_pan" name="Osc 2 Pan" max="64" min="-64" />
         <enum_int id="osc2_shape" name="Osc 2 Shape" source="shape" max="6" />
         <bool id="osc3_am" name="Osc 3 AM" />
-        <int id="osc3_coarse" name="Osc 3 Coarse" max="24" min="-24" />
+        <int id="osc3_coarse" name="Osc 3 Coarse" max="24" min="-24" unit="pitch:semitones"/>
         <int id="osc3_detune" name="Osc 3 Detune" max="50" min="-50" />
-        <int id="osc3_fine" name="Osc 3 Fine" max="100" min="-100" />
+        <int id="osc3_fine" name="Osc 3 fine" max="100" min="-100" unit="pitch:cents"/>
         <bool id="osc3_invert" name="Osc 3 Invert" />
         <int id="osc3_ofs" name="Osc 3 Offset" max="64" min="-64" />
         <int id="osc3_pan" name="Osc 3 Pan" max="64" min="-64" />
