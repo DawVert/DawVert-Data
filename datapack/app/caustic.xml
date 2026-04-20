@@ -38,9 +38,6 @@
       </params>
     </object>
     <object id="chorus">
-      <drumset id="wertfrew">
-        <visual />
-      </drumset>
       <visual name="Chorus" color="#8793d6" />
       <params>
         <float id="0" name="Rate" def="0.25" max="0.5" min="0.1" />
@@ -80,7 +77,12 @@
         <float id="0" name="Pre" def="3.97814" max="4.98382" />
         <float id="1" name="Amount" def="12.4155" max="20" min="1" />
         <float id="2" name="Post" def="0.1" />
-        <float id="3" name="Program" max="3" />
+        <enum_float id="3" name="Program" enum_max="3" max="3" end_point="start">
+          <part val="0" id="overdrive" />
+          <part val="1" id="saturate" />
+          <part val="2" id="foldback" />
+          <part val="3" id="fuzz" />
+        </enum_float>
       </params>
     </object>
     <object id="filter">

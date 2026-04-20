@@ -28,6 +28,31 @@
     </object>
     <object id="com.soundation.delay">
       <visual name="Delay" />
+      <enums>
+        <enum id="time_synced" max="20" end_point="end">
+          <part val="0" id="off" />
+          <part val="1" id="1/64" />
+          <part val="2" id="1/32t" />
+          <part val="3" id="1/64d" />
+          <part val="4" id="1/32" />
+          <part val="5" id="1/16t" />
+          <part val="6" id="1/32d" />
+          <part val="7" id="1/16" />
+          <part val="8" id="1/8t" />
+          <part val="9" id="1/16d" />
+          <part val="10" id="1/8" />
+          <part val="11" id="1/4t" />
+          <part val="12" id="1/8d" />
+          <part val="13" id="1/4" />
+          <part val="14" id="5/16" />
+          <part val="15" id="1/2t" />
+          <part val="16" id="1/4d" />
+          <part val="17" id="1/2" />
+          <part val="18" id="1t" />
+          <part val="19" id="1/2d" />
+          <part val="20" id="1" />
+        </enum>
+      </enum>
       <params>
         <float id="dry" def="1" />
         <float id="feedback" def="0.154" />

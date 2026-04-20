@@ -109,6 +109,17 @@
     </object>
     <object id="EQ">
       <visual name="EQ" />
+      <enums>
+        <enum id="shape" max="6" end_point="start">
+          <part val="0" id="peak" />
+          <part val="1" id="low_shelf" />
+          <part val="2" id="high_shelf" />
+          <part val="3" id="low_cut" />
+          <part val="4" id="high_cut" />
+          <part val="5" id="band_pass" />
+          <part val="6" id="notch" />
+        </enum>
+      </enum>
       <params>
         <float num="0" id="1_freq" def="40" max="18742.5" min="20.0" />
         <float num="1" id="1_q" def="0.4247425010840047" />
@@ -140,13 +151,13 @@
         <float num="27" id="7_active" def="1.0" />
         <float num="28" id="gain" def="0.5" />
         <float num="29" id="_" def="0.0" max="0.0" />
-        <float num="30" id="1_type" def="0.16666666666666666" />
-        <float num="31" id="2_type" def="0.0" />
-        <float num="32" id="3_type" def="0.0" />
-        <float num="33" id="4_type" def="0.0" />
-        <float num="34" id="5_type" def="0.0" />
-        <float num="35" id="6_type" def="0.0" />
-        <float num="36" id="7_type" def="0.3333333333333333" />
+        <enum_float num="30" id="1_type" source="shape" def="low_shelf" />
+        <enum_float num="31" id="2_type" source="shape" def="peak" />
+        <enum_float num="32" id="3_type" source="shape" def="peak" />
+        <enum_float num="33" id="4_type" source="shape" def="peak" />
+        <enum_float num="34" id="5_type" source="shape" def="peak" />
+        <enum_float num="35" id="6_type" source="shape" def="peak" />
+        <enum_float num="36" id="7_type" source="shape" def="high_shelf" />
       </params>
     </object>
     <object id="Phaser">

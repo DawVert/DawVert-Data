@@ -5,275 +5,351 @@
       <params>
         <bool id="phaseInvert" def="0" />
         <bool id="band0Enabled" def="0" />
-        <int id="band0Freq" def="80" min="20" max="20000" />
-        <float id="band0Q" def="0.707" min="0.1" max="2" />
+        <float id="band0Freq" def="80" min="20" max="20000" unit="freq:hz"/>
+        <float id="band0Q" def="0.707" min="0.1" max="2" unit="filtband:q"/>
         <bool id="band1Enabled" def="1" />
-        <int id="band1Freq" def="200" min="20" max="20000" />
-        <int id="band1Gain" def="0" min="-24" max="24" />
-        <int id="band1Q" def="1" min="0.1" max="18" />
-        <int id="band1Type" def="0" min="0" max="1" />
+        <float id="band1Freq" def="200" min="20" max="20000" unit="freq:hz"/>
+        <float id="band1Gain" def="0" min="-24" max="24" unit="decibel"/>
+        <float id="band1Q" def="1" min="0.1" max="18" unit="filtband:q"/>
+        <float id="band1Type" def="0" min="0" max="1" />
         <bool id="band2Enabled" def="1" />
-        <int id="band2Freq" def="500" min="20" max="20000" />
-        <int id="band2Gain" def="0" min="-24" max="24" />
-        <int id="band2Q" def="1" min="0.1" max="18" />
+        <float id="band2Freq" def="500" min="20" max="20000" unit="freq:hz"/>
+        <float id="band2Gain" def="0" min="-24" max="24" unit="decibel"/>
+        <float id="band2Q" def="1" min="0.1" max="18" unit="filtband:q"/>
         <bool id="band3Enabled" def="1" />
-        <int id="band3Freq" def="1000" min="20" max="20000" />
-        <int id="band3Gain" def="0" min="-24" max="24" />
-        <int id="band3Q" def="1" min="0.1" max="18" />
+        <float id="band3Freq" def="1000" min="20" max="20000" unit="freq:hz"/>
+        <float id="band3Gain" def="0" min="-24" max="24" unit="decibel"/>
+        <float id="band3Q" def="1" min="0.1" max="18" unit="filtband:q"/>
         <bool id="band4Enabled" def="1" />
-        <int id="band4Freq" def="3000" min="20" max="20000" />
-        <int id="band4Gain" def="0" min="-24" max="24" />
-        <int id="band4Q" def="1" min="0.1" max="18" />
+        <float id="band4Freq" def="3000" min="20" max="20000" unit="freq:hz"/>
+        <float id="band4Gain" def="0" min="-24" max="24" unit="decibel"/>
+        <float id="band4Q" def="1" min="0.1" max="18" unit="filtband:q"/>
         <bool id="band5Enabled" def="1" />
-        <int id="band5Freq" def="8000" min="20" max="20000" />
-        <int id="band5Gain" def="0" min="-24" max="24" />
-        <int id="band5Q" def="1" min="0.1" max="18" />
-        <int id="band5Type" def="0" min="0" max="1" />
+        <float id="band5Freq" def="8000" min="20" max="20000" unit="freq:hz"/>
+        <float id="band5Gain" def="0" min="-24" max="24" unit="decibel"/>
+        <float id="band5Q" def="1" min="0.1" max="18" unit="filtband:q"/>
+        <float id="band5Type" def="0" min="0" max="1" />
         <bool id="band6Enabled" def="0" />
-        <int id="band6Freq" def="16000" min="20" max="16000" />
-        <float id="band6Q" def="0.707" min="0.1" max="2" />
+        <float id="band6Freq" def="16000" min="20" max="16000" unit="freq:hz"/>
+        <float id="band6Q" def="0.707" min="0.1" max="2" unit="filtband:q"/>
       </params>
     </object>
     <object id="COMPRESSOR">
       <visual name="Compressor" />
       <params>
-        <int id="threshold" def="-24" min="-60" max="0" />
-        <int id="ratio" def="4" min="1" max="20" />
-        <int id="knee" def="6" min="0" max="40" />
-        <int id="attack" def="10" min="0" max="1000" />
-        <int id="release" def="100" min="10" max="3000" />
-        <int id="makeupGain" def="0" min="-12" max="24" />
-        <int id="mix" def="100" min="0" max="100" />
+        <float id="threshold" def="-24" min="-60" max="0" unit="decibel"/>
+        <float id="ratio" def="4" min="1" max="20" />
+        <float id="knee" def="6" min="0" max="40" unit="decibel"/>
+        <float id="attack" def="10" min="0" max="1000" unit="time:ms"/>
+        <float id="release" def="100" min="10" max="3000" unit="time:ms"/>
+        <float id="makeupGain" def="0" min="-12" max="24" unit="decibel"/>
+        <float id="mix" def="100" min="0" max="100" unit="one:percent"/>
       </params>
     </object>
     <object id="LIMITER">
       <visual name="Limiter" />
       <params>
-        <int id="inputGain" def="-2" min="-12" max="24" />
-        <int id="ceiling" def="0" min="-12" max="0" />
-        <int id="release" def="1" min="1" max="500" />
+        <float id="inputGain" def="-2" min="-12" max="24" unit="decibel"/>
+        <float id="ceiling" def="0" min="-12" max="0" unit="decibel"/>
+        <float id="release" def="1" min="1" max="500" unit="time:ms"/>
       </params>
     </object>
     <object id="GATE">
       <visual name="Gate" />
       <params>
-        <float id="threshold" def="-32.5" min="-80" max="0" />
-        <int id="range" def="-80" min="-80" max="0" />
-        <float id="attack" def="0.5" min="0.01" max="50" />
-        <int id="hold" def="167" min="0" max="500" />
-        <int id="release" def="100" min="5" max="2000" />
+        <float id="threshold" def="-32.5" min="-80" max="0" unit="decibel"/>
+        <float id="range" def="-80" min="-80" max="0" unit="decibel"/>
+        <float id="attack" def="0.5" min="0.01" max="50" unit="time:ms"/>
+        <float id="hold" def="167" min="0" max="500" unit="time:ms"/>
+        <float id="release" def="100" min="5" max="2000" unit="time:ms"/>
       </params>
     </object>
     <object id="DE_ESSER">
       <visual name="De-Esser" />
       <params>
-        <int id="frequency" def="6000" min="2000" max="12000" />
-        <int id="range" def="2000" min="500" max="6000" />
-        <int id="threshold" def="-20" min="-40" max="0" />
-        <int id="reduction" def="6" min="0" max="24" />
-        <int id="mode" def="0" min="0" max="1" />
+        <float id="frequency" def="6000" min="2000" max="12000" unit="freq:hz"/>
+        <float id="range" def="2000" min="500" max="6000" unit="freq:hz"/>
+        <float id="threshold" def="-20" min="-40" max="0" unit="decibel"/>
+        <float id="reduction" def="6" min="0" max="24" unit="decibel"/>
+        <enum_int id="mode" def="split" max="1">
+          <part val="0" id="split" />
+          <part val="1" id="wide" />
+        </enum_int>
         <bool id="listen" def="0" />
       </params>
     </object>
     <object id="EXPANDER">
       <visual name="Expander" />
       <params>
-        <int id="threshold" def="-40" min="-60" max="0" />
-        <int id="ratio" def="2" min="1" max="10" />
-        <int id="attack" def="5" min="0.1" max="100" />
-        <int id="release" def="100" min="10" max="1000" />
-        <int id="range" def="-40" min="-80" max="0" />
-        <int id="mix" def="100" min="0" max="100" />
+        <float id="threshold" def="-40" min="-60" max="0" unit="decibel"/>
+        <float id="ratio" def="2" min="1" max="10" />
+        <float id="attack" def="5" min="0.1" max="100" unit="time:ms"/>
+        <float id="release" def="100" min="10" max="1000" unit="time:ms"/>
+        <float id="range" def="-40" min="-80" max="0" unit="decibel"/>
+        <float id="mix" def="100" min="0" max="100" unit="one:percent"/>
       </params>
     </object>
     <object id="REVERB">
       <visual name="Reverb" />
       <params>
-        <int id="size" def="50" min="0" max="100" />
-        <int id="decay" def="2" min="0.1" max="10" />
-        <int id="damping" def="50" min="0" max="100" />
-        <int id="predelay" def="20" min="0" max="200" />
-        <int id="mix" def="30" min="0" max="100" />
+        <float id="size" def="50" min="0" max="100" unit="one:percent"/>
+        <float id="decay" def="2" min="0.1" max="10" unit="time:seconds"/>
+        <float id="damping" def="50" min="0" max="100" unit="one:percent"/>
+        <float id="predelay" def="20" min="0" max="200" unit="time:ms"/>
+        <float id="mix" def="30" min="0" max="100" unit="one:percent"/>
       </params>
     </object>
     <object id="DELAY">
       <visual name="Delay" />
       <params>
         <bool id="tempoSync" def="0" />
-        <int id="delayTimeLeft" def="250" min="1" max="2000" />
-        <int id="delayTimeRight" def="375" min="1" max="2000" />
-        <int id="noteValueLeft" def="2" min="0" max="4" />
-        <int id="noteValueRight" def="2" min="0" max="4" />
+        <float id="delayTimeLeft" def="250" min="1" max="2000" unit="time:ms"/>
+        <float id="delayTimeRight" def="375" min="1" max="2000" unit="time:ms"/>
+        <enum_int id="noteValueLeft" def="1/4" max="4">
+          <part val="0" id="1/16" />
+          <part val="1" id="1/8" />
+          <part val="2" id="1/4" />
+          <part val="3" id="1/2" />
+          <part val="4" id="1/1" />
+        </enum_int>
+        <enum_int id="noteValueRight" def="1/4" max="4">
+          <part val="0" id="1/16" />
+          <part val="1" id="1/8" />
+          <part val="2" id="1/4" />
+          <part val="3" id="1/2" />
+          <part val="4" id="1/1" />
+        </enum_int>
         <bool id="sync" def="0" />
-        <int id="feedback" def="30" min="0" max="95" />
-        <int id="filterFreq" def="8000" min="200" max="20000" />
-        <int id="mix" def="30" min="0" max="100" />
+        <float id="feedback" def="30" min="0" max="95" unit="one:percent"/>
+        <float id="filterFreq" def="8000" min="200" max="20000" unit="freq:hz"/>
+        <float id="mix" def="30" min="0" max="100" unit="one:percent"/>
       </params>
     </object>
     <object id="GUITAR_AMP">
       <visual name="Guitar Amp" />
       <params>
-        <int id="ampModel" def="1" min="0" max="3" />
-        <int id="inputGain" def="0" min="-12" max="12" />
-        <int id="gain" def="50" min="0" max="100" />
-        <int id="bass" def="50" min="0" max="100" />
-        <int id="mid" def="50" min="0" max="100" />
-        <int id="treble" def="50" min="0" max="100" />
-        <int id="presence" def="50" min="0" max="100" />
-        <int id="cabType" def="2" min="0" max="3" />
-        <int id="master" def="50" min="0" max="100" />
-        <int id="mix" def="100" min="0" max="100" />
+        <enum_int id="ampModel" def="clean" max="3">
+          <part val="0" id="clean" />
+          <part val="1" id="crunch" />
+          <part val="2" id="highgain" />
+          <part val="3" id="modernmetal" />
+        </enum_int>
+        <float id="ampModel" def="1" min="0" max="3" />
+        <float id="inputGain" def="0" min="-12" max="12" unit="decibel"/>
+        <float id="gain" def="50" min="0" max="100" unit="one:percent"/>
+        <float id="bass" def="50" min="0" max="100" unit="one:percent"/>
+        <float id="mid" def="50" min="0" max="100" unit="one:percent"/>
+        <float id="treble" def="50" min="0" max="100" unit="one:percent"/>
+        <float id="presence" def="50" min="0" max="100" unit="one:percent"/>
+        <enum_int id="cabType" def="4x10" max="3">
+          <part val="0" id="1x12" />
+          <part val="1" id="2x12" />
+          <part val="2" id="4x12" />
+          <part val="3" id="Direct" />
+        </enum_int>
+        <float id="master" def="50" min="0" max="100" unit="one:percent"/>
+        <float id="mix" def="100" min="0" max="100" unit="one:percent"/>
         <bool id="gateEnabled" def="1" />
-        <int id="gateThreshold" def="-50" min="-80" max="0" />
+        <float id="gateThreshold" def="-50" min="-80" max="0" unit="decibel"/>
       </params>
     </object>
     <object id="BASS_AMP">
       <visual name="Bass Amp" />
       <params>
-        <int id="ampModel" def="2" min="0" max="3" />
-        <int id="inputGain" def="0" min="-12" max="12" />
-        <int id="gain" def="27" min="0" max="100" />
-        <int id="bass" def="50" min="0" max="100" />
-        <int id="mid" def="59" min="0" max="100" />
-        <int id="treble" def="50" min="0" max="100" />
-        <int id="presence" def="50" min="0" max="100" />
-        <int id="cabType" def="1" min="0" max="3" />
-        <int id="master" def="50" min="0" max="100" />
-        <int id="mix" def="87" min="0" max="100" />
+        <enum_int id="ampModel" def="clean" max="3">
+          <part val="0" id="clean" />
+          <part val="1" id="vintage" />
+          <part val="2" id="modern" />
+          <part val="3" id="hifi" />
+        </enum_int>
+        <float id="inputGain" def="0" min="-12" max="12" unit="decibel"/>
+        <float id="gain" def="27" min="0" max="100" unit="one:percent"/>
+        <float id="bass" def="50" min="0" max="100" unit="one:percent"/>
+        <float id="mid" def="59" min="0" max="100" unit="one:percent"/>
+        <float id="treble" def="50" min="0" max="100" unit="one:percent"/>
+        <float id="presence" def="50" min="0" max="100" unit="one:percent"/>
+        <enum_int id="cabType" def="4x10" max="3">
+          <part val="0" id="1x15" />
+          <part val="1" id="4x10" />
+          <part val="2" id="8x10" />
+          <part val="3" id="DI" />
+        </enum_int>
+        <float id="master" def="50" min="0" max="100" unit="one:percent"/>
+        <float id="mix" def="87" min="0" max="100" unit="one:percent"/>
         <bool id="gateEnabled" def="0" />
-        <int id="gateThreshold" def="-46" min="-80" max="0" />
+        <float id="gateThreshold" def="-46" min="-80" max="0" unit="decibel"/>
       </params>
     </object>
     <object id="FLANGER">
       <visual name="Flanger" />
       <params>
-        <float id="rate" def="0.01" min="0.01" max="10" />
-        <int id="depth" def="50" min="0" max="100" />
-        <int id="delay" def="5" min="0.5" max="20" />
-        <int id="feedback" def="50" min="0" max="95" />
-        <int id="mix" def="50" min="0" max="100" />
+        <float id="rate" def="0.01" min="0.01" max="10" unit="freq:hz"/>
+        <float id="depth" def="50" min="0" max="100" unit="one:percent"/>
+        <float id="delay" def="5" min="0.5" max="20" unit="time:ms"/>
+        <float id="feedback" def="50" min="0" max="95" unit="one:percent"/>
+        <float id="mix" def="50" min="0" max="100" unit="one:percent"/>
       </params>
     </object>
     <object id="PHASER">
       <visual name="Phaser" />
       <params>
-        <int id="mode" def="0" min="0" max="2" />
-        <float id="rate" def="0.5" min="0.01" max="10" />
-        <int id="depth" def="50" min="0" max="100" />
-        <int id="sensitivity" def="50" min="0" max="100" />
-        <int id="centerFreq" def="1000" min="100" max="4000" />
-        <int id="stages" def="2" min="0" max="4" />
-        <int id="feedback" def="30" min="0" max="95" />
-        <int id="mix" def="50" min="0" max="100" />
+        <enum_int id="mode" def="lfo" max="2">
+          <part val="0" id="lfo" />
+          <part val="1" id="envelope" />
+          <part val="2" id="random" />
+        </enum_int>
+        <float id="rate" def="0.5" min="0.01" max="10" unit="freq:hz"/>
+        <float id="depth" def="50" min="0" max="100" unit="one:percent"/>
+        <float id="sensitivity" def="50" min="0" max="100" unit="one:percent"/>
+        <float id="centerFreq" def="1000" min="100" max="4000" unit="freq:hz"/>
+        <enum_int id="stages" def="6" max="4">
+          <part val="0" id="2" />
+          <part val="1" id="4" />
+          <part val="2" id="6" />
+          <part val="3" id="8" />
+          <part val="4" id="12" />
+        </enum_int>
+        <float id="feedback" def="30" min="0" max="95" unit="one:percent"/>
+        <float id="mix" def="50" min="0" max="100" unit="one:percent"/>
       </params>
     </object>
     <object id="CHORUS">
       <visual name="Chorus" />
       <params>
-        <int id="rate" def="1" min="0.1" max="5" />
-        <int id="depth" def="40" min="0" max="100" />
-        <int id="delay" def="20" min="5" max="50" />
-        <int id="voices" def="1" min="0" max="3" />
-        <int id="spread" def="100" min="0" max="100" />
-        <int id="mix" def="50" min="0" max="100" />
+        <float id="rate" def="1" min="0.1" max="5" unit="freq:hz"/>
+        <float id="depth" def="40" min="0" max="100" unit="one:percent"/>
+        <float id="delay" def="20" min="5" max="50" unit="time:ms"/>
+        <float id="voices" def="1" min="0" max="3" />
+        <float id="spread" def="100" min="0" max="100" unit="one:percent"/>
+        <float id="mix" def="50" min="0" max="100" unit="one:percent"/>
       </params>
     </object>
     <object id="TREMOLO">
       <visual name="Tremolo" />
       <params>
-        <int id="rate" def="4" min="0.1" max="20" />
-        <int id="depth" def="50" min="0" max="100" />
-        <int id="waveform" def="0" min="0" max="3" />
-        <int id="stereoPhase" def="0" min="0" max="180" />
+        <float id="rate" def="4" min="0.1" max="20" unit="freq:hz"/>
+        <float id="depth" def="50" min="0" max="100" unit="one:percent"/>
+        <enum_int id="waveform" def="sine" max="3">
+          <part val="0" id="sine" />
+          <part val="1" id="triangle" />
+          <part val="2" id="square" />
+          <part val="3" id="saw" />
+        </enum_int>
+        <float id="stereoPhase" def="0" min="0" max="180" />
       </params>
     </object>
     <object id="VIBRATO">
       <visual name="Vibrato" />
       <params>
-        <int id="rate" def="5" min="0.1" max="15" />
-        <int id="depth" def="30" min="0" max="100" />
-        <int id="waveform" def="0" min="0" max="1" />
-        <int id="mix" def="100" min="0" max="100" />
+        <float id="rate" def="5" min="0.1" max="15" unit="freq:hz"/>
+        <float id="depth" def="30" min="0" max="100" unit="one:percent"/>
+        <enum_int id="waveform" def="sine" max="1">
+          <part val="0" id="sine" />
+          <part val="1" id="triangle" />
+        <float id="mix" def="100" min="0" max="100" unit="one:percent"/>
       </params>
     </object>
     <object id="AUTO_PAN">
       <visual name="Auto Pan" />
       <params>
-        <float id="rate" def="0.1" min="0.1" max="10" />
-        <int id="depth" def="83" min="0" max="100" />
-        <int id="waveform" def="0" min="0" max="3" />
-        <int id="phase" def="0" min="0" max="360" />
+        <float id="rate" def="0.1" min="0.1" max="10" unit="freq:hz"/>
+        <float id="depth" def="83" min="0" max="100" unit="one:percent"/>
+        <enum_int id="waveform" def="sine" max="3">
+          <part val="0" id="sine" />
+          <part val="1" id="triangle" />
+          <part val="2" id="square" />
+          <part val="3" id="saw" />
+        </enum_int>
+        <float id="phase" def="0" min="0" max="360" />
       </params>
     </object>
     <object id="OVERDRIVE">
       <visual name="Overdrive" />
       <params>
-        <int id="drive" def="50" min="0" max="100" />
-        <int id="tone" def="5000" min="500" max="12000" />
-        <int id="character" def="1" min="0" max="3" />
-        <int id="output" def="0" min="-12" max="12" />
-        <int id="mix" def="100" min="0" max="100" />
+        <float id="drive" def="50" min="0" max="100" unit="one:percent"/>
+        <float id="tone" def="5000" min="500" max="12000" unit="freq:hz"/>
+        <enum_int id="character" def="warm" max="3">
+          <part val="0" id="clean" />
+          <part val="1" id="warm" />
+          <part val="2" id="hot" />
+          <part val="3" id="crunch" />
+        </enum_int>
+        <float id="output" def="0" min="-12" max="12" unit="decibel"/>
+        <float id="mix" def="100" min="0" max="100" unit="one:percent"/>
       </params>
     </object>
     <object id="BITCRUSHER">
       <visual name="Bitcrusher" />
       <params>
-        <int id="bitDepth" def="8" min="1" max="16" />
-        <int id="sampleRateReduction" def="1" min="1" max="50" />
-        <int id="mix" def="100" min="0" max="100" />
+        <float id="bitDepth" def="8" min="1" max="16" />
+        <float id="sampleRateReduction" def="1" min="1" max="50" />
+        <float id="mix" def="100" min="0" max="100" unit="one:percent"/>
       </params>
     </object>
     <object id="TAPE_SATURATION">
       <visual name="Tape Saturation" />
       <params>
-        <int id="drive" def="30" min="0" max="100" />
-        <int id="character" def="1" min="0" max="3" />
-        <int id="warmth" def="50" min="0" max="100" />
-        <int id="output" def="0" min="-12" max="12" />
-        <int id="mix" def="100" min="0" max="100" />
+        <float id="drive" def="30" min="0" max="100" unit="one:percent"/>
+        <enum_int id="character" def="warm" max="3">
+          <part val="0" id="clean" />
+          <part val="1" id="warm" />
+          <part val="2" id="hot" />
+          <part val="3" id="saturated" />
+        </enum_int>
+        <float id="warmth" def="50" min="0" max="100" unit="one:percent"/>
+        <float id="output" def="0" min="-12" max="12" unit="decibel"/>
+        <float id="mix" def="100" min="0" max="100" unit="one:percent"/>
       </params>
     </object>
     <object id="UTILITY">
       <visual name="Utility" />
       <params>
-        <int id="gain" def="0" min="-24" max="24" />
-        <int id="pan" def="0" min="-100" max="100" />
+        <float id="gain" def="0" min="-24" max="24" unit="decibel"/>
+        <float id="pan" def="0" min="-100" max="100" unit="one:percent_plusminus"/>
         <bool id="phaseInvertL" def="0" />
         <bool id="phaseInvertR" def="0" />
-        <int id="width" def="100" min="0" max="200" />
+        <float id="width" def="100" min="0" max="200" unit="one:percent"/>
         <bool id="mono" def="0" />
       </params>
     </object>
     <object id="STEREO_IMAGER">
       <visual name="Stereo Imager" />
       <params>
-        <int id="width" def="100" min="0" max="200" />
-        <int id="midGain" def="0" min="-12" max="12" />
-        <int id="sideGain" def="0" min="-12" max="12" />
-        <int id="balance" def="0" min="-100" max="100" />
+        <float id="width" def="100" min="0" max="200" unit="one:percent"/>
+        <float id="midGain" def="0" min="-12" max="12" unit="decibel"/>
+        <float id="sideGain" def="0" min="-12" max="12" unit="decibel"/>
+        <float id="balance" def="0" min="-100" max="100" unit="one:percent_plusminus"/>
       </params>
     </object>
     <object id="STEREO_SPREADER">
       <visual name="Stereo Spreader" />
       <params>
-        <int id="spread" def="50" min="0" max="100" />
-        <int id="delay" def="15" min="1" max="100" />
-        <int id="freqSpread" def="0" min="0" max="100" />
-        <int id="mix" def="100" min="0" max="100" />
+        <float id="spread" def="50" min="0" max="100" unit="one:percent"/>
+        <float id="delay" def="15" min="1" max="100" unit="time:ms"/>
+        <float id="freqSpread" def="0" min="0" max="100" unit="one:percent"/>
+        <float id="mix" def="100" min="0" max="100" unit="one:percent"/>
       </params>
     </object>
     <object id="AUTO_FILTER">
       <visual name="Auto Filter" />
       <params>
-        <int id="frequency" def="1000" min="20" max="20000" />
-        <int id="resonance" def="5" min="0.1" max="20" />
-        <int id="filterType" def="0" min="0" max="2" />
-        <int id="lfoRate" def="1" min="0.01" max="20" />
-        <int id="lfoDepth" def="50" min="0" max="100" />
-        <int id="lfoWaveform" def="0" min="0" max="3" />
-        <int id="mix" def="100" min="0" max="100" />
+        <float id="frequency" def="1000" min="20" max="20000" unit="freq:hz"/>
+        <float id="resonance" def="5" min="0.1" max="20" unit="filtband:q"/>
+        <enum_int id="filterType" def="lowpass" max="2">
+          <part val="0" id="lowpass" />
+          <part val="1" id="highpass" />
+          <part val="2" id="bandpass" />
+        </enum_int>
+        <float id="lfoRate" def="1" min="0.01" max="20" unit="freq:hz"/>
+        <float id="lfoDepth" def="50" min="0" max="100" unit="one:percent"/>
+        <enum_int id="lfoWaveform" def="sine" max="3">
+          <part val="0" id="sine" />
+          <part val="1" id="triangle" />
+          <part val="2" id="square" />
+          <part val="3" id="saw" />
+        </enum_int>
+        <float id="mix" def="100" min="0" max="100" unit="one:percent"/>
       </params>
-    
     </object>
   </category>
 </datapack>

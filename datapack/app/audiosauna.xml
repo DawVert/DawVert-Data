@@ -2,6 +2,20 @@
   <category id="plugin">
     <object id="1">
       <visual name="Analog Synth" color="#393939" />
+      <enums>
+        <enum id="lfo_waveform" max="2" end_point="end">
+          <part val="0" id="triangle" />
+          <part val="1" id="square" />
+          <part val="2" id="noise" />
+        </enum>
+        <enum id="osc_waveform" max="4" end_point="end">
+          <part val="0" id="saw" />
+          <part val="1" id="square" />
+          <part val="2" id="triangle" />
+          <part val="3" id="noise" />
+          <part val="4" id="sine" />
+        </enum>
+      </enum>
       <params>
         <float id="aOp1" name="Osc 1 Attack" max="5" />
         <float id="aOp2" name="Osc 2 Attack" max="5" />
@@ -23,13 +37,20 @@
         <int id="semi1" name="Osc 1 Semi" max="12" min="-12" />
         <int id="semi2" name="Osc 2 Semi" max="12" min="-12" />
         <float id="sustain" name="Sustain" />
-        <int id="wave1" name="Osc 1 Wave" max="4" />
-        <int id="wave2" name="Osc 2 Wave" max="4" />
-        <int id="waveform" name="Waveform" max="2" />
+        <enum_int id="wave1" name="Osc 1 Wave" source="osc_waveform" max="4" />
+        <enum_int id="wave2" name="Osc 2 Wave" source="osc_waveform" max="4" />
+        <enum_int id="waveform" name="Waveform" source="lfo_waveform" max="2" />
       </params>
     </object>
     <object id="0">
       <visual name="FM-Synth" color="#007fb8" />
+      <enums>
+        <enum id="lfo_waveform" max="2">
+          <part val="0" id="triangle" />
+          <part val="1" id="square" />
+          <part val="2" id="noise" />
+        </enum>
+      </enum>
       <params>
         <float id="aOp1" name="Op1 Attack" max="5" />
         <float id="aOp2" name="Op2 Attack" max="5" />
@@ -62,7 +83,7 @@
         <int id="sOp3" name="Op3 Sustain" max="100" />
         <int id="sOp4" name="Op4 Sustain" max="100" />
         <float id="sustain" name="Sustain" />
-        <float id="waveform" name="Waveform" max="2" />
+        <enum_int id="waveform" name="Waveform" source="lfo_waveform" max="2" />
       </params>
     </object>
   </category>

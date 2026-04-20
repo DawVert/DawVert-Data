@@ -14,22 +14,22 @@
         <object id="Chorus">
             <visual name="Chorus" />
             <params>
-                <float id="Decay" max="20.0" min="-60" />
+                <float id="Decay" max="20.0" min="-60" unit="decibel" />
                 <float id="Extras" max="10" min="1" />
-                <float id="Delay" max="50" min="30" />
+                <float id="Delay" max="50" min="30" unit="time:ms" />
             </params>
         </object>
         <object id="Compressor">
             <visual name="Compressor/Limiter" />
             <params>
-                <int id="RMS_Samples" name="RMS Samples" max="100" min="0" />
-                <float id="Output_Gain" name="Output Gain" max="30" min="-30" />
-                <float id="Soft_Knee" name="Soft Knee" max="6" min="0" />
+                <int id="RMS_Samples" name="RMS Samples" max="100" min="0" unit="time:samples" />
+                <float id="Output_Gain" name="Output Gain" max="30" min="-30" unit="decibel" />
+                <float id="Soft_Knee" name="Soft Knee" max="6" min="0" unit="decibel" />
                 <bool id="Stereo_Linking" name="Stereo Linking" />
-                <float id="Release" max="100" min="0" />
-                <float id="Attack" max="100" min="0" />
+                <float id="Release" max="100" min="0" unit="time:ms" />
+                <float id="Attack" max="100" min="0" unit="time:ms" />
                 <float id="Ratio" max="60" min="1" />
-                <float id="Threshold" max="0" min="-20" />
+                <float id="Threshold" max="0" min="-20" unit="decibel" />
             </params>
         </object>
         <object id="Decimator">
@@ -42,27 +42,27 @@
         <object id="Echo">
             <visual name="Echo" />
             <params>
-                <float id="Decay" max="20" min="-60" />
-                <float id="Delay" max="100" min="0.01" />
+                <float id="Decay" max="20" min="-60" unit="decibel" />
+                <float id="Delay" max="100" min="0.01" unit="time:seconds" />
             </params>
         </object>
         <object id="HighPassFilter">
             <visual name="High Pass Filter" />
             <params>
-                <int id="Frequency" max="20000" min="10" />
+                <int id="Frequency" max="20000" min="10" unit="freq:hz" />
             </params>
         </object>
         <object id="Level">
             <visual name="Level" />
             <params>
-                <float id="NoiseThreshold" max="-20" min="-75" />
+                <float id="NoiseThreshold" max="-20" min="-75" unit="decibel" />
                 <int id="Passes" max="6" min="1" />
             </params>
         </object>
         <object id="LowPassFilter">
             <visual name="Low Pass Filter" />
             <params>
-                <int id="Frequency" max="20000" min="10" />
+                <int id="Frequency" max="20000" min="10" unit="freq:hz" />
             </params>
         </object>
         <object id="StereoWiden">

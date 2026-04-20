@@ -32,6 +32,17 @@
           <part type="byte" name="osc3_am" />
         </struct>
       </datadef>
+      <enums>
+        <enum id="shape" max="6">
+          <part val="0" id="sine" />
+          <part val="1" id="triangle" />
+          <part val="2" id="square" />
+          <part val="3" id="saw" />
+          <part val="4" id="pulse" />
+          <part val="5" id="noise" />
+          <part val="6" id="custom" />
+        </enum>
+      </enum>
       <params>
         <int id="osc1_coarse" name="Osc 1 coarse" max="24" min="-24" />
         <int id="osc1_detune" name="Osc 1 stereo detune" max="50" min="-50" />
@@ -40,7 +51,7 @@
         <int id="osc1_mixlevel" name="Osc 1 Mix Level" max="128" />
         <int id="osc1_ofs" name="Osc 1 Offset" max="64" min="-64" />
         <int id="osc1_pan" name="Osc 1 Pan" max="64" min="-64" />
-        <int id="osc1_shape" name="Osc 1 Shape" max="6" />
+        <enum_int id="osc1_shape" name="Osc 1 Shape" source="shape" max="6" />
         <int id="osc2_coarse" name="Osc 2 Coarse" max="24" min="-24" />
         <int id="osc2_detune" name="Osc 2 Detune" max="50" min="-50" />
         <int id="osc2_fine" name="Osc 2 Fine" max="100" min="-100" />
@@ -48,7 +59,7 @@
         <int id="osc2_mixlevel" name="Osc 2 Mix Level" max="128" />
         <int id="osc2_ofs" name="Osc 2 Offset" max="64" min="-64" />
         <int id="osc2_pan" name="Osc 2 Pan" max="64" min="-64" />
-        <int id="osc2_shape" name="Osc 2 Shape" max="6" />
+        <enum_int id="osc2_shape" name="Osc 2 Shape" source="shape" max="6" />
         <bool id="osc3_am" name="Osc 3 AM" />
         <int id="osc3_coarse" name="Osc 3 Coarse" max="24" min="-24" />
         <int id="osc3_detune" name="Osc 3 Detune" max="50" min="-50" />
@@ -56,7 +67,7 @@
         <bool id="osc3_invert" name="Osc 3 Invert" />
         <int id="osc3_ofs" name="Osc 3 Offset" max="64" min="-64" />
         <int id="osc3_pan" name="Osc 3 Pan" max="64" min="-64" />
-        <int id="osc3_shape" name="Osc 3 Shape" max="6" />
+        <enum_int id="osc3_shape" name="Osc 3 Shape" source="shape" max="6" />
         <int id="phase_rand" name="Phase Rand" max="64" />
       </params>
       <datavals>
@@ -286,9 +297,23 @@
         </struct>
       </datadef>
       <params>
-        <int id="amp_type" max="3" />
-        <int id="cabinet" max="3" />
-        <int id="coil_type" max="2" />
+        <enum_int id="amp_type" max="3">
+          <part val="0" id="dry" name="Dry" />
+          <part val="1" id="tube" name="Tube" />
+          <part val="2" id="eq" name="EQ" />
+          <part val="3" id="bandpass" name="Bandpass" />
+        </enum_int>
+        <enum_int id="cabinet" max="3">
+          <part val="0" id="dry" name="Dry"/>
+          <part val="1" id="british" name="British"/>
+          <part val="2" id="combo" name="Combo"/>
+          <part val="3" id="stax" name="StaX"/>
+        </enum_int>
+        <enum_int id="coil_type" max="2">
+          <part val="0" id="none" name="None" />
+          <part val="1" id="single" name="Single" />
+          <part val="2" id="double" name="Double" />
+        </enum_int>
         <int id="damp" max="65535" />
         <int id="damp_vel" max="65535" />
         <int id="drive" max="65535" />
@@ -299,17 +324,49 @@
         <int id="fret" max="65535" />
         <int id="fx_param1" max="65535" />
         <int id="fx_param2" max="65535" />
-        <int id="fx_type" max="15" />
+        <enum_int id="fx_type" max="15">
+          <part val="0" id="dry" name="Dry"/>
+          <part val="1" id="amp:phaser" name="AMP:Phaser"/>
+          <part val="2" id="amp:tremolo" name="AMP:Tremolo"/>
+          <part val="3" id="amp:wahwah" name="AMP:WahWah"/>
+          <part val="4" id="amp:wahwah_lfo" name="AMP:WahWah LFO"/>
+          <part val="5" id="amp:ringmod" name="AMP:RingMod"/>
+          <part val="6" id="amp:fuzz_box" name="AMP:Fuzz Box"/>
+          <part val="7" id="amp:harmonizer" name="AMP:Harmonizer"/>
+          <part val="8" id="amp:talkbox" name="AMP:Talkbox"/>
+          <part val="9" id="mst:chorus" name="MST:Chorus"/>
+          <part val="10" id="mst:flanger" name="MST:Flanger"/>
+          <part val="11" id="mst:phaser" name="MST:Phaser"/>
+          <part val="12" id="mst:leslie" name="MST:Leslie"/>
+          <part val="13" id="mst:tremolo" name="MST:Tremolo"/>
+          <part val="14" id="mst:dub_delay" name="MST:Dub Delay"/>
+          <part val="15" id="mst:multi_tap" name="MST:Multi tap"/>
+        </enum_int>
         <int id="glissando" />
         <int id="harmonic" max="65535" />
         <int id="harmonic_vel" max="65535" />
         <int id="hold" />
-        <int id="mode" max="5" />
+        <enum_int id="mode" max="5">
+          <part val="0" id="none" name="None" />
+          <part val="1" id="autochords" name="AutoChords" />
+          <part val="2" id="powerchords" name="PowerChords" />
+          <part val="3" id="strumming" name="Strumming" />
+          <part val="4" id="solo_fixed" name="Solo fixed" />
+          <part val="5" id="solo_dynamic" name="Solo dynamic" />
+        </enum_int>
         <int id="pickup_position" max="65535" />
         <int id="pitch_bend" max="127" />
         <int id="presence" max="65535" />
         <int id="slap" max="65535" />
-        <int id="string_type" max="6" />
+        <enum_int id="string_type" max="6">
+          <part val="0" id="noise" name="Noise" />
+          <part val="1" id="6string1" name="6String1" />
+          <part val="2" id="6string2" name="6String2" />
+          <part val="3" id="6string3" name="6String3" />
+          <part val="4" id="slap" name="Slap" />
+          <part val="5" id="ebass" name="Ebass" />
+          <part val="6" id="fretless" name="Fretless" />
+        </enum_int>
         <int id="timing" max="65535" />
         <int id="tone" max="65535" />
       </params>
@@ -631,7 +688,11 @@
         <int id="time" name="Time" max="768" num="4" />
         <int id="fb_cut" name="Feedback Cut" max="128" num="7" />
         <int id="time_stereo_offset" name="Stereo Offset" max="512" min="-512" num="5" />
-        <int id="fb_mode" name="Feedback Mode" max="2" num="6" />
+        <enum_int id="fb_mode" name="Feedback Mode" max="2" num="6">
+          <part val="0" id="normal" name="Normal" />
+          <part val="1" id="invert" name="Invert" />
+          <part val="2" id="pingpong" name="Ping-pong" />
+        </enum_int>
       </params>
     </object>
     <object id="fruity delay 3">
@@ -760,16 +821,33 @@
           <part type="struct" name="bank_8_e" struct_name="__part__fruity_delay_bank_extra" />
         </struct>
       </datadef>
+      <enums>
+        <enum id="filter_type" max="6">
+          <part val="0" id="off" />
+          <part val="1" id="lowpass" />
+          <part val="2" id="bandpass" />
+          <part val="3" id="notch" />
+          <part val="4" id="highpass" />
+          <part val="5" id="lowshelf" />
+          <part val="6" id="peaking" />
+          <part val="7" id="highshelf" />
+        </enum>
+        <enum id="filter_mode" max="2">
+          <part val="0" id="single" />
+          <part val="1" id="dual" />
+          <part val="2" id="triple" />
+        </enum>
+      </enums>
       <params>
         <int id="bank_1_e/enabled" />
-        <int id="bank_1_e/fbfilter_mode" max="2" />
-        <int id="bank_1_e/fbfilter_type" max="7" />
+        <enum_int id="bank_1_e/fbfilter_mode" source="filter_mode" max="2" />
+        <enum_int id="bank_1_e/fbfilter_type" source="filter_type" max="7" />
         <int id="bank_1_e/feedback_leave_first_echo" max="0" />
         <int id="bank_1_e/feedback_mode" max="3" />
         <int id="bank_1_e/feedback_tempo" />
-        <int id="bank_1_e/filter_mode" max="2" />
+        <enum_int id="bank_1_e/filter_mode" source="filter_mode" max="2" />
         <int id="bank_1_e/filter_post" />
-        <int id="bank_1_e/filter_type" max="7" />
+        <enum_int id="bank_1_e/filter_type" source="filter_type" max="7" />
         <int id="bank_1_e/grain_div" max="4096" />
         <int id="bank_1_e/grain_sh" max="128" />
         <int id="bank_1_v/fbfilter_cut" name="Delay 1 - Feedback filt" max="65536" />
@@ -789,14 +867,14 @@
         <int id="bank_1_v/pan" name="Delay 1 - Input panning" max="128" />
         <int id="bank_1_v/vol" name="Delay 1 - Input volume" max="160" />
         <int id="bank_2_e/enabled" />
-        <int id="bank_2_e/fbfilter_mode" max="2" />
-        <int id="bank_2_e/fbfilter_type" max="7" />
+        <enum_int id="bank_2_e/fbfilter_mode" source="filter_mode" max="2" />
+        <enum_int id="bank_2_e/fbfilter_type" source="filter_type" max="7" />
         <int id="bank_2_e/feedback_leave_first_echo" max="0" />
         <int id="bank_2_e/feedback_mode" max="3" />
         <int id="bank_2_e/feedback_tempo" />
-        <int id="bank_2_e/filter_mode" max="2" />
+        <enum_int id="bank_2_e/filter_mode" source="filter_mode" max="2" />
         <int id="bank_2_e/filter_post" />
-        <int id="bank_2_e/filter_type" max="7" />
+        <enum_int id="bank_2_e/filter_type" source="filter_type" max="7" />
         <int id="bank_2_e/grain_div" max="4096" />
         <int id="bank_2_e/grain_sh" max="128" />
         <int id="bank_2_v/fbfilter_cut" name="Delay 2 - Feedback filt" max="65536" />
@@ -816,14 +894,14 @@
         <int id="bank_2_v/pan" name="Delay 2 - Input panning" max="128" />
         <int id="bank_2_v/vol" name="Delay 2 - Input volume" max="160" />
         <int id="bank_3_e/enabled" />
-        <int id="bank_3_e/fbfilter_mode" max="2" />
-        <int id="bank_3_e/fbfilter_type" max="7" />
+        <enum_int id="bank_3_e/fbfilter_mode" source="filter_mode" max="2" />
+        <enum_int id="bank_3_e/fbfilter_type" source="filter_type" max="7" />
         <int id="bank_3_e/feedback_leave_first_echo" max="0" />
         <int id="bank_3_e/feedback_mode" max="3" />
         <int id="bank_3_e/feedback_tempo" />
-        <int id="bank_3_e/filter_mode" max="2" />
+        <enum_int id="bank_3_e/filter_mode" source="filter_mode" max="2" />
         <int id="bank_3_e/filter_post" />
-        <int id="bank_3_e/filter_type" max="7" />
+        <enum_int id="bank_3_e/filter_type" source="filter_type" max="7" />
         <int id="bank_3_e/grain_div" max="4096" />
         <int id="bank_3_e/grain_sh" max="128" />
         <int id="bank_3_v/fbfilter_cut" name="Delay 3 - Feedback filt" max="65536" />
@@ -843,14 +921,14 @@
         <int id="bank_3_v/pan" name="Delay 3 - Input panning" max="128" />
         <int id="bank_3_v/vol" name="Delay 3 - Input volume" max="160" />
         <int id="bank_4_e/enabled" />
-        <int id="bank_4_e/fbfilter_mode" max="2" />
-        <int id="bank_4_e/fbfilter_type" max="7" />
+        <enum_int id="bank_4_e/fbfilter_mode" source="filter_mode" max="2" />
+        <enum_int id="bank_4_e/fbfilter_type" source="filter_type" max="7" />
         <int id="bank_4_e/feedback_leave_first_echo" max="0" />
         <int id="bank_4_e/feedback_mode" max="3" />
         <int id="bank_4_e/feedback_tempo" />
-        <int id="bank_4_e/filter_mode" max="2" />
+        <enum_int id="bank_4_e/filter_mode" source="filter_mode" max="2" />
         <int id="bank_4_e/filter_post" />
-        <int id="bank_4_e/filter_type" max="7" />
+        <enum_int id="bank_4_e/filter_type" source="filter_type" max="7" />
         <int id="bank_4_e/grain_div" max="4096" />
         <int id="bank_4_e/grain_sh" max="128" />
         <int id="bank_4_v/fbfilter_cut" name="Delay 4 - Feedback filt" max="65536" />
@@ -870,14 +948,14 @@
         <int id="bank_4_v/pan" name="Delay 4 - Input panning" max="128" />
         <int id="bank_4_v/vol" name="Delay 4 - Input volume" max="160" />
         <int id="bank_5_e/enabled" />
-        <int id="bank_5_e/fbfilter_mode" max="2" />
-        <int id="bank_5_e/fbfilter_type" max="7" />
+        <enum_int id="bank_5_e/fbfilter_mode" source="filter_mode" max="2" />
+        <enum_int id="bank_5_e/fbfilter_type" source="filter_type" max="7" />
         <int id="bank_5_e/feedback_leave_first_echo" max="0" />
         <int id="bank_5_e/feedback_mode" max="3" />
         <int id="bank_5_e/feedback_tempo" />
-        <int id="bank_5_e/filter_mode" max="2" />
+        <enum_int id="bank_5_e/filter_mode" source="filter_mode" max="2" />
         <int id="bank_5_e/filter_post" />
-        <int id="bank_5_e/filter_type" max="7" />
+        <enum_int id="bank_5_e/filter_type" source="filter_type" max="7" />
         <int id="bank_5_e/grain_div" max="4096" />
         <int id="bank_5_e/grain_sh" max="128" />
         <int id="bank_5_v/fbfilter_cut" name="Delay 5 - Feedback filt" max="65536" />
@@ -897,14 +975,14 @@
         <int id="bank_5_v/pan" name="Delay 5 - Input panning" max="128" />
         <int id="bank_5_v/vol" name="Delay 5 - Input volume" max="160" />
         <int id="bank_6_e/enabled" />
-        <int id="bank_6_e/fbfilter_mode" max="2" />
-        <int id="bank_6_e/fbfilter_type" max="7" />
+        <enum_int id="bank_6_e/fbfilter_mode" source="filter_mode" max="2" />
+        <enum_int id="bank_6_e/fbfilter_type" source="filter_type" max="7" />
         <int id="bank_6_e/feedback_leave_first_echo" max="0" />
         <int id="bank_6_e/feedback_mode" max="3" />
         <int id="bank_6_e/feedback_tempo" />
-        <int id="bank_6_e/filter_mode" max="2" />
+        <enum_int id="bank_6_e/filter_mode" source="filter_mode" max="2" />
         <int id="bank_6_e/filter_post" />
-        <int id="bank_6_e/filter_type" max="7" />
+        <enum_int id="bank_6_e/filter_type" source="filter_type" max="7" />
         <int id="bank_6_e/grain_div" max="4096" />
         <int id="bank_6_e/grain_sh" max="128" />
         <int id="bank_6_v/fbfilter_cut" name="Delay 6 - Feedback filt" max="65536" />
@@ -924,14 +1002,14 @@
         <int id="bank_6_v/pan" name="Delay 6 - Input panning" max="128" />
         <int id="bank_6_v/vol" name="Delay 6 - Input volume" max="160" />
         <int id="bank_7_e/enabled" />
-        <int id="bank_7_e/fbfilter_mode" max="2" />
-        <int id="bank_7_e/fbfilter_type" max="7" />
+        <enum_int id="bank_7_e/fbfilter_mode" source="filter_mode" max="2" />
+        <enum_int id="bank_7_e/fbfilter_type" source="filter_type" max="7" />
         <int id="bank_7_e/feedback_leave_first_echo" max="0" />
         <int id="bank_7_e/feedback_mode" max="3" />
         <int id="bank_7_e/feedback_tempo" />
-        <int id="bank_7_e/filter_mode" max="2" />
+        <enum_int id="bank_7_e/filter_mode" source="filter_mode" max="2" />
         <int id="bank_7_e/filter_post" />
-        <int id="bank_7_e/filter_type" max="7" />
+        <enum_int id="bank_7_e/filter_type" source="filter_type" max="7" />
         <int id="bank_7_e/grain_div" max="4096" />
         <int id="bank_7_e/grain_sh" max="128" />
         <int id="bank_7_v/fbfilter_cut" name="Delay 7 - Feedback filt" max="65536" />
@@ -951,14 +1029,14 @@
         <int id="bank_7_v/pan" name="Delay 7 - Input panning" max="128" />
         <int id="bank_7_v/vol" name="Delay 7 - Input volume" max="160" />
         <int id="bank_8_e/enabled" />
-        <int id="bank_8_e/fbfilter_mode" max="2" />
-        <int id="bank_8_e/fbfilter_type" max="7" />
+        <enum_int id="bank_8_e/fbfilter_mode" source="filter_mode" max="2" />
+        <enum_int id="bank_8_e/fbfilter_type" source="filter_type" max="7" />
         <int id="bank_8_e/feedback_leave_first_echo" max="0" />
         <int id="bank_8_e/feedback_mode" max="3" />
         <int id="bank_8_e/feedback_tempo" />
-        <int id="bank_8_e/filter_mode" max="2" />
+        <enum_int id="bank_8_e/filter_mode" source="filter_mode" max="2" />
         <int id="bank_8_e/filter_post" />
-        <int id="bank_8_e/filter_type" max="7" />
+        <enum_int id="bank_8_e/filter_type" source="filter_type" max="7" />
         <int id="bank_8_e/grain_div" max="4096" />
         <int id="bank_8_e/grain_sh" max="128" />
         <int id="bank_8_v/fbfilter_cut" name="Delay 8 - Feedback filt" max="65536" />
@@ -1574,34 +1652,46 @@
           <part type="s_int" name="main_lvl" />
         </struct>
       </datadef>
+      <enums>
+        <enum id="type" max="7">
+          <part val="0" id="disabled" />
+          <part val="1" id="lowpass" />
+          <part val="2" id="bandpass" />
+          <part val="3" id="highpass" />
+          <part val="4" id="notch" />
+          <part val="5" id="lowshelf" />
+          <part val="6" id="peaking" />
+          <part val="7" id="highshelf" />
+        </enum>
+      </enums>
       <params>
         <int id="1_freq" name="Band 1 Freq" max="65536" />
         <int id="1_gain" name="Band 1 Gain" max="1800" min="-1800" />
-        <int id="1_type" name="Band 1 Type" max="7" />
+        <enum_int id="1_type" name="Band 1 Type" source="type" max="7" />
         <int id="1_width" name="Band 1 Width" max="65536" />
         <int id="2_freq" name="Band 2 Freq" max="65536" />
         <int id="2_gain" name="Band 2 Gain" max="1800" min="-1800" />
-        <int id="2_type" name="Band 2 Type" max="7" />
+        <enum_int id="2_type" name="Band 2 Type" source="type" max="7" />
         <int id="2_width" name="Band 2 Width" max="65536" />
         <int id="3_freq" name="Band 3 Freq" max="65536" />
         <int id="3_gain" name="Band 3 Gain" max="1800" min="-1800" />
-        <int id="3_type" name="Band 3 Type" max="7" />
+        <enum_int id="3_type" name="Band 3 Type" source="type" max="7" />
         <int id="3_width" name="Band 3 Width" max="65536" />
         <int id="4_freq" name="Band 4 Freq" max="65536" />
         <int id="4_gain" name="Band 4 Gain" max="1800" min="-1800" />
-        <int id="4_type" name="Band 4 Type" max="7" />
+        <enum_int id="4_type" name="Band 4 Type" source="type" max="7" />
         <int id="4_width" name="Band 4 Width" max="65536" />
         <int id="5_freq" name="Band 5 Freq" max="65536" />
         <int id="5_gain" name="Band 5 Gain" max="1800" min="-1800" />
-        <int id="5_type" name="Band 5 Type" max="7" />
+        <enum_int id="5_type" name="Band 5 Type" source="type" max="7" />
         <int id="5_width" name="Band 5 Width" max="65536" />
         <int id="6_freq" name="Band 6 Freq" max="65536" />
         <int id="6_gain" name="Band 6 Gain" max="1800" min="-1800" />
-        <int id="6_type" name="Band 6 Type" max="7" />
+        <enum_int id="6_type" name="Band 6 Type" source="type" max="7" />
         <int id="6_width" name="Band 6 Width" max="65536" />
         <int id="7_freq" name="Band 7 Freq" max="65536" />
         <int id="7_gain" name="Band 7 Gain" max="1800" min="-1800" />
-        <int id="7_type" name="Band 7 Type" max="7" />
+        <enum_int id="7_type" name="Band 7 Type" source="type" max="7" />
         <int id="7_width" name="Band 7 Width" max="65536" />
         <int id="main_lvl" name="Main Level" max="256" />
       </params>
@@ -1649,41 +1739,53 @@
           <part type="s_int" name="main_lvl" />
         </struct>
       </datadef>
+      <enums>
+        <enum id="type" max="7">
+          <part val="0" id="disabled" />
+          <part val="1" id="lowpass" />
+          <part val="2" id="bandpass" />
+          <part val="3" id="highpass" />
+          <part val="4" id="notch" />
+          <part val="5" id="lowshelf" />
+          <part val="6" id="peaking" />
+          <part val="7" id="highshelf" />
+        </enum>
+      </enums>
       <params>
         <int id="1_freq" name="Band 1 Freq" max="65536" num="7" />
         <int id="1_gain" name="Band 1 Gain" max="1800" min="-1800" num="0" />
         <int id="1_order" name="Band 1 Order" max="3" min="-3" />
-        <int id="1_type" name="Band 1 Type" max="7" />
+        <enum_int id="1_type" name="Band 1 Type" source="type" max="7" />
         <int id="1_width" name="Band 1 Width" max="65536" />
         <int id="2_freq" name="Band 2 Freq" max="65536" num="8" />
         <int id="2_gain" name="Band 2 Gain" max="1800" min="-1800" num="1" />
         <int id="2_order" name="Band 2 Order" max="3" min="-3" />
-        <int id="2_type" name="Band 2 Type" max="7" />
+        <enum_int id="2_type" name="Band 2 Type" source="type" max="7" />
         <int id="2_width" name="Band 2 Width" max="65536" />
         <int id="3_freq" name="Band 3 Freq" max="65536" num="9" />
         <int id="3_gain" name="Band 3 Gain" max="1800" min="-1800" num="2" />
         <int id="3_order" name="Band 3 Order" max="3" min="-3" />
-        <int id="3_type" name="Band 3 Type" max="7" />
+        <enum_int id="3_type" name="Band 3 Type" source="type" max="7" />
         <int id="3_width" name="Band 3 Width" max="65536" />
         <int id="4_freq" name="Band 4 Freq" max="65536" num="10" />
         <int id="4_gain" name="Band 4 Gain" max="1800" min="-1800" num="3" />
         <int id="4_order" name="Band 4 Order" max="3" min="-3" />
-        <int id="4_type" name="Band 4 Type" max="7" />
+        <enum_int id="4_type" name="Band 4 Type" source="type" max="7" />
         <int id="4_width" name="Band 4 Width" max="65536" />
         <int id="5_freq" name="Band 5 Freq" max="65536" num="11" />
         <int id="5_gain" name="Band 5 Gain" max="1800" min="-1800" num="4" />
         <int id="5_order" name="Band 5 Order" max="3" min="-3" />
-        <int id="5_type" name="Band 5 Type" max="7" />
+        <enum_int id="5_type" name="Band 5 Type" source="type" max="7" />
         <int id="5_width" name="Band 5 Width" max="65536" />
         <int id="6_freq" name="Band 6 Freq" max="65536" num="12" />
         <int id="6_gain" name="Band 6 Gain" max="1800" min="-1800" num="5" />
         <int id="6_order" name="Band 6 Order" max="3" min="-3" />
-        <int id="6_type" name="Band 6 Type" max="7" />
+        <enum_int id="6_type" name="Band 6 Type" source="type" max="7" />
         <int id="6_width" name="Band 6 Width" max="65536" />
         <int id="7_freq" name="Band 7 Freq" max="65536" num="13" />
         <int id="7_gain" name="Band 7 Gain" max="1800" min="-1800" num="6" />
         <int id="7_order" name="Band 7 Order" max="3" min="-3" />
-        <int id="7_type" name="Band 7 Type" max="7" />
+        <enum_int id="7_type" name="Band 7 Type" source="type" max="7" />
         <int id="7_width" name="Band 7 Width" max="65536" />
         <int id="main_lvl" name="Main Level" max="1800" min="-1800" />
       </params>

@@ -12,4 +12,9 @@
       <color>#F08000</color>
     </colorset>
   </category>
+  <category id="plugin">
+    <object id="ptvoice"> <visual name="PTV" color="#ffff80" /> </object>
+    <object id="pcm"> <visual name="PCM" color="#f9f4f1" /> </object>
+    <object id="ptnoise"> <visual name="PTN" color="#d0d0ff" /> </object>
+  </category>
 </datapack>
