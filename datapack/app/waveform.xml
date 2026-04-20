@@ -172,9 +172,9 @@
     <object id="chorus">
       <visual name="Chorus (Old)" color="#33363d" />
       <params>
-        <float id="depthMs" def="3" max="20" min="0.1" />
+        <float id="depthMs" def="3" max="20" min="0.1" unit="time:ms" />
         <float id="mixProportion" def="0.5" />
-        <float id="speedHz" def="1" max="10" min="0.1" />
+        <float id="speedHz" def="1" max="10" min="0.1" unit="freq:hz" />
         <float id="width" def="0.5" />
       </params>
     </object>
@@ -261,8 +261,8 @@
     <object id="delay">
       <visual name="Delay (Old)" color="#33363d" />
       <params>
-        <float id="feedback" def="-6" max="0" min="-30" />
-        <float id="length" def="149" max="1000" />
+        <float id="feedback" def="-6" max="0" min="-30" unit="decibel" />
+        <float id="length" def="149" max="1000" unit="time:ms" />
         <float id="mix" def="0.3" />
       </params>
     </object>
@@ -371,7 +371,7 @@
       <params>
         <float id="depth" def="5" max="7" min="0.1" />
         <float id="feedback" def="0.7" max="0.99" />
-        <float id="rate" def="0.4" max="16" min="0.01" />
+        <float id="rate" def="0.4" max="16" min="0.01" unit="freq:hz" />
       </params>
     </object>
     <object id="phaser2">
