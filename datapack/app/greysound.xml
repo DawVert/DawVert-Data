@@ -128,13 +128,12 @@
     <object id="GUITAR_AMP">
       <visual name="Guitar Amp" />
       <params>
-        <enum_int id="ampModel" def="clean" max="3">
+        <enum_int id="ampModel" def="crunch" max="3">
           <part num="0" id="clean" />
           <part num="1" id="crunch" />
           <part num="2" id="highgain" />
           <part num="3" id="modernmetal" />
         </enum_int>
-        <float id="ampModel" def="1" min="0" max="3" />
         <float id="inputGain" def="0" min="-12" max="12" unit="decibel"/>
         <float id="gain" def="50" min="0" max="100" unit="one:percent"/>
         <float id="bass" def="50" min="0" max="100" unit="one:percent"/>
