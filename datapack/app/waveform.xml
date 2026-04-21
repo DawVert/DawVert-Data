@@ -6,7 +6,7 @@
         <float id="freq" name="Freq" def="83.2131" max="135.076" min="15.4868" unit="freq:midikey" />
         <float id="gain" name="Gain" max="20" min="-20" unit="decibel" />
         <float id="q" name="Q" def="0.5" max="4" min="0.1" unit="filtband:q" />
-        <enum_int id="shape" name="Shape" def="peak" max="6">
+        <enum_int id="shape" name="Shape" def="peak" enum_max="6">
           <part num="0" id="low_pass" />
           <part num="1" id="low_shelf" />
           <part num="2" id="peak" />
@@ -50,7 +50,7 @@
     <object id="8bandEq">
       <visual name="8-Band Equalizer" color="#33363d" />
       <enums>
-        <enum id="shape" max="6">
+        <enum id="shape" enum_max="6">
           <part num="0" id="low_pass" />
           <part num="1" id="low_shelf" />
           <part num="2" id="peak" />
@@ -61,27 +61,27 @@
         </enum>
       </enums>
       <params>
-        <enum_int id="analyzer" def="0" max="2" >
+        <enum_int id="analyzer" def="0" enum_max="2">
           <part num="0" id="line" />
           <part num="1" id="bins" />
           <part num="2" id="off" />
         </enum_int>
-        <bool id="enable1lm" def="0" />
-        <bool id="enable1rs" def="0" />
-        <bool id="enable2lm" def="0" />
-        <bool id="enable2rs" def="0" />
-        <bool id="enable3lm" def="0" />
-        <bool id="enable3rs" def="0" />
-        <bool id="enable4lm" def="0" />
-        <bool id="enable4rs" def="0" />
-        <bool id="enable5lm" def="0" />
-        <bool id="enable5rs" def="0" />
-        <bool id="enable6lm" def="0" />
-        <bool id="enable6rs" def="0" />
-        <bool id="enable7lm" def="0" />
-        <bool id="enable7rs" def="0" />
-        <bool id="enable8lm" def="0" />
-        <bool id="enable8rs" def="0" />
+        <bool id="enable1lm" />
+        <bool id="enable1rs" />
+        <bool id="enable2lm" />
+        <bool id="enable2rs" />
+        <bool id="enable3lm" />
+        <bool id="enable3rs" />
+        <bool id="enable4lm" />
+        <bool id="enable4rs" />
+        <bool id="enable5lm" />
+        <bool id="enable5rs" />
+        <bool id="enable6lm" />
+        <bool id="enable6rs" />
+        <bool id="enable7lm" />
+        <bool id="enable7rs" />
+        <bool id="enable8lm" />
+        <bool id="enable8rs" />
         <float id="freq1lm" def="22.5063" unit="freq:midikey" />
         <float id="freq1rs" def="22.5063" unit="freq:midikey" />
         <float id="freq2lm" def="22.5063" unit="freq:midikey" />
@@ -114,7 +114,7 @@
         <float id="gain7rs" unit="decibel" />
         <float id="gain8lm" unit="decibel" />
         <float id="gain8rs" unit="decibel" />
-        <enum_int id="mode" max="2" >
+        <enum_int id="mode" enum_max="2">
           <part num="0" id="stereo" />
           <part num="1" id="lr" />
           <part num="2" id="ms" />
@@ -135,22 +135,22 @@
         <float id="q7rs" def="0.5" unit="filtband:q" />
         <float id="q8lm" def="0.5" unit="filtband:q" />
         <float id="q8rs" def="0.5" unit="filtband:q" />
-        <enum_int id="shape1lm" source="shape" def="low_shelf" max="6"/>
-        <enum_int id="shape1rs" source="shape" def="low_shelf" max="6"/>
-        <enum_int id="shape2lm" source="shape" def="low_shelf" max="6"/>
-        <enum_int id="shape2rs" source="shape" def="low_shelf" max="6"/>
-        <enum_int id="shape3lm" source="shape" def="low_shelf" max="6"/>
-        <enum_int id="shape3rs" source="shape" def="low_shelf" max="6"/>
-        <enum_int id="shape4lm" source="shape" def="low_shelf" max="6"/>
-        <enum_int id="shape4rs" source="shape" def="low_shelf" max="6"/>
-        <enum_int id="shape5lm" source="shape" def="low_shelf" max="6"/>
-        <enum_int id="shape5rs" source="shape" def="low_shelf" max="6"/>
-        <enum_int id="shape6lm" source="shape" def="low_shelf" max="6"/>
-        <enum_int id="shape6rs" source="shape" def="low_shelf" max="6"/>
-        <enum_int id="shape7lm" source="shape" def="low_shelf" max="6"/>
-        <enum_int id="shape7rs" source="shape" def="low_shelf" max="6"/>
-        <enum_int id="shape8lm" source="shape" def="low_shelf" max="6"/>
-        <enum_int id="shape8rs" source="shape" def="low_shelf" max="6"/>
+        <enum_int id="shape1lm" def="low_shelf" source="shape" />
+        <enum_int id="shape1rs" def="low_shelf" source="shape" />
+        <enum_int id="shape2lm" def="low_shelf" source="shape" />
+        <enum_int id="shape2rs" def="low_shelf" source="shape" />
+        <enum_int id="shape3lm" def="low_shelf" source="shape" />
+        <enum_int id="shape3rs" def="low_shelf" source="shape" />
+        <enum_int id="shape4lm" def="low_shelf" source="shape" />
+        <enum_int id="shape4rs" def="low_shelf" source="shape" />
+        <enum_int id="shape5lm" def="low_shelf" source="shape" />
+        <enum_int id="shape5rs" def="low_shelf" source="shape" />
+        <enum_int id="shape6lm" def="low_shelf" source="shape" />
+        <enum_int id="shape6rs" def="low_shelf" source="shape" />
+        <enum_int id="shape7lm" def="low_shelf" source="shape" />
+        <enum_int id="shape7rs" def="low_shelf" source="shape" />
+        <enum_int id="shape8lm" def="low_shelf" source="shape" />
+        <enum_int id="shape8rs" def="low_shelf" source="shape" />
         <int id="slope1lm" def="12" max="48" min="12" unit="decibel" />
         <int id="slope1rs" def="12" max="48" min="12" unit="decibel" />
         <int id="slope2lm" def="12" max="48" min="12" unit="decibel" />
@@ -181,17 +181,17 @@
     <object id="chorusEffect">
       <visual name="Chorus" color="#33363d" />
       <params>
-        <float id="delay" name="Delay" def="10" max="30" unit="time:ms"/>
-        <float id="depth" name="Depth" def="20" max="20" unit="time:ms"/>
+        <float id="delay" name="Delay" def="10" max="30" unit="time:ms" />
+        <float id="depth" name="Depth" def="20" max="20" unit="time:ms" />
         <float id="mix" name="Mix" def="1" />
         <bool id="mixLock" name="Mix Lock" />
-        <enum_int id="mode" name="Mode" def="wide" max="2">
+        <enum_int id="mode" name="Mode" def="wide" enum_max="2">
           <part num="0" id="normal" />
           <part num="1" id="wide" />
           <part num="2" id="wider" />
         </enum_int>
         <float id="rateSyncOff" name="Rate Sec" def="0.4" max="5" min="0.02" unit="freq:hz" />
-        <enum_int id="rateSyncOn" name="Rate Beat" def="1/8t" max="35">
+        <enum_int id="rateSyncOn" name="Rate Beat" def="1/8t" enum_max="35">
           <part num="0" id="32" />
           <part num="1" id="28" />
           <part num="2" id="24" />
@@ -270,7 +270,7 @@
       <visual name="Distortion" color="#33363d" />
       <params>
         <float id="drive" />
-        <enum_int id="dtype" def="light" max="5">
+        <enum_int id="dtype" def="light" enum_max="5">
           <part num="0" id="light" />
           <part num="1" id="medium" />
           <part num="2" id="hard" />
@@ -289,8 +289,8 @@
       <visual name="DJ EQ" color="#33363d" />
       <params>
         <float id="bass" def="1" />
-        <float id="freq1" def="59.2131" max="135.076" min="15.487" unit="freq:midikey"/>
-        <float id="freq2" def="99.0762" max="135.076" min="15.487" unit="freq:midikey"/>
+        <float id="freq1" def="59.2131" max="135.076" min="15.487" unit="freq:midikey" />
+        <float id="freq2" def="99.0762" max="135.076" min="15.487" unit="freq:midikey" />
         <float id="mid" def="1" />
         <float id="treble" def="1" />
       </params>
@@ -324,11 +324,11 @@
     <object id="lowpass">
       <visual name="Low Pass (Old)" color="#33363d" />
       <params>
-        <enum_string id="mode" name="Mode" def="lowpass" max="1">
+        <enum_string id="mode" name="Mode" def="lowpass" enum_max="1">
           <part num="0" string="lowpass" id="lowpass" />
           <part num="1" string="highpass" id="highpass" />
         </enum_string>
-        <float id="frequency" name="Frequency" def="4000" max="22000" min="10" unit="freq:hz"/>
+        <float id="frequency" name="Frequency" def="4000" max="22000" min="10" unit="freq:hz" />
       </params>
     </object>
     <object id="naturalReverb">
@@ -382,7 +382,7 @@
         <float id="floor" def="20" max="20000" unit="freq:hz" />
         <float id="mix" def="1" />
         <bool id="mixLock" />
-        <enum_int id="rateSyncOn" def="1/8t" max="35">
+        <enum_int id="rateSyncOn" def="1/8t" enum_max="35">
           <part num="0" id="32" />
           <part num="1" id="28" />
           <part num="2" id="24" />
@@ -466,7 +466,7 @@
     <object id="stereoDelay">
       <visual name="Delay" color="#33363d" />
       <enums>
-        <enum id="delay_synctime" max="35">
+        <enum id="delay_synctime" enum_max="35">
           <part num="0" id="32" />
           <part num="1" id="28" />
           <part num="2" id="24" />
@@ -506,12 +506,12 @@
         </enum>
       </enums>
       <params>
-        <float id="crossL" def="8" max="99" unit="one:percent"/>
-        <float id="crossR" def="8" max="99" unit="one:percent"/>
-        <float id="delaySyncOffL" max="5000" unit="time:ms"/>
-        <float id="delaySyncOffR" max="5000" unit="time:ms"/>
-        <enum_int id="delaySyncOnL" def="8" source="delay_synctime" max="35" />
-        <enum_int id="delaySyncOnR" def="8" source="delay_synctime" max="35" />
+        <float id="crossL" def="8" max="99" unit="one:percent" />
+        <float id="crossR" def="8" max="99" unit="one:percent" />
+        <float id="delaySyncOffL" max="5000" unit="time:ms" />
+        <float id="delaySyncOffR" max="5000" unit="time:ms" />
+        <enum_int id="delaySyncOnL" def="8" source="delay_synctime" />
+        <enum_int id="delaySyncOnR" def="8" source="delay_synctime" />
         <float id="feedbackL" def="8" max="99" unit="one:percent" />
         <float id="feedbackR" def="8" max="99" unit="one:percent" />
         <float id="highcut" def="5000" max="20000" min="20" unit="freq:hz" />

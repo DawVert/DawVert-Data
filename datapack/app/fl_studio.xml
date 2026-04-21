@@ -33,7 +33,7 @@
         </struct>
       </datadef>
       <enums>
-        <enum id="shape" max="6">
+        <enum id="shape" enum_max="6">
           <part num="0" id="sine" />
           <part num="1" id="triangle" />
           <part num="2" id="square" />
@@ -42,7 +42,7 @@
           <part num="5" id="noise" />
           <part num="6" id="custom" />
         </enum>
-      </enum>
+      </enums>
       <params>
         <int id="osc1_coarse" name="Osc 1 coarse" max="24" min="-24" unit="pitch:semitones"/>
         <int id="osc1_detune" name="Osc 1 stereo detune" max="50" min="-50" />
@@ -51,7 +51,7 @@
         <int id="osc1_mixlevel" name="Osc 1 Mix Level" max="128" />
         <int id="osc1_ofs" name="Osc 1 Offset" max="64" min="-64" />
         <int id="osc1_pan" name="Osc 1 Pan" max="64" min="-64" />
-        <enum_int id="osc1_shape" name="Osc 1 Shape" source="shape" max="6" />
+        <enum_int id="osc1_shape" name="Osc 1 Shape" source="shape" />
         <int id="osc2_coarse" name="Osc 2 Coarse" max="24" min="-24" unit="pitch:semitones"/>
         <int id="osc2_detune" name="Osc 2 Detune" max="50" min="-50" />
         <int id="osc2_fine" name="Osc 2 fine" max="100" min="-100" unit="pitch:cents"/>
@@ -59,7 +59,7 @@
         <int id="osc2_mixlevel" name="Osc 2 Mix Level" max="128" />
         <int id="osc2_ofs" name="Osc 2 Offset" max="64" min="-64" />
         <int id="osc2_pan" name="Osc 2 Pan" max="64" min="-64" />
-        <enum_int id="osc2_shape" name="Osc 2 Shape" source="shape" max="6" />
+        <enum_int id="osc2_shape" name="Osc 2 Shape" source="shape" />
         <bool id="osc3_am" name="Osc 3 AM" />
         <int id="osc3_coarse" name="Osc 3 Coarse" max="24" min="-24" unit="pitch:semitones"/>
         <int id="osc3_detune" name="Osc 3 Detune" max="50" min="-50" />
@@ -67,8 +67,17 @@
         <bool id="osc3_invert" name="Osc 3 Invert" />
         <int id="osc3_ofs" name="Osc 3 Offset" max="64" min="-64" />
         <int id="osc3_pan" name="Osc 3 Pan" max="64" min="-64" />
-        <enum_int id="osc3_shape" name="Osc 3 Shape" source="shape" max="6" />
+        <enum_int id="osc3_shape" name="Osc 3 Shape" source="shape" />
         <int id="phase_rand" name="Phase Rand" max="64" />
+        <customunit id="phase_rand" type="to_one"/>
+        <customunit id="osc1_mixlevel" type="to_one" />
+        <customunit id="osc2_mixlevel" type="to_one" />
+        <customunit id="osc1_pan" type="div" value="64"/>
+        <customunit id="osc2_pan" type="div" value="64"/>
+        <customunit id="osc3_pan" type="div" value="64"/>
+        <customunit id="osc1_ofs" type="div" value="64"/>
+        <customunit id="osc2_ofs" type="div" value="64"/>
+        <customunit id="osc3_ofs" type="div" value="64"/>
       </params>
       <datavals>
         <int id="version" name="Version" />
@@ -149,6 +158,9 @@
         <int id="bass" max="65535" />
         <int id="mid" max="65535" />
         <int id="treble" max="65535" />
+        <customunit id="bass" type="to_one"/>
+        <customunit id="mid" type="to_one"/>
+        <customunit id="treble" type="to_one"/>
       </params>
       <datavals>
         <int id="version" />
@@ -297,19 +309,19 @@
         </struct>
       </datadef>
       <params>
-        <enum_int id="amp_type" max="3">
+        <enum_int id="amp_type" enum_max="3">
           <part num="0" id="dry" name="Dry" />
           <part num="1" id="tube" name="Tube" />
           <part num="2" id="eq" name="EQ" />
           <part num="3" id="bandpass" name="Bandpass" />
         </enum_int>
-        <enum_int id="cabinet" max="3">
+        <enum_int id="cabinet" enum_max="3">
           <part num="0" id="dry" name="Dry"/>
           <part num="1" id="british" name="British"/>
           <part num="2" id="combo" name="Combo"/>
           <part num="3" id="stax" name="StaX"/>
         </enum_int>
-        <enum_int id="coil_type" max="2">
+        <enum_int id="coil_type" enum_max="2">
           <part num="0" id="none" name="None" />
           <part num="1" id="single" name="Single" />
           <part num="2" id="double" name="Double" />
@@ -324,7 +336,7 @@
         <int id="fret" max="65535" />
         <int id="fx_param1" max="65535" />
         <int id="fx_param2" max="65535" />
-        <enum_int id="fx_type" max="15">
+        <enum_int id="fx_type" enum_max="15">
           <part num="0" id="dry" name="Dry"/>
           <part num="1" id="amp:phaser" name="AMP:Phaser"/>
           <part num="2" id="amp:tremolo" name="AMP:Tremolo"/>
@@ -346,7 +358,7 @@
         <int id="harmonic" max="65535" />
         <int id="harmonic_vel" max="65535" />
         <int id="hold" />
-        <enum_int id="mode" max="5">
+        <enum_int id="mode" enum_max="5">
           <part num="0" id="none" name="None" />
           <part num="1" id="autochords" name="AutoChords" />
           <part num="2" id="powerchords" name="PowerChords" />
@@ -358,7 +370,7 @@
         <int id="pitch_bend" max="127" />
         <int id="presence" max="65535" />
         <int id="slap" max="65535" />
-        <enum_int id="string_type" max="6">
+        <enum_int id="string_type" enum_max="6">
           <part num="0" id="noise" name="Noise" />
           <part num="1" id="6string1" name="6String1" />
           <part num="2" id="6string2" name="6String2" />
@@ -381,19 +393,32 @@
           <part type="int" name="version" />
           <part type="s_int" name="threshold" />
           <part type="int" name="ratio" />
-          <part type="int" name="gain" />
+          <part type="s_int" name="gain" />
           <part type="int" name="attack" />
           <part type="int" name="release" />
           <part type="int" name="type" />
         </struct>
       </datadef>
       <params>
-        <int id="threshold" max="0" min="-600" num="0" />
-        <int id="ratio" max="300" num="1" />
-        <int id="gain" max="300" num="2" />
-        <int id="attack" max="4000" num="3" />
-        <int id="release" max="4000" num="4" />
-        <int id="type" max="8" num="5" />
+        <int num="0" id="threshold" max="0" min="-600" />
+        <int num="1" id="ratio" max="300" />
+        <int num="2" id="gain" min="-300" max="300" />
+        <int num="3" id="attack" max="4000" />
+        <int num="4" id="release" max="4000" unit="time:ms" />
+        <enum_int num="5" id="type" enum_max="7">
+          <part num="0" id="hard" />
+          <part num="1" id="medium" />
+          <part num="2" id="vintage" />
+          <part num="3" id="soft" />
+          <part num="4" id="hard_r" />
+          <part num="5" id="medium_r" />
+          <part num="6" id="vintage_r" />
+          <part num="7" id="soft_r" />
+        </enum_int>
+        <customunit id="threshold" out_unit="decibel" type="div" value="10"/>
+        <customunit id="ratio" type="div" value="10"/>
+        <customunit id="attack" out_unit="time:ms" type="div" value="10"/>
+        <customunit id="gain" out_unit="decibel" type="div" value="10"/>
       </params>
       <datavals>
         <int id="version" max="2" />
@@ -419,11 +444,14 @@
         <int id="in_a" name="A" max="65536" />
         <int id="in_b" name="B" max="65536" />
         <int id="in_c" name="C" max="65536" />
+        <customunit id="in_a" type="to_one" />
+        <customunit id="in_b" type="to_one" />
+        <customunit id="in_c" type="to_one" />
       </params>
       <datavals>
         <int id="version" max="4" />
-        <string id="formula" name="Formula" max="0" />
-        <string id="comment" name="Comment" max="0" />
+        <string id="formula" name="Formula" />
+        <string id="comment" name="Comment" />
       </datavals>
     </object>
     <object id="frequency shifter">
@@ -688,7 +716,7 @@
         <int id="time" name="Time" max="768" num="4" />
         <int id="fb_cut" name="Feedback Cut" max="128" num="7" />
         <int id="time_stereo_offset" name="Stereo Offset" max="512" min="-512" num="5" />
-        <enum_int id="fb_mode" name="Feedback Mode" max="2" num="6">
+        <enum_int id="fb_mode" name="Feedback Mode" enum_max="2" num="6">
           <part num="0" id="normal" name="Normal" />
           <part num="1" id="invert" name="Invert" />
           <part num="2" id="pingpong" name="Ping-pong" />
@@ -822,7 +850,7 @@
         </struct>
       </datadef>
       <enums>
-        <enum id="filter_type" max="6">
+        <enum id="filter_type" enum_max="6">
           <part num="0" id="off" />
           <part num="1" id="lowpass" />
           <part num="2" id="bandpass" />
@@ -832,7 +860,7 @@
           <part num="6" id="peaking" />
           <part num="7" id="highshelf" />
         </enum>
-        <enum id="filter_mode" max="2">
+        <enum id="filter_mode" enum_max="2">
           <part num="0" id="single" />
           <part num="1" id="dual" />
           <part num="2" id="triple" />
@@ -840,14 +868,14 @@
       </enums>
       <params>
         <int id="bank_1_e/enabled" />
-        <enum_int id="bank_1_e/fbfilter_mode" source="filter_mode" max="2" />
-        <enum_int id="bank_1_e/fbfilter_type" source="filter_type" max="7" />
+        <enum_int id="bank_1_e/fbfilter_mode" source="filter_mode" />
+        <enum_int id="bank_1_e/fbfilter_type" source="filter_type" />
         <int id="bank_1_e/feedback_leave_first_echo" max="0" />
         <int id="bank_1_e/feedback_mode" max="3" />
         <int id="bank_1_e/feedback_tempo" />
-        <enum_int id="bank_1_e/filter_mode" source="filter_mode" max="2" />
+        <enum_int id="bank_1_e/filter_mode" source="filter_mode" />
         <int id="bank_1_e/filter_post" />
-        <enum_int id="bank_1_e/filter_type" source="filter_type" max="7" />
+        <enum_int id="bank_1_e/filter_type" source="filter_type" />
         <int id="bank_1_e/grain_div" max="4096" />
         <int id="bank_1_e/grain_sh" max="128" />
         <int id="bank_1_v/fbfilter_cut" name="Delay 1 - Feedback filt" max="65536" />
@@ -867,14 +895,14 @@
         <int id="bank_1_v/pan" name="Delay 1 - Input panning" max="128" />
         <int id="bank_1_v/vol" name="Delay 1 - Input volume" max="160" />
         <int id="bank_2_e/enabled" />
-        <enum_int id="bank_2_e/fbfilter_mode" source="filter_mode" max="2" />
-        <enum_int id="bank_2_e/fbfilter_type" source="filter_type" max="7" />
+        <enum_int id="bank_2_e/fbfilter_mode" source="filter_mode" />
+        <enum_int id="bank_2_e/fbfilter_type" source="filter_type" />
         <int id="bank_2_e/feedback_leave_first_echo" max="0" />
         <int id="bank_2_e/feedback_mode" max="3" />
         <int id="bank_2_e/feedback_tempo" />
-        <enum_int id="bank_2_e/filter_mode" source="filter_mode" max="2" />
+        <enum_int id="bank_2_e/filter_mode" source="filter_mode" />
         <int id="bank_2_e/filter_post" />
-        <enum_int id="bank_2_e/filter_type" source="filter_type" max="7" />
+        <enum_int id="bank_2_e/filter_type" source="filter_type" />
         <int id="bank_2_e/grain_div" max="4096" />
         <int id="bank_2_e/grain_sh" max="128" />
         <int id="bank_2_v/fbfilter_cut" name="Delay 2 - Feedback filt" max="65536" />
@@ -894,14 +922,14 @@
         <int id="bank_2_v/pan" name="Delay 2 - Input panning" max="128" />
         <int id="bank_2_v/vol" name="Delay 2 - Input volume" max="160" />
         <int id="bank_3_e/enabled" />
-        <enum_int id="bank_3_e/fbfilter_mode" source="filter_mode" max="2" />
-        <enum_int id="bank_3_e/fbfilter_type" source="filter_type" max="7" />
+        <enum_int id="bank_3_e/fbfilter_mode" source="filter_mode" />
+        <enum_int id="bank_3_e/fbfilter_type" source="filter_type" />
         <int id="bank_3_e/feedback_leave_first_echo" max="0" />
         <int id="bank_3_e/feedback_mode" max="3" />
         <int id="bank_3_e/feedback_tempo" />
-        <enum_int id="bank_3_e/filter_mode" source="filter_mode" max="2" />
+        <enum_int id="bank_3_e/filter_mode" source="filter_mode" />
         <int id="bank_3_e/filter_post" />
-        <enum_int id="bank_3_e/filter_type" source="filter_type" max="7" />
+        <enum_int id="bank_3_e/filter_type" source="filter_type" />
         <int id="bank_3_e/grain_div" max="4096" />
         <int id="bank_3_e/grain_sh" max="128" />
         <int id="bank_3_v/fbfilter_cut" name="Delay 3 - Feedback filt" max="65536" />
@@ -921,14 +949,14 @@
         <int id="bank_3_v/pan" name="Delay 3 - Input panning" max="128" />
         <int id="bank_3_v/vol" name="Delay 3 - Input volume" max="160" />
         <int id="bank_4_e/enabled" />
-        <enum_int id="bank_4_e/fbfilter_mode" source="filter_mode" max="2" />
-        <enum_int id="bank_4_e/fbfilter_type" source="filter_type" max="7" />
+        <enum_int id="bank_4_e/fbfilter_mode" source="filter_mode" />
+        <enum_int id="bank_4_e/fbfilter_type" source="filter_type" />
         <int id="bank_4_e/feedback_leave_first_echo" max="0" />
         <int id="bank_4_e/feedback_mode" max="3" />
         <int id="bank_4_e/feedback_tempo" />
-        <enum_int id="bank_4_e/filter_mode" source="filter_mode" max="2" />
+        <enum_int id="bank_4_e/filter_mode" source="filter_mode" />
         <int id="bank_4_e/filter_post" />
-        <enum_int id="bank_4_e/filter_type" source="filter_type" max="7" />
+        <enum_int id="bank_4_e/filter_type" source="filter_type" />
         <int id="bank_4_e/grain_div" max="4096" />
         <int id="bank_4_e/grain_sh" max="128" />
         <int id="bank_4_v/fbfilter_cut" name="Delay 4 - Feedback filt" max="65536" />
@@ -948,14 +976,14 @@
         <int id="bank_4_v/pan" name="Delay 4 - Input panning" max="128" />
         <int id="bank_4_v/vol" name="Delay 4 - Input volume" max="160" />
         <int id="bank_5_e/enabled" />
-        <enum_int id="bank_5_e/fbfilter_mode" source="filter_mode" max="2" />
-        <enum_int id="bank_5_e/fbfilter_type" source="filter_type" max="7" />
+        <enum_int id="bank_5_e/fbfilter_mode" source="filter_mode" />
+        <enum_int id="bank_5_e/fbfilter_type" source="filter_type" />
         <int id="bank_5_e/feedback_leave_first_echo" max="0" />
         <int id="bank_5_e/feedback_mode" max="3" />
         <int id="bank_5_e/feedback_tempo" />
-        <enum_int id="bank_5_e/filter_mode" source="filter_mode" max="2" />
+        <enum_int id="bank_5_e/filter_mode" source="filter_mode" />
         <int id="bank_5_e/filter_post" />
-        <enum_int id="bank_5_e/filter_type" source="filter_type" max="7" />
+        <enum_int id="bank_5_e/filter_type" source="filter_type" />
         <int id="bank_5_e/grain_div" max="4096" />
         <int id="bank_5_e/grain_sh" max="128" />
         <int id="bank_5_v/fbfilter_cut" name="Delay 5 - Feedback filt" max="65536" />
@@ -975,14 +1003,14 @@
         <int id="bank_5_v/pan" name="Delay 5 - Input panning" max="128" />
         <int id="bank_5_v/vol" name="Delay 5 - Input volume" max="160" />
         <int id="bank_6_e/enabled" />
-        <enum_int id="bank_6_e/fbfilter_mode" source="filter_mode" max="2" />
-        <enum_int id="bank_6_e/fbfilter_type" source="filter_type" max="7" />
+        <enum_int id="bank_6_e/fbfilter_mode" source="filter_mode" />
+        <enum_int id="bank_6_e/fbfilter_type" source="filter_type" />
         <int id="bank_6_e/feedback_leave_first_echo" max="0" />
         <int id="bank_6_e/feedback_mode" max="3" />
         <int id="bank_6_e/feedback_tempo" />
-        <enum_int id="bank_6_e/filter_mode" source="filter_mode" max="2" />
+        <enum_int id="bank_6_e/filter_mode" source="filter_mode" />
         <int id="bank_6_e/filter_post" />
-        <enum_int id="bank_6_e/filter_type" source="filter_type" max="7" />
+        <enum_int id="bank_6_e/filter_type" source="filter_type" />
         <int id="bank_6_e/grain_div" max="4096" />
         <int id="bank_6_e/grain_sh" max="128" />
         <int id="bank_6_v/fbfilter_cut" name="Delay 6 - Feedback filt" max="65536" />
@@ -1002,14 +1030,14 @@
         <int id="bank_6_v/pan" name="Delay 6 - Input panning" max="128" />
         <int id="bank_6_v/vol" name="Delay 6 - Input volume" max="160" />
         <int id="bank_7_e/enabled" />
-        <enum_int id="bank_7_e/fbfilter_mode" source="filter_mode" max="2" />
-        <enum_int id="bank_7_e/fbfilter_type" source="filter_type" max="7" />
+        <enum_int id="bank_7_e/fbfilter_mode" source="filter_mode" />
+        <enum_int id="bank_7_e/fbfilter_type" source="filter_type" />
         <int id="bank_7_e/feedback_leave_first_echo" max="0" />
         <int id="bank_7_e/feedback_mode" max="3" />
         <int id="bank_7_e/feedback_tempo" />
-        <enum_int id="bank_7_e/filter_mode" source="filter_mode" max="2" />
+        <enum_int id="bank_7_e/filter_mode" source="filter_mode" />
         <int id="bank_7_e/filter_post" />
-        <enum_int id="bank_7_e/filter_type" source="filter_type" max="7" />
+        <enum_int id="bank_7_e/filter_type" source="filter_type" />
         <int id="bank_7_e/grain_div" max="4096" />
         <int id="bank_7_e/grain_sh" max="128" />
         <int id="bank_7_v/fbfilter_cut" name="Delay 7 - Feedback filt" max="65536" />
@@ -1029,14 +1057,14 @@
         <int id="bank_7_v/pan" name="Delay 7 - Input panning" max="128" />
         <int id="bank_7_v/vol" name="Delay 7 - Input volume" max="160" />
         <int id="bank_8_e/enabled" />
-        <enum_int id="bank_8_e/fbfilter_mode" source="filter_mode" max="2" />
-        <enum_int id="bank_8_e/fbfilter_type" source="filter_type" max="7" />
+        <enum_int id="bank_8_e/fbfilter_mode" source="filter_mode" />
+        <enum_int id="bank_8_e/fbfilter_type" source="filter_type" />
         <int id="bank_8_e/feedback_leave_first_echo" max="0" />
         <int id="bank_8_e/feedback_mode" max="3" />
         <int id="bank_8_e/feedback_tempo" />
-        <enum_int id="bank_8_e/filter_mode" source="filter_mode" max="2" />
+        <enum_int id="bank_8_e/filter_mode" source="filter_mode" />
         <int id="bank_8_e/filter_post" />
-        <enum_int id="bank_8_e/filter_type" source="filter_type" max="7" />
+        <enum_int id="bank_8_e/filter_type" source="filter_type" />
         <int id="bank_8_e/grain_div" max="4096" />
         <int id="bank_8_e/grain_sh" max="128" />
         <int id="bank_8_v/fbfilter_cut" name="Delay 8 - Feedback filt" max="65536" />
@@ -1653,7 +1681,7 @@
         </struct>
       </datadef>
       <enums>
-        <enum id="type" max="7">
+        <enum id="type" enum_max="7">
           <part num="0" id="disabled" />
           <part num="1" id="lowpass" />
           <part num="2" id="bandpass" />
@@ -1667,31 +1695,31 @@
       <params>
         <int id="1_freq" name="Band 1 Freq" max="65536" />
         <int id="1_gain" name="Band 1 Gain" max="1800" min="-1800" />
-        <enum_int id="1_type" name="Band 1 Type" source="type" max="7" />
+        <enum_int id="1_type" name="Band 1 Type" source="type" />
         <int id="1_width" name="Band 1 Width" max="65536" />
         <int id="2_freq" name="Band 2 Freq" max="65536" />
         <int id="2_gain" name="Band 2 Gain" max="1800" min="-1800" />
-        <enum_int id="2_type" name="Band 2 Type" source="type" max="7" />
+        <enum_int id="2_type" name="Band 2 Type" source="type" />
         <int id="2_width" name="Band 2 Width" max="65536" />
         <int id="3_freq" name="Band 3 Freq" max="65536" />
         <int id="3_gain" name="Band 3 Gain" max="1800" min="-1800" />
-        <enum_int id="3_type" name="Band 3 Type" source="type" max="7" />
+        <enum_int id="3_type" name="Band 3 Type" source="type" />
         <int id="3_width" name="Band 3 Width" max="65536" />
         <int id="4_freq" name="Band 4 Freq" max="65536" />
         <int id="4_gain" name="Band 4 Gain" max="1800" min="-1800" />
-        <enum_int id="4_type" name="Band 4 Type" source="type" max="7" />
+        <enum_int id="4_type" name="Band 4 Type" source="type" />
         <int id="4_width" name="Band 4 Width" max="65536" />
         <int id="5_freq" name="Band 5 Freq" max="65536" />
         <int id="5_gain" name="Band 5 Gain" max="1800" min="-1800" />
-        <enum_int id="5_type" name="Band 5 Type" source="type" max="7" />
+        <enum_int id="5_type" name="Band 5 Type" source="type" />
         <int id="5_width" name="Band 5 Width" max="65536" />
         <int id="6_freq" name="Band 6 Freq" max="65536" />
         <int id="6_gain" name="Band 6 Gain" max="1800" min="-1800" />
-        <enum_int id="6_type" name="Band 6 Type" source="type" max="7" />
+        <enum_int id="6_type" name="Band 6 Type" source="type" />
         <int id="6_width" name="Band 6 Width" max="65536" />
         <int id="7_freq" name="Band 7 Freq" max="65536" />
         <int id="7_gain" name="Band 7 Gain" max="1800" min="-1800" />
-        <enum_int id="7_type" name="Band 7 Type" source="type" max="7" />
+        <enum_int id="7_type" name="Band 7 Type" source="type" />
         <int id="7_width" name="Band 7 Width" max="65536" />
         <int id="main_lvl" name="Main Level" max="256" />
       </params>
@@ -1740,7 +1768,7 @@
         </struct>
       </datadef>
       <enums>
-        <enum id="type" max="7">
+        <enum id="type" enum_max="7">
           <part num="0" id="disabled" />
           <part num="1" id="lowpass" />
           <part num="2" id="bandpass" />
@@ -1755,37 +1783,37 @@
         <int id="1_freq" name="Band 1 Freq" max="65536" num="7" />
         <int id="1_gain" name="Band 1 Gain" max="1800" min="-1800" num="0" />
         <int id="1_order" name="Band 1 Order" max="3" min="-3" />
-        <enum_int id="1_type" name="Band 1 Type" source="type" max="7" />
+        <enum_int id="1_type" name="Band 1 Type" source="type" />
         <int id="1_width" name="Band 1 Width" max="65536" />
         <int id="2_freq" name="Band 2 Freq" max="65536" num="8" />
         <int id="2_gain" name="Band 2 Gain" max="1800" min="-1800" num="1" />
         <int id="2_order" name="Band 2 Order" max="3" min="-3" />
-        <enum_int id="2_type" name="Band 2 Type" source="type" max="7" />
+        <enum_int id="2_type" name="Band 2 Type" source="type" />
         <int id="2_width" name="Band 2 Width" max="65536" />
         <int id="3_freq" name="Band 3 Freq" max="65536" num="9" />
         <int id="3_gain" name="Band 3 Gain" max="1800" min="-1800" num="2" />
         <int id="3_order" name="Band 3 Order" max="3" min="-3" />
-        <enum_int id="3_type" name="Band 3 Type" source="type" max="7" />
+        <enum_int id="3_type" name="Band 3 Type" source="type" />
         <int id="3_width" name="Band 3 Width" max="65536" />
         <int id="4_freq" name="Band 4 Freq" max="65536" num="10" />
         <int id="4_gain" name="Band 4 Gain" max="1800" min="-1800" num="3" />
         <int id="4_order" name="Band 4 Order" max="3" min="-3" />
-        <enum_int id="4_type" name="Band 4 Type" source="type" max="7" />
+        <enum_int id="4_type" name="Band 4 Type" source="type" />
         <int id="4_width" name="Band 4 Width" max="65536" />
         <int id="5_freq" name="Band 5 Freq" max="65536" num="11" />
         <int id="5_gain" name="Band 5 Gain" max="1800" min="-1800" num="4" />
         <int id="5_order" name="Band 5 Order" max="3" min="-3" />
-        <enum_int id="5_type" name="Band 5 Type" source="type" max="7" />
+        <enum_int id="5_type" name="Band 5 Type" source="type" />
         <int id="5_width" name="Band 5 Width" max="65536" />
         <int id="6_freq" name="Band 6 Freq" max="65536" num="12" />
         <int id="6_gain" name="Band 6 Gain" max="1800" min="-1800" num="5" />
         <int id="6_order" name="Band 6 Order" max="3" min="-3" />
-        <enum_int id="6_type" name="Band 6 Type" source="type" max="7" />
+        <enum_int id="6_type" name="Band 6 Type" source="type" />
         <int id="6_width" name="Band 6 Width" max="65536" />
         <int id="7_freq" name="Band 7 Freq" max="65536" num="13" />
         <int id="7_gain" name="Band 7 Gain" max="1800" min="-1800" num="6" />
         <int id="7_order" name="Band 7 Order" max="3" min="-3" />
-        <enum_int id="7_type" name="Band 7 Type" source="type" max="7" />
+        <enum_int id="7_type" name="Band 7 Type" source="type" />
         <int id="7_width" name="Band 7 Width" max="65536" />
         <int id="main_lvl" name="Main Level" max="1800" min="-1800" />
       </params>
@@ -1857,16 +1885,24 @@
         </struct>
       </datadef>
       <params>
-        <int id="lowcut" name="Low Cut" max="65536" num="0" />
-        <int id="highcut" name="High Cut" max="65536" num="1" />
-        <int id="predelay" name="Predelay" max="250" num="2" />
-        <int id="room_size" name="Room Size" max="65536" num="3" />
-        <int id="diffusion" name="Diffusion" max="65536" num="4" />
-        <int id="color" name="Color" max="40" num="5" />
-        <int id="decay" name="Decay" max="65536" num="6" />
-        <int id="hidamping" name="High Damping" max="65536" num="7" />
-        <int id="dry" name="Dry" max="65536" num="8" />
-        <int id="reverb" name="Reverb" max="65536" num="9" />
+        <int num="0" id="lowcut" name="Low Cut" max="65536" />
+        <int num="1" id="highcut" name="High Cut" max="65536" />
+        <int num="2" id="predelay" name="Predelay" max="250" unit="time:ms"/>
+        <int num="3" id="room_size" name="Room Size" max="65536" />
+        <int num="4" id="diffusion" name="Diffusion" max="65536" />
+        <int num="5" id="color" name="Color" max="40" />
+        <int num="6" id="decay" name="Decay" max="65536" />
+        <int num="7" id="hidamping" name="High Damping" max="65536" />
+        <int num="8" id="dry" name="Dry" max="65536" />
+        <int num="9" id="reverb" name="Reverb" max="65536" />
+        <customunit id="lowcut" out_unit="freq:hz" type="range_change" range_in="0:65536" range_out="20:3000"/>
+        <customunit id="highcut" out_unit="freq:hz" type="range_change" range_in="0:65536" range_out="500:22050"/>
+        <customunit id="room_size" type="to_one"/>
+        <customunit id="diffusion" type="to_one"/>
+        <customunit id="decay" out_unit="time:seconds" type="range_change" range_in="0:65536" range_out="0.1:20"/>
+        <customunit id="hidamping" out_unit="freq:hz" type="range_change" range_in="0:65536" range_out="500:22050"/>
+        <customunit id="dry" type="to_one"/>
+        <customunit id="reverb" type="to_one"/>
       </params>
       <datavals>
         <int id="version" name="Version" />
@@ -1886,7 +1922,7 @@
           <part type="int" name="hidamping" />
           <part type="int" name="bass" />
           <part type="int" name="cross" />
-          <part type="int" name="stereo" />
+          <part type="s_int" name="stereo" />
           <part type="int" name="dry" />
           <part type="int" name="er" />
           <part type="int" name="wet" />
@@ -1897,23 +1933,37 @@
         </struct>
       </datadef>
       <params>
-        <int id="lowcut" name="Low Cut" max="3000" num="0" />
-        <int id="highcut" name="High Cut" max="221" num="1" />
-        <int id="predelay" name="Predelay" max="384" num="2" />
-        <int id="room_size" name="Room Size" max="100" num="3" />
-        <int id="diffusion" name="Diffusion" max="100" num="4" />
-        <int id="decay" name="Decay" max="200" num="5" />
-        <int id="hidamping" name="High Damping" max="221" num="6" />
-        <int id="bass" name="Bass Multi" max="300" num="7" />
-        <int id="cross" name="Crossover" max="2000" num="8" />
-        <int id="stereo" name="Stereo Seperation" num="9" />
-        <int id="dry" name="Dry" max="160" num="10" />
-        <int id="er" name="Early Reflection" max="160" num="11" />
-        <int id="wet" name="Wet" max="160" num="12" />
-        <int id="mod_speed" name="Mod Speed" max="2048" num="13" />
-        <int id="mod" name="Mod Depth" max="2048" num="14" />
+        <int num="0" id="lowcut" name="Low Cut" max="3000" unit="freq:hz" />
+        <int num="1" id="highcut" name="High Cut" max="221" />
+        <int num="2" id="predelay" name="Predelay" max="384" />
+        <int num="3" id="room_size" name="Room Size" max="100" />
+        <int num="4" id="diffusion" name="Diffusion" max="100" />
+        <int num="5" id="decay" name="Decay" max="200" />
+        <int num="6" id="hidamping" name="High Damping" max="221" />
+        <int num="7" id="bass" name="Bass Multi" max="300" />
+        <int num="8" id="cross" name="Crossover" max="2000" unit="freq:hz" />
+        <int num="9" id="stereo" name="Stereo Seperation"  min="-64" max="64"/>
+        <int num="10" id="dry" name="Dry" max="160" />
+        <int num="11" id="er" name="Early Reflection" max="160" />
+        <int num="12" id="wet" name="Wet" max="160" />
+        <int num="13" id="mod_speed" name="Mod Speed" max="2048" />
+        <int num="14" id="mod" name="Mod Depth" max="2048" />
         <bool id="mid_side" name="Mid/Side Input" />
         <bool id="tempo_predelay" name="Tempo Based Predelay" />
+
+        <customunit id="highcut" out_unit="freq:hz" type="mul" value="100"/>
+        <customunit id="predelay" out_unit="time:seconds" type="div" value="38.4"/>
+        <customunit id="room_size" type="to_one"/>
+        <customunit id="diffusion" type="to_one"/>
+        <customunit id="decay" out_unit="time:seconds" type="div" value="10"/>
+        <customunit id="hidamping" out_unit="freq:hz" type="mul" value="100"/>
+        <customunit id="bass" type="div" value="100"/>
+        <customunit id="stereo" type="div" value="64"/>
+        <customunit id="dry" type="div" value="128"/>
+        <customunit id="er" type="div" value="128"/>
+        <customunit id="wet" type="div" value="128"/>
+        <customunit id="mod_speed" type="to_one"/>
+        <customunit id="mod" type="to_one"/>
       </params>
       <datavals>
         <int id="version" name="Version" />
@@ -1994,14 +2044,14 @@
         </struct>
       </datadef>
       <params>
-        <int id="delay" name="Delay" max="4096" min="-4096" num="4" />
-        <int id="dephase" name="Dephaseing" max="4096" min="-4096" num="5" />
         <int id="iodiff" name="In/Out Diffrence" />
-        <int id="l2l" name="Left" max="25600" min="-25600" num="1" />
-        <int id="l2r" name="Left to Right" max="25600" min="-25600" num="3" />
         <int id="prepost" name="Pre/Post" />
-        <int id="r2l" name="Right to Left" max="25600" min="-25600" num="0" />
-        <int id="r2r" name="Right" max="25600" min="-25600" num="2" />
+        <int num="0" id="r2l" name="Right to Left" max="25600" min="-25600" />
+        <int num="1" id="l2l" name="Left" max="25600" min="-25600" />
+        <int num="2" id="r2r" name="Right" max="25600" min="-25600" />
+        <int num="3" id="l2r" name="Left to Right" max="25600" min="-25600" />
+        <int num="4" id="delay" name="Delay" max="4096" min="-4096" />
+        <int num="5" id="dephase" name="Dephaseing" max="4096" min="-4096" />
       </params>
     </object>
     <object id="pitcher">
@@ -2691,11 +2741,11 @@
         </struct>
       </datadef>
       <params>
-        <int id="spread" max="10000" num="0" />
-        <int id="stereo_sep" max="10000" min="-10000" num="1" />
-        <int id="low_bypass" max="1e+06" min="1000" num="2" />
-        <int id="mono" num="3" />
-        <int id="enabled" num="4" />
+        <int num="0" id="spread" max="10000" />
+        <int num="1" id="stereo_sep" max="10000" min="-10000" />
+        <int num="2" id="low_bypass" max="1e+06" min="1000" />
+        <int num="3" id="mono" />
+        <int num="4" id="enabled" />
       </params>
       <datavals>
         <int id="version" name="Version" max="65539" />
@@ -2814,603 +2864,603 @@
       <datadef>
       </datadef>
       <params>
-        <int id="param_0" name="Main - Master level" def="88" max="160" num="0" />
-        <int id="param_1" name="Main - Master LFO level" def="128" max="128" min="-128" num="1" />
-        <int id="param_2" name="Main - Master pitch" max="24" min="-24" num="2" />
-        <int id="param_3" name="Main - Volume attack" def="128" max="256" num="3" />
-        <int id="param_4" name="Main - Volume decay" def="165" max="256" num="4" />
-        <int id="param_5" name="Main - Volume sustain" max="128" min="-128" num="5" />
-        <int id="param_6" name="Main - Volume release" def="166" max="256" num="6" />
-        <int id="param_7" name="Main - Filter attack" def="128" max="256" num="7" />
-        <int id="param_8" name="Main - Filter decay" def="128" max="256" num="8" />
-        <int id="param_9" name="Main - Filter sustain" max="128" min="-128" num="9" />
-        <int id="param_10" name="Main - Filter release" def="128" max="256" num="10" />
-        <int id="param_11" name="Main - Unison order" def="6" max="9" min="1" num="11" />
-        <int id="param_12" name="Main - Unison panning" def="58" max="128" num="12" />
-        <int id="param_13" name="Main - Unison volume" def="128" max="128" min="16" num="13" />
-        <int id="param_14" name="Main - Unison pitch" def="158" max="256" num="14" />
-        <int id="param_15" name="Main - Unison sub level" max="96" num="15" />
-        <int id="param_16" name="Main - Unison phase" def="128" max="128" num="16" />
-        <int id="param_17" name="Main - Unison envelope" def="27" max="192" num="17" />
-        <int id="param_18" name="Main - Modulation X" def="512" max="512" num="18" />
-        <int id="param_19" name="Main - Modulation Y" def="442" max="512" num="19" />
-        <int id="param_20" name="Operator 1 - Starting p" max="256" num="20" />
-        <int id="param_21" name="Operator 1 - Volume" def="256" max="256" min="-256" num="21" />
-        <int id="param_22" name="Operator 1 - Pitch enve" def="1200" max="4800" num="22" />
-        <int id="param_23" name="Operator 1 - Panning -" def="128" max="256" num="23" />
-        <int id="param_24" name="Operator 1 - Panning -" def="128" max="256" num="24" />
-        <int id="param_25" name="Operator 1 - Panning -" max="128" num="25" />
-        <int id="param_26" name="Operator 1 - Panning -" def="128" max="256" min="-128" num="26" />
-        <int id="param_27" name="Operator 1 - Panning -" def="40000" max="65536" min="512" num="27" />
-        <int id="param_28" name="Operator 1 - Panning -" max="128" min="-128" num="28" />
-        <int id="param_29" name="Operator 1 - Panning -" max="128" min="-128" num="29" />
-        <int id="param_30" name="Operator 1 - Panning -" max="112" min="-112" num="30" />
-        <int id="param_31" name="Operator 1 - Volume - A" def="128" max="256" num="31" />
-        <int id="param_32" name="Operator 1 - Volume - D" def="128" max="256" num="32" />
-        <int id="param_33" name="Operator 1 - Volume - S" max="128" min="-128" num="33" />
-        <int id="param_34" name="Operator 1 - Volume - R" def="128" max="256" num="34" />
-        <int id="param_35" name="Operator 1 - Volume - L" def="40000" max="65536" min="512" num="35" />
-        <int id="param_36" name="Operator 1 - Volume - L" max="128" min="-128" num="36" />
-        <int id="param_37" name="Operator 1 - Volume - L" max="128" min="-128" num="37" />
-        <int id="param_38" name="Operator 1 - Volume - L" max="112" min="-112" num="38" />
-        <int id="param_39" name="Operator 1 - Input modu" def="128" max="256" num="39" />
-        <int id="param_40" name="Operator 1 - Input modu" def="128" max="256" num="40" />
-        <int id="param_41" name="Operator 1 - Input modu" max="128" min="-128" num="41" />
-        <int id="param_42" name="Operator 1 - Input modu" def="128" max="256" num="42" />
-        <int id="param_43" name="Operator 1 - Input modu" def="40000" max="65536" min="512" num="43" />
-        <int id="param_44" name="Operator 1 - Input modu" max="128" min="-128" num="44" />
-        <int id="param_45" name="Operator 1 - Input modu" max="128" min="-128" num="45" />
-        <int id="param_46" name="Operator 1 - Input modu" max="112" min="-112" num="46" />
-        <int id="param_47" name="Operator 1 - Pitch - At" def="128" max="256" num="47" />
-        <int id="param_48" name="Operator 1 - Pitch - De" def="128" max="256" num="48" />
-        <int id="param_49" name="Operator 1 - Pitch - Su" max="128" min="-128" num="49" />
-        <int id="param_50" name="Operator 1 - Pitch - Re" def="128" max="256" num="50" />
-        <int id="param_51" name="Operator 1 - Pitch - LF" def="40000" max="65536" min="512" num="51" />
-        <int id="param_52" name="Operator 1 - Pitch - LF" max="128" min="-128" num="52" />
-        <int id="param_53" name="Operator 1 - Pitch - LF" max="128" min="-128" num="53" />
-        <int id="param_54" name="Operator 1 - Pitch - LF" max="112" min="-112" num="54" />
-        <int id="param_55" name="Operator 1 - Phase - At" def="128" max="256" num="55" />
-        <int id="param_56" name="Operator 1 - Phase - De" def="128" max="256" num="56" />
-        <int id="param_57" name="Operator 1 - Phase - Su" max="128" min="-128" num="57" />
-        <int id="param_58" name="Operator 1 - Phase - Re" def="128" max="256" num="58" />
-        <int id="param_59" name="Operator 1 - Phase - LF" def="40000" max="65536" min="512" num="59" />
-        <int id="param_60" name="Operator 1 - Phase - LF" max="128" min="-128" num="60" />
-        <int id="param_61" name="Operator 1 - Phase - LF" max="128" min="-128" num="61" />
-        <int id="param_62" name="Operator 1 - Phase - LF" max="112" min="-112" num="62" />
-        <int id="param_63" name="Operator 1 - Plucked da" def="128" max="256" num="63" />
-        <int id="param_64" name="Operator 1 - Plucked da" def="128" max="256" num="64" />
-        <int id="param_65" name="Operator 1 - Plucked da" max="128" min="-128" num="65" />
-        <int id="param_66" name="Operator 1 - Plucked da" def="128" max="256" num="66" />
-        <int id="param_67" name="Operator 1 - Plucked da" def="40000" max="65536" min="512" num="67" />
-        <int id="param_68" name="Operator 1 - Plucked da" max="128" min="-128" num="68" />
-        <int id="param_69" name="Operator 1 - Plucked da" max="128" min="-128" num="69" />
-        <int id="param_70" name="Operator 1 - Plucked da" max="112" min="-112" num="70" />
-        <int id="param_71" name="Operator 2 - Starting p" max="256" num="71" />
-        <int id="param_72" name="Operator 2 - Volume" def="256" max="256" min="-256" num="72" />
-        <int id="param_73" name="Operator 2 - Pitch enve" def="1200" max="4800" num="73" />
-        <int id="param_74" name="Operator 2 - Panning -" def="128" max="256" num="74" />
-        <int id="param_75" name="Operator 2 - Panning -" def="128" max="256" num="75" />
-        <int id="param_76" name="Operator 2 - Panning -" max="128" num="76" />
-        <int id="param_77" name="Operator 2 - Panning -" def="128" max="256" min="-128" num="77" />
-        <int id="param_78" name="Operator 2 - Panning -" def="40000" max="65536" min="512" num="78" />
-        <int id="param_79" name="Operator 2 - Panning -" max="128" min="-128" num="79" />
-        <int id="param_80" name="Operator 2 - Panning -" max="128" min="-128" num="80" />
-        <int id="param_81" name="Operator 2 - Panning -" max="112" min="-112" num="81" />
-        <int id="param_82" name="Operator 2 - Volume - A" def="128" max="256" num="82" />
-        <int id="param_83" name="Operator 2 - Volume - D" def="128" max="256" num="83" />
-        <int id="param_84" name="Operator 2 - Volume - S" max="128" min="-128" num="84" />
-        <int id="param_85" name="Operator 2 - Volume - R" def="128" max="256" num="85" />
-        <int id="param_86" name="Operator 2 - Volume - L" def="40000" max="65536" min="512" num="86" />
-        <int id="param_87" name="Operator 2 - Volume - L" max="128" min="-128" num="87" />
-        <int id="param_88" name="Operator 2 - Volume - L" max="128" min="-128" num="88" />
-        <int id="param_89" name="Operator 2 - Volume - L" max="112" min="-112" num="89" />
-        <int id="param_90" name="Operator 2 - Input modu" def="128" max="256" num="90" />
-        <int id="param_91" name="Operator 2 - Input modu" def="128" max="256" num="91" />
-        <int id="param_92" name="Operator 2 - Input modu" max="128" min="-128" num="92" />
-        <int id="param_93" name="Operator 2 - Input modu" def="128" max="256" num="93" />
-        <int id="param_94" name="Operator 2 - Input modu" def="40000" max="65536" min="512" num="94" />
-        <int id="param_95" name="Operator 2 - Input modu" max="128" min="-128" num="95" />
-        <int id="param_96" name="Operator 2 - Input modu" max="128" min="-128" num="96" />
-        <int id="param_97" name="Operator 2 - Input modu" max="112" min="-112" num="97" />
-        <int id="param_98" name="Operator 2 - Pitch - At" def="128" max="256" num="98" />
-        <int id="param_99" name="Operator 2 - Pitch - De" def="128" max="256" num="99" />
-        <int id="param_100" name="Operator 2 - Pitch - Su" max="128" min="-128" num="100" />
-        <int id="param_101" name="Operator 2 - Pitch - Re" def="128" max="256" num="101" />
-        <int id="param_102" name="Operator 2 - Pitch - LF" def="40000" max="65536" min="512" num="102" />
-        <int id="param_103" name="Operator 2 - Pitch - LF" max="128" min="-128" num="103" />
-        <int id="param_104" name="Operator 2 - Pitch - LF" max="128" min="-128" num="104" />
-        <int id="param_105" name="Operator 2 - Pitch - LF" max="112" min="-112" num="105" />
-        <int id="param_106" name="Operator 2 - Phase - At" def="128" max="256" num="106" />
-        <int id="param_107" name="Operator 2 - Phase - De" def="128" max="256" num="107" />
-        <int id="param_108" name="Operator 2 - Phase - Su" max="128" min="-128" num="108" />
-        <int id="param_109" name="Operator 2 - Phase - Re" def="128" max="256" num="109" />
-        <int id="param_110" name="Operator 2 - Phase - LF" def="40000" max="65536" min="512" num="110" />
-        <int id="param_111" name="Operator 2 - Phase - LF" max="128" min="-128" num="111" />
-        <int id="param_112" name="Operator 2 - Phase - LF" max="128" min="-128" num="112" />
-        <int id="param_113" name="Operator 2 - Phase - LF" max="112" min="-112" num="113" />
-        <int id="param_114" name="Operator 2 - Plucked da" def="128" max="256" num="114" />
-        <int id="param_115" name="Operator 2 - Plucked da" def="128" max="256" num="115" />
-        <int id="param_116" name="Operator 2 - Plucked da" max="128" min="-128" num="116" />
-        <int id="param_117" name="Operator 2 - Plucked da" def="128" max="256" num="117" />
-        <int id="param_118" name="Operator 2 - Plucked da" def="40000" max="65536" min="512" num="118" />
-        <int id="param_119" name="Operator 2 - Plucked da" max="128" min="-128" num="119" />
-        <int id="param_120" name="Operator 2 - Plucked da" max="128" min="-128" num="120" />
-        <int id="param_121" name="Operator 2 - Plucked da" max="112" min="-112" num="121" />
-        <int id="param_122" name="Operator 3 - Starting p" max="256" num="122" />
-        <int id="param_123" name="Operator 3 - Volume" def="256" max="256" min="-256" num="123" />
-        <int id="param_124" name="Operator 3 - Pitch enve" def="1200" max="4800" num="124" />
-        <int id="param_125" name="Operator 3 - Panning -" def="128" max="256" num="125" />
-        <int id="param_126" name="Operator 3 - Panning -" def="128" max="256" num="126" />
-        <int id="param_127" name="Operator 3 - Panning -" max="128" num="127" />
-        <int id="param_128" name="Operator 3 - Panning -" def="128" max="256" min="-128" num="128" />
-        <int id="param_129" name="Operator 3 - Panning -" def="40000" max="65536" min="512" num="129" />
-        <int id="param_130" name="Operator 3 - Panning -" max="128" min="-128" num="130" />
-        <int id="param_131" name="Operator 3 - Panning -" max="128" min="-128" num="131" />
-        <int id="param_132" name="Operator 3 - Panning -" max="112" min="-112" num="132" />
-        <int id="param_133" name="Operator 3 - Volume - A" def="128" max="256" num="133" />
-        <int id="param_134" name="Operator 3 - Volume - D" def="128" max="256" num="134" />
-        <int id="param_135" name="Operator 3 - Volume - S" max="128" min="-128" num="135" />
-        <int id="param_136" name="Operator 3 - Volume - R" def="128" max="256" num="136" />
-        <int id="param_137" name="Operator 3 - Volume - L" def="40000" max="65536" min="512" num="137" />
-        <int id="param_138" name="Operator 3 - Volume - L" max="128" min="-128" num="138" />
-        <int id="param_139" name="Operator 3 - Volume - L" max="128" min="-128" num="139" />
-        <int id="param_140" name="Operator 3 - Volume - L" max="112" min="-112" num="140" />
-        <int id="param_141" name="Operator 3 - Input modu" def="128" max="256" num="141" />
-        <int id="param_142" name="Operator 3 - Input modu" def="128" max="256" num="142" />
-        <int id="param_143" name="Operator 3 - Input modu" max="128" min="-128" num="143" />
-        <int id="param_144" name="Operator 3 - Input modu" def="128" max="256" num="144" />
-        <int id="param_145" name="Operator 3 - Input modu" def="40000" max="65536" min="512" num="145" />
-        <int id="param_146" name="Operator 3 - Input modu" max="128" min="-128" num="146" />
-        <int id="param_147" name="Operator 3 - Input modu" max="128" min="-128" num="147" />
-        <int id="param_148" name="Operator 3 - Input modu" max="112" min="-112" num="148" />
-        <int id="param_149" name="Operator 3 - Pitch - At" def="128" max="256" num="149" />
-        <int id="param_150" name="Operator 3 - Pitch - De" def="128" max="256" num="150" />
-        <int id="param_151" name="Operator 3 - Pitch - Su" max="128" min="-128" num="151" />
-        <int id="param_152" name="Operator 3 - Pitch - Re" def="128" max="256" num="152" />
-        <int id="param_153" name="Operator 3 - Pitch - LF" def="40000" max="65536" min="512" num="153" />
-        <int id="param_154" name="Operator 3 - Pitch - LF" max="128" min="-128" num="154" />
-        <int id="param_155" name="Operator 3 - Pitch - LF" max="128" min="-128" num="155" />
-        <int id="param_156" name="Operator 3 - Pitch - LF" max="112" min="-112" num="156" />
-        <int id="param_157" name="Operator 3 - Phase - At" def="128" max="256" num="157" />
-        <int id="param_158" name="Operator 3 - Phase - De" def="128" max="256" num="158" />
-        <int id="param_159" name="Operator 3 - Phase - Su" max="128" min="-128" num="159" />
-        <int id="param_160" name="Operator 3 - Phase - Re" def="128" max="256" num="160" />
-        <int id="param_161" name="Operator 3 - Phase - LF" def="40000" max="65536" min="512" num="161" />
-        <int id="param_162" name="Operator 3 - Phase - LF" max="128" min="-128" num="162" />
-        <int id="param_163" name="Operator 3 - Phase - LF" max="128" min="-128" num="163" />
-        <int id="param_164" name="Operator 3 - Phase - LF" max="112" min="-112" num="164" />
-        <int id="param_165" name="Operator 3 - Plucked da" def="128" max="256" num="165" />
-        <int id="param_166" name="Operator 3 - Plucked da" def="128" max="256" num="166" />
-        <int id="param_167" name="Operator 3 - Plucked da" max="128" min="-128" num="167" />
-        <int id="param_168" name="Operator 3 - Plucked da" def="128" max="256" num="168" />
-        <int id="param_169" name="Operator 3 - Plucked da" def="40000" max="65536" min="512" num="169" />
-        <int id="param_170" name="Operator 3 - Plucked da" max="128" min="-128" num="170" />
-        <int id="param_171" name="Operator 3 - Plucked da" max="128" min="-128" num="171" />
-        <int id="param_172" name="Operator 3 - Plucked da" max="112" min="-112" num="172" />
-        <int id="param_173" name="Operator 4 - Starting p" max="256" num="173" />
-        <int id="param_174" name="Operator 4 - Volume" def="256" max="256" min="-256" num="174" />
-        <int id="param_175" name="Operator 4 - Pitch enve" def="1200" max="4800" num="175" />
-        <int id="param_176" name="Operator 4 - Panning -" def="128" max="256" num="176" />
-        <int id="param_177" name="Operator 4 - Panning -" def="128" max="256" num="177" />
-        <int id="param_178" name="Operator 4 - Panning -" max="128" num="178" />
-        <int id="param_179" name="Operator 4 - Panning -" def="128" max="256" min="-128" num="179" />
-        <int id="param_180" name="Operator 4 - Panning -" def="40000" max="65536" min="512" num="180" />
-        <int id="param_181" name="Operator 4 - Panning -" max="128" min="-128" num="181" />
-        <int id="param_182" name="Operator 4 - Panning -" max="128" min="-128" num="182" />
-        <int id="param_183" name="Operator 4 - Panning -" max="112" min="-112" num="183" />
-        <int id="param_184" name="Operator 4 - Volume - A" def="128" max="256" num="184" />
-        <int id="param_185" name="Operator 4 - Volume - D" def="128" max="256" num="185" />
-        <int id="param_186" name="Operator 4 - Volume - S" max="128" min="-128" num="186" />
-        <int id="param_187" name="Operator 4 - Volume - R" def="128" max="256" num="187" />
-        <int id="param_188" name="Operator 4 - Volume - L" def="40000" max="65536" min="512" num="188" />
-        <int id="param_189" name="Operator 4 - Volume - L" max="128" min="-128" num="189" />
-        <int id="param_190" name="Operator 4 - Volume - L" max="128" min="-128" num="190" />
-        <int id="param_191" name="Operator 4 - Volume - L" max="112" min="-112" num="191" />
-        <int id="param_192" name="Operator 4 - Input modu" def="128" max="256" num="192" />
-        <int id="param_193" name="Operator 4 - Input modu" def="128" max="256" num="193" />
-        <int id="param_194" name="Operator 4 - Input modu" max="128" min="-128" num="194" />
-        <int id="param_195" name="Operator 4 - Input modu" def="128" max="256" num="195" />
-        <int id="param_196" name="Operator 4 - Input modu" def="40000" max="65536" min="512" num="196" />
-        <int id="param_197" name="Operator 4 - Input modu" max="128" min="-128" num="197" />
-        <int id="param_198" name="Operator 4 - Input modu" max="128" min="-128" num="198" />
-        <int id="param_199" name="Operator 4 - Input modu" max="112" min="-112" num="199" />
-        <int id="param_200" name="Operator 4 - Pitch - At" def="128" max="256" num="200" />
-        <int id="param_201" name="Operator 4 - Pitch - De" def="128" max="256" num="201" />
-        <int id="param_202" name="Operator 4 - Pitch - Su" max="128" min="-128" num="202" />
-        <int id="param_203" name="Operator 4 - Pitch - Re" def="128" max="256" num="203" />
-        <int id="param_204" name="Operator 4 - Pitch - LF" def="40000" max="65536" min="512" num="204" />
-        <int id="param_205" name="Operator 4 - Pitch - LF" max="128" min="-128" num="205" />
-        <int id="param_206" name="Operator 4 - Pitch - LF" max="128" min="-128" num="206" />
-        <int id="param_207" name="Operator 4 - Pitch - LF" max="112" min="-112" num="207" />
-        <int id="param_208" name="Operator 4 - Phase - At" def="128" max="256" num="208" />
-        <int id="param_209" name="Operator 4 - Phase - De" def="128" max="256" num="209" />
-        <int id="param_210" name="Operator 4 - Phase - Su" max="128" min="-128" num="210" />
-        <int id="param_211" name="Operator 4 - Phase - Re" def="128" max="256" num="211" />
-        <int id="param_212" name="Operator 4 - Phase - LF" def="40000" max="65536" min="512" num="212" />
-        <int id="param_213" name="Operator 4 - Phase - LF" max="128" min="-128" num="213" />
-        <int id="param_214" name="Operator 4 - Phase - LF" max="128" min="-128" num="214" />
-        <int id="param_215" name="Operator 4 - Phase - LF" max="112" min="-112" num="215" />
-        <int id="param_216" name="Operator 4 - Plucked da" def="128" max="256" num="216" />
-        <int id="param_217" name="Operator 4 - Plucked da" def="128" max="256" num="217" />
-        <int id="param_218" name="Operator 4 - Plucked da" max="128" min="-128" num="218" />
-        <int id="param_219" name="Operator 4 - Plucked da" def="128" max="256" num="219" />
-        <int id="param_220" name="Operator 4 - Plucked da" def="40000" max="65536" min="512" num="220" />
-        <int id="param_221" name="Operator 4 - Plucked da" max="128" min="-128" num="221" />
-        <int id="param_222" name="Operator 4 - Plucked da" max="128" min="-128" num="222" />
-        <int id="param_223" name="Operator 4 - Plucked da" max="112" min="-112" num="223" />
-        <int id="param_224" name="Operator 5 - Starting p" max="256" num="224" />
-        <int id="param_225" name="Operator 5 - Volume" def="256" max="256" min="-256" num="225" />
-        <int id="param_226" name="Operator 5 - Pitch enve" def="1200" max="4800" num="226" />
-        <int id="param_227" name="Operator 5 - Panning -" def="128" max="256" num="227" />
-        <int id="param_228" name="Operator 5 - Panning -" def="128" max="256" num="228" />
-        <int id="param_229" name="Operator 5 - Panning -" max="128" num="229" />
-        <int id="param_230" name="Operator 5 - Panning -" def="128" max="256" min="-128" num="230" />
-        <int id="param_231" name="Operator 5 - Panning -" def="40000" max="65536" min="512" num="231" />
-        <int id="param_232" name="Operator 5 - Panning -" max="128" min="-128" num="232" />
-        <int id="param_233" name="Operator 5 - Panning -" max="128" min="-128" num="233" />
-        <int id="param_234" name="Operator 5 - Panning -" max="112" min="-112" num="234" />
-        <int id="param_235" name="Operator 5 - Volume - A" def="128" max="256" num="235" />
-        <int id="param_236" name="Operator 5 - Volume - D" def="128" max="256" num="236" />
-        <int id="param_237" name="Operator 5 - Volume - S" max="128" min="-128" num="237" />
-        <int id="param_238" name="Operator 5 - Volume - R" def="128" max="256" num="238" />
-        <int id="param_239" name="Operator 5 - Volume - L" def="40000" max="65536" min="512" num="239" />
-        <int id="param_240" name="Operator 5 - Volume - L" max="128" min="-128" num="240" />
-        <int id="param_241" name="Operator 5 - Volume - L" max="128" min="-128" num="241" />
-        <int id="param_242" name="Operator 5 - Volume - L" max="112" min="-112" num="242" />
-        <int id="param_243" name="Operator 5 - Input modu" def="128" max="256" num="243" />
-        <int id="param_244" name="Operator 5 - Input modu" def="128" max="256" num="244" />
-        <int id="param_245" name="Operator 5 - Input modu" max="128" min="-128" num="245" />
-        <int id="param_246" name="Operator 5 - Input modu" def="128" max="256" num="246" />
-        <int id="param_247" name="Operator 5 - Input modu" def="40000" max="65536" min="512" num="247" />
-        <int id="param_248" name="Operator 5 - Input modu" max="128" min="-128" num="248" />
-        <int id="param_249" name="Operator 5 - Input modu" max="128" min="-128" num="249" />
-        <int id="param_250" name="Operator 5 - Input modu" max="112" min="-112" num="250" />
-        <int id="param_251" name="Operator 5 - Pitch - At" def="128" max="256" num="251" />
-        <int id="param_252" name="Operator 5 - Pitch - De" def="128" max="256" num="252" />
-        <int id="param_253" name="Operator 5 - Pitch - Su" max="128" min="-128" num="253" />
-        <int id="param_254" name="Operator 5 - Pitch - Re" def="128" max="256" num="254" />
-        <int id="param_255" name="Operator 5 - Pitch - LF" def="40000" max="65536" min="512" num="255" />
-        <int id="param_256" name="Operator 5 - Pitch - LF" max="128" min="-128" num="256" />
-        <int id="param_257" name="Operator 5 - Pitch - LF" max="128" min="-128" num="257" />
-        <int id="param_258" name="Operator 5 - Pitch - LF" max="112" min="-112" num="258" />
-        <int id="param_259" name="Operator 5 - Phase - At" def="128" max="256" num="259" />
-        <int id="param_260" name="Operator 5 - Phase - De" def="128" max="256" num="260" />
-        <int id="param_261" name="Operator 5 - Phase - Su" max="128" min="-128" num="261" />
-        <int id="param_262" name="Operator 5 - Phase - Re" def="128" max="256" num="262" />
-        <int id="param_263" name="Operator 5 - Phase - LF" def="40000" max="65536" min="512" num="263" />
-        <int id="param_264" name="Operator 5 - Phase - LF" max="128" min="-128" num="264" />
-        <int id="param_265" name="Operator 5 - Phase - LF" max="128" min="-128" num="265" />
-        <int id="param_266" name="Operator 5 - Phase - LF" max="112" min="-112" num="266" />
-        <int id="param_267" name="Operator 5 - Plucked da" def="128" max="256" num="267" />
-        <int id="param_268" name="Operator 5 - Plucked da" def="128" max="256" num="268" />
-        <int id="param_269" name="Operator 5 - Plucked da" max="128" min="-128" num="269" />
-        <int id="param_270" name="Operator 5 - Plucked da" def="128" max="256" num="270" />
-        <int id="param_271" name="Operator 5 - Plucked da" def="40000" max="65536" min="512" num="271" />
-        <int id="param_272" name="Operator 5 - Plucked da" max="128" min="-128" num="272" />
-        <int id="param_273" name="Operator 5 - Plucked da" max="128" min="-128" num="273" />
-        <int id="param_274" name="Operator 5 - Plucked da" max="112" min="-112" num="274" />
-        <int id="param_275" name="Operator 6 - Starting p" max="256" num="275" />
-        <int id="param_276" name="Operator 6 - Volume" def="256" max="256" min="-256" num="276" />
-        <int id="param_277" name="Operator 6 - Pitch enve" def="1200" max="4800" num="277" />
-        <int id="param_278" name="Operator 6 - Panning -" def="128" max="256" num="278" />
-        <int id="param_279" name="Operator 6 - Panning -" def="128" max="256" num="279" />
-        <int id="param_280" name="Operator 6 - Panning -" max="128" num="280" />
-        <int id="param_281" name="Operator 6 - Panning -" def="128" max="256" min="-128" num="281" />
-        <int id="param_282" name="Operator 6 - Panning -" def="40000" max="65536" min="512" num="282" />
-        <int id="param_283" name="Operator 6 - Panning -" max="128" min="-128" num="283" />
-        <int id="param_284" name="Operator 6 - Panning -" max="128" min="-128" num="284" />
-        <int id="param_285" name="Operator 6 - Panning -" max="112" min="-112" num="285" />
-        <int id="param_286" name="Operator 6 - Volume - A" def="128" max="256" num="286" />
-        <int id="param_287" name="Operator 6 - Volume - D" def="128" max="256" num="287" />
-        <int id="param_288" name="Operator 6 - Volume - S" max="128" min="-128" num="288" />
-        <int id="param_289" name="Operator 6 - Volume - R" def="128" max="256" num="289" />
-        <int id="param_290" name="Operator 6 - Volume - L" def="40000" max="65536" min="512" num="290" />
-        <int id="param_291" name="Operator 6 - Volume - L" max="128" min="-128" num="291" />
-        <int id="param_292" name="Operator 6 - Volume - L" max="128" min="-128" num="292" />
-        <int id="param_293" name="Operator 6 - Volume - L" max="112" min="-112" num="293" />
-        <int id="param_294" name="Operator 6 - Input modu" def="128" max="256" num="294" />
-        <int id="param_295" name="Operator 6 - Input modu" def="128" max="256" num="295" />
-        <int id="param_296" name="Operator 6 - Input modu" max="128" min="-128" num="296" />
-        <int id="param_297" name="Operator 6 - Input modu" def="128" max="256" num="297" />
-        <int id="param_298" name="Operator 6 - Input modu" def="40000" max="65536" min="512" num="298" />
-        <int id="param_299" name="Operator 6 - Input modu" max="128" min="-128" num="299" />
-        <int id="param_300" name="Operator 6 - Input modu" max="128" min="-128" num="300" />
-        <int id="param_301" name="Operator 6 - Input modu" max="112" min="-112" num="301" />
-        <int id="param_302" name="Operator 6 - Pitch - At" def="128" max="256" num="302" />
-        <int id="param_303" name="Operator 6 - Pitch - De" def="128" max="256" num="303" />
-        <int id="param_304" name="Operator 6 - Pitch - Su" max="128" min="-128" num="304" />
-        <int id="param_305" name="Operator 6 - Pitch - Re" def="128" max="256" num="305" />
-        <int id="param_306" name="Operator 6 - Pitch - LF" def="40000" max="65536" min="512" num="306" />
-        <int id="param_307" name="Operator 6 - Pitch - LF" max="128" min="-128" num="307" />
-        <int id="param_308" name="Operator 6 - Pitch - LF" max="128" min="-128" num="308" />
-        <int id="param_309" name="Operator 6 - Pitch - LF" max="112" min="-112" num="309" />
-        <int id="param_310" name="Operator 6 - Phase - At" def="128" max="256" num="310" />
-        <int id="param_311" name="Operator 6 - Phase - De" def="128" max="256" num="311" />
-        <int id="param_312" name="Operator 6 - Phase - Su" max="128" min="-128" num="312" />
-        <int id="param_313" name="Operator 6 - Phase - Re" def="128" max="256" num="313" />
-        <int id="param_314" name="Operator 6 - Phase - LF" def="40000" max="65536" min="512" num="314" />
-        <int id="param_315" name="Operator 6 - Phase - LF" max="128" min="-128" num="315" />
-        <int id="param_316" name="Operator 6 - Phase - LF" max="128" min="-128" num="316" />
-        <int id="param_317" name="Operator 6 - Phase - LF" max="112" min="-112" num="317" />
-        <int id="param_318" name="Operator 6 - Plucked da" def="128" max="256" num="318" />
-        <int id="param_319" name="Operator 6 - Plucked da" def="128" max="256" num="319" />
-        <int id="param_320" name="Operator 6 - Plucked da" max="128" min="-128" num="320" />
-        <int id="param_321" name="Operator 6 - Plucked da" def="128" max="256" num="321" />
-        <int id="param_322" name="Operator 6 - Plucked da" def="40000" max="65536" min="512" num="322" />
-        <int id="param_323" name="Operator 6 - Plucked da" max="128" min="-128" num="323" />
-        <int id="param_324" name="Operator 6 - Plucked da" max="128" min="-128" num="324" />
-        <int id="param_325" name="Operator 6 - Plucked da" max="112" min="-112" num="325" />
-        <int id="param_326" name="Filter 1 - Filter mode" def="1" max="5" num="326" />
-        <int id="param_327" name="Filter 1 - Cutoff envel" def="128" max="256" num="327" />
-        <int id="param_328" name="Filter 1 - Cutoff frequ" def="128" max="256" num="328" />
-        <int id="param_329" name="Filter 1 - Resonance /" max="256" num="329" />
-        <int id="param_330" name="Filter 1 - Low / gain /" def="128" max="128" num="330" />
-        <int id="param_331" name="Filter 1 - Band" max="128" num="331" />
-        <int id="param_332" name="Filter 1 - High" max="128" num="332" />
-        <int id="param_333" name="Filter 1 - Waveshaper p" def="64" max="192" min="64" num="333" />
-        <int id="param_334" name="Filter 1 - Waveshaper m" def="128" max="128" num="334" />
-        <int id="param_335" name="Filter 1 - To next filt" max="256" min="-256" num="335" />
-        <int id="param_336" name="Filter 1 - Panning - At" def="128" max="256" num="336" />
-        <int id="param_337" name="Filter 1 - Panning - De" def="128" max="256" num="337" />
-        <int id="param_338" name="Filter 1 - Panning - Su" max="128" min="-128" num="338" />
-        <int id="param_339" name="Filter 1 - Panning - Re" def="128" max="256" num="339" />
-        <int id="param_340" name="Filter 1 - Panning - LF" def="40000" max="65536" min="512" num="340" />
-        <int id="param_341" name="Filter 1 - Panning - LF" max="128" min="-128" num="341" />
-        <int id="param_342" name="Filter 1 - Panning - LF" max="128" min="-128" num="342" />
-        <int id="param_343" name="Filter 1 - Panning - LF" max="112" min="-112" num="343" />
-        <int id="param_344" name="Filter 1 - Volume - Att" def="128" max="256" num="344" />
-        <int id="param_345" name="Filter 1 - Volume - Dec" def="128" max="256" num="345" />
-        <int id="param_346" name="Filter 1 - Volume - Sus" max="128" min="-128" num="346" />
-        <int id="param_347" name="Filter 1 - Volume - Rel" def="128" max="256" num="347" />
-        <int id="param_348" name="Filter 1 - Volume - LFO" def="40000" max="65536" min="512" num="348" />
-        <int id="param_349" name="Filter 1 - Volume - LFO" max="128" min="-128" num="349" />
-        <int id="param_350" name="Filter 1 - Volume - LFO" max="128" min="-128" num="350" />
-        <int id="param_351" name="Filter 1 - Volume - LFO" max="112" min="-112" num="351" />
-        <int id="param_352" name="Filter 1 - Filter cutof" def="128" max="256" num="352" />
-        <int id="param_353" name="Filter 1 - Filter cutof" def="128" max="256" num="353" />
-        <int id="param_354" name="Filter 1 - Filter cutof" max="128" min="-128" num="354" />
-        <int id="param_355" name="Filter 1 - Filter cutof" def="128" max="256" num="355" />
-        <int id="param_356" name="Filter 1 - Filter cutof" def="40000" max="65536" min="512" num="356" />
-        <int id="param_357" name="Filter 1 - Filter cutof" max="128" min="-128" num="357" />
-        <int id="param_358" name="Filter 1 - Filter cutof" max="128" min="-128" num="358" />
-        <int id="param_359" name="Filter 1 - Filter cutof" max="112" min="-112" num="359" />
-        <int id="param_360" name="Filter 1 - Filter reson" def="128" max="256" num="360" />
-        <int id="param_361" name="Filter 1 - Filter reson" def="128" max="256" num="361" />
-        <int id="param_362" name="Filter 1 - Filter reson" max="128" min="-128" num="362" />
-        <int id="param_363" name="Filter 1 - Filter reson" def="128" max="256" num="363" />
-        <int id="param_364" name="Filter 1 - Filter reson" def="40000" max="65536" min="512" num="364" />
-        <int id="param_365" name="Filter 1 - Filter reson" max="128" min="-128" num="365" />
-        <int id="param_366" name="Filter 1 - Filter reson" max="128" min="-128" num="366" />
-        <int id="param_367" name="Filter 1 - Filter reson" max="112" min="-112" num="367" />
-        <int id="param_368" name="Filter 1 - Filter low /" def="128" max="256" num="368" />
-        <int id="param_369" name="Filter 1 - Filter low /" def="128" max="256" num="369" />
-        <int id="param_370" name="Filter 1 - Filter low /" max="128" min="-128" num="370" />
-        <int id="param_371" name="Filter 1 - Filter low /" def="128" max="256" num="371" />
-        <int id="param_372" name="Filter 1 - Filter low /" def="40000" max="65536" min="512" num="372" />
-        <int id="param_373" name="Filter 1 - Filter low /" max="128" min="-128" num="373" />
-        <int id="param_374" name="Filter 1 - Filter low /" max="128" min="-128" num="374" />
-        <int id="param_375" name="Filter 1 - Filter low /" max="112" min="-112" num="375" />
-        <int id="param_376" name="Filter 1 - Filter band" def="128" max="256" num="376" />
-        <int id="param_377" name="Filter 1 - Filter band" def="128" max="256" num="377" />
-        <int id="param_378" name="Filter 1 - Filter band" max="128" min="-128" num="378" />
-        <int id="param_379" name="Filter 1 - Filter band" def="128" max="256" num="379" />
-        <int id="param_380" name="Filter 1 - Filter band" def="40000" max="65536" min="512" num="380" />
-        <int id="param_381" name="Filter 1 - Filter band" max="128" min="-128" num="381" />
-        <int id="param_382" name="Filter 1 - Filter band" max="128" min="-128" num="382" />
-        <int id="param_383" name="Filter 1 - Filter band" max="112" min="-112" num="383" />
-        <int id="param_384" name="Filter 1 - Filter high" def="128" max="256" num="384" />
-        <int id="param_385" name="Filter 1 - Filter high" def="128" max="256" num="385" />
-        <int id="param_386" name="Filter 1 - Filter high" max="128" min="-128" num="386" />
-        <int id="param_387" name="Filter 1 - Filter high" def="128" max="256" num="387" />
-        <int id="param_388" name="Filter 1 - Filter high" def="40000" max="65536" min="512" num="388" />
-        <int id="param_389" name="Filter 1 - Filter high" max="128" min="-128" num="389" />
-        <int id="param_390" name="Filter 1 - Filter high" max="128" min="-128" num="390" />
-        <int id="param_391" name="Filter 1 - Filter high" max="112" min="-112" num="391" />
-        <int id="param_392" name="Filter 1 - Waveshaper -" def="128" max="256" num="392" />
-        <int id="param_393" name="Filter 1 - Waveshaper -" def="128" max="256" num="393" />
-        <int id="param_394" name="Filter 1 - Waveshaper -" max="128" min="-128" num="394" />
-        <int id="param_395" name="Filter 1 - Waveshaper -" def="128" max="256" num="395" />
-        <int id="param_396" name="Filter 1 - Waveshaper -" def="40000" max="65536" min="512" num="396" />
-        <int id="param_397" name="Filter 1 - Waveshaper -" max="128" min="-128" num="397" />
-        <int id="param_398" name="Filter 1 - Waveshaper -" max="128" min="-128" num="398" />
-        <int id="param_399" name="Filter 1 - Waveshaper -" max="112" min="-112" num="399" />
-        <int id="param_400" name="Filter 2 - Filter mode" def="1" max="5" num="400" />
-        <int id="param_401" name="Filter 2 - Cutoff envel" def="128" max="256" num="401" />
-        <int id="param_402" name="Filter 2 - Cutoff frequ" def="128" max="256" num="402" />
-        <int id="param_403" name="Filter 2 - Resonance /" max="256" num="403" />
-        <int id="param_404" name="Filter 2 - Low / gain /" def="128" max="128" num="404" />
-        <int id="param_405" name="Filter 2 - Band" max="128" num="405" />
-        <int id="param_406" name="Filter 2 - High" max="128" num="406" />
-        <int id="param_407" name="Filter 2 - Waveshaper p" def="64" max="192" min="64" num="407" />
-        <int id="param_408" name="Filter 2 - Waveshaper m" def="128" max="128" num="408" />
-        <int id="param_409" name="Filter 2 - To next filt" max="256" min="-256" num="409" />
-        <int id="param_410" name="Filter 2 - Panning - At" def="128" max="256" num="410" />
-        <int id="param_411" name="Filter 2 - Panning - De" def="128" max="256" num="411" />
-        <int id="param_412" name="Filter 2 - Panning - Su" max="128" min="-128" num="412" />
-        <int id="param_413" name="Filter 2 - Panning - Re" def="128" max="256" num="413" />
-        <int id="param_414" name="Filter 2 - Panning - LF" def="40000" max="65536" min="512" num="414" />
-        <int id="param_415" name="Filter 2 - Panning - LF" max="128" min="-128" num="415" />
-        <int id="param_416" name="Filter 2 - Panning - LF" max="128" min="-128" num="416" />
-        <int id="param_417" name="Filter 2 - Panning - LF" max="112" min="-112" num="417" />
-        <int id="param_418" name="Filter 2 - Volume - Att" def="128" max="256" num="418" />
-        <int id="param_419" name="Filter 2 - Volume - Dec" def="128" max="256" num="419" />
-        <int id="param_420" name="Filter 2 - Volume - Sus" max="128" min="-128" num="420" />
-        <int id="param_421" name="Filter 2 - Volume - Rel" def="128" max="256" num="421" />
-        <int id="param_422" name="Filter 2 - Volume - LFO" def="40000" max="65536" min="512" num="422" />
-        <int id="param_423" name="Filter 2 - Volume - LFO" max="128" min="-128" num="423" />
-        <int id="param_424" name="Filter 2 - Volume - LFO" max="128" min="-128" num="424" />
-        <int id="param_425" name="Filter 2 - Volume - LFO" max="112" min="-112" num="425" />
-        <int id="param_426" name="Filter 2 - Filter cutof" def="128" max="256" num="426" />
-        <int id="param_427" name="Filter 2 - Filter cutof" def="128" max="256" num="427" />
-        <int id="param_428" name="Filter 2 - Filter cutof" max="128" min="-128" num="428" />
-        <int id="param_429" name="Filter 2 - Filter cutof" def="128" max="256" num="429" />
-        <int id="param_430" name="Filter 2 - Filter cutof" def="40000" max="65536" min="512" num="430" />
-        <int id="param_431" name="Filter 2 - Filter cutof" max="128" min="-128" num="431" />
-        <int id="param_432" name="Filter 2 - Filter cutof" max="128" min="-128" num="432" />
-        <int id="param_433" name="Filter 2 - Filter cutof" max="112" min="-112" num="433" />
-        <int id="param_434" name="Filter 2 - Filter reson" def="128" max="256" num="434" />
-        <int id="param_435" name="Filter 2 - Filter reson" def="128" max="256" num="435" />
-        <int id="param_436" name="Filter 2 - Filter reson" max="128" min="-128" num="436" />
-        <int id="param_437" name="Filter 2 - Filter reson" def="128" max="256" num="437" />
-        <int id="param_438" name="Filter 2 - Filter reson" def="40000" max="65536" min="512" num="438" />
-        <int id="param_439" name="Filter 2 - Filter reson" max="128" min="-128" num="439" />
-        <int id="param_440" name="Filter 2 - Filter reson" max="128" min="-128" num="440" />
-        <int id="param_441" name="Filter 2 - Filter reson" max="112" min="-112" num="441" />
-        <int id="param_442" name="Filter 2 - Filter low /" def="128" max="256" num="442" />
-        <int id="param_443" name="Filter 2 - Filter low /" def="128" max="256" num="443" />
-        <int id="param_444" name="Filter 2 - Filter low /" max="128" min="-128" num="444" />
-        <int id="param_445" name="Filter 2 - Filter low /" def="128" max="256" num="445" />
-        <int id="param_446" name="Filter 2 - Filter low /" def="40000" max="65536" min="512" num="446" />
-        <int id="param_447" name="Filter 2 - Filter low /" max="128" min="-128" num="447" />
-        <int id="param_448" name="Filter 2 - Filter low /" max="128" min="-128" num="448" />
-        <int id="param_449" name="Filter 2 - Filter low /" max="112" min="-112" num="449" />
-        <int id="param_450" name="Filter 2 - Filter band" def="128" max="256" num="450" />
-        <int id="param_451" name="Filter 2 - Filter band" def="128" max="256" num="451" />
-        <int id="param_452" name="Filter 2 - Filter band" max="128" min="-128" num="452" />
-        <int id="param_453" name="Filter 2 - Filter band" def="128" max="256" num="453" />
-        <int id="param_454" name="Filter 2 - Filter band" def="40000" max="65536" min="512" num="454" />
-        <int id="param_455" name="Filter 2 - Filter band" max="128" min="-128" num="455" />
-        <int id="param_456" name="Filter 2 - Filter band" max="128" min="-128" num="456" />
-        <int id="param_457" name="Filter 2 - Filter band" max="112" min="-112" num="457" />
-        <int id="param_458" name="Filter 2 - Filter high" def="128" max="256" num="458" />
-        <int id="param_459" name="Filter 2 - Filter high" def="128" max="256" num="459" />
-        <int id="param_460" name="Filter 2 - Filter high" max="128" min="-128" num="460" />
-        <int id="param_461" name="Filter 2 - Filter high" def="128" max="256" num="461" />
-        <int id="param_462" name="Filter 2 - Filter high" def="40000" max="65536" min="512" num="462" />
-        <int id="param_463" name="Filter 2 - Filter high" max="128" min="-128" num="463" />
-        <int id="param_464" name="Filter 2 - Filter high" max="128" min="-128" num="464" />
-        <int id="param_465" name="Filter 2 - Filter high" max="112" min="-112" num="465" />
-        <int id="param_466" name="Filter 2 - Waveshaper -" def="128" max="256" num="466" />
-        <int id="param_467" name="Filter 2 - Waveshaper -" def="128" max="256" num="467" />
-        <int id="param_468" name="Filter 2 - Waveshaper -" max="128" min="-128" num="468" />
-        <int id="param_469" name="Filter 2 - Waveshaper -" def="128" max="256" num="469" />
-        <int id="param_470" name="Filter 2 - Waveshaper -" def="40000" max="65536" min="512" num="470" />
-        <int id="param_471" name="Filter 2 - Waveshaper -" max="128" min="-128" num="471" />
-        <int id="param_472" name="Filter 2 - Waveshaper -" max="128" min="-128" num="472" />
-        <int id="param_473" name="Filter 2 - Waveshaper -" max="112" min="-112" num="473" />
-        <int id="param_474" name="Filter 3 - Filter mode" def="1" max="5" num="474" />
-        <int id="param_475" name="Filter 3 - Cutoff envel" def="128" max="256" num="475" />
-        <int id="param_476" name="Filter 3 - Cutoff frequ" def="128" max="256" num="476" />
-        <int id="param_477" name="Filter 3 - Resonance /" max="256" num="477" />
-        <int id="param_478" name="Filter 3 - Low / gain /" def="128" max="128" num="478" />
-        <int id="param_479" name="Filter 3 - Band" max="128" num="479" />
-        <int id="param_480" name="Filter 3 - High" max="128" num="480" />
-        <int id="param_481" name="Filter 3 - Waveshaper p" def="64" max="192" min="64" num="481" />
-        <int id="param_482" name="Filter 3 - Waveshaper m" def="128" max="128" num="482" />
-        <int id="param_483" name="Filter 3 - Panning - At" def="128" max="256" num="483" />
-        <int id="param_484" name="Filter 3 - Panning - De" def="128" max="256" num="484" />
-        <int id="param_485" name="Filter 3 - Panning - Su" max="128" min="-128" num="485" />
-        <int id="param_486" name="Filter 3 - Panning - Re" def="128" max="256" num="486" />
-        <int id="param_487" name="Filter 3 - Panning - LF" def="40000" max="65536" min="512" num="487" />
-        <int id="param_488" name="Filter 3 - Panning - LF" max="128" min="-128" num="488" />
-        <int id="param_489" name="Filter 3 - Panning - LF" max="128" min="-128" num="489" />
-        <int id="param_490" name="Filter 3 - Panning - LF" max="112" min="-112" num="490" />
-        <int id="param_491" name="Filter 3 - Volume - Att" def="128" max="256" num="491" />
-        <int id="param_492" name="Filter 3 - Volume - Dec" def="128" max="256" num="492" />
-        <int id="param_493" name="Filter 3 - Volume - Sus" max="128" min="-128" num="493" />
-        <int id="param_494" name="Filter 3 - Volume - Rel" def="128" max="256" num="494" />
-        <int id="param_495" name="Filter 3 - Volume - LFO" def="40000" max="65536" min="512" num="495" />
-        <int id="param_496" name="Filter 3 - Volume - LFO" max="128" min="-128" num="496" />
-        <int id="param_497" name="Filter 3 - Volume - LFO" max="128" min="-128" num="497" />
-        <int id="param_498" name="Filter 3 - Volume - LFO" max="112" min="-112" num="498" />
-        <int id="param_499" name="Filter 3 - Filter cutof" def="128" max="256" num="499" />
-        <int id="param_500" name="Filter 3 - Filter cutof" def="128" max="256" num="500" />
-        <int id="param_501" name="Filter 3 - Filter cutof" max="128" min="-128" num="501" />
-        <int id="param_502" name="Filter 3 - Filter cutof" def="128" max="256" num="502" />
-        <int id="param_503" name="Filter 3 - Filter cutof" def="40000" max="65536" min="512" num="503" />
-        <int id="param_504" name="Filter 3 - Filter cutof" max="128" min="-128" num="504" />
-        <int id="param_505" name="Filter 3 - Filter cutof" max="128" min="-128" num="505" />
-        <int id="param_506" name="Filter 3 - Filter cutof" max="112" min="-112" num="506" />
-        <int id="param_507" name="Filter 3 - Filter reson" def="128" max="256" num="507" />
-        <int id="param_508" name="Filter 3 - Filter reson" def="128" max="256" num="508" />
-        <int id="param_509" name="Filter 3 - Filter reson" max="128" min="-128" num="509" />
-        <int id="param_510" name="Filter 3 - Filter reson" def="128" max="256" num="510" />
-        <int id="param_511" name="Filter 3 - Filter reson" def="40000" max="65536" min="512" num="511" />
-        <int id="param_512" name="Filter 3 - Filter reson" max="128" min="-128" num="512" />
-        <int id="param_513" name="Filter 3 - Filter reson" max="128" min="-128" num="513" />
-        <int id="param_514" name="Filter 3 - Filter reson" max="112" min="-112" num="514" />
-        <int id="param_515" name="Filter 3 - Filter low /" def="128" max="256" num="515" />
-        <int id="param_516" name="Filter 3 - Filter low /" def="128" max="256" num="516" />
-        <int id="param_517" name="Filter 3 - Filter low /" max="128" min="-128" num="517" />
-        <int id="param_518" name="Filter 3 - Filter low /" def="128" max="256" num="518" />
-        <int id="param_519" name="Filter 3 - Filter low /" def="40000" max="65536" min="512" num="519" />
-        <int id="param_520" name="Filter 3 - Filter low /" max="128" min="-128" num="520" />
-        <int id="param_521" name="Filter 3 - Filter low /" max="128" min="-128" num="521" />
-        <int id="param_522" name="Filter 3 - Filter low /" max="112" min="-112" num="522" />
-        <int id="param_523" name="Filter 3 - Filter band" def="128" max="256" num="523" />
-        <int id="param_524" name="Filter 3 - Filter band" def="128" max="256" num="524" />
-        <int id="param_525" name="Filter 3 - Filter band" max="128" min="-128" num="525" />
-        <int id="param_526" name="Filter 3 - Filter band" def="128" max="256" num="526" />
-        <int id="param_527" name="Filter 3 - Filter band" def="40000" max="65536" min="512" num="527" />
-        <int id="param_528" name="Filter 3 - Filter band" max="128" min="-128" num="528" />
-        <int id="param_529" name="Filter 3 - Filter band" max="128" min="-128" num="529" />
-        <int id="param_530" name="Filter 3 - Filter band" max="112" min="-112" num="530" />
-        <int id="param_531" name="Filter 3 - Filter high" def="128" max="256" num="531" />
-        <int id="param_532" name="Filter 3 - Filter high" def="128" max="256" num="532" />
-        <int id="param_533" name="Filter 3 - Filter high" max="128" min="-128" num="533" />
-        <int id="param_534" name="Filter 3 - Filter high" def="128" max="256" num="534" />
-        <int id="param_535" name="Filter 3 - Filter high" def="40000" max="65536" min="512" num="535" />
-        <int id="param_536" name="Filter 3 - Filter high" max="128" min="-128" num="536" />
-        <int id="param_537" name="Filter 3 - Filter high" max="128" min="-128" num="537" />
-        <int id="param_538" name="Filter 3 - Filter high" max="112" min="-112" num="538" />
-        <int id="param_539" name="Filter 3 - Waveshaper -" def="128" max="256" num="539" />
-        <int id="param_540" name="Filter 3 - Waveshaper -" def="128" max="256" num="540" />
-        <int id="param_541" name="Filter 3 - Waveshaper -" max="128" min="-128" num="541" />
-        <int id="param_542" name="Filter 3 - Waveshaper -" def="128" max="256" num="542" />
-        <int id="param_543" name="Filter 3 - Waveshaper -" def="40000" max="65536" min="512" num="543" />
-        <int id="param_544" name="Filter 3 - Waveshaper -" max="128" min="-128" num="544" />
-        <int id="param_545" name="Filter 3 - Waveshaper -" max="128" min="-128" num="545" />
-        <int id="param_546" name="Filter 3 - Waveshaper -" max="112" min="-112" num="546" />
-        <int id="param_547" name="Effects - Panning" max="128" min="-128" num="547" />
-        <int id="param_548" name="Effects - Chorus order" def="1" max="9" num="548" />
-        <int id="param_549" name="Effects - Chorus depth" def="712" max="1024" num="549" />
-        <int id="param_550" name="Effects - Chorus speed" def="796" max="1024" num="550" />
-        <int id="param_551" name="Effects - Chorus delay" def="68" max="128" num="551" />
-        <int id="param_552" name="Effects - Chorus spread" def="128" max="128" num="552" />
-        <int id="param_553" name="Effects - Chorus cross" def="-32" max="128" min="-128" num="553" />
-        <int id="param_554" name="Effects - Chorus volume" def="128" max="128" min="-128" num="554" />
-        <int id="param_555" name="Effects - Send level" def="128" max="128" num="555" />
-        <int id="param_556" name="Effects - Delay feedbac" def="64" max="127" num="556" />
-        <int id="param_557" name="Effects - Delay time" def="96" max="384" num="557" />
-        <int id="param_558" name="Effects - Delay time st" def="-116" max="512" min="-512" num="558" />
-        <int id="param_559" name="Effects - Delay volume" def="64" max="128" min="-128" num="559" />
-        <int id="param_560" name="Effects - Delay feedbac" def="1" max="2" num="560" />
-        <int id="param_561" name="Effects - Delay feedbac" def="64" max="127" num="561" />
-        <int id="param_562" name="Effects - Delay time" def="144" max="384" num="562" />
-        <int id="param_563" name="Effects - Delay time st" def="360" max="512" min="-512" num="563" />
-        <int id="param_564" name="Effects - Delay volume" def="84" max="128" min="-128" num="564" />
-        <int id="param_565" name="Effects - Delay feedbac" def="2" max="2" num="565" />
-        <int id="param_566" name="Effects - Delay feedbac" def="64" max="127" num="566" />
-        <int id="param_567" name="Effects - Delay time" def="144" max="384" num="567" />
-        <int id="param_568" name="Effects - Delay time st" max="512" min="-512" num="568" />
-        <int id="param_569" name="Effects - Delay volume" def="64" max="128" min="-128" num="569" />
-        <int id="param_570" name="Effects - Delay feedbac" max="2" num="570" />
-        <int id="param_571" name="Effects - Panning - Att" def="128" max="256" num="571" />
-        <int id="param_572" name="Effects - Panning - Dec" def="128" max="256" num="572" />
-        <int id="param_573" name="Effects - Panning - Sus" max="128" min="-128" num="573" />
-        <int id="param_574" name="Effects - Panning - Rel" def="128" max="256" num="574" />
-        <int id="param_575" name="Effects - Panning - LFO" def="40000" max="65536" min="512" num="575" />
-        <int id="param_576" name="Effects - Panning - LFO" max="128" min="-128" num="576" />
-        <int id="param_577" name="Effects - Panning - LFO" max="128" min="-128" num="577" />
-        <int id="param_578" name="Effects - Panning - LFO" max="112" min="-112" num="578" />
-        <int id="param_579" name="Effects - Volume - Atta" def="128" max="256" num="579" />
-        <int id="param_580" name="Effects - Volume - Deca" def="128" max="256" num="580" />
-        <int id="param_581" name="Effects - Volume - Sust" max="128" min="-128" num="581" />
-        <int id="param_582" name="Effects - Volume - Rele" def="128" max="256" num="582" />
-        <int id="param_583" name="Effects - Volume - LFO" def="40000" max="65536" min="512" num="583" />
-        <int id="param_584" name="Effects - Volume - LFO" max="128" min="-128" num="584" />
-        <int id="param_585" name="Effects - Volume - LFO" max="128" min="-128" num="585" />
-        <int id="param_586" name="Effects - Volume - LFO" max="112" min="-112" num="586" />
-        <int id="param_587" name="Main - EQ band 1 level" def="820" max="1800" min="-1800" num="587" />
-        <int id="param_588" name="Main - EQ band 2 level" def="-460" max="1800" min="-1800" num="588" />
-        <int id="param_589" name="Main - EQ band 3 level" def="540" max="1800" min="-1800" num="589" />
-        <int id="param_590" name="Main - EQ band 1 freq" def="19857" max="65536" num="590" />
-        <int id="param_591" name="Main - EQ band 2 freq" def="29305" max="65536" num="591" />
-        <int id="param_592" name="Main - EQ band 3 freq" def="42769" max="65536" num="592" />
-        <int id="param_593" name="Main - EQ band 1 width" def="17500" max="65536" num="593" />
-        <int id="param_594" name="Main - EQ band 2 width" def="17500" max="65536" num="594" />
-        <int id="param_595" name="Main - EQ band 3 width" def="17628" max="65536" num="595" />
-        <int id="param_596" name="Main - Portamento" num="596" />
+        <int num="0" id="param_0" name="Main - Master level" def="88" max="160" />
+        <int num="1" id="param_1" name="Main - Master LFO level" def="128" max="128" min="-128" />
+        <int num="2" id="param_2" name="Main - Master pitch" max="24" min="-24" />
+        <int num="3" id="param_3" name="Main - Volume attack" def="128" max="256" />
+        <int num="4" id="param_4" name="Main - Volume decay" def="165" max="256" />
+        <int num="5" id="param_5" name="Main - Volume sustain" max="128" min="-128" />
+        <int num="6" id="param_6" name="Main - Volume release" def="166" max="256" />
+        <int num="7" id="param_7" name="Main - Filter attack" def="128" max="256" />
+        <int num="8" id="param_8" name="Main - Filter decay" def="128" max="256" />
+        <int num="9" id="param_9" name="Main - Filter sustain" max="128" min="-128" />
+        <int num="10" id="param_10" name="Main - Filter release" def="128" max="256" />
+        <int num="11" id="param_11" name="Main - Unison order" def="6" max="9" min="1" />
+        <int num="12" id="param_12" name="Main - Unison panning" def="58" max="128" />
+        <int num="13" id="param_13" name="Main - Unison volume" def="128" max="128" min="16" />
+        <int num="14" id="param_14" name="Main - Unison pitch" def="158" max="256" />
+        <int num="15" id="param_15" name="Main - Unison sub level" max="96" />
+        <int num="16" id="param_16" name="Main - Unison phase" def="128" max="128" />
+        <int num="17" id="param_17" name="Main - Unison envelope" def="27" max="192" />
+        <int num="18" id="param_18" name="Main - Modulation X" def="512" max="512" />
+        <int num="19" id="param_19" name="Main - Modulation Y" def="442" max="512" />
+        <int num="20" id="param_20" name="Operator 1 - Starting p" max="256" />
+        <int num="21" id="param_21" name="Operator 1 - Volume" def="256" max="256" min="-256" />
+        <int num="22" id="param_22" name="Operator 1 - Pitch enve" def="1200" max="4800" />
+        <int num="23" id="param_23" name="Operator 1 - Panning -" def="128" max="256" />
+        <int num="24" id="param_24" name="Operator 1 - Panning -" def="128" max="256" />
+        <int num="25" id="param_25" name="Operator 1 - Panning -" max="128" />
+        <int num="26" id="param_26" name="Operator 1 - Panning -" def="128" max="256" min="-128" />
+        <int num="27" id="param_27" name="Operator 1 - Panning -" def="40000" max="65536" min="512" />
+        <int num="28" id="param_28" name="Operator 1 - Panning -" max="128" min="-128" />
+        <int num="29" id="param_29" name="Operator 1 - Panning -" max="128" min="-128" />
+        <int num="30" id="param_30" name="Operator 1 - Panning -" max="112" min="-112" />
+        <int num="31" id="param_31" name="Operator 1 - Volume - A" def="128" max="256" />
+        <int num="32" id="param_32" name="Operator 1 - Volume - D" def="128" max="256" />
+        <int num="33" id="param_33" name="Operator 1 - Volume - S" max="128" min="-128" />
+        <int num="34" id="param_34" name="Operator 1 - Volume - R" def="128" max="256" />
+        <int num="35" id="param_35" name="Operator 1 - Volume - L" def="40000" max="65536" min="512" />
+        <int num="36" id="param_36" name="Operator 1 - Volume - L" max="128" min="-128" />
+        <int num="37" id="param_37" name="Operator 1 - Volume - L" max="128" min="-128" />
+        <int num="38" id="param_38" name="Operator 1 - Volume - L" max="112" min="-112" />
+        <int num="39" id="param_39" name="Operator 1 - Input modu" def="128" max="256" />
+        <int num="40" id="param_40" name="Operator 1 - Input modu" def="128" max="256" />
+        <int num="41" id="param_41" name="Operator 1 - Input modu" max="128" min="-128" />
+        <int num="42" id="param_42" name="Operator 1 - Input modu" def="128" max="256" />
+        <int num="43" id="param_43" name="Operator 1 - Input modu" def="40000" max="65536" min="512" />
+        <int num="44" id="param_44" name="Operator 1 - Input modu" max="128" min="-128" />
+        <int num="45" id="param_45" name="Operator 1 - Input modu" max="128" min="-128" />
+        <int num="46" id="param_46" name="Operator 1 - Input modu" max="112" min="-112" />
+        <int num="47" id="param_47" name="Operator 1 - Pitch - At" def="128" max="256" />
+        <int num="48" id="param_48" name="Operator 1 - Pitch - De" def="128" max="256" />
+        <int num="49" id="param_49" name="Operator 1 - Pitch - Su" max="128" min="-128" />
+        <int num="50" id="param_50" name="Operator 1 - Pitch - Re" def="128" max="256" />
+        <int num="51" id="param_51" name="Operator 1 - Pitch - LF" def="40000" max="65536" min="512" />
+        <int num="52" id="param_52" name="Operator 1 - Pitch - LF" max="128" min="-128" />
+        <int num="53" id="param_53" name="Operator 1 - Pitch - LF" max="128" min="-128" />
+        <int num="54" id="param_54" name="Operator 1 - Pitch - LF" max="112" min="-112" />
+        <int num="55" id="param_55" name="Operator 1 - Phase - At" def="128" max="256" />
+        <int num="56" id="param_56" name="Operator 1 - Phase - De" def="128" max="256" />
+        <int num="57" id="param_57" name="Operator 1 - Phase - Su" max="128" min="-128" />
+        <int num="58" id="param_58" name="Operator 1 - Phase - Re" def="128" max="256" />
+        <int num="59" id="param_59" name="Operator 1 - Phase - LF" def="40000" max="65536" min="512" />
+        <int num="60" id="param_60" name="Operator 1 - Phase - LF" max="128" min="-128" />
+        <int num="61" id="param_61" name="Operator 1 - Phase - LF" max="128" min="-128" />
+        <int num="62" id="param_62" name="Operator 1 - Phase - LF" max="112" min="-112" />
+        <int num="63" id="param_63" name="Operator 1 - Plucked da" def="128" max="256" />
+        <int num="64" id="param_64" name="Operator 1 - Plucked da" def="128" max="256" />
+        <int num="65" id="param_65" name="Operator 1 - Plucked da" max="128" min="-128" />
+        <int num="66" id="param_66" name="Operator 1 - Plucked da" def="128" max="256" />
+        <int num="67" id="param_67" name="Operator 1 - Plucked da" def="40000" max="65536" min="512" />
+        <int num="68" id="param_68" name="Operator 1 - Plucked da" max="128" min="-128" />
+        <int num="69" id="param_69" name="Operator 1 - Plucked da" max="128" min="-128" />
+        <int num="70" id="param_70" name="Operator 1 - Plucked da" max="112" min="-112" />
+        <int num="71" id="param_71" name="Operator 2 - Starting p" max="256" />
+        <int num="72" id="param_72" name="Operator 2 - Volume" def="256" max="256" min="-256" />
+        <int num="73" id="param_73" name="Operator 2 - Pitch enve" def="1200" max="4800" />
+        <int num="74" id="param_74" name="Operator 2 - Panning -" def="128" max="256" />
+        <int num="75" id="param_75" name="Operator 2 - Panning -" def="128" max="256" />
+        <int num="76" id="param_76" name="Operator 2 - Panning -" max="128" />
+        <int num="77" id="param_77" name="Operator 2 - Panning -" def="128" max="256" min="-128" />
+        <int num="78" id="param_78" name="Operator 2 - Panning -" def="40000" max="65536" min="512" />
+        <int num="79" id="param_79" name="Operator 2 - Panning -" max="128" min="-128" />
+        <int num="80" id="param_80" name="Operator 2 - Panning -" max="128" min="-128" />
+        <int num="81" id="param_81" name="Operator 2 - Panning -" max="112" min="-112" />
+        <int num="82" id="param_82" name="Operator 2 - Volume - A" def="128" max="256" />
+        <int num="83" id="param_83" name="Operator 2 - Volume - D" def="128" max="256" />
+        <int num="84" id="param_84" name="Operator 2 - Volume - S" max="128" min="-128" />
+        <int num="85" id="param_85" name="Operator 2 - Volume - R" def="128" max="256" />
+        <int num="86" id="param_86" name="Operator 2 - Volume - L" def="40000" max="65536" min="512" />
+        <int num="87" id="param_87" name="Operator 2 - Volume - L" max="128" min="-128" />
+        <int num="88" id="param_88" name="Operator 2 - Volume - L" max="128" min="-128" />
+        <int num="89" id="param_89" name="Operator 2 - Volume - L" max="112" min="-112" />
+        <int num="90" id="param_90" name="Operator 2 - Input modu" def="128" max="256" />
+        <int num="91" id="param_91" name="Operator 2 - Input modu" def="128" max="256" />
+        <int num="92" id="param_92" name="Operator 2 - Input modu" max="128" min="-128" />
+        <int num="93" id="param_93" name="Operator 2 - Input modu" def="128" max="256" />
+        <int num="94" id="param_94" name="Operator 2 - Input modu" def="40000" max="65536" min="512" />
+        <int num="95" id="param_95" name="Operator 2 - Input modu" max="128" min="-128" />
+        <int num="96" id="param_96" name="Operator 2 - Input modu" max="128" min="-128" />
+        <int num="97" id="param_97" name="Operator 2 - Input modu" max="112" min="-112" />
+        <int num="98" id="param_98" name="Operator 2 - Pitch - At" def="128" max="256" />
+        <int num="99" id="param_99" name="Operator 2 - Pitch - De" def="128" max="256" />
+        <int num="100" id="param_100" name="Operator 2 - Pitch - Su" max="128" min="-128" />
+        <int num="101" id="param_101" name="Operator 2 - Pitch - Re" def="128" max="256" />
+        <int num="102" id="param_102" name="Operator 2 - Pitch - LF" def="40000" max="65536" min="512" />
+        <int num="103" id="param_103" name="Operator 2 - Pitch - LF" max="128" min="-128" />
+        <int num="104" id="param_104" name="Operator 2 - Pitch - LF" max="128" min="-128" />
+        <int num="105" id="param_105" name="Operator 2 - Pitch - LF" max="112" min="-112" />
+        <int num="106" id="param_106" name="Operator 2 - Phase - At" def="128" max="256" />
+        <int num="107" id="param_107" name="Operator 2 - Phase - De" def="128" max="256" />
+        <int num="108" id="param_108" name="Operator 2 - Phase - Su" max="128" min="-128" />
+        <int num="109" id="param_109" name="Operator 2 - Phase - Re" def="128" max="256" />
+        <int num="110" id="param_110" name="Operator 2 - Phase - LF" def="40000" max="65536" min="512" />
+        <int num="111" id="param_111" name="Operator 2 - Phase - LF" max="128" min="-128" />
+        <int num="112" id="param_112" name="Operator 2 - Phase - LF" max="128" min="-128" />
+        <int num="113" id="param_113" name="Operator 2 - Phase - LF" max="112" min="-112" />
+        <int num="114" id="param_114" name="Operator 2 - Plucked da" def="128" max="256" />
+        <int num="115" id="param_115" name="Operator 2 - Plucked da" def="128" max="256" />
+        <int num="116" id="param_116" name="Operator 2 - Plucked da" max="128" min="-128" />
+        <int num="117" id="param_117" name="Operator 2 - Plucked da" def="128" max="256" />
+        <int num="118" id="param_118" name="Operator 2 - Plucked da" def="40000" max="65536" min="512" />
+        <int num="119" id="param_119" name="Operator 2 - Plucked da" max="128" min="-128" />
+        <int num="120" id="param_120" name="Operator 2 - Plucked da" max="128" min="-128" />
+        <int num="121" id="param_121" name="Operator 2 - Plucked da" max="112" min="-112" />
+        <int num="122" id="param_122" name="Operator 3 - Starting p" max="256" />
+        <int num="123" id="param_123" name="Operator 3 - Volume" def="256" max="256" min="-256" />
+        <int num="124" id="param_124" name="Operator 3 - Pitch enve" def="1200" max="4800" />
+        <int num="125" id="param_125" name="Operator 3 - Panning -" def="128" max="256" />
+        <int num="126" id="param_126" name="Operator 3 - Panning -" def="128" max="256" />
+        <int num="127" id="param_127" name="Operator 3 - Panning -" max="128" />
+        <int num="128" id="param_128" name="Operator 3 - Panning -" def="128" max="256" min="-128" />
+        <int num="129" id="param_129" name="Operator 3 - Panning -" def="40000" max="65536" min="512" />
+        <int num="130" id="param_130" name="Operator 3 - Panning -" max="128" min="-128" />
+        <int num="131" id="param_131" name="Operator 3 - Panning -" max="128" min="-128" />
+        <int num="132" id="param_132" name="Operator 3 - Panning -" max="112" min="-112" />
+        <int num="133" id="param_133" name="Operator 3 - Volume - A" def="128" max="256" />
+        <int num="134" id="param_134" name="Operator 3 - Volume - D" def="128" max="256" />
+        <int num="135" id="param_135" name="Operator 3 - Volume - S" max="128" min="-128" />
+        <int num="136" id="param_136" name="Operator 3 - Volume - R" def="128" max="256" />
+        <int num="137" id="param_137" name="Operator 3 - Volume - L" def="40000" max="65536" min="512" />
+        <int num="138" id="param_138" name="Operator 3 - Volume - L" max="128" min="-128" />
+        <int num="139" id="param_139" name="Operator 3 - Volume - L" max="128" min="-128" />
+        <int num="140" id="param_140" name="Operator 3 - Volume - L" max="112" min="-112" />
+        <int num="141" id="param_141" name="Operator 3 - Input modu" def="128" max="256" />
+        <int num="142" id="param_142" name="Operator 3 - Input modu" def="128" max="256" />
+        <int num="143" id="param_143" name="Operator 3 - Input modu" max="128" min="-128" />
+        <int num="144" id="param_144" name="Operator 3 - Input modu" def="128" max="256" />
+        <int num="145" id="param_145" name="Operator 3 - Input modu" def="40000" max="65536" min="512" />
+        <int num="146" id="param_146" name="Operator 3 - Input modu" max="128" min="-128" />
+        <int num="147" id="param_147" name="Operator 3 - Input modu" max="128" min="-128" />
+        <int num="148" id="param_148" name="Operator 3 - Input modu" max="112" min="-112" />
+        <int num="149" id="param_149" name="Operator 3 - Pitch - At" def="128" max="256" />
+        <int num="150" id="param_150" name="Operator 3 - Pitch - De" def="128" max="256" />
+        <int num="151" id="param_151" name="Operator 3 - Pitch - Su" max="128" min="-128" />
+        <int num="152" id="param_152" name="Operator 3 - Pitch - Re" def="128" max="256" />
+        <int num="153" id="param_153" name="Operator 3 - Pitch - LF" def="40000" max="65536" min="512" />
+        <int num="154" id="param_154" name="Operator 3 - Pitch - LF" max="128" min="-128" />
+        <int num="155" id="param_155" name="Operator 3 - Pitch - LF" max="128" min="-128" />
+        <int num="156" id="param_156" name="Operator 3 - Pitch - LF" max="112" min="-112" />
+        <int num="157" id="param_157" name="Operator 3 - Phase - At" def="128" max="256" />
+        <int num="158" id="param_158" name="Operator 3 - Phase - De" def="128" max="256" />
+        <int num="159" id="param_159" name="Operator 3 - Phase - Su" max="128" min="-128" />
+        <int num="160" id="param_160" name="Operator 3 - Phase - Re" def="128" max="256" />
+        <int num="161" id="param_161" name="Operator 3 - Phase - LF" def="40000" max="65536" min="512" />
+        <int num="162" id="param_162" name="Operator 3 - Phase - LF" max="128" min="-128" />
+        <int num="163" id="param_163" name="Operator 3 - Phase - LF" max="128" min="-128" />
+        <int num="164" id="param_164" name="Operator 3 - Phase - LF" max="112" min="-112" />
+        <int num="165" id="param_165" name="Operator 3 - Plucked da" def="128" max="256" />
+        <int num="166" id="param_166" name="Operator 3 - Plucked da" def="128" max="256" />
+        <int num="167" id="param_167" name="Operator 3 - Plucked da" max="128" min="-128" />
+        <int num="168" id="param_168" name="Operator 3 - Plucked da" def="128" max="256" />
+        <int num="169" id="param_169" name="Operator 3 - Plucked da" def="40000" max="65536" min="512" />
+        <int num="170" id="param_170" name="Operator 3 - Plucked da" max="128" min="-128" />
+        <int num="171" id="param_171" name="Operator 3 - Plucked da" max="128" min="-128" />
+        <int num="172" id="param_172" name="Operator 3 - Plucked da" max="112" min="-112" />
+        <int num="173" id="param_173" name="Operator 4 - Starting p" max="256" />
+        <int num="174" id="param_174" name="Operator 4 - Volume" def="256" max="256" min="-256" />
+        <int num="175" id="param_175" name="Operator 4 - Pitch enve" def="1200" max="4800" />
+        <int num="176" id="param_176" name="Operator 4 - Panning -" def="128" max="256" />
+        <int num="177" id="param_177" name="Operator 4 - Panning -" def="128" max="256" />
+        <int num="178" id="param_178" name="Operator 4 - Panning -" max="128" />
+        <int num="179" id="param_179" name="Operator 4 - Panning -" def="128" max="256" min="-128" />
+        <int num="180" id="param_180" name="Operator 4 - Panning -" def="40000" max="65536" min="512" />
+        <int num="181" id="param_181" name="Operator 4 - Panning -" max="128" min="-128" />
+        <int num="182" id="param_182" name="Operator 4 - Panning -" max="128" min="-128" />
+        <int num="183" id="param_183" name="Operator 4 - Panning -" max="112" min="-112" />
+        <int num="184" id="param_184" name="Operator 4 - Volume - A" def="128" max="256" />
+        <int num="185" id="param_185" name="Operator 4 - Volume - D" def="128" max="256" />
+        <int num="186" id="param_186" name="Operator 4 - Volume - S" max="128" min="-128" />
+        <int num="187" id="param_187" name="Operator 4 - Volume - R" def="128" max="256" />
+        <int num="188" id="param_188" name="Operator 4 - Volume - L" def="40000" max="65536" min="512" />
+        <int num="189" id="param_189" name="Operator 4 - Volume - L" max="128" min="-128" />
+        <int num="190" id="param_190" name="Operator 4 - Volume - L" max="128" min="-128" />
+        <int num="191" id="param_191" name="Operator 4 - Volume - L" max="112" min="-112" />
+        <int num="192" id="param_192" name="Operator 4 - Input modu" def="128" max="256" />
+        <int num="193" id="param_193" name="Operator 4 - Input modu" def="128" max="256" />
+        <int num="194" id="param_194" name="Operator 4 - Input modu" max="128" min="-128" />
+        <int num="195" id="param_195" name="Operator 4 - Input modu" def="128" max="256" />
+        <int num="196" id="param_196" name="Operator 4 - Input modu" def="40000" max="65536" min="512" />
+        <int num="197" id="param_197" name="Operator 4 - Input modu" max="128" min="-128" />
+        <int num="198" id="param_198" name="Operator 4 - Input modu" max="128" min="-128" />
+        <int num="199" id="param_199" name="Operator 4 - Input modu" max="112" min="-112" />
+        <int num="200" id="param_200" name="Operator 4 - Pitch - At" def="128" max="256" />
+        <int num="201" id="param_201" name="Operator 4 - Pitch - De" def="128" max="256" />
+        <int num="202" id="param_202" name="Operator 4 - Pitch - Su" max="128" min="-128" />
+        <int num="203" id="param_203" name="Operator 4 - Pitch - Re" def="128" max="256" />
+        <int num="204" id="param_204" name="Operator 4 - Pitch - LF" def="40000" max="65536" min="512" />
+        <int num="205" id="param_205" name="Operator 4 - Pitch - LF" max="128" min="-128" />
+        <int num="206" id="param_206" name="Operator 4 - Pitch - LF" max="128" min="-128" />
+        <int num="207" id="param_207" name="Operator 4 - Pitch - LF" max="112" min="-112" />
+        <int num="208" id="param_208" name="Operator 4 - Phase - At" def="128" max="256" />
+        <int num="209" id="param_209" name="Operator 4 - Phase - De" def="128" max="256" />
+        <int num="210" id="param_210" name="Operator 4 - Phase - Su" max="128" min="-128" />
+        <int num="211" id="param_211" name="Operator 4 - Phase - Re" def="128" max="256" />
+        <int num="212" id="param_212" name="Operator 4 - Phase - LF" def="40000" max="65536" min="512" />
+        <int num="213" id="param_213" name="Operator 4 - Phase - LF" max="128" min="-128" />
+        <int num="214" id="param_214" name="Operator 4 - Phase - LF" max="128" min="-128" />
+        <int num="215" id="param_215" name="Operator 4 - Phase - LF" max="112" min="-112" />
+        <int num="216" id="param_216" name="Operator 4 - Plucked da" def="128" max="256" />
+        <int num="217" id="param_217" name="Operator 4 - Plucked da" def="128" max="256" />
+        <int num="218" id="param_218" name="Operator 4 - Plucked da" max="128" min="-128" />
+        <int num="219" id="param_219" name="Operator 4 - Plucked da" def="128" max="256" />
+        <int num="220" id="param_220" name="Operator 4 - Plucked da" def="40000" max="65536" min="512" />
+        <int num="221" id="param_221" name="Operator 4 - Plucked da" max="128" min="-128" />
+        <int num="222" id="param_222" name="Operator 4 - Plucked da" max="128" min="-128" />
+        <int num="223" id="param_223" name="Operator 4 - Plucked da" max="112" min="-112" />
+        <int num="224" id="param_224" name="Operator 5 - Starting p" max="256" />
+        <int num="225" id="param_225" name="Operator 5 - Volume" def="256" max="256" min="-256" />
+        <int num="226" id="param_226" name="Operator 5 - Pitch enve" def="1200" max="4800" />
+        <int num="227" id="param_227" name="Operator 5 - Panning -" def="128" max="256" />
+        <int num="228" id="param_228" name="Operator 5 - Panning -" def="128" max="256" />
+        <int num="229" id="param_229" name="Operator 5 - Panning -" max="128" />
+        <int num="230" id="param_230" name="Operator 5 - Panning -" def="128" max="256" min="-128" />
+        <int num="231" id="param_231" name="Operator 5 - Panning -" def="40000" max="65536" min="512" />
+        <int num="232" id="param_232" name="Operator 5 - Panning -" max="128" min="-128" />
+        <int num="233" id="param_233" name="Operator 5 - Panning -" max="128" min="-128" />
+        <int num="234" id="param_234" name="Operator 5 - Panning -" max="112" min="-112" />
+        <int num="235" id="param_235" name="Operator 5 - Volume - A" def="128" max="256" />
+        <int num="236" id="param_236" name="Operator 5 - Volume - D" def="128" max="256" />
+        <int num="237" id="param_237" name="Operator 5 - Volume - S" max="128" min="-128" />
+        <int num="238" id="param_238" name="Operator 5 - Volume - R" def="128" max="256" />
+        <int num="239" id="param_239" name="Operator 5 - Volume - L" def="40000" max="65536" min="512" />
+        <int num="240" id="param_240" name="Operator 5 - Volume - L" max="128" min="-128" />
+        <int num="241" id="param_241" name="Operator 5 - Volume - L" max="128" min="-128" />
+        <int num="242" id="param_242" name="Operator 5 - Volume - L" max="112" min="-112" />
+        <int num="243" id="param_243" name="Operator 5 - Input modu" def="128" max="256" />
+        <int num="244" id="param_244" name="Operator 5 - Input modu" def="128" max="256" />
+        <int num="245" id="param_245" name="Operator 5 - Input modu" max="128" min="-128" />
+        <int num="246" id="param_246" name="Operator 5 - Input modu" def="128" max="256" />
+        <int num="247" id="param_247" name="Operator 5 - Input modu" def="40000" max="65536" min="512" />
+        <int num="248" id="param_248" name="Operator 5 - Input modu" max="128" min="-128" />
+        <int num="249" id="param_249" name="Operator 5 - Input modu" max="128" min="-128" />
+        <int num="250" id="param_250" name="Operator 5 - Input modu" max="112" min="-112" />
+        <int num="251" id="param_251" name="Operator 5 - Pitch - At" def="128" max="256" />
+        <int num="252" id="param_252" name="Operator 5 - Pitch - De" def="128" max="256" />
+        <int num="253" id="param_253" name="Operator 5 - Pitch - Su" max="128" min="-128" />
+        <int num="254" id="param_254" name="Operator 5 - Pitch - Re" def="128" max="256" />
+        <int num="255" id="param_255" name="Operator 5 - Pitch - LF" def="40000" max="65536" min="512" />
+        <int num="256" id="param_256" name="Operator 5 - Pitch - LF" max="128" min="-128" />
+        <int num="257" id="param_257" name="Operator 5 - Pitch - LF" max="128" min="-128" />
+        <int num="258" id="param_258" name="Operator 5 - Pitch - LF" max="112" min="-112" />
+        <int num="259" id="param_259" name="Operator 5 - Phase - At" def="128" max="256" />
+        <int num="260" id="param_260" name="Operator 5 - Phase - De" def="128" max="256" />
+        <int num="261" id="param_261" name="Operator 5 - Phase - Su" max="128" min="-128" />
+        <int num="262" id="param_262" name="Operator 5 - Phase - Re" def="128" max="256" />
+        <int num="263" id="param_263" name="Operator 5 - Phase - LF" def="40000" max="65536" min="512" />
+        <int num="264" id="param_264" name="Operator 5 - Phase - LF" max="128" min="-128" />
+        <int num="265" id="param_265" name="Operator 5 - Phase - LF" max="128" min="-128" />
+        <int num="266" id="param_266" name="Operator 5 - Phase - LF" max="112" min="-112" />
+        <int num="267" id="param_267" name="Operator 5 - Plucked da" def="128" max="256" />
+        <int num="268" id="param_268" name="Operator 5 - Plucked da" def="128" max="256" />
+        <int num="269" id="param_269" name="Operator 5 - Plucked da" max="128" min="-128" />
+        <int num="270" id="param_270" name="Operator 5 - Plucked da" def="128" max="256" />
+        <int num="271" id="param_271" name="Operator 5 - Plucked da" def="40000" max="65536" min="512" />
+        <int num="272" id="param_272" name="Operator 5 - Plucked da" max="128" min="-128" />
+        <int num="273" id="param_273" name="Operator 5 - Plucked da" max="128" min="-128" />
+        <int num="274" id="param_274" name="Operator 5 - Plucked da" max="112" min="-112" />
+        <int num="275" id="param_275" name="Operator 6 - Starting p" max="256" />
+        <int num="276" id="param_276" name="Operator 6 - Volume" def="256" max="256" min="-256" />
+        <int num="277" id="param_277" name="Operator 6 - Pitch enve" def="1200" max="4800" />
+        <int num="278" id="param_278" name="Operator 6 - Panning -" def="128" max="256" />
+        <int num="279" id="param_279" name="Operator 6 - Panning -" def="128" max="256" />
+        <int num="280" id="param_280" name="Operator 6 - Panning -" max="128" />
+        <int num="281" id="param_281" name="Operator 6 - Panning -" def="128" max="256" min="-128" />
+        <int num="282" id="param_282" name="Operator 6 - Panning -" def="40000" max="65536" min="512" />
+        <int num="283" id="param_283" name="Operator 6 - Panning -" max="128" min="-128" />
+        <int num="284" id="param_284" name="Operator 6 - Panning -" max="128" min="-128" />
+        <int num="285" id="param_285" name="Operator 6 - Panning -" max="112" min="-112" />
+        <int num="286" id="param_286" name="Operator 6 - Volume - A" def="128" max="256" />
+        <int num="287" id="param_287" name="Operator 6 - Volume - D" def="128" max="256" />
+        <int num="288" id="param_288" name="Operator 6 - Volume - S" max="128" min="-128" />
+        <int num="289" id="param_289" name="Operator 6 - Volume - R" def="128" max="256" />
+        <int num="290" id="param_290" name="Operator 6 - Volume - L" def="40000" max="65536" min="512" />
+        <int num="291" id="param_291" name="Operator 6 - Volume - L" max="128" min="-128" />
+        <int num="292" id="param_292" name="Operator 6 - Volume - L" max="128" min="-128" />
+        <int num="293" id="param_293" name="Operator 6 - Volume - L" max="112" min="-112" />
+        <int num="294" id="param_294" name="Operator 6 - Input modu" def="128" max="256" />
+        <int num="295" id="param_295" name="Operator 6 - Input modu" def="128" max="256" />
+        <int num="296" id="param_296" name="Operator 6 - Input modu" max="128" min="-128" />
+        <int num="297" id="param_297" name="Operator 6 - Input modu" def="128" max="256" />
+        <int num="298" id="param_298" name="Operator 6 - Input modu" def="40000" max="65536" min="512" />
+        <int num="299" id="param_299" name="Operator 6 - Input modu" max="128" min="-128" />
+        <int num="300" id="param_300" name="Operator 6 - Input modu" max="128" min="-128" />
+        <int num="301" id="param_301" name="Operator 6 - Input modu" max="112" min="-112" />
+        <int num="302" id="param_302" name="Operator 6 - Pitch - At" def="128" max="256" />
+        <int num="303" id="param_303" name="Operator 6 - Pitch - De" def="128" max="256" />
+        <int num="304" id="param_304" name="Operator 6 - Pitch - Su" max="128" min="-128" />
+        <int num="305" id="param_305" name="Operator 6 - Pitch - Re" def="128" max="256" />
+        <int num="306" id="param_306" name="Operator 6 - Pitch - LF" def="40000" max="65536" min="512" />
+        <int num="307" id="param_307" name="Operator 6 - Pitch - LF" max="128" min="-128" />
+        <int num="308" id="param_308" name="Operator 6 - Pitch - LF" max="128" min="-128" />
+        <int num="309" id="param_309" name="Operator 6 - Pitch - LF" max="112" min="-112" />
+        <int num="310" id="param_310" name="Operator 6 - Phase - At" def="128" max="256" />
+        <int num="311" id="param_311" name="Operator 6 - Phase - De" def="128" max="256" />
+        <int num="312" id="param_312" name="Operator 6 - Phase - Su" max="128" min="-128" />
+        <int num="313" id="param_313" name="Operator 6 - Phase - Re" def="128" max="256" />
+        <int num="314" id="param_314" name="Operator 6 - Phase - LF" def="40000" max="65536" min="512" />
+        <int num="315" id="param_315" name="Operator 6 - Phase - LF" max="128" min="-128" />
+        <int num="316" id="param_316" name="Operator 6 - Phase - LF" max="128" min="-128" />
+        <int num="317" id="param_317" name="Operator 6 - Phase - LF" max="112" min="-112" />
+        <int num="318" id="param_318" name="Operator 6 - Plucked da" def="128" max="256" />
+        <int num="319" id="param_319" name="Operator 6 - Plucked da" def="128" max="256" />
+        <int num="320" id="param_320" name="Operator 6 - Plucked da" max="128" min="-128" />
+        <int num="321" id="param_321" name="Operator 6 - Plucked da" def="128" max="256" />
+        <int num="322" id="param_322" name="Operator 6 - Plucked da" def="40000" max="65536" min="512" />
+        <int num="323" id="param_323" name="Operator 6 - Plucked da" max="128" min="-128" />
+        <int num="324" id="param_324" name="Operator 6 - Plucked da" max="128" min="-128" />
+        <int num="325" id="param_325" name="Operator 6 - Plucked da" max="112" min="-112" />
+        <int num="326" id="param_326" name="Filter 1 - Filter mode" def="1" max="5" />
+        <int num="327" id="param_327" name="Filter 1 - Cutoff envel" def="128" max="256" />
+        <int num="328" id="param_328" name="Filter 1 - Cutoff frequ" def="128" max="256" />
+        <int num="329" id="param_329" name="Filter 1 - Resonance /" max="256" />
+        <int num="330" id="param_330" name="Filter 1 - Low / gain /" def="128" max="128" />
+        <int num="331" id="param_331" name="Filter 1 - Band" max="128" />
+        <int num="332" id="param_332" name="Filter 1 - High" max="128" />
+        <int num="333" id="param_333" name="Filter 1 - Waveshaper p" def="64" max="192" min="64" />
+        <int num="334" id="param_334" name="Filter 1 - Waveshaper m" def="128" max="128" />
+        <int num="335" id="param_335" name="Filter 1 - To next filt" max="256" min="-256" />
+        <int num="336" id="param_336" name="Filter 1 - Panning - At" def="128" max="256" />
+        <int num="337" id="param_337" name="Filter 1 - Panning - De" def="128" max="256" />
+        <int num="338" id="param_338" name="Filter 1 - Panning - Su" max="128" min="-128" />
+        <int num="339" id="param_339" name="Filter 1 - Panning - Re" def="128" max="256" />
+        <int num="340" id="param_340" name="Filter 1 - Panning - LF" def="40000" max="65536" min="512" />
+        <int num="341" id="param_341" name="Filter 1 - Panning - LF" max="128" min="-128" />
+        <int num="342" id="param_342" name="Filter 1 - Panning - LF" max="128" min="-128" />
+        <int num="343" id="param_343" name="Filter 1 - Panning - LF" max="112" min="-112" />
+        <int num="344" id="param_344" name="Filter 1 - Volume - Att" def="128" max="256" />
+        <int num="345" id="param_345" name="Filter 1 - Volume - Dec" def="128" max="256" />
+        <int num="346" id="param_346" name="Filter 1 - Volume - Sus" max="128" min="-128" />
+        <int num="347" id="param_347" name="Filter 1 - Volume - Rel" def="128" max="256" />
+        <int num="348" id="param_348" name="Filter 1 - Volume - LFO" def="40000" max="65536" min="512" />
+        <int num="349" id="param_349" name="Filter 1 - Volume - LFO" max="128" min="-128" />
+        <int num="350" id="param_350" name="Filter 1 - Volume - LFO" max="128" min="-128" />
+        <int num="351" id="param_351" name="Filter 1 - Volume - LFO" max="112" min="-112" />
+        <int num="352" id="param_352" name="Filter 1 - Filter cutof" def="128" max="256" />
+        <int num="353" id="param_353" name="Filter 1 - Filter cutof" def="128" max="256" />
+        <int num="354" id="param_354" name="Filter 1 - Filter cutof" max="128" min="-128" />
+        <int num="355" id="param_355" name="Filter 1 - Filter cutof" def="128" max="256" />
+        <int num="356" id="param_356" name="Filter 1 - Filter cutof" def="40000" max="65536" min="512" />
+        <int num="357" id="param_357" name="Filter 1 - Filter cutof" max="128" min="-128" />
+        <int num="358" id="param_358" name="Filter 1 - Filter cutof" max="128" min="-128" />
+        <int num="359" id="param_359" name="Filter 1 - Filter cutof" max="112" min="-112" />
+        <int num="360" id="param_360" name="Filter 1 - Filter reson" def="128" max="256" />
+        <int num="361" id="param_361" name="Filter 1 - Filter reson" def="128" max="256" />
+        <int num="362" id="param_362" name="Filter 1 - Filter reson" max="128" min="-128" />
+        <int num="363" id="param_363" name="Filter 1 - Filter reson" def="128" max="256" />
+        <int num="364" id="param_364" name="Filter 1 - Filter reson" def="40000" max="65536" min="512" />
+        <int num="365" id="param_365" name="Filter 1 - Filter reson" max="128" min="-128" />
+        <int num="366" id="param_366" name="Filter 1 - Filter reson" max="128" min="-128" />
+        <int num="367" id="param_367" name="Filter 1 - Filter reson" max="112" min="-112" />
+        <int num="368" id="param_368" name="Filter 1 - Filter low /" def="128" max="256" />
+        <int num="369" id="param_369" name="Filter 1 - Filter low /" def="128" max="256" />
+        <int num="370" id="param_370" name="Filter 1 - Filter low /" max="128" min="-128" />
+        <int num="371" id="param_371" name="Filter 1 - Filter low /" def="128" max="256" />
+        <int num="372" id="param_372" name="Filter 1 - Filter low /" def="40000" max="65536" min="512" />
+        <int num="373" id="param_373" name="Filter 1 - Filter low /" max="128" min="-128" />
+        <int num="374" id="param_374" name="Filter 1 - Filter low /" max="128" min="-128" />
+        <int num="375" id="param_375" name="Filter 1 - Filter low /" max="112" min="-112" />
+        <int num="376" id="param_376" name="Filter 1 - Filter band" def="128" max="256" />
+        <int num="377" id="param_377" name="Filter 1 - Filter band" def="128" max="256" />
+        <int num="378" id="param_378" name="Filter 1 - Filter band" max="128" min="-128" />
+        <int num="379" id="param_379" name="Filter 1 - Filter band" def="128" max="256" />
+        <int num="380" id="param_380" name="Filter 1 - Filter band" def="40000" max="65536" min="512" />
+        <int num="381" id="param_381" name="Filter 1 - Filter band" max="128" min="-128" />
+        <int num="382" id="param_382" name="Filter 1 - Filter band" max="128" min="-128" />
+        <int num="383" id="param_383" name="Filter 1 - Filter band" max="112" min="-112" />
+        <int num="384" id="param_384" name="Filter 1 - Filter high" def="128" max="256" />
+        <int num="385" id="param_385" name="Filter 1 - Filter high" def="128" max="256" />
+        <int num="386" id="param_386" name="Filter 1 - Filter high" max="128" min="-128" />
+        <int num="387" id="param_387" name="Filter 1 - Filter high" def="128" max="256" />
+        <int num="388" id="param_388" name="Filter 1 - Filter high" def="40000" max="65536" min="512" />
+        <int num="389" id="param_389" name="Filter 1 - Filter high" max="128" min="-128" />
+        <int num="390" id="param_390" name="Filter 1 - Filter high" max="128" min="-128" />
+        <int num="391" id="param_391" name="Filter 1 - Filter high" max="112" min="-112" />
+        <int num="392" id="param_392" name="Filter 1 - Waveshaper -" def="128" max="256" />
+        <int num="393" id="param_393" name="Filter 1 - Waveshaper -" def="128" max="256" />
+        <int num="394" id="param_394" name="Filter 1 - Waveshaper -" max="128" min="-128" />
+        <int num="395" id="param_395" name="Filter 1 - Waveshaper -" def="128" max="256" />
+        <int num="396" id="param_396" name="Filter 1 - Waveshaper -" def="40000" max="65536" min="512" />
+        <int num="397" id="param_397" name="Filter 1 - Waveshaper -" max="128" min="-128" />
+        <int num="398" id="param_398" name="Filter 1 - Waveshaper -" max="128" min="-128" />
+        <int num="399" id="param_399" name="Filter 1 - Waveshaper -" max="112" min="-112" />
+        <int num="400" id="param_400" name="Filter 2 - Filter mode" def="1" max="5" />
+        <int num="401" id="param_401" name="Filter 2 - Cutoff envel" def="128" max="256" />
+        <int num="402" id="param_402" name="Filter 2 - Cutoff frequ" def="128" max="256" />
+        <int num="403" id="param_403" name="Filter 2 - Resonance /" max="256" />
+        <int num="404" id="param_404" name="Filter 2 - Low / gain /" def="128" max="128" />
+        <int num="405" id="param_405" name="Filter 2 - Band" max="128" />
+        <int num="406" id="param_406" name="Filter 2 - High" max="128" />
+        <int num="407" id="param_407" name="Filter 2 - Waveshaper p" def="64" max="192" min="64" />
+        <int num="408" id="param_408" name="Filter 2 - Waveshaper m" def="128" max="128" />
+        <int num="409" id="param_409" name="Filter 2 - To next filt" max="256" min="-256" />
+        <int num="410" id="param_410" name="Filter 2 - Panning - At" def="128" max="256" />
+        <int num="411" id="param_411" name="Filter 2 - Panning - De" def="128" max="256" />
+        <int num="412" id="param_412" name="Filter 2 - Panning - Su" max="128" min="-128" />
+        <int num="413" id="param_413" name="Filter 2 - Panning - Re" def="128" max="256" />
+        <int num="414" id="param_414" name="Filter 2 - Panning - LF" def="40000" max="65536" min="512" />
+        <int num="415" id="param_415" name="Filter 2 - Panning - LF" max="128" min="-128" />
+        <int num="416" id="param_416" name="Filter 2 - Panning - LF" max="128" min="-128" />
+        <int num="417" id="param_417" name="Filter 2 - Panning - LF" max="112" min="-112" />
+        <int num="418" id="param_418" name="Filter 2 - Volume - Att" def="128" max="256" />
+        <int num="419" id="param_419" name="Filter 2 - Volume - Dec" def="128" max="256" />
+        <int num="420" id="param_420" name="Filter 2 - Volume - Sus" max="128" min="-128" />
+        <int num="421" id="param_421" name="Filter 2 - Volume - Rel" def="128" max="256" />
+        <int num="422" id="param_422" name="Filter 2 - Volume - LFO" def="40000" max="65536" min="512" />
+        <int num="423" id="param_423" name="Filter 2 - Volume - LFO" max="128" min="-128" />
+        <int num="424" id="param_424" name="Filter 2 - Volume - LFO" max="128" min="-128" />
+        <int num="425" id="param_425" name="Filter 2 - Volume - LFO" max="112" min="-112" />
+        <int num="426" id="param_426" name="Filter 2 - Filter cutof" def="128" max="256" />
+        <int num="427" id="param_427" name="Filter 2 - Filter cutof" def="128" max="256" />
+        <int num="428" id="param_428" name="Filter 2 - Filter cutof" max="128" min="-128" />
+        <int num="429" id="param_429" name="Filter 2 - Filter cutof" def="128" max="256" />
+        <int num="430" id="param_430" name="Filter 2 - Filter cutof" def="40000" max="65536" min="512" />
+        <int num="431" id="param_431" name="Filter 2 - Filter cutof" max="128" min="-128" />
+        <int num="432" id="param_432" name="Filter 2 - Filter cutof" max="128" min="-128" />
+        <int num="433" id="param_433" name="Filter 2 - Filter cutof" max="112" min="-112" />
+        <int num="434" id="param_434" name="Filter 2 - Filter reson" def="128" max="256" />
+        <int num="435" id="param_435" name="Filter 2 - Filter reson" def="128" max="256" />
+        <int num="436" id="param_436" name="Filter 2 - Filter reson" max="128" min="-128" />
+        <int num="437" id="param_437" name="Filter 2 - Filter reson" def="128" max="256" />
+        <int num="438" id="param_438" name="Filter 2 - Filter reson" def="40000" max="65536" min="512" />
+        <int num="439" id="param_439" name="Filter 2 - Filter reson" max="128" min="-128" />
+        <int num="440" id="param_440" name="Filter 2 - Filter reson" max="128" min="-128" />
+        <int num="441" id="param_441" name="Filter 2 - Filter reson" max="112" min="-112" />
+        <int num="442" id="param_442" name="Filter 2 - Filter low /" def="128" max="256" />
+        <int num="443" id="param_443" name="Filter 2 - Filter low /" def="128" max="256" />
+        <int num="444" id="param_444" name="Filter 2 - Filter low /" max="128" min="-128" />
+        <int num="445" id="param_445" name="Filter 2 - Filter low /" def="128" max="256" />
+        <int num="446" id="param_446" name="Filter 2 - Filter low /" def="40000" max="65536" min="512" />
+        <int num="447" id="param_447" name="Filter 2 - Filter low /" max="128" min="-128" />
+        <int num="448" id="param_448" name="Filter 2 - Filter low /" max="128" min="-128" />
+        <int num="449" id="param_449" name="Filter 2 - Filter low /" max="112" min="-112" />
+        <int num="450" id="param_450" name="Filter 2 - Filter band" def="128" max="256" />
+        <int num="451" id="param_451" name="Filter 2 - Filter band" def="128" max="256" />
+        <int num="452" id="param_452" name="Filter 2 - Filter band" max="128" min="-128" />
+        <int num="453" id="param_453" name="Filter 2 - Filter band" def="128" max="256" />
+        <int num="454" id="param_454" name="Filter 2 - Filter band" def="40000" max="65536" min="512" />
+        <int num="455" id="param_455" name="Filter 2 - Filter band" max="128" min="-128" />
+        <int num="456" id="param_456" name="Filter 2 - Filter band" max="128" min="-128" />
+        <int num="457" id="param_457" name="Filter 2 - Filter band" max="112" min="-112" />
+        <int num="458" id="param_458" name="Filter 2 - Filter high" def="128" max="256" />
+        <int num="459" id="param_459" name="Filter 2 - Filter high" def="128" max="256" />
+        <int num="460" id="param_460" name="Filter 2 - Filter high" max="128" min="-128" />
+        <int num="461" id="param_461" name="Filter 2 - Filter high" def="128" max="256" />
+        <int num="462" id="param_462" name="Filter 2 - Filter high" def="40000" max="65536" min="512" />
+        <int num="463" id="param_463" name="Filter 2 - Filter high" max="128" min="-128" />
+        <int num="464" id="param_464" name="Filter 2 - Filter high" max="128" min="-128" />
+        <int num="465" id="param_465" name="Filter 2 - Filter high" max="112" min="-112" />
+        <int num="466" id="param_466" name="Filter 2 - Waveshaper -" def="128" max="256" />
+        <int num="467" id="param_467" name="Filter 2 - Waveshaper -" def="128" max="256" />
+        <int num="468" id="param_468" name="Filter 2 - Waveshaper -" max="128" min="-128" />
+        <int num="469" id="param_469" name="Filter 2 - Waveshaper -" def="128" max="256" />
+        <int num="470" id="param_470" name="Filter 2 - Waveshaper -" def="40000" max="65536" min="512" />
+        <int num="471" id="param_471" name="Filter 2 - Waveshaper -" max="128" min="-128" />
+        <int num="472" id="param_472" name="Filter 2 - Waveshaper -" max="128" min="-128" />
+        <int num="473" id="param_473" name="Filter 2 - Waveshaper -" max="112" min="-112" />
+        <int num="474" id="param_474" name="Filter 3 - Filter mode" def="1" max="5" />
+        <int num="475" id="param_475" name="Filter 3 - Cutoff envel" def="128" max="256" />
+        <int num="476" id="param_476" name="Filter 3 - Cutoff frequ" def="128" max="256" />
+        <int num="477" id="param_477" name="Filter 3 - Resonance /" max="256" />
+        <int num="478" id="param_478" name="Filter 3 - Low / gain /" def="128" max="128" />
+        <int num="479" id="param_479" name="Filter 3 - Band" max="128" />
+        <int num="480" id="param_480" name="Filter 3 - High" max="128" />
+        <int num="481" id="param_481" name="Filter 3 - Waveshaper p" def="64" max="192" min="64" />
+        <int num="482" id="param_482" name="Filter 3 - Waveshaper m" def="128" max="128" />
+        <int num="483" id="param_483" name="Filter 3 - Panning - At" def="128" max="256" />
+        <int num="484" id="param_484" name="Filter 3 - Panning - De" def="128" max="256" />
+        <int num="485" id="param_485" name="Filter 3 - Panning - Su" max="128" min="-128" />
+        <int num="486" id="param_486" name="Filter 3 - Panning - Re" def="128" max="256" />
+        <int num="487" id="param_487" name="Filter 3 - Panning - LF" def="40000" max="65536" min="512" />
+        <int num="488" id="param_488" name="Filter 3 - Panning - LF" max="128" min="-128" />
+        <int num="489" id="param_489" name="Filter 3 - Panning - LF" max="128" min="-128" />
+        <int num="490" id="param_490" name="Filter 3 - Panning - LF" max="112" min="-112" />
+        <int num="491" id="param_491" name="Filter 3 - Volume - Att" def="128" max="256" />
+        <int num="492" id="param_492" name="Filter 3 - Volume - Dec" def="128" max="256" />
+        <int num="493" id="param_493" name="Filter 3 - Volume - Sus" max="128" min="-128" />
+        <int num="494" id="param_494" name="Filter 3 - Volume - Rel" def="128" max="256" />
+        <int num="495" id="param_495" name="Filter 3 - Volume - LFO" def="40000" max="65536" min="512" />
+        <int num="496" id="param_496" name="Filter 3 - Volume - LFO" max="128" min="-128" />
+        <int num="497" id="param_497" name="Filter 3 - Volume - LFO" max="128" min="-128" />
+        <int num="498" id="param_498" name="Filter 3 - Volume - LFO" max="112" min="-112" />
+        <int num="499" id="param_499" name="Filter 3 - Filter cutof" def="128" max="256" />
+        <int num="500" id="param_500" name="Filter 3 - Filter cutof" def="128" max="256" />
+        <int num="501" id="param_501" name="Filter 3 - Filter cutof" max="128" min="-128" />
+        <int num="502" id="param_502" name="Filter 3 - Filter cutof" def="128" max="256" />
+        <int num="503" id="param_503" name="Filter 3 - Filter cutof" def="40000" max="65536" min="512" />
+        <int num="504" id="param_504" name="Filter 3 - Filter cutof" max="128" min="-128" />
+        <int num="505" id="param_505" name="Filter 3 - Filter cutof" max="128" min="-128" />
+        <int num="506" id="param_506" name="Filter 3 - Filter cutof" max="112" min="-112" />
+        <int num="507" id="param_507" name="Filter 3 - Filter reson" def="128" max="256" />
+        <int num="508" id="param_508" name="Filter 3 - Filter reson" def="128" max="256" />
+        <int num="509" id="param_509" name="Filter 3 - Filter reson" max="128" min="-128" />
+        <int num="510" id="param_510" name="Filter 3 - Filter reson" def="128" max="256" />
+        <int num="511" id="param_511" name="Filter 3 - Filter reson" def="40000" max="65536" min="512" />
+        <int num="512" id="param_512" name="Filter 3 - Filter reson" max="128" min="-128" />
+        <int num="513" id="param_513" name="Filter 3 - Filter reson" max="128" min="-128" />
+        <int num="514" id="param_514" name="Filter 3 - Filter reson" max="112" min="-112" />
+        <int num="515" id="param_515" name="Filter 3 - Filter low /" def="128" max="256" />
+        <int num="516" id="param_516" name="Filter 3 - Filter low /" def="128" max="256" />
+        <int num="517" id="param_517" name="Filter 3 - Filter low /" max="128" min="-128" />
+        <int num="518" id="param_518" name="Filter 3 - Filter low /" def="128" max="256" />
+        <int num="519" id="param_519" name="Filter 3 - Filter low /" def="40000" max="65536" min="512" />
+        <int num="520" id="param_520" name="Filter 3 - Filter low /" max="128" min="-128" />
+        <int num="521" id="param_521" name="Filter 3 - Filter low /" max="128" min="-128" />
+        <int num="522" id="param_522" name="Filter 3 - Filter low /" max="112" min="-112" />
+        <int num="523" id="param_523" name="Filter 3 - Filter band" def="128" max="256" />
+        <int num="524" id="param_524" name="Filter 3 - Filter band" def="128" max="256" />
+        <int num="525" id="param_525" name="Filter 3 - Filter band" max="128" min="-128" />
+        <int num="526" id="param_526" name="Filter 3 - Filter band" def="128" max="256" />
+        <int num="527" id="param_527" name="Filter 3 - Filter band" def="40000" max="65536" min="512" />
+        <int num="528" id="param_528" name="Filter 3 - Filter band" max="128" min="-128" />
+        <int num="529" id="param_529" name="Filter 3 - Filter band" max="128" min="-128" />
+        <int num="530" id="param_530" name="Filter 3 - Filter band" max="112" min="-112" />
+        <int num="531" id="param_531" name="Filter 3 - Filter high" def="128" max="256" />
+        <int num="532" id="param_532" name="Filter 3 - Filter high" def="128" max="256" />
+        <int num="533" id="param_533" name="Filter 3 - Filter high" max="128" min="-128" />
+        <int num="534" id="param_534" name="Filter 3 - Filter high" def="128" max="256" />
+        <int num="535" id="param_535" name="Filter 3 - Filter high" def="40000" max="65536" min="512" />
+        <int num="536" id="param_536" name="Filter 3 - Filter high" max="128" min="-128" />
+        <int num="537" id="param_537" name="Filter 3 - Filter high" max="128" min="-128" />
+        <int num="538" id="param_538" name="Filter 3 - Filter high" max="112" min="-112" />
+        <int num="539" id="param_539" name="Filter 3 - Waveshaper -" def="128" max="256" />
+        <int num="540" id="param_540" name="Filter 3 - Waveshaper -" def="128" max="256" />
+        <int num="541" id="param_541" name="Filter 3 - Waveshaper -" max="128" min="-128" />
+        <int num="542" id="param_542" name="Filter 3 - Waveshaper -" def="128" max="256" />
+        <int num="543" id="param_543" name="Filter 3 - Waveshaper -" def="40000" max="65536" min="512" />
+        <int num="544" id="param_544" name="Filter 3 - Waveshaper -" max="128" min="-128" />
+        <int num="545" id="param_545" name="Filter 3 - Waveshaper -" max="128" min="-128" />
+        <int num="546" id="param_546" name="Filter 3 - Waveshaper -" max="112" min="-112" />
+        <int num="547" id="param_547" name="Effects - Panning" max="128" min="-128" />
+        <int num="548" id="param_548" name="Effects - Chorus order" def="1" max="9" />
+        <int num="549" id="param_549" name="Effects - Chorus depth" def="712" max="1024" />
+        <int num="550" id="param_550" name="Effects - Chorus speed" def="796" max="1024" />
+        <int num="551" id="param_551" name="Effects - Chorus delay" def="68" max="128" />
+        <int num="552" id="param_552" name="Effects - Chorus spread" def="128" max="128" />
+        <int num="553" id="param_553" name="Effects - Chorus cross" def="-32" max="128" min="-128" />
+        <int num="554" id="param_554" name="Effects - Chorus volume" def="128" max="128" min="-128" />
+        <int num="555" id="param_555" name="Effects - Send level" def="128" max="128" />
+        <int num="556" id="param_556" name="Effects - Delay feedbac" def="64" max="127" />
+        <int num="557" id="param_557" name="Effects - Delay time" def="96" max="384" />
+        <int num="558" id="param_558" name="Effects - Delay time st" def="-116" max="512" min="-512" />
+        <int num="559" id="param_559" name="Effects - Delay volume" def="64" max="128" min="-128" />
+        <int num="560" id="param_560" name="Effects - Delay feedbac" def="1" max="2" />
+        <int num="561" id="param_561" name="Effects - Delay feedbac" def="64" max="127" />
+        <int num="562" id="param_562" name="Effects - Delay time" def="144" max="384" />
+        <int num="563" id="param_563" name="Effects - Delay time st" def="360" max="512" min="-512" />
+        <int num="564" id="param_564" name="Effects - Delay volume" def="84" max="128" min="-128" />
+        <int num="565" id="param_565" name="Effects - Delay feedbac" def="2" max="2" />
+        <int num="566" id="param_566" name="Effects - Delay feedbac" def="64" max="127" />
+        <int num="567" id="param_567" name="Effects - Delay time" def="144" max="384" />
+        <int num="568" id="param_568" name="Effects - Delay time st" max="512" min="-512" />
+        <int num="569" id="param_569" name="Effects - Delay volume" def="64" max="128" min="-128" />
+        <int num="570" id="param_570" name="Effects - Delay feedbac" max="2" />
+        <int num="571" id="param_571" name="Effects - Panning - Att" def="128" max="256" />
+        <int num="572" id="param_572" name="Effects - Panning - Dec" def="128" max="256" />
+        <int num="573" id="param_573" name="Effects - Panning - Sus" max="128" min="-128" />
+        <int num="574" id="param_574" name="Effects - Panning - Rel" def="128" max="256" />
+        <int num="575" id="param_575" name="Effects - Panning - LFO" def="40000" max="65536" min="512" />
+        <int num="576" id="param_576" name="Effects - Panning - LFO" max="128" min="-128" />
+        <int num="577" id="param_577" name="Effects - Panning - LFO" max="128" min="-128" />
+        <int num="578" id="param_578" name="Effects - Panning - LFO" max="112" min="-112" />
+        <int num="579" id="param_579" name="Effects - Volume - Atta" def="128" max="256" />
+        <int num="580" id="param_580" name="Effects - Volume - Deca" def="128" max="256" />
+        <int num="581" id="param_581" name="Effects - Volume - Sust" max="128" min="-128" />
+        <int num="582" id="param_582" name="Effects - Volume - Rele" def="128" max="256" />
+        <int num="583" id="param_583" name="Effects - Volume - LFO" def="40000" max="65536" min="512" />
+        <int num="584" id="param_584" name="Effects - Volume - LFO" max="128" min="-128" />
+        <int num="585" id="param_585" name="Effects - Volume - LFO" max="128" min="-128" />
+        <int num="586" id="param_586" name="Effects - Volume - LFO" max="112" min="-112" />
+        <int num="587" id="param_587" name="Main - EQ band 1 level" def="820" max="1800" min="-1800" />
+        <int num="588" id="param_588" name="Main - EQ band 2 level" def="-460" max="1800" min="-1800" />
+        <int num="589" id="param_589" name="Main - EQ band 3 level" def="540" max="1800" min="-1800" />
+        <int num="590" id="param_590" name="Main - EQ band 1 freq" def="19857" max="65536" />
+        <int num="591" id="param_591" name="Main - EQ band 2 freq" def="29305" max="65536" />
+        <int num="592" id="param_592" name="Main - EQ band 3 freq" def="42769" max="65536" />
+        <int num="593" id="param_593" name="Main - EQ band 1 width" def="17500" max="65536" />
+        <int num="594" id="param_594" name="Main - EQ band 2 width" def="17500" max="65536" />
+        <int num="595" id="param_595" name="Main - EQ band 3 width" def="17628" max="65536" />
+        <int num="596" id="param_596" name="Main - Portamento" />
       </params>
       <extplug_assoc>
         <vst2>
@@ -4032,106 +4082,106 @@
       <datadef>
       </datadef>
       <params>
-        <int id="param_0" name="Phase randomness" max="1000" min="-1000" num="0" />
-        <int id="param_1" name="Low harmonics protectio" max="1024" num="1" />
-        <int id="param_2" name="Sub harmonic 1" max="2048" num="2" />
-        <int id="param_3" name="Sub harmonic 3" max="2048" num="3" />
-        <int id="param_4" name="Sub harmonic 4" max="2048" num="4" />
-        <int id="param_5" name="Timbre EQ band 1" max="1024" min="-1024" num="5" />
-        <int id="param_6" name="Timbre EQ band 2" max="1024" min="-1024" num="6" />
-        <int id="param_7" name="Timbre EQ band 3" max="1024" min="-1024" num="7" />
-        <int id="param_8" name="Timbre EQ band 4" max="1024" min="-1024" num="8" />
-        <int id="param_9" name="Timbre EQ band 5" max="1024" min="-1024" num="9" />
-        <int id="param_10" name="Timbre EQ band 6" max="1024" min="-1024" num="10" />
-        <int id="param_11" name="Harmonic mask 1/12" max="1000" num="11" />
-        <int id="param_12" name="Harmonic mask 2/12" max="1000" num="12" />
-        <int id="param_13" name="Harmonic mask 3/12" max="1000" num="13" />
-        <int id="param_14" name="Harmonic mask 4/12" max="1000" num="14" />
-        <int id="param_15" name="Harmonic mask 5/12" max="1000" num="15" />
-        <int id="param_16" name="Harmonic mask 6/12" max="1000" num="16" />
-        <int id="param_17" name="Harmonic mask 7/12" max="1000" num="17" />
-        <int id="param_18" name="Harmonic mask 8/12" max="1000" num="18" />
-        <int id="param_19" name="Harmonic mask 9/12" max="1000" num="19" />
-        <int id="param_20" name="Harmonic mask 10/12" max="1000" num="20" />
-        <int id="param_21" name="Harmonic mask 11/12" max="1000" num="21" />
-        <int id="param_22" name="Harmonic mask 12/12" max="1000" num="22" />
-        <int id="param_23" name="Harmonic mask mix" max="1000" num="23" />
-        <int id="param_24" name="Harmonic mask mix LFO a" max="1000" min="-1000" num="24" />
-        <int id="param_25" name="Stereo tremolo depth" max="1000" num="25" />
-        <int id="param_26" name="Volume env attack lengt" max="1000" num="26" />
-        <int id="param_27" name="Volume env decay length" max="1000" num="27" />
-        <int id="param_28" name="Volume env release leng" max="1000" num="28" />
-        <int id="param_29" name="Velocity to attack" num="29" />
-        <int id="param_30" name="Release velocity to rel" num="30" />
-        <int id="param_31" name="Pluck decay length" max="1000" num="31" />
-        <int id="param_32" name="Velocity to pluck decay" num="32" />
-        <int id="param_33" name="Alternate pluck mode" num="33" />
-        <int id="param_34" name="Pluck uses harmonic mas" num="34" />
-        <int id="param_35" name="Pluck only on release" num="35" />
-        <int id="param_36" name="Master volume" max="2000" num="36" />
-        <int id="param_37" name="Velocity to volume" num="37" />
-        <int id="param_38" name="Master pitch" max="2400" min="-2400" num="38" />
-        <int id="param_39" name="Detuning" max="2400" min="-2400" num="39" />
-        <int id="param_40" name="Grittiness" max="1000" min="-1000" num="40" />
-        <int id="param_41" name="Pitch vibrato depth" max="1000" num="41" />
-        <int id="param_42" name="Pitch LFO amount" max="1000" min="-1000" num="42" />
-        <int id="param_43" name="Portamento mode" num="43" />
-        <int id="param_44" name="Monophonic mode" num="44" />
-        <int id="param_45" name="Portamento / legato tim" max="1000" min="-1000" num="45" />
-        <int id="param_46" name="Velocity / release to p" num="46" />
-        <int id="param_47" name="Adaptive filter envelop" max="0" num="47" />
-        <int id="param_48" name="Filter env attack lengt" max="1000" num="48" />
-        <int id="param_49" name="Filter env decay length" max="1000" num="49" />
-        <int id="param_50" name="Filter env attack slope" max="1000" min="-1000" num="50" />
-        <int id="param_51" name="Filter env decay slope" max="1000" min="-1000" num="51" />
-        <int id="param_52" name="Filter env amount" max="1000" min="-1000" num="52" />
-        <int id="param_53" name="Velocity to filter env" num="53" />
-        <int id="param_54" name="Filter frequency" max="8192" num="54" />
-        <int id="param_55" name="Filter scale" num="55" />
-        <int id="param_56" name="Filter width" max="1000" num="56" />
-        <int id="param_57" name="Key to filter frequency" max="2000" min="-2000" num="57" />
-        <int id="param_58" name="Filter LFO amount" max="1000" min="-1000" num="58" />
-        <int id="param_59" name="Resonance amount" max="1000" num="59" />
-        <int id="param_60" name="Resonance scale" num="60" />
-        <int id="param_61" name="Resonance offset / nois" max="2400" min="-2400" num="61" />
-        <int id="param_62" name="Resonance self-oscillat" max="2048" num="62" />
-        <int id="param_63" name="Adaptive width" num="63" />
-        <int id="param_64" name="Track filter frequency" num="64" />
-        <int id="param_65" name="Unison order" max="9" min="1" num="65" />
-        <int id="param_66" name="Unison panning" max="103" min="97" num="66" />
-        <int id="param_67" name="Unison pitch thickness" max="256" num="67" />
-        <int id="param_68" name="Unison phase" max="128" num="68" />
-        <int id="param_69" name="Unison variation" max="128" num="69" />
-        <int id="param_70" name="Unison type" max="2" num="70" />
-        <int id="param_71" name="Phaser mix" max="1000" num="71" />
-        <int id="param_72" name="Phaser scale" max="2" num="72" />
-        <int id="param_73" name="Phaser width" max="10000" num="73" />
-        <int id="param_74" name="Phaser width LFO amount" max="1000" min="-1000" num="74" />
-        <int id="param_75" name="Phaser offset" max="999" num="75" />
-        <int id="param_76" name="Phaser offset LFO amoun" max="1000" min="-1000" num="76" />
-        <int id="param_77" name="Phaser offset motion sp" max="8000" min="-8000" num="77" />
-        <int id="param_78" name="Key to phaser offset" max="2000" min="-2000" num="78" />
-        <int id="param_79" name="Harmonizer mix" max="1000" num="79" />
-        <int id="param_80" name="Harmonizer width" max="1000" num="80" />
-        <int id="param_81" name="Harmonizer width LFO am" max="1000" min="-1000" num="81" />
-        <int id="param_82" name="Velocity to harmonizer" num="82" />
-        <int id="param_83" name="Harmonizer strength" max="1024" num="83" />
-        <int id="param_84" name="Harmonizer type" max="4" num="84" />
-        <int id="param_85" name="Harmonizer position" max="3" num="85" />
-        <int id="param_86" name="LFO shape / source" max="13" num="86" />
-        <int id="param_87" name="Global / retriggered LF" max="0" num="87" />
-        <int id="param_88" name="LFO attack" max="1000" num="88" />
-        <int id="param_89" name="LFO speed" max="8000" min="-8000" num="89" />
-        <int id="param_90" name="Chorus type" max="9" num="90" />
-        <int id="param_91" name="Chorus mix" max="1000" num="91" />
-        <int id="param_92" name="Delay type" max="3" num="92" />
-        <int id="param_93" name="Delay input level" max="1000" num="93" />
-        <int id="param_94" name="Delay feedback level" max="900" num="94" />
-        <int id="param_95" name="Delay time" max="384" num="95" />
-        <int id="param_96" name="Reverb type" max="6" num="96" />
-        <int id="param_97" name="Reverb wet level" max="1000" num="97" />
-        <int id="param_98" name="Compression level" max="1000" num="98" />
-        <int id="param_99" name="Velocity to unison pitc" num="99" />
+        <int num="0" id="param_0" name="Phase randomness" max="1000" min="-1000" />
+        <int num="1" id="param_1" name="Low harmonics protectio" max="1024" />
+        <int num="2" id="param_2" name="Sub harmonic 1" max="2048" />
+        <int num="3" id="param_3" name="Sub harmonic 3" max="2048" />
+        <int num="4" id="param_4" name="Sub harmonic 4" max="2048" />
+        <int num="5" id="param_5" name="Timbre EQ band 1" max="1024" min="-1024" />
+        <int num="6" id="param_6" name="Timbre EQ band 2" max="1024" min="-1024" />
+        <int num="7" id="param_7" name="Timbre EQ band 3" max="1024" min="-1024" />
+        <int num="8" id="param_8" name="Timbre EQ band 4" max="1024" min="-1024" />
+        <int num="9" id="param_9" name="Timbre EQ band 5" max="1024" min="-1024" />
+        <int num="10" id="param_10" name="Timbre EQ band 6" max="1024" min="-1024" />
+        <int num="11" id="param_11" name="Harmonic mask 1/12" max="1000" />
+        <int num="12" id="param_12" name="Harmonic mask 2/12" max="1000" />
+        <int num="13" id="param_13" name="Harmonic mask 3/12" max="1000" />
+        <int num="14" id="param_14" name="Harmonic mask 4/12" max="1000" />
+        <int num="15" id="param_15" name="Harmonic mask 5/12" max="1000" />
+        <int num="16" id="param_16" name="Harmonic mask 6/12" max="1000" />
+        <int num="17" id="param_17" name="Harmonic mask 7/12" max="1000" />
+        <int num="18" id="param_18" name="Harmonic mask 8/12" max="1000" />
+        <int num="19" id="param_19" name="Harmonic mask 9/12" max="1000" />
+        <int num="20" id="param_20" name="Harmonic mask 10/12" max="1000" />
+        <int num="21" id="param_21" name="Harmonic mask 11/12" max="1000" />
+        <int num="22" id="param_22" name="Harmonic mask 12/12" max="1000" />
+        <int num="23" id="param_23" name="Harmonic mask mix" max="1000" />
+        <int num="24" id="param_24" name="Harmonic mask mix LFO a" max="1000" min="-1000" />
+        <int num="25" id="param_25" name="Stereo tremolo depth" max="1000" />
+        <int num="26" id="param_26" name="Volume env attack lengt" max="1000" />
+        <int num="27" id="param_27" name="Volume env decay length" max="1000" />
+        <int num="28" id="param_28" name="Volume env release leng" max="1000" />
+        <int num="29" id="param_29" name="Velocity to attack" />
+        <int num="30" id="param_30" name="Release velocity to rel" />
+        <int num="31" id="param_31" name="Pluck decay length" max="1000" />
+        <int num="32" id="param_32" name="Velocity to pluck decay" />
+        <int num="33" id="param_33" name="Alternate pluck mode" />
+        <int num="34" id="param_34" name="Pluck uses harmonic mas" />
+        <int num="35" id="param_35" name="Pluck only on release" />
+        <int num="36" id="param_36" name="Master volume" max="2000" />
+        <int num="37" id="param_37" name="Velocity to volume" />
+        <int num="38" id="param_38" name="Master pitch" max="2400" min="-2400" />
+        <int num="39" id="param_39" name="Detuning" max="2400" min="-2400" />
+        <int num="40" id="param_40" name="Grittiness" max="1000" min="-1000" />
+        <int num="41" id="param_41" name="Pitch vibrato depth" max="1000" />
+        <int num="42" id="param_42" name="Pitch LFO amount" max="1000" min="-1000" />
+        <int num="43" id="param_43" name="Portamento mode" />
+        <int num="44" id="param_44" name="Monophonic mode" />
+        <int num="45" id="param_45" name="Portamento / legato tim" max="1000" min="-1000" />
+        <int num="46" id="param_46" name="Velocity / release to p" />
+        <int num="47" id="param_47" name="Adaptive filter envelop" max="0" />
+        <int num="48" id="param_48" name="Filter env attack lengt" max="1000" />
+        <int num="49" id="param_49" name="Filter env decay length" max="1000" />
+        <int num="50" id="param_50" name="Filter env attack slope" max="1000" min="-1000" />
+        <int num="51" id="param_51" name="Filter env decay slope" max="1000" min="-1000" />
+        <int num="52" id="param_52" name="Filter env amount" max="1000" min="-1000" />
+        <int num="53" id="param_53" name="Velocity to filter env" />
+        <int num="54" id="param_54" name="Filter frequency" max="8192" />
+        <int num="55" id="param_55" name="Filter scale" />
+        <int num="56" id="param_56" name="Filter width" max="1000" />
+        <int num="57" id="param_57" name="Key to filter frequency" max="2000" min="-2000" />
+        <int num="58" id="param_58" name="Filter LFO amount" max="1000" min="-1000" />
+        <int num="59" id="param_59" name="Resonance amount" max="1000" />
+        <int num="60" id="param_60" name="Resonance scale" />
+        <int num="61" id="param_61" name="Resonance offset / nois" max="2400" min="-2400" />
+        <int num="62" id="param_62" name="Resonance self-oscillat" max="2048" />
+        <int num="63" id="param_63" name="Adaptive width" />
+        <int num="64" id="param_64" name="Track filter frequency" />
+        <int num="65" id="param_65" name="Unison order" max="9" min="1" />
+        <int num="66" id="param_66" name="Unison panning" max="103" min="97" />
+        <int num="67" id="param_67" name="Unison pitch thickness" max="256" />
+        <int num="68" id="param_68" name="Unison phase" max="128" />
+        <int num="69" id="param_69" name="Unison variation" max="128" />
+        <int num="70" id="param_70" name="Unison type" max="2" />
+        <int num="71" id="param_71" name="Phaser mix" max="1000" />
+        <int num="72" id="param_72" name="Phaser scale" max="2" />
+        <int num="73" id="param_73" name="Phaser width" max="10000" />
+        <int num="74" id="param_74" name="Phaser width LFO amount" max="1000" min="-1000" />
+        <int num="75" id="param_75" name="Phaser offset" max="999" />
+        <int num="76" id="param_76" name="Phaser offset LFO amoun" max="1000" min="-1000" />
+        <int num="77" id="param_77" name="Phaser offset motion sp" max="8000" min="-8000" />
+        <int num="78" id="param_78" name="Key to phaser offset" max="2000" min="-2000" />
+        <int num="79" id="param_79" name="Harmonizer mix" max="1000" />
+        <int num="80" id="param_80" name="Harmonizer width" max="1000" />
+        <int num="81" id="param_81" name="Harmonizer width LFO am" max="1000" min="-1000" />
+        <int num="82" id="param_82" name="Velocity to harmonizer" />
+        <int num="83" id="param_83" name="Harmonizer strength" max="1024" />
+        <int num="84" id="param_84" name="Harmonizer type" max="4" />
+        <int num="85" id="param_85" name="Harmonizer position" max="3" />
+        <int num="86" id="param_86" name="LFO shape / source" max="13" />
+        <int num="87" id="param_87" name="Global / retriggered LF" max="0" />
+        <int num="88" id="param_88" name="LFO attack" max="1000" />
+        <int num="89" id="param_89" name="LFO speed" max="8000" min="-8000" />
+        <int num="90" id="param_90" name="Chorus type" max="9" />
+        <int num="91" id="param_91" name="Chorus mix" max="1000" />
+        <int num="92" id="param_92" name="Delay type" max="3" />
+        <int num="93" id="param_93" name="Delay input level" max="1000" />
+        <int num="94" id="param_94" name="Delay feedback level" max="900" />
+        <int num="95" id="param_95" name="Delay time" max="384" />
+        <int num="96" id="param_96" name="Reverb type" max="6" />
+        <int num="97" id="param_97" name="Reverb wet level" max="1000" />
+        <int num="98" id="param_98" name="Compression level" max="1000" />
+        <int num="99" id="param_99" name="Velocity to unison pitc" />
       </params>
       <extplug_assoc>
         <vst2>
@@ -4243,15 +4293,15 @@
       <datadef>
       </datadef>
       <params>
-        <int id="param_0" name="Time slot" max="35" num="0" />
-        <int id="param_1" name="Volume slot" max="35" num="1" />
-        <int id="param_2" name="Time mix" max="256" num="2" />
-        <int id="param_3" name="Volume mix" max="256" num="3" />
-        <int id="param_4" name="Vol. smoothing attack" max="10000" num="4" />
-        <int id="param_5" name="Vol. smoothing release" max="10000" num="5" />
-        <int id="param_6" name="Volume envelope tension" max="256" min="-256" num="6" />
-        <int id="param_7" name="Hold delay (bar repeat)" num="7" />
-        <int id="param_8" name="Time offset (scratching" max="65536" num="8" />
+        <int num="0" id="param_0" name="Time slot" max="35" />
+        <int num="1" id="param_1" name="Volume slot" max="35" />
+        <int num="2" id="param_2" name="Time mix" max="256" />
+        <int num="3" id="param_3" name="Volume mix" max="256" />
+        <int num="4" id="param_4" name="Vol. smoothing attack" max="10000" />
+        <int num="5" id="param_5" name="Vol. smoothing release" max="10000" />
+        <int num="6" id="param_6" name="Volume envelope tension" max="256" min="-256" />
+        <int num="7" id="param_7" name="Hold delay (bar repeat)" />
+        <int num="8" id="param_8" name="Time offset (scratching" max="65536" />
       </params>
       <extplug_assoc>
         <vst2>
@@ -4272,50 +4322,50 @@
       <datadef>
       </datadef>
       <params>
-        <int id="param_0" name="Master IN Lvl" max="256" num="0" />
-        <int id="param_1" name="Master OUT Lvl" max="256" num="1" />
-        <int id="param_2" name="EQ Enable" max="256" num="2" />
-        <int id="param_3" name="EQ Band 1" max="256" num="3" />
-        <int id="param_4" name="EQ Band 2" max="256" num="4" />
-        <int id="param_5" name="EQ Band 3" max="256" num="5" />
-        <int id="param_6" name="EQ Band 4" max="256" num="6" />
-        <int id="param_7" name="EQ Band 5" max="256" num="7" />
-        <int id="param_8" name="EQ Band 6" max="256" num="8" />
-        <int id="param_9" name="EQ Band 7" max="256" num="9" />
-        <int id="param_10" name="EQ Band 8" max="256" num="10" />
-        <int id="param_11" name="unknown" max="256" num="11" />
-        <int id="param_12" name="unknown" max="256" num="12" />
-        <int id="param_13" name="Box1 - Param 1" max="256" num="13" />
-        <int id="param_14" name="Box1 - Param 2" max="256" num="14" />
-        <int id="param_15" name="Box1 - Param 3" max="256" num="15" />
-        <int id="param_16" name="Box1 - Param 4" max="256" num="16" />
-        <int id="param_17" name="Box1 - Param 5" max="256" num="17" />
-        <int id="param_18" name="Box2 - Param 1" max="256" num="18" />
-        <int id="param_19" name="Box2 - Param 2" max="256" num="19" />
-        <int id="param_20" name="Box2 - Param 3" max="256" num="20" />
-        <int id="param_21" name="Box2 - Param 4" max="256" num="21" />
-        <int id="param_22" name="Box2 - Param 5" max="256" num="22" />
-        <int id="param_23" name="Box3 - Param 1" max="256" num="23" />
-        <int id="param_24" name="Box3 - Param 2" max="256" num="24" />
-        <int id="param_25" name="Box3 - Param 3" max="256" num="25" />
-        <int id="param_26" name="Box3 - Param 4" max="256" num="26" />
-        <int id="param_27" name="Box3 - Param 5" max="256" num="27" />
-        <int id="param_28" name="Box4 - Param 1" max="256" num="28" />
-        <int id="param_29" name="Box4 - Param 2" max="256" num="29" />
-        <int id="param_30" name="Box4 - Param 3" max="256" num="30" />
-        <int id="param_31" name="Box4 - Param 4" max="256" num="31" />
-        <int id="param_32" name="Box4 - Param 5" max="256" num="32" />
-        <int id="param_33" name="Box5 - Param 1" max="256" num="33" />
-        <int id="param_34" name="Box5 - Param 2" max="256" num="34" />
-        <int id="param_35" name="Box5 - Param 3" max="256" num="35" />
-        <int id="param_36" name="Box5 - Param 4" max="256" num="36" />
-        <int id="param_37" name="Box5 - Param 5" max="256" num="37" />
-        <int id="param_38" name="unknown" max="256" num="38" />
-        <int id="param_39" name="Box 1 Enable" max="256" num="39" />
-        <int id="param_40" name="Box 2 Enable" max="256" num="40" />
-        <int id="param_41" name="Box 3 Enable" max="256" num="41" />
-        <int id="param_42" name="Box 4 Enable" max="256" num="42" />
-        <int id="param_43" name="Box 5 Enable" max="256" num="43" />
+        <int num="0" id="param_0" name="Master IN Lvl" max="256" />
+        <int num="1" id="param_1" name="Master OUT Lvl" max="256" />
+        <int num="2" id="param_2" name="EQ Enable" max="256" />
+        <int num="3" id="param_3" name="EQ Band 1" max="256" />
+        <int num="4" id="param_4" name="EQ Band 2" max="256" />
+        <int num="5" id="param_5" name="EQ Band 3" max="256" />
+        <int num="6" id="param_6" name="EQ Band 4" max="256" />
+        <int num="7" id="param_7" name="EQ Band 5" max="256" />
+        <int num="8" id="param_8" name="EQ Band 6" max="256" />
+        <int num="9" id="param_9" name="EQ Band 7" max="256" />
+        <int num="10" id="param_10" name="EQ Band 8" max="256" />
+        <int num="11" id="param_11" name="unknown" max="256" />
+        <int num="12" id="param_12" name="unknown" max="256" />
+        <int num="13" id="param_13" name="Box1 - Param 1" max="256" />
+        <int num="14" id="param_14" name="Box1 - Param 2" max="256" />
+        <int num="15" id="param_15" name="Box1 - Param 3" max="256" />
+        <int num="16" id="param_16" name="Box1 - Param 4" max="256" />
+        <int num="17" id="param_17" name="Box1 - Param 5" max="256" />
+        <int num="18" id="param_18" name="Box2 - Param 1" max="256" />
+        <int num="19" id="param_19" name="Box2 - Param 2" max="256" />
+        <int num="20" id="param_20" name="Box2 - Param 3" max="256" />
+        <int num="21" id="param_21" name="Box2 - Param 4" max="256" />
+        <int num="22" id="param_22" name="Box2 - Param 5" max="256" />
+        <int num="23" id="param_23" name="Box3 - Param 1" max="256" />
+        <int num="24" id="param_24" name="Box3 - Param 2" max="256" />
+        <int num="25" id="param_25" name="Box3 - Param 3" max="256" />
+        <int num="26" id="param_26" name="Box3 - Param 4" max="256" />
+        <int num="27" id="param_27" name="Box3 - Param 5" max="256" />
+        <int num="28" id="param_28" name="Box4 - Param 1" max="256" />
+        <int num="29" id="param_29" name="Box4 - Param 2" max="256" />
+        <int num="30" id="param_30" name="Box4 - Param 3" max="256" />
+        <int num="31" id="param_31" name="Box4 - Param 4" max="256" />
+        <int num="32" id="param_32" name="Box4 - Param 5" max="256" />
+        <int num="33" id="param_33" name="Box5 - Param 1" max="256" />
+        <int num="34" id="param_34" name="Box5 - Param 2" max="256" />
+        <int num="35" id="param_35" name="Box5 - Param 3" max="256" />
+        <int num="36" id="param_36" name="Box5 - Param 4" max="256" />
+        <int num="37" id="param_37" name="Box5 - Param 5" max="256" />
+        <int num="38" id="param_38" name="unknown" max="256" />
+        <int num="39" id="param_39" name="Box 1 Enable" max="256" />
+        <int num="40" id="param_40" name="Box 2 Enable" max="256" />
+        <int num="41" id="param_41" name="Box 3 Enable" max="256" />
+        <int num="42" id="param_42" name="Box 4 Enable" max="256" />
+        <int num="43" id="param_43" name="Box 5 Enable" max="256" />
       </params>
       <extplug_assoc>
         <vst2>
@@ -4371,65 +4421,65 @@
       <datadef>
       </datadef>
       <params>
-        <int id="param_0" name="Low band frequency" max="65536" num="0" />
-        <int id="param_1" name="Low band slope" num="1" />
-        <int id="param_2" name="High band frequency" max="65536" num="2" />
-        <int id="param_3" name="High band slope" num="3" />
-        <int id="param_4" name="LMH lookahead delay" max="10000" num="4" />
-        <int id="param_5" name="LMH mix" max="1000" num="5" />
-        <int id="param_6" name="Low cut" max="65536" min="-1" num="6" />
-        <int id="param_7" name="Low band mode" max="3" num="7" />
-        <int id="param_8" name="Low band pre gain" max="2000" num="8" />
-        <int id="param_9" name="Low band post gain" max="2000" num="9" />
-        <int id="param_10" name="Low band stereo separat" max="1000" min="-1000" num="10" />
-        <int id="param_11" name="Low band soft saturatio" max="1000" min="-1000" num="11" />
-        <int id="param_12" name="Low band soft saturatio" max="2000" num="12" />
-        <int id="param_13" name="Low band attack time" max="10000" num="13" />
-        <int id="param_14" name="Low band release 2 time" max="10000" num="14" />
-        <int id="param_15" name="Low band attack / relea" max="8" min="1" num="15" />
-        <int id="param_16" name="Low band release time" max="10000" num="16" />
-        <int id="param_17" name="Low band release curve" max="8" min="1" num="17" />
-        <int id="param_18" name="Low band sustain window" max="10000" num="18" />
-        <int id="param_19" name="Low band sustain mode" num="19" />
-        <int id="param_20" name="Mid band mode" max="3" num="20" />
-        <int id="param_21" name="Mid band pre gain" max="2000" num="21" />
-        <int id="param_22" name="Mid band post gain" max="2000" num="22" />
-        <int id="param_23" name="Mid band stereo separat" max="1000" min="-1000" num="23" />
-        <int id="param_24" name="Mid band soft saturatio" max="1000" min="-1000" num="24" />
-        <int id="param_25" name="Mid band soft saturatio" max="2000" num="25" />
-        <int id="param_26" name="Mid band attack time" max="10000" num="26" />
-        <int id="param_27" name="Mid band release 2 time" max="10000" num="27" />
-        <int id="param_28" name="Mid band attack / relea" max="8" min="1" num="28" />
-        <int id="param_29" name="Mid band release time" max="10000" num="29" />
-        <int id="param_30" name="Mid band release curve" max="8" min="1" num="30" />
-        <int id="param_31" name="Mid band sustain window" max="10000" num="31" />
-        <int id="param_32" name="Mid band sustain mode" num="32" />
-        <int id="param_33" name="High band mode" max="3" num="33" />
-        <int id="param_34" name="High band pre gain" max="2000" num="34" />
-        <int id="param_35" name="High band post gain" max="2000" num="35" />
-        <int id="param_36" name="High band stereo separa" max="1000" min="-1000" num="36" />
-        <int id="param_37" name="High band soft saturati" max="1000" min="-1000" num="37" />
-        <int id="param_38" name="High band soft saturati" max="2000" num="38" />
-        <int id="param_39" name="High band attack time" max="10000" num="39" />
-        <int id="param_40" name="High band release 2 tim" max="10000" num="40" />
-        <int id="param_41" name="High band attack / rele" max="8" min="1" num="41" />
-        <int id="param_42" name="High band release time" max="10000" num="42" />
-        <int id="param_43" name="High band release curve" max="8" min="1" num="43" />
-        <int id="param_44" name="High band sustain windo" max="10000" num="44" />
-        <int id="param_45" name="High band sustain mode" num="45" />
-        <int id="param_46" name="Master mode" max="3" num="46" />
-        <int id="param_47" name="Master pre gain" max="2000" num="47" />
-        <int id="param_48" name="Master post gain" max="2000" num="48" />
-        <int id="param_49" name="Master stereo separatio" max="1000" min="-1000" num="49" />
-        <int id="param_50" name="Master soft saturation" max="1000" min="-1000" num="50" />
-        <int id="param_51" name="Master soft saturation" max="2000" num="51" />
-        <int id="param_52" name="Master attack time" max="10000" num="52" />
-        <int id="param_53" name="Master release 2 time" max="10000" num="53" />
-        <int id="param_54" name="Master attack / release" max="8" min="1" num="54" />
-        <int id="param_55" name="Master release time" max="10000" num="55" />
-        <int id="param_56" name="Master release curve" max="8" min="1" num="56" />
-        <int id="param_57" name="Master sustain window" max="10000" num="57" />
-        <int id="param_58" name="Master sustain mode" num="58" />
+        <int num="0" id="param_0" name="Low band frequency" max="65536" />
+        <int num="1" id="param_1" name="Low band slope" />
+        <int num="2" id="param_2" name="High band frequency" max="65536" />
+        <int num="3" id="param_3" name="High band slope" />
+        <int num="4" id="param_4" name="LMH lookahead delay" max="10000" />
+        <int num="5" id="param_5" name="LMH mix" max="1000" />
+        <int num="6" id="param_6" name="Low cut" max="65536" min="-1" />
+        <int num="7" id="param_7" name="Low band mode" max="3" />
+        <int num="8" id="param_8" name="Low band pre gain" max="2000" />
+        <int num="9" id="param_9" name="Low band post gain" max="2000" />
+        <int num="10" id="param_10" name="Low band stereo separat" max="1000" min="-1000" />
+        <int num="11" id="param_11" name="Low band soft saturatio" max="1000" min="-1000" />
+        <int num="12" id="param_12" name="Low band soft saturatio" max="2000" />
+        <int num="13" id="param_13" name="Low band attack time" max="10000" />
+        <int num="14" id="param_14" name="Low band release 2 time" max="10000" />
+        <int num="15" id="param_15" name="Low band attack / relea" max="8" min="1" />
+        <int num="16" id="param_16" name="Low band release time" max="10000" />
+        <int num="17" id="param_17" name="Low band release curve" max="8" min="1" />
+        <int num="18" id="param_18" name="Low band sustain window" max="10000" />
+        <int num="19" id="param_19" name="Low band sustain mode" />
+        <int num="20" id="param_20" name="Mid band mode" max="3" />
+        <int num="21" id="param_21" name="Mid band pre gain" max="2000" />
+        <int num="22" id="param_22" name="Mid band post gain" max="2000" />
+        <int num="23" id="param_23" name="Mid band stereo separat" max="1000" min="-1000" />
+        <int num="24" id="param_24" name="Mid band soft saturatio" max="1000" min="-1000" />
+        <int num="25" id="param_25" name="Mid band soft saturatio" max="2000" />
+        <int num="26" id="param_26" name="Mid band attack time" max="10000" />
+        <int num="27" id="param_27" name="Mid band release 2 time" max="10000" />
+        <int num="28" id="param_28" name="Mid band attack / relea" max="8" min="1" />
+        <int num="29" id="param_29" name="Mid band release time" max="10000" />
+        <int num="30" id="param_30" name="Mid band release curve" max="8" min="1" />
+        <int num="31" id="param_31" name="Mid band sustain window" max="10000" />
+        <int num="32" id="param_32" name="Mid band sustain mode" />
+        <int num="33" id="param_33" name="High band mode" max="3" />
+        <int num="34" id="param_34" name="High band pre gain" max="2000" />
+        <int num="35" id="param_35" name="High band post gain" max="2000" />
+        <int num="36" id="param_36" name="High band stereo separa" max="1000" min="-1000" />
+        <int num="37" id="param_37" name="High band soft saturati" max="1000" min="-1000" />
+        <int num="38" id="param_38" name="High band soft saturati" max="2000" />
+        <int num="39" id="param_39" name="High band attack time" max="10000" />
+        <int num="40" id="param_40" name="High band release 2 tim" max="10000" />
+        <int num="41" id="param_41" name="High band attack / rele" max="8" min="1" />
+        <int num="42" id="param_42" name="High band release time" max="10000" />
+        <int num="43" id="param_43" name="High band release curve" max="8" min="1" />
+        <int num="44" id="param_44" name="High band sustain windo" max="10000" />
+        <int num="45" id="param_45" name="High band sustain mode" />
+        <int num="46" id="param_46" name="Master mode" max="3" />
+        <int num="47" id="param_47" name="Master pre gain" max="2000" />
+        <int num="48" id="param_48" name="Master post gain" max="2000" />
+        <int num="49" id="param_49" name="Master stereo separatio" max="1000" min="-1000" />
+        <int num="50" id="param_50" name="Master soft saturation" max="1000" min="-1000" />
+        <int num="51" id="param_51" name="Master soft saturation" max="2000" />
+        <int num="52" id="param_52" name="Master attack time" max="10000" />
+        <int num="53" id="param_53" name="Master release 2 time" max="10000" />
+        <int num="54" id="param_54" name="Master attack / release" max="8" min="1" />
+        <int num="55" id="param_55" name="Master release time" max="10000" />
+        <int num="56" id="param_56" name="Master release curve" max="8" min="1" />
+        <int num="57" id="param_57" name="Master sustain window" max="10000" />
+        <int num="58" id="param_58" name="Master sustain mode" />
       </params>
       <extplug_assoc>
         <vst2>

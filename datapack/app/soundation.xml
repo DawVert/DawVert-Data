@@ -29,7 +29,7 @@
     <object id="com.soundation.delay">
       <visual name="Delay" />
       <enums>
-        <enum id="time_synced" max="20" end_point="end">
+        <enum id="time_synced" enum_max="20" end_point="end">
           <part num="0" id="off" />
           <part num="1" id="1/64" />
           <part num="2" id="1/32t" />
@@ -52,7 +52,7 @@
           <part num="19" id="1/2d" />
           <part num="20" id="1" />
         </enum>
-      </enum>
+      </enums>
       <params>
         <float id="dry" def="1" />
         <float id="feedback" def="0.154" />

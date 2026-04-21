@@ -3,11 +3,11 @@
     <object id="ChannelMix">
       <visual name="Channel Mixer" />
       <params>
-        <float num="0" id="l_to_l" def="1.0" />
-        <float num="1" id="r_to_l" def="0.5" />
-        <float num="2" id="l_to_r" def="0.5" />
-        <float num="3" id="r_to_r" def="1.0" />
-        <float num="4" id="_" def="0.0" />
+        <float num="0" id="l_to_l" def="1" unit="normalized:plusminus" />
+        <float num="1" id="r_to_l" def="0.5" unit="normalized:plusminus" />
+        <float num="2" id="l_to_r" def="0.5" unit="normalized:plusminus" />
+        <float num="3" id="r_to_r" def="1" unit="normalized:plusminus" />
+        <float num="4" id="_" />
       </params>
     </object>
     <object id="Chorus">
@@ -15,16 +15,22 @@
       <params>
         <float num="0" id="voices" def="0.07142857142857142" />
         <float num="1" id="delay_range" def="0.5991983967935872" />
-        <float num="2" id="delay_rate" def="0.0" />
-        <float num="3" id="feedback" def="0.0" />
+        <float num="2" id="delay_rate" />
+        <float num="3" id="feedback" />
         <float num="4" id="spread" def="0.15" />
-        <float num="5" id="gain_depth" def="0.0" />
-        <float num="6" id="gain_rate" def="0.0" />
-        <float num="7" id="stereo_field" def="1.0" />
-        <float num="8" id="add_binaural_cues" def="0.0" />
+        <float num="5" id="gain_depth" />
+        <float num="6" id="gain_rate" />
+        <float num="7" id="stereo_field" def="1" />
+        <float num="8" id="add_binaural_cues" />
         <float num="9" id="dry" def="0.35" />
         <float num="10" id="wet" def="0.15" />
-        <float num="11" id="_" def="0.0" />
+        <float num="11" id="_" />
+        <customunit id="voices" type="from_one" range_out="1:15" />
+        <customunit id="delay_range" out_unit="time:ms" type="from_one" range_out="0.1:50" />
+        <customunit id="delay_rate" out_unit="freq:hz" type="from_one" range_out="0.1:12" />
+        <customunit id="spread" out_unit="time:ms" type="from_one" range_out="0:200" />
+        <customunit id="gain_depth" out_unit="decibel" type="from_one" range_out="0:15" />
+        <customunit id="gain_rate" out_unit="freq:hz" type="from_one" range_out="0.1:30" />
       </params>
     </object>
     <object id="Compressor">
@@ -35,14 +41,16 @@
         <float num="2" id="knee" def="0.3" />
         <float num="3" id="attack" def="0.6041241024010339" />
         <float num="4" id="release" def="0.629858331726371" />
-        <float num="10" id="lookahead" def="0.0" />
-        <float num="11" id="sustain" def="0.0" />
-        <float num="6" id="link_channels" def="1.0" />
-        <float num="9" id="sidechain" def="0.0" />
-        <float num="12" id="vocal" def="0.0" />
-        <float num="5" id="gain" def="0.0" />
-        <float num="8" id="mix" def="1.0" />
-        <float num="7" id="_" def="0.0" />
+        <float num="10" id="lookahead" />
+        <float num="11" id="sustain" />
+        <float num="6" id="link_channels" def="1" />
+        <float num="9" id="sidechain" />
+        <float num="12" id="vocal" />
+        <float num="5" id="gain" />
+        <float num="8" id="mix" def="1" />
+        <float num="7" id="_" />
+        <customunit id="threshold" out_unit="decibel" type="from_one" range_out="-60:0" />
+        <customunit id="ratio" type="from_one" range_out="1:20" />
       </params>
     </object>
     <object id="Delay">
@@ -50,12 +58,12 @@
       <params>
         <float num="0" id="l_delay" def="0.3" />
         <float num="1" id="l_mix" def="0.6" />
-        <float num="2" id="l_invert" def="0.0" />
+        <float num="2" id="l_invert" />
         <float num="3" id="r_delay" def="0.36" />
         <float num="4" id="r_mix" def="0.7" />
-        <float num="5" id="r_invert" def="0.0" />
-        <float num="6" id="sync_channels" def="0.0" />
-        <float num="7" id="_" def="0.0" />
+        <float num="5" id="r_invert" />
+        <float num="6" id="sync_channels" />
+        <float num="7" id="_" />
       </params>
     </object>
     <object id="Echo">
@@ -64,30 +72,30 @@
         <float num="0" id="l_delay" def="0.14957478739369684" />
         <float num="1" id="l_feedback" def="0.5" />
         <float num="2" id="l_lvl" def="0.4" />
-        <float num="3" id="l_lowcut" def="0.0" />
-        <float num="4" id="l_highcut" def="1.0" />
+        <float num="3" id="l_lowcut" />
+        <float num="4" id="l_highcut" def="1" />
         <float num="5" id="r_delay" def="0.12456228114057029" />
         <float num="6" id="r_feedback" def="0.5" />
         <float num="7" id="r_lvl" def="0.4" />
-        <float num="8" id="r_lowcut" def="0.0" />
-        <float num="9" id="r_highcut" def="1.0" />
-        <float num="10" id="width" def="1.0" />
+        <float num="8" id="r_lowcut" />
+        <float num="9" id="r_highcut" def="1" />
+        <float num="10" id="width" def="1" />
         <float num="11" id="gain" def="0.5" />
-        <float num="12" id="sync_channels" def="0.0" />
-        <float num="13" id="_" def="0.0" />
+        <float num="12" id="sync_channels" />
+        <float num="13" id="_" />
       </params>
     </object>
     <object id="Flanger">
       <visual name="Flanger" />
       <params>
-        <float num="0" id="delay" def="0.0" />
+        <float num="0" id="delay" />
         <float num="1" id="depth" def="0.2" />
         <float num="2" id="stereo_phasing" def="0.08333333333333333" />
         <float num="3" id="feedback" def="0.8333333333333334" />
         <float num="4" id="mod_rate" def="0.3700063644964152" />
         <float num="5" id="dry" def="0.5" />
         <float num="6" id="wet" def="0.75" />
-        <float num="7" id="_" def="0.0" />
+        <float num="7" id="_" />
       </params>
     </object>
     <object id="Limiter">
@@ -95,16 +103,16 @@
       <params>
         <float num="0" id="input" def="0.7272727272727273" />
         <float num="1" id="ceiling" def="0.9979166666666667" />
-        <float num="2" id="saturation" def="1.0" />
+        <float num="2" id="saturation" def="1" />
         <float num="3" id="lookahead" def="0.34708067508455476" />
         <float num="4" id="sustain" def="0.34708067508455476" />
         <float num="5" id="release" def="0.5691077130854597" />
-        <float num="6" id="link_channels" def="1.0" />
-        <float num="9" id="side_chain" def="0.0" />
-        <float num="11" id="true_peak" def="0.0" />
+        <float num="6" id="link_channels" def="1" />
+        <float num="9" id="side_chain" />
+        <float num="11" id="true_peak" />
         <float num="10" id="output" def="0.5" />
-        <float num="8" id="mix" def="1.0" />
-        <float num="7" id="7" def="0.0" />
+        <float num="8" id="mix" def="1" />
+        <float num="7" id="7" />
       </params>
     </object>
     <object id="EQ">
@@ -119,45 +127,45 @@
           <part num="5" id="band_pass" />
           <part num="6" id="notch" />
         </enum>
-      </enum>
+      </enums>
       <params>
-        <float num="0" id="1_freq" def="40" max="18742.5" min="20.0" />
+        <float num="0" id="1_freq" def="40" max="18742.5" min="20" />
         <float num="1" id="1_q" def="0.4247425010840047" />
         <float num="2" id="1_gain" def="0.5" />
-        <float num="3" id="1_active" def="1.0" />
-        <float num="4" id="2_freq" def="70" max="18742.5" min="20.0" />
+        <float num="3" id="1_active" def="1" />
+        <float num="4" id="2_freq" def="70" max="18742.5" min="20" />
         <float num="5" id="2_q" def="0.4247425010840047" />
         <float num="6" id="2_gain" def="0.5" />
-        <float num="7" id="2_active" def="1.0" />
-        <float num="8" id="3_freq" def="200" max="18742.5" min="20.0" />
+        <float num="7" id="2_active" def="1" />
+        <float num="8" id="3_freq" def="200" max="18742.5" min="20" />
         <float num="9" id="3_q" def="0.4247425010840047" />
         <float num="10" id="3_gain" def="0.5" />
-        <float num="11" id="3_active" def="1.0" />
-        <float num="12" id="4_freq" def="600" max="18742.5" min="20.0" />
+        <float num="11" id="3_active" def="1" />
+        <float num="12" id="4_freq" def="600" max="18742.5" min="20" />
         <float num="13" id="4_q" def="0.4247425010840047" />
         <float num="14" id="4_gain" def="0.5" />
-        <float num="15" id="4_active" def="1.0" />
-        <float num="16" id="5_freq" def="1800" max="18742.5" min="20.0" />
+        <float num="15" id="4_active" def="1" />
+        <float num="16" id="5_freq" def="1800" max="18742.5" min="20" />
         <float num="17" id="5_q" def="0.4247425010840047" />
         <float num="18" id="5_gain" def="0.5" />
-        <float num="19" id="5_active" def="1.0" />
-        <float num="20" id="6_freq" def="5500" max="18742.5" min="20.0" />
+        <float num="19" id="5_active" def="1" />
+        <float num="20" id="6_freq" def="5500" max="18742.5" min="20" />
         <float num="21" id="6_q" def="0.4247425010840047" />
         <float num="22" id="6_gain" def="0.5" />
-        <float num="23" id="6_active" def="1.0" />
-        <float num="24" id="7_freq" def="10000.0" max="18742.5" min="20.0" />
+        <float num="23" id="6_active" def="1" />
+        <float num="24" id="7_freq" def="10000" max="18742.5" min="20" />
         <float num="25" id="7_q" def="0.4247425010840047" />
         <float num="26" id="7_gain" def="0.5" />
-        <float num="27" id="7_active" def="1.0" />
+        <float num="27" id="7_active" def="1" />
         <float num="28" id="gain" def="0.5" />
-        <float num="29" id="_" def="0.0" max="0.0" />
-        <enum_float num="30" id="1_type" source="shape" def="low_shelf" />
-        <enum_float num="31" id="2_type" source="shape" def="peak" />
-        <enum_float num="32" id="3_type" source="shape" def="peak" />
-        <enum_float num="33" id="4_type" source="shape" def="peak" />
-        <enum_float num="34" id="5_type" source="shape" def="peak" />
-        <enum_float num="35" id="6_type" source="shape" def="peak" />
-        <enum_float num="36" id="7_type" source="shape" def="high_shelf" />
+        <float num="29" id="_" max="0" />
+        <enum_float num="30" id="1_type" def="low_shelf" source="shape" />
+        <enum_float num="31" id="2_type" def="peak" source="shape" />
+        <enum_float num="32" id="3_type" def="peak" source="shape" />
+        <enum_float num="33" id="4_type" def="peak" source="shape" />
+        <enum_float num="34" id="5_type" def="peak" source="shape" />
+        <enum_float num="35" id="6_type" def="peak" source="shape" />
+        <enum_float num="36" id="7_type" def="high_shelf" source="shape" />
       </params>
     </object>
     <object id="Phaser">
@@ -165,14 +173,14 @@
       <params>
         <float num="0" id="stages" def="0.2222222222222222" />
         <float num="1" id="freq" def="0.6666666666666667" />
-        <float num="2" id="intensity" def="1.0" />
+        <float num="2" id="intensity" def="1" />
         <float num="3" id="depth" def="0.7" />
         <float num="4" id="feedback" def="0.5" />
         <float num="5" id="mod_rate" def="0.05" />
         <float num="6" id="phase_diff" def="0.5" />
         <float num="7" id="mix" def="0.5" />
         <float num="8" id="gain" def="0.75" />
-        <float num="9" id="_" def="0.0" />
+        <float num="9" id="_" />
       </params>
     </object>
     <object id="PlateReverb">
@@ -180,48 +188,53 @@
       <params>
         <float num="0" id="predelay" def="0.05" />
         <float num="1" id="roomsize" def="0.75" />
-        <float num="2" id="width" def="1.0" />
+        <float num="2" id="width" def="1" />
         <float num="3" id="decay" def="0.5333159078712726" />
         <float num="4" id="damping" def="0.7997683545572292" />
-        <float num="5" id="lowcut" def="0.0" />
+        <float num="5" id="lowcut" />
         <float num="6" id="highcut" def="0.9037252330445482" />
         <float num="7" id="wet" def="0.5" />
         <float num="8" id="dry" def="0.5" />
-        <float num="9" id="_" def="0.0" />
+        <float num="9" id="_" />
       </params>
     </object>
     <object id="RoomReverb">
       <visual name="Richverb" />
       <params>
         <float num="0" id="er_roomsize" def="0.15789473684210525" />
-        <float num="1" id="er_width" def="1.0" />
-        <float num="2" id="er_lowcut" def="0.0" />
-        <float num="3" id="er_highcut" def="1.0" />
+        <float num="1" id="er_width" def="1" />
+        <float num="2" id="er_lowcut" />
+        <float num="3" id="er_highcut" def="1" />
         <float num="4" id="roomsize" def="0.15789473684210525" />
-        <float num="5" id="width" def="1.0" />
+        <float num="5" id="width" def="1" />
         <float num="6" id="decay" def="0.5040735348038954" />
         <float num="7" id="diffusion" def="0.9" />
         <float num="8" id="damp_lf_freq" def="0.47670391740874885" />
         <float num="9" id="damp_lf_gain" def="0.5000000000000002" />
         <float num="10" id="damp_hf_freq" def="0.9457031256247278" />
         <float num="11" id="damp_hf_gain" def="0.2846617209633035" />
-        <float num="12" id="lowcut" def="0.0" />
+        <float num="12" id="lowcut" />
         <float num="13" id="highcut" def="0.948061208362004" />
         <float num="14" id="predelay" def="0.05" />
         <float num="15" id="out_er" def="0.35" />
         <float num="16" id="out_wet" def="0.35" />
         <float num="17" id="out_dry" def="0.35" />
-        <float num="18" id="_" def="0.0" />
+        <float num="18" id="_" />
+
+        <customunit id="er_roomsize" out_unit="time:ms" type="from_one" range_out="5:100" />
+        <customunit id="predelay" out_unit="time:ms" type="from_one" range_out="0:200" />
       </params>
     </object>
     <object id="Balance">
       <visual name="Volume and Pan" />
       <params>
         <float num="0" id="vol" def="0.6666666666666666" />
-        <float num="1" id="pan" def="0.5" />
-        <float num="3" id="panlaw" def="0.0" />
-        <float num="4" id="gaincomp" def="1.0" />
-        <float num="2" id="_" def="0.0" />
+        <float num="1" id="pan" def="0.5" unit="normalized:plusminus" />
+        <float num="3" id="panlaw" />
+        <float num="4" id="gaincomp" def="1" />
+        <float num="2" id="_" />
+
+        <customunit id="vol" out_unit="decibel" type="from_one" range_out="-96:48" />
       </params>
     </object>
   </category>
