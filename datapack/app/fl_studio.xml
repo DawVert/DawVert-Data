@@ -44,40 +44,40 @@
         </enum>
       </enums>
       <params>
-        <int id="osc1_coarse" name="Osc 1 coarse" max="24" min="-24" unit="pitch:semitones"/>
+        <int id="osc1_coarse" name="Osc 1 coarse" max="24" min="-24" unit="pitch:semitones" />
         <int id="osc1_detune" name="Osc 1 stereo detune" max="50" min="-50" />
-        <int id="osc1_fine" name="Osc 1 fine" max="100" min="-100" unit="pitch:cents"/>
+        <int id="osc1_fine" name="Osc 1 fine" max="100" min="-100" unit="pitch:cents" />
         <bool id="osc1_invert" name="Osc 1 Invert" />
         <int id="osc1_mixlevel" name="Osc 1 Mix Level" max="128" />
         <int id="osc1_ofs" name="Osc 1 Offset" max="64" min="-64" />
         <int id="osc1_pan" name="Osc 1 Pan" max="64" min="-64" />
         <enum_int id="osc1_shape" name="Osc 1 Shape" source="shape" />
-        <int id="osc2_coarse" name="Osc 2 Coarse" max="24" min="-24" unit="pitch:semitones"/>
+        <int id="osc2_coarse" name="Osc 2 Coarse" max="24" min="-24" unit="pitch:semitones" />
         <int id="osc2_detune" name="Osc 2 Detune" max="50" min="-50" />
-        <int id="osc2_fine" name="Osc 2 fine" max="100" min="-100" unit="pitch:cents"/>
+        <int id="osc2_fine" name="Osc 2 fine" max="100" min="-100" unit="pitch:cents" />
         <bool id="osc2_invert" name="Osc 2 Invert" />
         <int id="osc2_mixlevel" name="Osc 2 Mix Level" max="128" />
         <int id="osc2_ofs" name="Osc 2 Offset" max="64" min="-64" />
         <int id="osc2_pan" name="Osc 2 Pan" max="64" min="-64" />
         <enum_int id="osc2_shape" name="Osc 2 Shape" source="shape" />
         <bool id="osc3_am" name="Osc 3 AM" />
-        <int id="osc3_coarse" name="Osc 3 Coarse" max="24" min="-24" unit="pitch:semitones"/>
+        <int id="osc3_coarse" name="Osc 3 Coarse" max="24" min="-24" unit="pitch:semitones" />
         <int id="osc3_detune" name="Osc 3 Detune" max="50" min="-50" />
-        <int id="osc3_fine" name="Osc 3 fine" max="100" min="-100" unit="pitch:cents"/>
+        <int id="osc3_fine" name="Osc 3 fine" max="100" min="-100" unit="pitch:cents" />
         <bool id="osc3_invert" name="Osc 3 Invert" />
         <int id="osc3_ofs" name="Osc 3 Offset" max="64" min="-64" />
         <int id="osc3_pan" name="Osc 3 Pan" max="64" min="-64" />
         <enum_int id="osc3_shape" name="Osc 3 Shape" source="shape" />
         <int id="phase_rand" name="Phase Rand" max="64" />
-        <customunit id="phase_rand" type="to_one"/>
+        <customunit id="phase_rand" type="to_one" />
         <customunit id="osc1_mixlevel" type="to_one" />
         <customunit id="osc2_mixlevel" type="to_one" />
-        <customunit id="osc1_pan" type="div" value="64"/>
-        <customunit id="osc2_pan" type="div" value="64"/>
-        <customunit id="osc3_pan" type="div" value="64"/>
-        <customunit id="osc1_ofs" type="div" value="64"/>
-        <customunit id="osc2_ofs" type="div" value="64"/>
-        <customunit id="osc3_ofs" type="div" value="64"/>
+        <customunit id="osc1_pan" type="div" value="64" />
+        <customunit id="osc2_pan" type="div" value="64" />
+        <customunit id="osc3_pan" type="div" value="64" />
+        <customunit id="osc1_ofs" type="div" value="64" />
+        <customunit id="osc2_ofs" type="div" value="64" />
+        <customunit id="osc3_ofs" type="div" value="64" />
       </params>
       <datavals>
         <int id="version" name="Version" />
@@ -158,9 +158,9 @@
         <int id="bass" max="65535" />
         <int id="mid" max="65535" />
         <int id="treble" max="65535" />
-        <customunit id="bass" type="to_one"/>
-        <customunit id="mid" type="to_one"/>
-        <customunit id="treble" type="to_one"/>
+        <customunit id="bass" type="to_one" />
+        <customunit id="mid" type="to_one" />
+        <customunit id="treble" type="to_one" />
       </params>
       <datavals>
         <int id="version" />
@@ -205,8 +205,6 @@
     </object>
     <object id="effector__DISABLED">
       <data group="fx" />
-      <datadef>
-      </datadef>
       <params>
         <float id="bypass" name="Bypass" />
         <float id="effect" name="Effect" />
@@ -316,10 +314,10 @@
           <part num="3" id="bandpass" name="Bandpass" />
         </enum_int>
         <enum_int id="cabinet" enum_max="3">
-          <part num="0" id="dry" name="Dry"/>
-          <part num="1" id="british" name="British"/>
-          <part num="2" id="combo" name="Combo"/>
-          <part num="3" id="stax" name="StaX"/>
+          <part num="0" id="dry" name="Dry" />
+          <part num="1" id="british" name="British" />
+          <part num="2" id="combo" name="Combo" />
+          <part num="3" id="stax" name="StaX" />
         </enum_int>
         <enum_int id="coil_type" enum_max="2">
           <part num="0" id="none" name="None" />
@@ -337,22 +335,22 @@
         <int id="fx_param1" max="65535" />
         <int id="fx_param2" max="65535" />
         <enum_int id="fx_type" enum_max="15">
-          <part num="0" id="dry" name="Dry"/>
-          <part num="1" id="amp:phaser" name="AMP:Phaser"/>
-          <part num="2" id="amp:tremolo" name="AMP:Tremolo"/>
-          <part num="3" id="amp:wahwah" name="AMP:WahWah"/>
-          <part num="4" id="amp:wahwah_lfo" name="AMP:WahWah LFO"/>
-          <part num="5" id="amp:ringmod" name="AMP:RingMod"/>
-          <part num="6" id="amp:fuzz_box" name="AMP:Fuzz Box"/>
-          <part num="7" id="amp:harmonizer" name="AMP:Harmonizer"/>
-          <part num="8" id="amp:talkbox" name="AMP:Talkbox"/>
-          <part num="9" id="mst:chorus" name="MST:Chorus"/>
-          <part num="10" id="mst:flanger" name="MST:Flanger"/>
-          <part num="11" id="mst:phaser" name="MST:Phaser"/>
-          <part num="12" id="mst:leslie" name="MST:Leslie"/>
-          <part num="13" id="mst:tremolo" name="MST:Tremolo"/>
-          <part num="14" id="mst:dub_delay" name="MST:Dub Delay"/>
-          <part num="15" id="mst:multi_tap" name="MST:Multi tap"/>
+          <part num="0" id="dry" name="Dry" />
+          <part num="1" id="amp:phaser" name="AMP:Phaser" />
+          <part num="2" id="amp:tremolo" name="AMP:Tremolo" />
+          <part num="3" id="amp:wahwah" name="AMP:WahWah" />
+          <part num="4" id="amp:wahwah_lfo" name="AMP:WahWah LFO" />
+          <part num="5" id="amp:ringmod" name="AMP:RingMod" />
+          <part num="6" id="amp:fuzz_box" name="AMP:Fuzz Box" />
+          <part num="7" id="amp:harmonizer" name="AMP:Harmonizer" />
+          <part num="8" id="amp:talkbox" name="AMP:Talkbox" />
+          <part num="9" id="mst:chorus" name="MST:Chorus" />
+          <part num="10" id="mst:flanger" name="MST:Flanger" />
+          <part num="11" id="mst:phaser" name="MST:Phaser" />
+          <part num="12" id="mst:leslie" name="MST:Leslie" />
+          <part num="13" id="mst:tremolo" name="MST:Tremolo" />
+          <part num="14" id="mst:dub_delay" name="MST:Dub Delay" />
+          <part num="15" id="mst:multi_tap" name="MST:Multi tap" />
         </enum_int>
         <int id="glissando" />
         <int id="harmonic" max="65535" />
@@ -415,10 +413,10 @@
           <part num="6" id="vintage_r" />
           <part num="7" id="soft_r" />
         </enum_int>
-        <customunit id="threshold" out_unit="decibel" type="div" value="10"/>
-        <customunit id="ratio" type="div" value="10"/>
-        <customunit id="attack" out_unit="time:ms" type="div" value="10"/>
-        <customunit id="gain" out_unit="decibel" type="div" value="10"/>
+        <customunit id="threshold" out_unit="decibel" type="div" value="10" />
+        <customunit id="ratio" type="div" value="10" />
+        <customunit id="attack" out_unit="time:ms" type="div" value="10" />
+        <customunit id="gain" out_unit="decibel" type="div" value="10" />
       </params>
       <datavals>
         <int id="version" max="2" />
@@ -1722,6 +1720,14 @@
         <enum_int id="7_type" name="Band 7 Type" source="type" />
         <int id="7_width" name="Band 7 Width" max="65536" />
         <int id="main_lvl" name="Main Level" max="256" />
+        <customunit id="1_gain" type="div" value="100" />
+        <customunit id="2_gain" type="div" value="100" />
+        <customunit id="3_gain" type="div" value="100" />
+        <customunit id="4_gain" type="div" value="100" />
+        <customunit id="5_gain" type="div" value="100" />
+        <customunit id="6_gain" type="div" value="100" />
+        <customunit id="7_gain" type="div" value="100" />
+        <customunit id="main_lvl" type="div" value="256" />
       </params>
     </object>
     <object id="fruity parametric eq 2">
@@ -1816,6 +1822,14 @@
         <enum_int id="7_type" name="Band 7 Type" source="type" />
         <int id="7_width" name="Band 7 Width" max="65536" />
         <int id="main_lvl" name="Main Level" max="1800" min="-1800" />
+        <customunit id="1_gain" type="div" value="100" />
+        <customunit id="2_gain" type="div" value="100" />
+        <customunit id="3_gain" type="div" value="100" />
+        <customunit id="4_gain" type="div" value="100" />
+        <customunit id="5_gain" type="div" value="100" />
+        <customunit id="6_gain" type="div" value="100" />
+        <customunit id="7_gain" type="div" value="100" />
+        <customunit id="main_lvl" type="div" value="100" />
       </params>
       <datavals>
         <int id="version" name="Version" />
@@ -1853,15 +1867,22 @@
         </struct>
       </datadef>
       <params>
-        <int id="sweep_freq" name="Sweep Freq" max="5000" num="0" />
-        <int id="depth_min" name="Min Depth" max="1000" num="1" />
-        <int id="depth_max" name="Max Depth" max="1000" num="2" />
-        <int id="freq_range" name="Freq Range" max="1024" num="3" />
-        <int id="stereo" name="Stereo" max="1024" num="4" />
-        <int id="num_stages" name="NR. Stages" max="22" num="5" />
-        <int id="feedback" name="Feedback" max="1000" num="6" />
-        <int id="drywet" name="Dry-Wet" max="1024" num="7" />
-        <int id="gain" name="Gain" max="5000" num="8" />
+        <int num="0" id="sweep_freq" name="Sweep Freq" max="5000" />
+        <int num="1" id="depth_min" name="Min Depth" max="1000" />
+        <int num="2" id="depth_max" name="Max Depth" max="1000" />
+        <int num="3" id="freq_range" name="Freq Range" max="1024" />
+        <int num="4" id="stereo" name="Stereo" max="1024" />
+        <int num="5" id="num_stages" name="NR. Stages" max="22" />
+        <int num="6" id="feedback" name="Feedback" max="1000" />
+        <int num="7" id="drywet" name="Dry-Wet" max="1024" />
+        <int num="8" id="gain" name="Gain" max="5000" />
+        <customunit id="sweep_freq" out_unit="freq:hz" type="to_one" />
+        <customunit id="gain" type="div" value="2500" />
+        <customunit id="drywet" type="to_one" />
+        <customunit id="depth_min" type="to_one" />
+        <customunit id="depth_max" type="to_one" />
+        <customunit id="stereo" type="to_one" />
+        <customunit id="feedback" type="to_one" />
       </params>
       <datavals>
         <int id="version" name="Version" />
@@ -1887,7 +1908,7 @@
       <params>
         <int num="0" id="lowcut" name="Low Cut" max="65536" />
         <int num="1" id="highcut" name="High Cut" max="65536" />
-        <int num="2" id="predelay" name="Predelay" max="250" unit="time:ms"/>
+        <int num="2" id="predelay" name="Predelay" max="250" unit="time:ms" />
         <int num="3" id="room_size" name="Room Size" max="65536" />
         <int num="4" id="diffusion" name="Diffusion" max="65536" />
         <int num="5" id="color" name="Color" max="40" />
@@ -1895,14 +1916,14 @@
         <int num="7" id="hidamping" name="High Damping" max="65536" />
         <int num="8" id="dry" name="Dry" max="65536" />
         <int num="9" id="reverb" name="Reverb" max="65536" />
-        <customunit id="lowcut" out_unit="freq:hz" type="range_change" range_in="0:65536" range_out="20:3000"/>
-        <customunit id="highcut" out_unit="freq:hz" type="range_change" range_in="0:65536" range_out="500:22050"/>
-        <customunit id="room_size" type="to_one"/>
-        <customunit id="diffusion" type="to_one"/>
-        <customunit id="decay" out_unit="time:seconds" type="range_change" range_in="0:65536" range_out="0.1:20"/>
-        <customunit id="hidamping" out_unit="freq:hz" type="range_change" range_in="0:65536" range_out="500:22050"/>
-        <customunit id="dry" type="to_one"/>
-        <customunit id="reverb" type="to_one"/>
+        <customunit id="lowcut" out_unit="freq:hz" type="range_change" range_in="0:65536" range_out="20:3000" />
+        <customunit id="highcut" out_unit="freq:hz" type="range_change" range_in="0:65536" range_out="500:22050" />
+        <customunit id="room_size" type="to_one" />
+        <customunit id="diffusion" type="to_one" />
+        <customunit id="decay" out_unit="time:seconds" type="range_change" range_in="0:65536" range_out="0.1:20" />
+        <customunit id="hidamping" out_unit="freq:hz" type="range_change" range_in="0:65536" range_out="500:22050" />
+        <customunit id="dry" type="to_one" />
+        <customunit id="reverb" type="to_one" />
       </params>
       <datavals>
         <int id="version" name="Version" />
@@ -1942,7 +1963,7 @@
         <int num="6" id="hidamping" name="High Damping" max="221" />
         <int num="7" id="bass" name="Bass Multi" max="300" />
         <int num="8" id="cross" name="Crossover" max="2000" unit="freq:hz" />
-        <int num="9" id="stereo" name="Stereo Seperation"  min="-64" max="64"/>
+        <int num="9" id="stereo" name="Stereo Seperation"  min="-64" max="64" />
         <int num="10" id="dry" name="Dry" max="160" />
         <int num="11" id="er" name="Early Reflection" max="160" />
         <int num="12" id="wet" name="Wet" max="160" />
@@ -1951,19 +1972,19 @@
         <bool id="mid_side" name="Mid/Side Input" />
         <bool id="tempo_predelay" name="Tempo Based Predelay" />
 
-        <customunit id="highcut" out_unit="freq:hz" type="mul" value="100"/>
-        <customunit id="predelay" out_unit="time:seconds" type="div" value="38.4"/>
-        <customunit id="room_size" type="to_one"/>
-        <customunit id="diffusion" type="to_one"/>
-        <customunit id="decay" out_unit="time:seconds" type="div" value="10"/>
-        <customunit id="hidamping" out_unit="freq:hz" type="mul" value="100"/>
-        <customunit id="bass" type="div" value="100"/>
-        <customunit id="stereo" type="div" value="64"/>
-        <customunit id="dry" type="div" value="128"/>
-        <customunit id="er" type="div" value="128"/>
-        <customunit id="wet" type="div" value="128"/>
-        <customunit id="mod_speed" type="to_one"/>
-        <customunit id="mod" type="to_one"/>
+        <customunit id="highcut" out_unit="freq:hz" type="mul" value="100" />
+        <customunit id="predelay" out_unit="time:seconds" type="div" value="38.4" />
+        <customunit id="room_size" type="to_one" />
+        <customunit id="diffusion" type="to_one" />
+        <customunit id="decay" out_unit="time:seconds" type="div" value="10" />
+        <customunit id="hidamping" out_unit="freq:hz" type="mul" value="100" />
+        <customunit id="bass" type="div" value="100" />
+        <customunit id="stereo" type="div" value="64" />
+        <customunit id="dry" type="div" value="128" />
+        <customunit id="er" type="div" value="128" />
+        <customunit id="wet" type="div" value="128" />
+        <customunit id="mod_speed" type="to_one" />
+        <customunit id="mod" type="to_one" />
       </params>
       <datavals>
         <int id="version" name="Version" />
@@ -1978,8 +1999,10 @@
         </struct>
       </datadef>
       <params>
-        <int id="postgain" name="PostGain" max="160" num="1" />
-        <int id="threshold" name="Threshold" max="127" num="0" />
+        <int num="0" id="threshold" name="Threshold" max="127" />
+        <int num="1" id="postgain" name="PostGain" max="160" />
+        <customunit id="threshold" type="to_one" />
+        <customunit id="postgain" type="to_one" />
       </params>
     </object>
     <object id="fruity spectroman">
@@ -1996,9 +2019,9 @@
         </struct>
       </datadef>
       <params>
-        <int id="amp" name="Amp" num="1" />
-        <int id="outputmode" name="Output Mode" num="0" />
-        <int id="scale" name="Freq Scale" num="2" />
+        <int num="0" id="outputmode" name="Output Mode" />
+        <int num="1" id="amp" name="Amp" />
+        <int num="2" id="scale" name="Freq Scale" />
       </params>
       <datavals>
         <bool id="show_peaks" />
@@ -2020,12 +2043,20 @@
         </struct>
       </datadef>
       <params>
-        <int id="pan" name="Pan" max="128" min="-128" num="0" />
-        <int id="phase_offs" name="Phase Offset" max="512" min="-512" num="3" />
-        <int id="phaseinvert" name="Phase Invert" max="2" num="5" />
-        <int id="prepost" name="Pre/Post" num="4" />
-        <int id="stereo" name="Stereo Seperation" max="96" min="-96" num="2" />
-        <int id="vol" name="Volume" def="256" max="320" num="1" />
+        <int num="0" id="pan" name="Pan" max="128" min="-128" />
+        <int num="1" id="vol" name="Volume" def="256" max="320" />
+        <int num="2" id="stereo" name="Stereo Seperation" max="96" min="-96" />
+        <int num="3" id="phase_offs" name="Phase Offset" max="512" min="-512" />
+        <int num="4" id="prepost" name="Pre/Post" />
+        <enum_int num="5" id="phaseinvert" name="Phase Invert" enum_max="2">
+          <part num="0" id="none" />
+          <part num="1" id="left" />
+          <part num="2" id="right" />
+        </enum_int>
+        <customunit id="pan" type="div" value="128" />
+        <customunit id="vol" type="div" value="320" />
+        <customunit id="stereo" type="div" value="96" />
+        <customunit id="phase_offs" type="div" value="512" />
       </params>
     </object>
     <object id="fruity stereo shaper">
@@ -2052,6 +2083,10 @@
         <int num="3" id="l2r" name="Left to Right" max="25600" min="-25600" />
         <int num="4" id="delay" name="Delay" max="4096" min="-4096" />
         <int num="5" id="dephase" name="Dephaseing" max="4096" min="-4096" />
+        <customunit id="r2l" type="div" value="12800" />
+        <customunit id="l2l" type="div" value="12800" />
+        <customunit id="r2r" type="div" value="12800" />
+        <customunit id="l2r" type="div" value="12800" />
       </params>
     </object>
     <object id="pitcher">
@@ -2861,8 +2896,6 @@
     </object>
     <object id="sytrus">
       <data group="synth" />
-      <datadef>
-      </datadef>
       <params>
         <int num="0" id="param_0" name="Main - Master level" def="88" max="160" />
         <int num="1" id="param_1" name="Main - Master LFO level" def="128" max="128" min="-128" />
@@ -4066,10 +4099,8 @@
     </object>
     <object id="wave candy">
       <data group="fx" />
-      <datadef>
-      </datadef>
       <params>
-        <int id="hold" name="Hold" num="0" />
+        <int num="0" id="hold" name="Hold" />
       </params>
       <extplug_assoc>
         <vst2>
@@ -4079,8 +4110,6 @@
     </object>
     <object id="harmless">
       <data group="synth" />
-      <datadef>
-      </datadef>
       <params>
         <int num="0" id="param_0" name="Phase randomness" max="1000" min="-1000" />
         <int num="1" id="param_1" name="Low harmonics protectio" max="1024" />
@@ -4290,8 +4319,6 @@
     </object>
     <object id="gross beat">
       <data group="fx" />
-      <datadef>
-      </datadef>
       <params>
         <int num="0" id="param_0" name="Time slot" max="35" />
         <int num="1" id="param_1" name="Volume slot" max="35" />
@@ -4319,8 +4346,6 @@
     </object>
     <object id="hardcore">
       <data group="fx" />
-      <datadef>
-      </datadef>
       <params>
         <int num="0" id="param_0" name="Master IN Lvl" max="256" />
         <int num="1" id="param_1" name="Master OUT Lvl" max="256" />
@@ -4418,8 +4443,6 @@
     </object>
     <object id="maximus">
       <data group="fx" />
-      <datadef>
-      </datadef>
       <params>
         <int num="0" id="param_0" name="Low band frequency" max="65536" />
         <int num="1" id="param_1" name="Low band slope" />
@@ -4547,8 +4570,6 @@
     </object>
     <object id="fruity notebook">
       <data group="fx" />
-      <datadef>
-      </datadef>
       <params>
         <int id="currentpage" name="Page index" def="1" max="100" min="1" num="0" />
       </params>
