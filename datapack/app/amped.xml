@@ -21,11 +21,11 @@
       <visual name="Compressor" />
       <params>
         <float id="attackTimeMS" def="9" max="300" unit="time:ms" />
-        <enum_int id="circuitMode" def="digital" max="1">
+        <enum_int id="circuitMode" def="digital" enum_max="1">
           <part num="0" id="analog" />
           <part num="1" id="digital" />
         </enum_int>
-        <enum_int id="detectMode" def="rms" max="1">
+        <enum_int id="detectMode" def="rms" enum_max="1">
           <part num="0" id="peak" />
           <part num="1" id="rms" />
         </enum_int>
@@ -33,7 +33,7 @@
         <bool id="filterAudition" />
         <float id="filterFrequency" def="2018" max="20000" min="20" unit="freq:hz" />
         <float id="filterGainDB" max="60" unit="decibel" />
-        <enum_int id="filterMode" def="lowpass" max="2">
+        <enum_int id="filterMode" def="lowpass" enum_max="2">
           <part num="0" id="lowpass" />
           <part num="1" id="highpass" />
           <part num="2" id="bandpass" />
@@ -73,7 +73,7 @@
         <float id="feedback" def="0.3" min="-1" />
         <float id="intensity" def="0.4" />
         <float id="mix" def="1" />
-        <enum_int id="mode" def="grit" max="10">
+        <enum_int id="mode" def="grit" enum_max="10">
           <part num="0" id="roar" />
           <part num="1" id="growl" />
           <part num="2" id="dirt" />
@@ -107,7 +107,7 @@
     <object id="EqualizerPro">
       <visual name="Equalizer" />
       <enums>
-        <enum id="filter_type" max="4">
+        <enum id="filter_type" enum_max="4">
           <part num="0" id="peak" />
           <part num="1" id="high_pass" />
           <part num="2" id="low_pass" />
@@ -120,42 +120,42 @@
         <float id="filter/1/freq" def="60" max="20000" min="20" unit="freq:hz" />
         <float id="filter/1/gain" max="24" min="-24" unit="decibel" />
         <float id="filter/1/q" def="0.71" max="40" min="0.1" unit="filtband:q" />
-        <enum_int id="filter/1/type" source="filter_type" def="high_pass" max="4" />
+        <enum_int id="filter/1/type" source="filter_type" def="high_pass" />
         <bool id="filter/2/active" />
         <float id="filter/2/freq" def="120" max="20000" min="20" unit="freq:hz" />
         <float id="filter/2/gain" max="24" min="-24" unit="decibel" />
         <float id="filter/2/q" def="0.71" max="40" min="0.1" unit="filtband:q" />
-        <enum_int id="filter/2/type" source="filter_type" def="low_shelf" max="4" />
+        <enum_int id="filter/2/type" source="filter_type" def="low_shelf" />
         <bool id="filter/3/active" />
         <float id="filter/3/freq" def="400" max="20000" min="20" unit="freq:hz" />
         <float id="filter/3/gain" max="24" min="-24" unit="decibel" />
         <float id="filter/3/q" def="0.71" max="40" min="0.1" unit="filtband:q" />
-        <enum_int id="filter/3/type" source="filter_type" def="peak" max="4" />
+        <enum_int id="filter/3/type" source="filter_type" def="peak" />
         <bool id="filter/4/active" />
         <float id="filter/4/freq" def="1200" max="20000" min="20" unit="freq:hz" />
         <float id="filter/4/gain" max="24" min="-24" unit="decibel" />
         <float id="filter/4/q" def="0.71" max="40" min="0.1" unit="filtband:q" />
-        <enum_int id="filter/4/type" source="filter_type" def="peak" max="4" />
+        <enum_int id="filter/4/type" source="filter_type" def="peak" />
         <bool id="filter/5/active" />
         <float id="filter/5/freq" def="3000" max="20000" min="20" unit="freq:hz" />
         <float id="filter/5/gain" max="24" min="-24" unit="decibel" />
         <float id="filter/5/q" def="0.71" max="40" min="0.1" unit="filtband:q" />
-        <enum_int id="filter/5/type" source="filter_type" def="peak" max="4" />
+        <enum_int id="filter/5/type" source="filter_type" def="peak" />
         <bool id="filter/6/active" />
         <float id="filter/6/freq" def="6000" max="20000" min="20" unit="freq:hz" />
         <float id="filter/6/gain" max="24" min="-24" unit="decibel" />
         <float id="filter/6/q" def="0.71" max="40" min="0.1" unit="filtband:q" />
-        <enum_int id="filter/6/type" source="filter_type" def="peak" max="4" />
+        <enum_int id="filter/6/type" source="filter_type" def="peak" />
         <bool id="filter/7/active" />
         <float id="filter/7/freq" def="9000" max="20000" min="20" unit="freq:hz" />
         <float id="filter/7/gain" max="24" min="-24" unit="decibel" />
         <float id="filter/7/q" def="0.71" max="40" min="0.1" unit="filtband:q" />
-        <enum_int id="filter/7/type" source="filter_type" def="high_shelf" max="4" />
+        <enum_int id="filter/7/type" source="filter_type" def="high_shelf" />
         <bool id="filter/8/active" />
         <float id="filter/8/freq" def="15000" max="20000" min="20" unit="freq:hz" />
         <float id="filter/8/gain" max="24" min="-24" unit="decibel" />
         <float id="filter/8/q" def="0.71" max="40" min="0.1" unit="filtband:q" />
-        <enum_int id="filter/8/type" source="filter_type" def="low_pass" max="4" />
+        <enum_int id="filter/8/type" source="filter_type" def="low_pass" />
         <float id="postGain" max="24" />
       </params>
     </object>
@@ -163,11 +163,11 @@
       <visual name="Expander" />
       <params>
         <float id="attackTimeMS" max="300" unit="time:ms" />
-        <enum_int id="circuitMode" def="digital" max="1">
+        <enum_int id="circuitMode" def="digital" enum_max="1">
           <part num="0" id="analog" />
           <part num="1" id="digital" />
         </enum_int>
-        <enum_int id="detectMode" def="peak" max="1">
+        <enum_int id="detectMode" def="peak" enum_max="1">
           <part num="0" id="peak" />
           <part num="1" id="rms" />
         </enum_int>
@@ -175,7 +175,7 @@
         <bool id="filterAudition" />
         <float id="filterFrequency" def="200" max="20000" min="20" unit="freq:hz" />
         <float id="filterGainDB" max="60" unit="decibel" />
-        <enum_int id="filterMode" def="bandpass" max="2">
+        <enum_int id="filterMode" def="bandpass" enum_max="2">
           <part num="0" id="lowpass" />
           <part num="1" id="highpass" />
           <part num="2" id="bandpass" />
@@ -206,11 +206,11 @@
       <params>
         <float id="attackCurve" />
         <float id="attackTimeMS" max="300" unit="time:ms" />
-        <enum_int id="circuitMode" def="digital" max="1">
+        <enum_int id="circuitMode" def="digital" enum_max="1">
           <part num="0" id="analog" />
           <part num="1" id="digital" />
         </enum_int>
-        <enum_int id="detectMode" def="peak" max="1">
+        <enum_int id="detectMode" def="peak" enum_max="1">
           <part num="0" id="peak" />
           <part num="1" id="rms" />
         </enum_int>
@@ -218,7 +218,7 @@
         <bool id="filterAudition" />
         <float id="filterFrequency" def="200" max="20000" min="20" unit="freq:hz" />
         <float id="filterGainDB" max="60" unit="decibel" />
-        <enum_int id="filterMode" def="bandpass" max="2">
+        <enum_int id="filterMode" def="bandpass" enum_max="2">
           <part num="0" id="lowpass" />
           <part num="1" id="highpass" />
           <part num="2" id="bandpass" />
@@ -277,8 +277,8 @@
         <float id="sample/offset" min="-1" />
         <float id="sample/position" min="0.01" />
         <float id="sample/randomPosition" />
-        <float id="sample/rate" def="44100" max="44100" min="44100" />
-        <float id="sample/rootKey" def="60" max="60" min="60" />
+        <float id="sample/rate" def="44100" max="44100" min="44100" unit="freq:hz" />
+        <float id="sample/rootKey" def="60" max="60" min="60" unit="freq:midikey" />
         <float id="sample/speed" />
         <float id="sample/start" max="0.988581" />
       </params>
@@ -287,11 +287,11 @@
       <visual name="Limiter" />
       <params>
         <float id="attackTimeMS" max="300" unit="time:ms" />
-        <enum_int id="circuitMode" def="digital" max="1">
+        <enum_int id="circuitMode" def="digital" enum_max="1">
           <part num="0" id="analog" />
           <part num="1" id="digital" />
         </enum_int>
-        <enum_int id="detectMode" def="peak" max="1">
+        <enum_int id="detectMode" def="peak" enum_max="1">
           <part num="0" id="peak" />
           <part num="1" id="rms" />
         </enum_int>
@@ -299,7 +299,7 @@
         <bool id="filterAudition" />
         <float id="filterFrequency" def="200" max="20000" min="20" unit="freq:hz" />
         <float id="filterGainDB" max="60" unit="decibel" />
-        <enum_int id="filterMode" def="bandpass" max="2">
+        <enum_int id="filterMode" def="bandpass" enum_max="2">
           <part num="0" id="lowpass" />
           <part num="1" id="highpass" />
           <part num="2" id="bandpass" />
@@ -369,11 +369,25 @@
     </object>
     <object id="Volt">
       <visual name="VOLT" />
+      <enums>
+        <enum id="shape" enum_max="4">
+          <part num="0" id="sine" />
+          <part num="1" id="triangle" />
+          <part num="2" id="square" />
+          <part num="3" id="saw" />
+          <part num="4" id="noise" />
+        </enum>
+        <enum id="lfomode" enum_max="2">
+          <part num="0" id="free" />
+          <part num="1" id="retrigger" />
+          <part num="2" id="oneshot" />
+        </enum>
+      </enums>
       <params>
         <float id="global/glide" />
         <float id="global/jr" max="0" />
-        <float id="global/solo" />
-        <float id="part/1/active" def="1" min="1" />
+        <bool id="global/solo" />
+        <bool id="part/1/active" def="1" min="1" />
         <float id="part/1/amp/level" def="1" max="2" />
         <float id="part/1/eg/1/A" def="0.01" />
         <float id="part/1/eg/1/D" def="0.5" />
@@ -423,62 +437,62 @@
         <float id="part/1/filter/fc" />
         <float id="part/1/filter/mode" def="1" max="6" />
         <float id="part/1/lfo/1/amp" />
-        <float id="part/1/lfo/1/delay" max="10" />
+        <float id="part/1/lfo/1/delay" max="10" unit="time:seconds"/>
         <float id="part/1/lfo/1/gain" />
-        <float id="part/1/lfo/1/mode" max="2" />
+        <enum_int id="part/1/lfo/1/mode" source="lfomode" def="free" />
         <float id="part/1/lfo/1/pan" />
         <float id="part/1/lfo/1/pitch" />
-        <float id="part/1/lfo/1/rate" max="10" />
+        <float id="part/1/lfo/1/rate" max="10" unit="freq:hz" />
         <float id="part/1/lfo/1/shape" />
-        <float id="part/1/lfo/1/wave" def="1" max="4" />
+        <enum_int id="part/1/lfo/1/wave" source="shape" def="triangle" />
         <float id="part/1/lfo/2/amp" />
-        <float id="part/1/lfo/2/delay" max="10" />
+        <float id="part/1/lfo/2/delay" max="10" unit="time:seconds"/>
         <float id="part/1/lfo/2/gain" />
-        <float id="part/1/lfo/2/mode" max="2" />
+        <enum_int id="part/1/lfo/2/mode" source="lfomode" def="free" />
         <float id="part/1/lfo/2/pan" />
         <float id="part/1/lfo/2/pitch" />
-        <float id="part/1/lfo/2/rate" max="10" />
+        <float id="part/1/lfo/2/rate" max="10" unit="freq:hz" />
         <float id="part/1/lfo/2/shape" />
-        <float id="part/1/lfo/2/wave" def="1" max="4" />
+        <enum_int id="part/1/lfo/2/wave" source="shape" def="triangle" />
         <float id="part/1/lfo/3/amp" />
-        <float id="part/1/lfo/3/delay" max="10" />
-        <float id="part/1/lfo/3/mode" max="2" />
-        <float id="part/1/lfo/3/rate" max="10" />
-        <float id="part/1/lfo/3/wave" def="1" max="4" />
+        <float id="part/1/lfo/3/delay" max="10" unit="time:seconds"/>
+        <enum_int id="part/1/lfo/3/mode" source="lfomode" def="free" />
+        <float id="part/1/lfo/3/rate" max="10" unit="freq:hz" />
+        <enum_int id="part/1/lfo/3/wave" source="shape" def="triangle" />
         <float id="part/1/lfo/4/amp" />
-        <float id="part/1/lfo/4/delay" max="10" />
-        <float id="part/1/lfo/4/mode" max="2" />
-        <float id="part/1/lfo/4/rate" max="10" />
-        <float id="part/1/lfo/4/wave" def="1" max="4" />
-        <float id="part/1/osc/1/active" def="1" />
-        <float id="part/1/osc/1/coarse" max="12" min="-12" />
+        <float id="part/1/lfo/4/delay" max="10" unit="time:seconds"/>
+        <enum_int id="part/1/lfo/4/mode" source="lfomode" def="free" />
+        <float id="part/1/lfo/4/rate" max="10" unit="freq:hz" />
+        <enum_int id="part/1/lfo/4/wave" source="shape" def="triangle" />
+        <bool id="part/1/osc/1/active" def="1" />
+        <float id="part/1/osc/1/coarse" max="12" min="-12" unit="pitch:semitones"/>
         <float id="part/1/osc/1/detune" def="0.3" />
-        <float id="part/1/osc/1/fine" def="-10" max="100" min="-100" />
+        <float id="part/1/osc/1/fine" def="-10" max="100" min="-100" unit="pitch:cents"/>
         <float id="part/1/osc/1/gain" def="1" max="2" />
         <float id="part/1/osc/1/mix" def="0.5" />
-        <float id="part/1/osc/1/octave" def="-2" max="3" min="-3" />
-        <float id="part/1/osc/1/pan" def="0.5" />
+        <float id="part/1/osc/1/octave" def="-2" max="3" min="-3" unit="pitch:octave"/>
+        <float id="part/1/osc/1/pan" def="0.5" unit="normalized:plusminus"/>
         <float id="part/1/osc/1/quality" def="1" />
         <float id="part/1/osc/1/shape" />
         <float id="part/1/osc/1/stereo" def="0.84" />
         <float id="part/1/osc/1/unison" def="5" max="7" min="1" />
         <float id="part/1/osc/1/wave" def="3" max="4" />
-        <float id="part/1/osc/2/active" def="1" />
-        <float id="part/1/osc/2/coarse" max="12" min="-12" />
+        <bool id="part/1/osc/2/active" def="1" />
+        <float id="part/1/osc/2/coarse" max="12" min="-12" unit="pitch:semitones"/>
         <float id="part/1/osc/2/detune" def="0.3" />
-        <float id="part/1/osc/2/fine" def="9" max="100" min="-100" />
+        <float id="part/1/osc/2/fine" def="9" max="100" min="-100" unit="pitch:cents"/>
         <float id="part/1/osc/2/gain" def="1" max="2" />
         <float id="part/1/osc/2/mix" def="0.5" />
-        <float id="part/1/osc/2/octave" def="-2" max="3" min="-3" />
-        <float id="part/1/osc/2/pan" def="0.5" />
+        <float id="part/1/osc/2/octave" def="-2" max="3" min="-3" unit="pitch:octave"/>
+        <float id="part/1/osc/2/pan" def="0.5" unit="normalized:plusminus"/>
         <float id="part/1/osc/2/quality" def="1" />
         <float id="part/1/osc/2/shape" def="0.1" />
         <float id="part/1/osc/2/stereo" />
         <float id="part/1/osc/2/unison" def="1" max="7" min="1" />
-        <float id="part/1/osc/2/wave" def="1" max="4" />
+        <enum_int id="part/1/osc/2/wave" source="shape" def="triangle" />
         <float id="part/1/oscmix" def="0.5" />
         <float id="part/1/oscmod" max="2" />
-        <float id="part/2/active" />
+        <bool id="part/2/active" />
         <float id="part/2/amp/level" def="1" max="2" />
         <float id="part/2/eg/1/A" def="0.01" />
         <float id="part/2/eg/1/D" def="0.5" />
@@ -528,70 +542,84 @@
         <float id="part/2/filter/fc" def="1" />
         <float id="part/2/filter/mode" def="1" max="6" />
         <float id="part/2/lfo/1/amp" />
-        <float id="part/2/lfo/1/delay" max="10" />
+        <float id="part/2/lfo/1/delay" max="10" unit="time:seconds"/>
         <float id="part/2/lfo/1/gain" />
-        <float id="part/2/lfo/1/mode" max="2" />
+        <enum_int id="part/2/lfo/1/mode" source="lfomode" def="free" />
         <float id="part/2/lfo/1/pan" />
         <float id="part/2/lfo/1/pitch" />
-        <float id="part/2/lfo/1/rate" max="10" />
+        <float id="part/2/lfo/1/rate" max="10" unit="freq:hz" />
         <float id="part/2/lfo/1/shape" />
-        <float id="part/2/lfo/1/wave" def="1" max="4" />
+        <enum_int id="part/2/lfo/1/wave" source="shape" def="triangle" />
         <float id="part/2/lfo/2/amp" />
-        <float id="part/2/lfo/2/delay" max="10" />
+        <float id="part/2/lfo/2/delay" max="10" unit="time:seconds"/>
         <float id="part/2/lfo/2/gain" />
-        <float id="part/2/lfo/2/mode" max="2" />
+        <enum_int id="part/2/lfo/2/mode" source="lfomode" def="free" />
         <float id="part/2/lfo/2/pan" />
         <float id="part/2/lfo/2/pitch" />
-        <float id="part/2/lfo/2/rate" max="10" />
+        <float id="part/2/lfo/2/rate" max="10" unit="freq:hz" />
         <float id="part/2/lfo/2/shape" />
-        <float id="part/2/lfo/2/wave" def="1" max="4" />
+        <enum_int id="part/2/lfo/2/wave" source="shape" def="triangle" />
         <float id="part/2/lfo/3/amp" />
-        <float id="part/2/lfo/3/delay" max="10" />
-        <float id="part/2/lfo/3/mode" max="2" />
-        <float id="part/2/lfo/3/rate" max="10" />
-        <float id="part/2/lfo/3/wave" def="1" max="4" />
+        <float id="part/2/lfo/3/delay" max="10" unit="time:seconds"/>
+        <enum_int id="part/2/lfo/3/mode" source="lfomode" def="free" />
+        <float id="part/2/lfo/3/rate" max="10" unit="freq:hz" />
+        <enum_int id="part/2/lfo/3/wave" source="shape" def="triangle" />
         <float id="part/2/lfo/4/amp" />
-        <float id="part/2/lfo/4/delay" max="10" />
-        <float id="part/2/lfo/4/mode" max="2" />
-        <float id="part/2/lfo/4/rate" max="10" />
-        <float id="part/2/lfo/4/wave" def="1" max="4" />
-        <float id="part/2/osc/1/active" />
-        <float id="part/2/osc/1/coarse" max="12" min="-12" />
+        <float id="part/2/lfo/4/delay" max="10" unit="time:seconds"/>
+        <enum_int id="part/2/lfo/4/mode" source="lfomode" def="free" />
+        <float id="part/2/lfo/4/rate" max="10" unit="freq:hz" />
+        <enum_int id="part/2/lfo/4/wave" source="shape" def="triangle" />
+        <bool id="part/2/osc/1/active" />
+        <float id="part/2/osc/1/coarse" max="12" min="-12" unit="pitch:semitones"/>
         <float id="part/2/osc/1/detune" def="0.3" />
-        <float id="part/2/osc/1/fine" max="100" min="-100" />
+        <float id="part/2/osc/1/fine" max="100" min="-100" unit="pitch:cents"/>
         <float id="part/2/osc/1/gain" def="1" max="2" />
         <float id="part/2/osc/1/mix" def="0.5" />
-        <float id="part/2/osc/1/octave" def="-1" max="3" min="-3" />
-        <float id="part/2/osc/1/pan" def="0.5" />
+        <float id="part/2/osc/1/octave" def="-1" max="3" min="-3" unit="pitch:octave"/>
+        <float id="part/2/osc/1/pan" def="0.5" unit="normalized:plusminus"/>
         <float id="part/2/osc/1/quality" />
         <float id="part/2/osc/1/shape" />
         <float id="part/2/osc/1/stereo" />
         <float id="part/2/osc/1/unison" def="1" max="7" min="1" />
         <float id="part/2/osc/1/wave" def="3" max="4" />
-        <float id="part/2/osc/2/active" />
-        <float id="part/2/osc/2/coarse" max="12" min="-12" />
+        <bool id="part/2/osc/2/active" />
+        <float id="part/2/osc/2/coarse" max="12" min="-12" unit="pitch:semitones"/>
         <float id="part/2/osc/2/detune" def="0.3" />
-        <float id="part/2/osc/2/fine" max="100" min="-100" />
+        <float id="part/2/osc/2/fine" max="100" min="-100" unit="pitch:cents"/>
         <float id="part/2/osc/2/gain" def="1" max="2" />
         <float id="part/2/osc/2/mix" def="0.5" />
-        <float id="part/2/osc/2/octave" def="-1" max="3" min="-3" />
-        <float id="part/2/osc/2/pan" def="0.5" />
+        <float id="part/2/osc/2/octave" def="-1" max="3" min="-3" unit="pitch:octave"/>
+        <float id="part/2/osc/2/pan" def="0.5" unit="normalized:plusminus"/>
         <float id="part/2/osc/2/quality" />
         <float id="part/2/osc/2/shape" />
         <float id="part/2/osc/2/stereo" />
         <float id="part/2/osc/2/unison" def="1" max="7" min="1" />
         <float id="part/2/osc/2/wave" def="3" max="4" />
-        <float id="part/2/oscmix" def="0.5" />
+        <float id="part/2/oscmix" def="0.5" unit="normalized:plusminus"/>
         <float id="part/2/oscmod" max="2" />
       </params>
     </object>
     <object id="VoltMini">
       <visual name="VOLT Mini" />
+      <enums>
+        <enum id="shape" enum_max="4">
+          <part num="0" id="sine" />
+          <part num="1" id="triangle" />
+          <part num="2" id="square" />
+          <part num="3" id="saw" />
+          <part num="4" id="noise" />
+        </enum>
+        <enum id="lfomode" enum_max="2">
+          <part num="0" id="free" />
+          <part num="1" id="retrigger" />
+          <part num="2" id="oneshot" />
+        </enum>
+      </enums>
       <params>
         <float id="global/glide" />
         <float id="global/jr" def="1" min="1" />
-        <float id="global/solo" />
-        <float id="part/1/active" def="1" min="1" />
+        <bool id="global/solo" />
+        <bool id="part/1/active" def="1" min="1" />
         <float id="part/1/amp/level" def="0.56" max="2" />
         <float id="part/1/eg/1/A" def="0.0253" />
         <float id="part/1/eg/1/D" def="0.0082" />
@@ -629,37 +657,37 @@
         <float id="part/1/filter/fc" />
         <float id="part/1/filter/mode" max="4" />
         <float id="part/1/lfo/1/amp" />
-        <float id="part/1/lfo/1/delay" max="10" />
+        <float id="part/1/lfo/1/delay" max="10" unit="time:seconds"/>
         <float id="part/1/lfo/1/gain" />
-        <float id="part/1/lfo/1/mode" max="2" />
+        <enum_int id="part/1/lfo/1/mode" source="lfomode" def="free" />
         <float id="part/1/lfo/1/pan" />
         <float id="part/1/lfo/1/pitch" />
-        <float id="part/1/lfo/1/rate" max="10" />
+        <float id="part/1/lfo/1/rate" max="10" unit="freq:hz" />
         <float id="part/1/lfo/1/shape" />
-        <float id="part/1/lfo/1/wave" def="1" max="4" />
+        <enum_int id="part/1/lfo/1/wave" source="shape" def="triangle" />
         <float id="part/1/lfo/3/amp" />
-        <float id="part/1/lfo/3/delay" max="10" />
-        <float id="part/1/lfo/3/mode" max="2" />
-        <float id="part/1/lfo/3/rate" max="10" />
-        <float id="part/1/lfo/3/wave" def="1" max="4" />
+        <float id="part/1/lfo/3/delay" max="10" unit="time:seconds"/>
+        <enum_int id="part/1/lfo/3/mode" source="lfomode" def="free" />
+        <float id="part/1/lfo/3/rate" max="10" unit="freq:hz" />
+        <enum_int id="part/1/lfo/3/wave" source="shape" def="triangle" />
         <float id="part/1/lfo/4/amp" />
-        <float id="part/1/lfo/4/delay" max="10" />
-        <float id="part/1/lfo/4/mode" max="2" />
-        <float id="part/1/lfo/4/rate" max="10" />
-        <float id="part/1/lfo/4/wave" def="1" max="4" />
-        <float id="part/1/osc/1/active" def="1" />
-        <float id="part/1/osc/1/coarse" max="12" min="-12" />
+        <float id="part/1/lfo/4/delay" max="10" unit="time:seconds"/>
+        <enum_int id="part/1/lfo/4/mode" source="lfomode" def="free" />
+        <float id="part/1/lfo/4/rate" max="10" unit="freq:hz" />
+        <enum_int id="part/1/lfo/4/wave" source="shape" def="triangle" />
+        <bool id="part/1/osc/1/active" def="1" />
+        <float id="part/1/osc/1/coarse" max="12" min="-12" unit="pitch:semitones"/>
         <float id="part/1/osc/1/detune" def="0.14" />
-        <float id="part/1/osc/1/fine" max="100" min="-100" />
+        <float id="part/1/osc/1/fine" max="100" min="-100" unit="pitch:cents"/>
         <float id="part/1/osc/1/gain" def="0.8" max="2" />
         <float id="part/1/osc/1/mix" def="0.45" />
-        <float id="part/1/osc/1/octave" def="1" max="3" min="-3" />
-        <float id="part/1/osc/1/pan" def="0.5" />
+        <float id="part/1/osc/1/octave" def="1" max="3" min="-3" unit="pitch:octave"/>
+        <float id="part/1/osc/1/pan" def="0.5" unit="normalized:plusminus"/>
         <float id="part/1/osc/1/quality" def="1" />
         <float id="part/1/osc/1/shape" def="0.32" />
         <float id="part/1/osc/1/stereo" def="0.62" />
         <float id="part/1/osc/1/unison" def="7" max="7" min="1" />
-        <float id="part/1/osc/1/wave" max="4" />
+        <enum_int id="part/1/osc/1/wave" source="shape" def="sine" />
         <float id="part/1/oscmix" def="0.5" max="0.5" min="0.5" />
         <float id="part/1/oscmod" max="0" />
       </params>
