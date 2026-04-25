@@ -1,0 +1,182 @@
+<datapack>
+    <category id="inst">
+      <object id="92"><data filename="abassbowed.instr"/><visual name="Double Bass Bowed"/></object>
+      <object id="11"><data filename="abass.instr"/><visual name="Acoustic Bass"/></object>
+      <object id="61"><data filename="accordion.instr"/><visual name="Accordion"/></object>
+      <object id="13"><data filename="aguitar.instr"/><visual name="Acoustic Guitar"/></object>
+      <object id="54"><data filename="aguitarsteel.instr"/><visual name="Steel String"/></object>
+      <object id="8"><data filename="altsax.instr"/><visual name="Alto Saxophone"/></object>
+      <object id="62"><data filename="bagpipe.instr"/><visual name="Bagpipe"/></object>
+      <object id="66"><data filename="banjo.instr"/><visual name="Banjo"/></object>
+      <object id="94"><data filename="bassoon.instr"/><visual name="Bassoon"/></object>
+      <object id="7"><data filename="brass.instr"/><visual name="Brass Section"/></object>
+      <object id="102"><data filename="celesta.instr"/><visual name="Celesta"/></object>
+      <object id="44"><data filename="cello.instr"/><visual name="Cello"/></object>
+      <object id="3"><data filename="cellos.instr"/><visual name="Cello Section"/></object>
+      <object id="26"><data filename="choir.instr"/><visual name="Choir"/></object>
+      <object id="1"><data filename="church.instr"/><visual name="Church Organ"/></object>
+      <object id="4"><data filename="clarinet.instr"/><visual name="Clarinet"/></object>
+      <object id="27"><data filename="didgeridoo.instr"/><visual name="Didgeridoo"/></object>
+      <object id="10"><data filename="drawbar.instr"/><visual name="Drawbar Organ"/></object>
+      <object id="76"><data filename="drumkiteightbit.instr"/><visual name="8-Bit Kit"/></object>
+      <object id="75"><data filename="drumkitfx.instr"/><visual name="Sound Effects"/></object>
+      <object id="74"><data filename="drumkithiphop.instr"/><visual name="Hip Hop Drum Kit"/></object>
+      <object id="17"><data filename="drumkit.instr"/><visual name="Drum Kit"/></object>
+      <object id="100"><data filename="drumkitjazz.instr"/><visual name="Jazz Drum Kit"/></object>
+      <object id="70"><data filename="drumkitremix.instr"/><visual name="Remix Drum Kit"/></object>
+      <object id="71"><data filename="drumkitrock.instr"/><visual name="Rock Drum Kit"/></object>
+      <object id="99"><data filename="drumkitworld.instr"/><visual name="World Kit"/></object>
+      <object id="12"><data filename="ebass.instr"/><visual name="E-Bass Acoustic"/></object>
+      <object id="51"><data filename="ebasspick.instr"/><visual name="Pick Bass"/></object>
+      <object id="50"><data filename="ebassrock.instr"/><visual name="Rock Bass"/></object>
+      <object id="52"><data filename="ebassslap.instr"/><visual name="Slap Bass"/></object>
+      <object id="14"><data filename="eguitarclean.instr"/><visual name="E-Guitar Clean"/></object>
+      <object id="58"><data filename="eguitarfunk.instr"/><visual name="E-Guitar Funk"/></object>
+      <object id="55"><data filename="eguitarlead.instr"/><visual name="E-Guitar Lead"/></object>
+      <object id="57"><data filename="eguitarmuted.instr"/><visual name="E-Guitar Muted"/></object>
+      <object id="15"><data filename="eguitaroverdrive.instr"/><visual name="E-Guitar Overdrive"/></object>
+      <object id="16"><data filename="eguitarpower.instr"/><visual name="Power Chords"/></object>
+      <object id="56"><data filename="eguitarstrat.instr"/><visual name="E-Guitar Strat"/></object>
+      <object id="9"><data filename="epianobright.instr"/><visual name="E-Piano Bright"/></object>
+      <object id="98"><data filename="flugelhorn.instr"/><visual name="Flugelhorn"/></object>
+      <object id="5"><data filename="flute.instr"/><visual name="Flute"/></object>
+      <object id="90"><data filename="frenchhorn.instr"/><visual name="French Horn"/></object>
+      <object id="63"><data filename="glockenspiel.instr"/><visual name="Glockenspiel Small"/></object>
+      <object id="0"><data filename="grand.instr"/><visual name="Grand Piano 2"/></object>
+      <object id="40"><data filename="hammond.instr"/><visual name="Hammond Organ"/></object>
+      <object id="41"><data filename="hammondrock.instr"/><visual name="Hammond Rock Organ"/></object>
+      <object id="78"><data filename="harmonica.instr"/><visual name="Harmonica"/></object>
+      <object id="77"><data filename="harp.instr"/><visual name="Harp"/></object>
+      <object id="42"><data filename="harpsichord.instr"/><visual name="Harpsichord"/></object>
+      <object id="53"><data filename="jazzguitar.instr"/><visual name="Jazz Guitar"/></object>
+      <object id="68"><data filename="koto.instr"/><visual name="Koto"/></object>
+      <object id="23"><data filename="marimba.instr"/><visual name="Marimba"/></object>
+      <object id="43"><data filename="oboe.instr"/><visual name="Oboe"/></object>
+      <object id="67"><data filename="ocarina.instr"/><visual name="Ocarina"/></object>
+      <object id="6"><data filename="panflute.instr"/><visual name="Pan Flute"/></object>
+      <object id="96"><data filename="piccolo.instr"/><visual name="Piccolo"/></object>
+      <object id="72"><data filename="recorder.instr"/><visual name="Recorder"/></object>
+      <object id="39"><data filename="rhodes.instr"/><visual name="E-Piano Vintage"/></object>
+      <object id="25"><data filename="rockorgan.instr"/><visual name="Rock Organ"/></object>
+      <object id="64"><data filename="saz.instr"/><visual name="Saz Lute"/></object>
+      <object id="65"><data filename="sazoctave.instr"/><visual name="Saz Octaves"/></object>
+      <object id="80"><data filename="shakuhachi.instr"/><visual name="Shakuhachi"/></object>
+      <object id="79"><data filename="sitar.instr"/><visual name="Sitar"/></object>
+      <object id="59"><data filename="sopranosax.instr"/><visual name="Soprano Saxophone"/></object>
+      <object id="156"><data filename="sso_alto_flute.instr"/><visual name="Alto Flute"/></object>
+      <object id="155"><data filename="sso_bass_clarinet.instr"/><visual name="Bass Clarinet"/></object>
+      <object id="148"><data filename="sso_basses_pizzicato.instr"/><visual name="Double Basses Pizzicato"/></object>
+      <object id="147"><data filename="sso_basses_staccato.instr"/><visual name="Double Basses Staccato"/></object>
+      <object id="146"><data filename="sso_basses_sustain.instr"/><visual name="Double Basses Legato"/></object>
+      <object id="158"><data filename="sso_bassoon.instr"/><visual name="Bassoon Solo"/></object>
+      <object id="157"><data filename="sso_bassoons.instr"/><visual name="Bassoons Legato"/></object>
+      <object id="162"><data filename="sso_bass_trombone.instr"/><visual name="Bass Trombone"/></object>
+      <object id="133"><data filename="sso_celli_pizz.instr"/><visual name="Celli Pizzicato"/></object>
+      <object id="132"><data filename="sso_celli_staccato.instr"/><visual name="Celli Staccato"/></object>
+      <object id="131"><data filename="sso_celli_sustain.instr"/><visual name="Celli Legato"/></object>
+      <object id="145"><data filename="sso_cello_solo.instr"/><visual name="Cello Solo"/></object>
+      <object id="171"><data filename="sso_chimes.instr"/><visual name="Chimes"/></object>
+      <object id="169"><data filename="sso_chorus.instr"/><visual name="Mixed Choir"/></object>
+      <object id="154"><data filename="sso_clarinet.instr"/><visual name="Clarinet Solo"/></object>
+      <object id="153"><data filename="sso_clarinets.instr"/><visual name="Clarinets Legato"/></object>
+      <object id="159"><data filename="sso_contrabasson.instr"/><visual name="Contrabassoon"/></object>
+      <object id="141"><data filename="sso_cor_anglais.instr"/><visual name="English Horn"/></object>
+      <object id="150"><data filename="sso_flute_solo.instr"/><visual name="Flute Vibrato"/></object>
+      <object id="140"><data filename="sso_flutes_staccato.instr"/><visual name="Flutes Staccato"/></object>
+      <object id="149"><data filename="sso_flutes_sustain.instr"/><visual name="Flutes Legato"/></object>
+      <object id="172"><data filename="sso_glockenspiel.instr"/><visual name="Glockenspiel"/></object>
+      <object id="143"><data filename="sso_grandpiano.instr"/><visual name="Grand Piano (Hall)"/></object>
+      <object id="168"><data filename="sso_harp.instr"/><visual name="Concert Harp"/></object>
+      <object id="167"><data filename="sso_horn.instr"/><visual name="Horn Solo"/></object>
+      <object id="139"><data filename="sso_horns_staccato.instr"/><visual name="Horns Staccato"/></object>
+      <object id="138"><data filename="sso_horns_sustain.instr"/><visual name="Horns Legato"/></object>
+      <object id="152"><data filename="sso_oboe.instr"/><visual name="Oboe Solo"/></object>
+      <object id="151"><data filename="sso_oboes_sustain.instr"/><visual name="Oboes Legato"/></object>
+      <object id="176"><data filename="sso_orchestral_strings.instr"/><visual name="Orchestral Strings Legato"/></object>
+      <object id="179"><data filename="sso_orchestral_strings_pizzicato.instr"/><visual name="Orchestral Strings Pizzicato"/></object>
+      <object id="177"><data filename="sso_orchestral_strings_stc.instr"/><visual name="Orchestral Strings Staccato"/></object>
+      <object id="178"><data filename="sso_percussion.instr"/><visual name="Orchestral Percussion"/></object>
+      <object id="142"><data filename="sso_piccolo.instr"/><visual name="Piccolo Legato"/></object>
+      <object id="163"><data filename="sso_tenor_trombone.instr"/><visual name="Tenor Trombone"/></object>
+      <object id="170"><data filename="sso_timpani.instr"/><visual name="Timpani Set"/></object>
+      <object id="160"><data filename="sso_trombones.instr"/><visual name="Trombones Legato"/></object>
+      <object id="161"><data filename="sso_trombones_staccato.instr"/><visual name="Trombones Staccato"/></object>
+      <object id="166"><data filename="sso_trumpet.instr"/><visual name="Trumpet Solo"/></object>
+      <object id="164"><data filename="sso_trumpets.instr"/><visual name="Trumpets Legato"/></object>
+      <object id="165"><data filename="sso_trumpets_staccato.instr"/><visual name="Trumpets Staccato"/></object>
+      <object id="174"><data filename="sso_tuba.instr"/><visual name="Tuba Legato"/></object>
+      <object id="175"><data filename="sso_tuba_staccato.instr"/><visual name="Tuba Staccato"/></object>
+      <object id="136"><data filename="sso_violas_pizz.instr"/><visual name="Violas Pizzicato"/></object>
+      <object id="135"><data filename="sso_violas_staccato.instr"/><visual name="Violas Staccato"/></object>
+      <object id="134"><data filename="sso_violas_sustain.instr"/><visual name="Violas Legato"/></object>
+      <object id="144"><data filename="sso_violin_solo.instr"/><visual name="Violin Solo"/></object>
+      <object id="130"><data filename="sso_violins_pizz.instr"/><visual name="Violins Pizzicato"/></object>
+      <object id="129"><data filename="sso_violins_staccato.instr"/><visual name="Violins Staccato"/></object>
+      <object id="128"><data filename="sso_violins_sustain.instr"/><visual name="Violins Legato"/></object>
+      <object id="137"><data filename="sso_violins_tremolo.instr"/><visual name="Violins Tremolo"/></object>
+      <object id="173"><data filename="sso_xylophone.instr"/><visual name="Xylophone"/></object>
+      <object id="24"><data filename="steeldrum.instr"/><visual name="Steel Drum"/></object>
+      <object id="73"><data filename="steinway.instr"/><visual name="Grand Piano 1"/></object>
+      <object id="2"><data filename="strings.instr"/><visual name="String Section"/></object>
+      <object id="91"><data filename="stringspizz.instr"/><visual name="String Section Pizzicato"/></object>
+      <object id="34"><data filename="synth5thchord.instr"/><visual name="5th Chord"/></object>
+      <object id="30"><data filename="synthaggressivesync.instr"/><visual name="Aggressive Sync"/></object>
+      <object id="32"><data filename="synthanalogattack.instr"/><visual name="Analog Attack"/></object>
+      <object id="86"><data filename="synthanalogsquare.instr"/><visual name="Analog Square"/></object>
+      <object id="117"><data filename="synthbasekeys.instr"/><visual name="Base Keys"/></object>
+      <object id="20"><data filename="synthbass.instr"/><visual name="Synth Bass"/></object>
+      <object id="33"><data filename="synthbells.instr"/><visual name="Synth Bells"/></object>
+      <object id="89"><data filename="synthbladewalker.instr"/><visual name="Blade Sweeper"/></object>
+      <object id="114"><data filename="synthblindbass.instr"/><visual name="Blind Bass"/></object>
+      <object id="37"><data filename="synthbrass.instr"/><visual name="Synth Brass"/></object>
+      <object id="87"><data filename="synthchoirpad.instr"/><visual name="Choir Pad"/></object>
+      <object id="109"><data filename="synthdeeppad.instr"/><visual name="Deep Pad"/></object>
+      <object id="84"><data filename="synthdirtylead.instr"/><visual name="Dirty Lead"/></object>
+      <object id="81"><data filename="synthdistbass.instr"/><visual name="Distortion Bass"/></object>
+      <object id="116"><data filename="synthdotkeys.instr"/><visual name="Dot Keys"/></object>
+      <object id="19"><data filename="synthdreampad.instr"/><visual name="Dream Pad"/></object>
+      <object id="31"><data filename="synthextremesync.instr"/><visual name="Extreme Sync"/></object>
+      <object id="105"><data filename="synthfreelead.instr"/><visual name="Free Lead"/></object>
+      <object id="35"><data filename="synthglasspad.instr"/><visual name="Glass Pad"/></object>
+      <object id="106"><data filename="synthgoalead.instr"/><visual name="Goa Lead"/></object>
+      <object id="127"><data filename="synthharmonypad.instr"/><visual name="Harmony Pad"/></object>
+      <object id="108"><data filename="synthheavenbells.instr"/><visual name="Heaven Bells"/></object>
+      <object id="115"><data filename="synthhiphopbass.instr"/><visual name="HipHop Bass"/></object>
+      <object id="120"><data filename="synthhollowpiano.instr"/><visual name="Hollow Piano"/></object>
+      <object id="110"><data filename="synthjunokeys.instr"/><visual name="Juno Keys"/></object>
+      <object id="113"><data filename="synthjunolead.instr"/><visual name="Juno Lead"/></object>
+      <object id="18"><data filename="synthleadfat.instr"/><visual name="Fat Lead"/></object>
+      <object id="124"><data filename="synthmooglead.instr"/><visual name="Moog Lead"/></object>
+      <object id="36"><data filename="synthmoogpad.instr"/><visual name="Moog Pad"/></object>
+      <object id="85"><data filename="synthpiano.instr"/><visual name="Synth Piano"/></object>
+      <object id="107"><data filename="synthpolarbells.instr"/><visual name="Polar Bells"/></object>
+      <object id="121"><data filename="synthpowerbass.instr"/><visual name="Power Bass"/></object>
+      <object id="38"><data filename="synthpulse.instr"/><visual name="Pulse Keys"/></object>
+      <object id="112"><data filename="synthresobass.instr"/><visual name="Reso Bass"/></object>
+      <object id="118"><data filename="synthsawkeys.instr"/><visual name="Saw Keys"/></object>
+      <object id="104"><data filename="synthsinelead.instr"/><visual name="Sine Lead"/></object>
+      <object id="123"><data filename="synthskylead.instr"/><visual name="Sky Lead"/></object>
+      <object id="88"><data filename="synthskypad.instr"/><visual name="Sky Pad"/></object>
+      <object id="82"><data filename="synthslicerlead.instr"/><visual name="Slicer Lead"/></object>
+      <object id="125"><data filename="synthsoftpad.instr"/><visual name="Soft Pad"/></object>
+      <object id="28"><data filename="synthspace.instr"/><visual name="Space Synth"/></object>
+      <object id="122"><data filename="synthspacelead.instr"/><visual name="Space Lead"/></object>
+      <object id="119"><data filename="synthsquarekeys.instr"/><visual name="Square Keys"/></object>
+      <object id="29"><data filename="synthstrings.instr"/><visual name="Synth Strings"/></object>
+      <object id="111"><data filename="synthsubbass.instr"/><visual name="Sub Bass"/></object>
+      <object id="103"><data filename="synthsupersaw.instr"/><visual name="SuperSaw"/></object>
+      <object id="83"><data filename="synthtrancelead.instr"/><visual name="Trance Lead"/></object>
+      <object id="126"><data filename="synthvocalpad.instr"/><visual name="Vocal Pad"/></object>
+      <object id="60"><data filename="tenorsax.instr"/><visual name="Tenor Saxophone"/></object>
+      <object id="21"><data filename="timpani.instr"/><visual name="Timpani"/></object>
+      <object id="49"><data filename="trombone.instr"/><visual name="Trombone"/></object>
+      <object id="47"><data filename="trumpet.instr"/><visual name="Trumpet"/></object>
+      <object id="48"><data filename="trumpetmute.instr"/><visual name="Trumpet Muted"/></object>
+      <object id="97"><data filename="tuba.instr"/><visual name="Tuba"/></object>
+      <object id="101"><data filename="tubularbells.instr"/><visual name="Tubular Bells"/></object>
+      <object id="69"><data filename="ukulele.instr"/><visual name="Ukulele"/></object>
+      <object id="22"><data filename="vibraphone.instr"/><visual name="Vibraphone"/></object>
+      <object id="45"><data filename="violin.instr"/><visual name="Violin"/></object>
+      <object id="46"><data filename="violinpizz.instr"/><visual name="Violin Pizzicato"/></object>
+    </category>
+</datapack>
