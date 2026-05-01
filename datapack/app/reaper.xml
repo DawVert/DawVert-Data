@@ -25,7 +25,6 @@
       </params>
     </object>
     <object id="reagate">
-      <visual name="ReaComp" />
       <params>
         <float id="thresh" name="Thresh" num="0" />
         <float id="attack" name="Attack" num="1" />
@@ -47,6 +46,48 @@
         <float id="midichan" name="MidiChan" num="17" />
         <float id="invrtwet" name="InvrtWet" num="18" />
       </params>
+    </object>
+    <object id="reasamplomatic">
+      <datadef>
+        <struct name="main">
+          <part type="string_t" name="filename"/>
+          <part type="double" name="volume"/>
+          <part type="double" name="pan"/>
+          <part type="double" name="min_vol_gain"/>
+          <part type="double" name="key_start"/>
+          <part type="double" name="key_end"/>
+          <part type="double" name="pitch_start"/>
+          <part type="double" name="pitch_end"/>
+          <part type="double" name="midi_chan"/>
+          <part type="double" name="voices"/>
+          <part type="double" name="env_attack"/>
+          <part type="double" name="env_release"/>
+          <part type="double" name="obey_note_offs"/>
+          <part type="double" name="loop_on"/>
+          <part type="double" name="start"/>
+          <part type="double" name="end"/>
+          <part type="double" name="pitch_offset"/>
+          <part type="int_u32" name="mode"/>
+          <part type="double" name="__unk17"/>
+          <part type="double" name="__unk18"/>
+          <part type="int_u32" name="cache_sample_size"/>
+          <part type="double" name="pitch_bend"/>
+          <part type="int_s32" name="resample_mode"/>
+          <part type="double" name="vel_max"/>
+          <part type="double" name="vel_min"/>
+          <part type="double" name="prob_hitting"/>
+          <part type="double" name="round_robin"/>
+          <part type="double" name="filter_played"/>
+          <part type="double" name="xfade"/>
+          <part type="double" name="loop_start"/>
+          <part type="double" name="env_decay"/>
+          <part type="double" name="env_sustain"/>
+          <part type="double" name="note_off_release_override"/>
+          <part type="double" name="note_off_release_override__enabled"/>
+          <part type="double" name="legacy_voice_reuse"/>
+          <part type="double" name="porta"/>
+        </struct>
+      </datadef>
     </object>
   </category>
 </datapack>

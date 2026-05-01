@@ -468,7 +468,7 @@
           <part num="4" id="moog" />
           <part num="5" id="exp" />
         </enum>
-      </enum>
+      </enums>
       <params>
         <float id="foldback" def="1" />
         <int id="newdetune0" max="1200" min="-1200" unit="pitch:cents"/>
@@ -618,7 +618,7 @@
           <part num="2" id="saw" />
           <part num="3" id="noise" />
         </enum>
-      </enum>
+      </enums>
       <params>
         <int id="attack0" def="8" max="15" />
         <int id="attack1" def="8" max="15" />
@@ -699,7 +699,7 @@
           <part num="6" id="noise" />
           <part num="7" id="custom" />
         </enum>
-      </enum>
+      </enums>
       <params>
         <int id="coarse0" name="Osc 1 coarse detuning" max="24" min="-24" unit="pitch:semitones"/>
         <int id="coarse1" name="Osc 2 coarse detuning" def="-12" max="24" min="-24" unit="pitch:semitones"/>
@@ -858,7 +858,7 @@
           <part num="2" id="ring" />
           <part num="3" id="pm" />
         </enum>
-      </enum>
+      </enums>
       <params>
         <float id="a1_ltune" name="Left detune A1" max="600" min="-600" unit="pitch:cents"/>
         <float id="a1_mult" name="Freq. multiplier A1" def="8" max="24" min="1" />

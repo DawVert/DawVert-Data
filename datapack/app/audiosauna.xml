@@ -15,7 +15,7 @@
           <part val="3" id="noise" />
           <part val="4" id="sine" />
         </enum>
-      </enum>
+      </enums>
       <params>
         <float id="aOp1" name="Osc 1 Attack" max="5" unit="time:seconds"/>
         <float id="aOp2" name="Osc 2 Attack" max="5" unit="time:seconds"/>
@@ -50,7 +50,7 @@
           <part val="1" id="square" />
           <part val="2" id="noise" />
         </enum>
-      </enum>
+      </enums>
       <params>
         <float id="aOp1" name="Op1 Attack" max="5" unit="time:seconds"/>
         <float id="aOp2" name="Op2 Attack" max="5" unit="time:seconds"/>
