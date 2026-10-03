@@ -1,0 +1,114 @@
+<datapack>
+  <category id="track">
+    <colorset id="main">
+      <color>#637184</color>
+      <color>#e7694a</color>
+      <color>#ef9652</color>
+      <color>#f7b65a</color>
+      <color>#fff76b</color>
+      <color>#add76b</color>
+      <color>#84c76b</color>
+      <color>#4aae6b</color>
+      <color>#4ab6ad</color>
+      <color>#4ab6e7</color>
+      <color>#5a86bd</color>
+      <color>#6361a5</color>
+      <color>#63498c</color>
+      <color>#8c518c</color>
+      <color>#ad5994</color>
+      <color>#e76994</color>
+      <color>#e76973</color>
+    </colorset>
+  </category>
+  <category id="plugin">
+    <object id="1">
+      <visual name="Digital Delay" />
+      <params>
+        <int id="Delay" def="500" min="1" max="1000" name="Delay" />
+        <int id="Feedback" def="32" min="0" max="64" name="Feedback" />
+        <int id="Brightness" def="64" min="0" max="64" name="Brightness" />
+      </params>
+    </object>
+    <object id="2">
+      <visual name="Chorus" />
+      <params>
+        <int id="Width" def="32" min="0" max="64" name="Width" />
+        <int id="Speed" def="16" min="1" max="64" name="Speed" />
+        <int id="Feedback" def="32" min="0" max="64" name="Feedback" />
+      </params>
+    </object>
+    <object id="3">
+      <visual name="Digital Reverb" />
+      <params>
+        <int id="Delay" def="32" min="1" max="250" name="Delay" />
+        <int id="HallSize" def="32" min="0" max="64" name="Hall Size" />
+        <int id="LoPassFreq" def="32" min="0" max="64" name="LoPass Freq" />
+        <int id="HiPassFreq" def="32" min="0" max="64" name="HiPass Freq" />
+      </params>
+    </object>
+    <object id="4">
+      <visual name="Phaser" />
+      <params>
+        <int id="Rate" def="32" min="1" max="64" name="Rate" />
+        <int id="Feedback" def="32" min="0" max="64" name="Feedback" />
+        <int id="Depth" def="32" min="0" max="64" name="Depth" />
+      </params>
+    </object>
+    <object id="5">
+      <visual name="Tremolo" />
+      <params>
+        <int id="Speed" def="32" min="1" max="64" name="Speed" />
+      </params>
+    </object>
+    <object id="6">
+      <visual name="7 Band Equalizer" />
+      <params>
+        <int id="F1" def="0" min="-10" max="10" name="100" />
+        <int id="F2" def="0" min="-10" max="10" name="200" />
+        <int id="F3" def="0" min="-10" max="10" name="400" />
+        <int id="F4" def="0" min="-10" max="10" name="800" />
+        <int id="F5" def="0" min="-10" max="10" name="1600" />
+        <int id="F6" def="0" min="-10" max="10" name="3200" />
+        <int id="F7" def="0" min="-10" max="10" name="6400" />
+      </params>
+    </object>
+    <object id="7">
+      <visual name="Pitch Shift" />
+      <params>
+        <int id="SemiTones" def="0" min="-12" max="12" name="Semitones" />
+      </params>
+    </object>
+    <object id="8">
+      <visual name="Filter Factory" />
+      <params>
+        <int id="Resonance" def="32" min="0" max="64" name="Resonance" />
+        <int id="CutOff" def="2600" min="200" max="5000" name="Cutoff" />
+        <int id="Type" def="4" min="1" max="4" name="Type" />
+        <int id="Gain" def="0" min="0" max="64" name="Gain" />
+      </params>
+    </object>
+    <object id="9">
+      <visual name="Overdrive" />
+      <params>
+        <int id="Level" def="0" min="0" max="64" name="Level" />
+        <int id="Drive" def="0" min="0" max="64" name="Drive" />
+      </params>
+    </object>
+    <object id="10">
+      <visual name="Tone Boost" />
+      <params>
+        <int id="Bass" def="32" min="0" max="64" name="Bass" />
+        <int id="Middle" def="32" min="0" max="64" name="Middle" />
+        <int id="Treble" def="32" min="0" max="64" name="Treble" />
+      </params>
+    </object>
+    <object id="11">
+      <visual name="Noise Gate" />
+      <params>
+        <int id="Threshold" def="8" min="1" max="64" name="Threshold" />
+        <int id="Attack" def="10" min="10" max="250" name="Attack" />
+        <int id="Release" def="250" min="100" max="1000" name="Release" />
+      </params>
+    </object>
+  </category>
+</datapack>
