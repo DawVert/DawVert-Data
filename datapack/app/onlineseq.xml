@@ -877,4 +877,11 @@
       <visual name="EDM Kit (E)" color="#47233f" />
     </object>
   </category>
+  <category id="fx">
+    <object id="bitcrush"><visual name="Bitcrusher" /></object>
+    <object id="delay"><visual name="Delay" /></object>
+    <object id="distortion"><visual name="Distortion" /></object>
+    <object id="reverb"><visual name="Reverb" /></object>
+    <object id="eq"><visual name="EQ" /></object>
+  </category>
 </datapack>
