@@ -52,6 +52,13 @@
       <visual name="Spectrum" />
     </object>
   </category>
+  <category id="fx">
+    <object id="echo"><visual name="Echo" /></object>
+    <object id="distortion"><visual name="Distortion" /></object>
+    <object id="bitcrusher"><visual name="Bitcrusher" /></object>
+    <object id="chorus"><visual name="Chorus" /></object>
+    <object id="reverb"><visual name="Reverb" /></object>
+  </category>
   <category id="preset">
     <object id="1024">
       <data group="novelty" />
